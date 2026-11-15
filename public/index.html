@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es-AR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Agenda del Cervecero · Quilmes A.C.</title>
+  <meta name="description" content="Fixture, resultados y tablas de fútbol, básquet y hockey de Quilmes Atlético Club." />
+  <meta name="theme-color" content="#0b1f3a" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div class="wrap">
+      <p class="eyebrow">Quilmes Atlético Club</p>
+      <h1>Agenda del Cervecero</h1>
+      <p class="actualizado" id="actualizado">Cargando datos…</p>
+    </div>
+    <nav class="tabs wrap" role="tablist" aria-label="Deportes">
+      <button role="tab" data-vista="resumen" aria-selected="true">Resumen</button>
+      <button role="tab" data-vista="futbol" aria-selected="false">Fútbol</button>
+      <button role="tab" data-vista="basquet" aria-selected="false">Básquet</button>
+      <button role="tab" data-vista="hockey" aria-selected="false">Hockey</button>
+    </nav>
+  </header>
+
+  <main class="wrap" id="contenido" aria-live="polite"></main>
+
+  <footer class="wrap pie">
+    Datos: AFA, FEBAMBA y AHBA. Se actualizan solos tres veces por día. Página no oficial, hecha por un hincha.
+  </footer>
+
+  <script src="app.js" type="module"></script>
+</body>
+</html>

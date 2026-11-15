@@ -1,0 +1,28 @@
+{
+  "zonaHoraria": "-03:00",
+  "afa": {
+    "id": "futbol",
+    "titulo": "Fútbol · Primera",
+    "competencia": "Primera Nacional",
+    "canal": "nacionalb",
+    "equipoId": 15
+  },
+  "febamba": {
+    "id": "basquet",
+    "titulo": "Básquet · Mayores",
+    "competencia": "FEBAMBA · Superior",
+    "competicionId": 2013,
+    "compCatId": 5074,
+    "nombreEquipo": "QUILMES ATLETICO CLUB",
+    "diasAtras": 60,
+    "diasAdelante": 30
+  },
+  "ahba": {
+    "clubId": "00000005",
+    "nombreEquipo": "QUILMES",
+    "torneos": [
+      { "id": "hockey-caballeros", "titulo": "Hockey · Caballeros", "codigo": "RUdVX3ViflQ=" },
+      { "id": "hockey-damas", "titulo": "Hockey · Damas", "codigo": "RUdVX3VlfV0=" }
+    ]
+  }
+}

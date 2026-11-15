@@ -1,0 +1,18 @@
+{
+  "name": "quilmes-web",
+  "version": "1.0.0",
+  "description": "Seguimiento de fútbol, básquet y hockey de Quilmes Atlético Club",
+  "main": "index.js",
+  "scripts": {
+    "test": "node --test test/*.test.js",
+    "update": "node scripts/update.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cheerio": "^1.2.0",
+    "playwright": "^1.65.1"
+  },
+  "type": "module"
+}
