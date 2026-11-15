@@ -103,39 +103,51 @@ function curva(sec, alto = 46) {
       <circle cx="${ux}" cy="${uy}" r="4" vector-effect="non-scaling-stroke"/></svg>`;
 }
 
-const forma = (sec, n = 5) =>
-  `<div class="forma" aria-label="Últimos ${n} partidos">${jugados(sec).slice(0, n).reverse()
-    .map((p) => `<span class="r ${resultado(p)}" title="${PALABRA[resultado(p)]} ${esc(marcadorPropio(p))} con ${esc(rival(p))}">${resultado(p)}</span>`)
+const forma = (sec, n = 5) => {
+  const lista = jugados(sec).slice(0, n).reverse();
+  return `<div class="forma" aria-label="Últimos ${lista.length} partidos, el más reciente a la derecha">${lista
+    .map((p, i) => `<span class="r ${resultado(p)}${i === lista.length - 1 ? ' ultimo' : ''}" title="${PALABRA[resultado(p)]} ${esc(marcadorPropio(p))} con ${esc(rival(p))}">${resultado(p)}</span>`)
     .join('')}</div>`;
+};
+const escudo = (clase = '') => `<svg class="escudo ${clase}" aria-hidden="true"><use href="#escudo"/></svg>`;
 
 // ---------- Componentes ----------
 function entrada(p, sec) {
   const local = nombre(p.local), visita = nombre(p.visitante);
-  const linea = (n) => `<span class="${n === 'Quilmes' ? '' : 'rival-nombre'}">${esc(n)}</span>`;
-  const t = partes(p.fecha, { weekday: 'short', day: 'numeric', month: 'short' });
-  return `<article class="entrada" aria-label="Próximo partido: ${esc(local)} contra ${esc(visita)}, ${esc(fechaLarga(p.fecha))}">
-      <div class="entrada-cuerpo">
-        <div class="entrada-comp"><b>${esc(sec.deporteNombre)}, ${esc(sec.titulo.toLowerCase())}</b><br>${esc(sec.competencia)}${p.ronda ? `, ${esc(p.ronda.toLowerCase())}` : ''}</div>
-        <div class="cruce">${linea(local)}<span class="vs">contra</span>${linea(visita)}</div>
-        <div class="entrada-pie"><span class="cuenta" data-cuenta="${esc(p.fecha)}">${esc(cuenta(p.fecha))}</span>${p.lugar ? `<span>${esc(p.lugar)}</span>` : `<span>${p.esLocal ? 'De local' : 'De visitante'}</span>`}</div>
+  const t = partes(p.fecha, { weekday: 'long', day: 'numeric', month: 'long' });
+  const linea = (n) => `<div class="equipo-nombre${n === 'Quilmes' ? '' : ' rival'}">${esc(n)}</div>`;
+  const ahora = cuenta(p.fecha) === 'Se está jugando';
+  const giro = 'El Decano · desde 1887 · Quilmes A.C. · ';
+  return `<article class="cartel" aria-label="Próximo partido: ${esc(local)} contra ${esc(visita)}, ${esc(fechaLarga(p.fecha))}">
+      ${escudo('marca-agua')}
+      <div class="cartel-cab">
+        <span class="etiqueta">${esc(sec.deporteNombre)} · ${esc(sec.titulo)}</span>
+        <b>${esc(sec.competencia)}${p.ronda ? `, ${esc(p.ronda.toLowerCase())}` : ''}</b>
       </div>
-      <div class="entrada-talon" aria-hidden="true">
-        <span class="talon-dia">${esc(sinPunto(t.weekday))}</span>
-        <span class="talon-num">${esc(t.day)}</span>
-        <span class="talon-mes">${esc(sinPunto(t.month))}</span>
-        <span class="talon-hora">${esc(hora(p.fecha))}</span>
+      ${linea(local)}
+      <div class="banda"><span>${esc(t.weekday)} ${esc(t.day)} de ${esc(t.month)}</span><em>contra</em><b>${esc(hora(p.fecha))} h</b></div>
+      ${linea(visita)}
+      <div class="cartel-pie"><span>${p.esLocal ? 'Juega de <b>local</b>' : 'Juega de <b>visitante</b>'}</span>${p.lugar ? `<span>${esc(p.lugar)}</span>` : ''}</div>
+      <div class="sello${ahora ? ' ahora' : ''}" aria-hidden="true">
+        <svg viewBox="0 0 100 100"><defs><path id="giro-${esc(sec.id)}" d="M50,50 m-39,0 a39,39 0 1,1 78,0 a39,39 0 1,1 -78,0"/></defs>
+          <circle cx="50" cy="50" r="48" stroke-width="1.6"/><circle cx="50" cy="50" r="30" stroke-width="1"/>
+          <text><textPath href="#giro-${esc(sec.id)}" textLength="242">${giro.toUpperCase()}</textPath></text></svg>
+        <span class="cuenta" data-cuenta="${esc(p.fecha)}">${esc(cuenta(p.fecha))}</span>
       </div>
     </article>`;
 }
 
+const ESTAMPA = { G: 'Ganó', E: 'Empate', P: 'Perdió' };
 function listaResultados(items) {
   if (!items.length) return '<p class="vacio">Todavía no hay resultados.</p>';
   return `<ul class="resultados">${items
     .map(({ p, sec }) => {
       const r = resultado(p);
-      const marca = r ? `<span class="r ${r}" aria-label="${PALABRA[r]}">${r}</span>` : '<span></span>';
-      const derecha = p.jugado ? `<span class="tanteador">${esc(marcadorPropio(p))}</span>` : `<span class="tanteador">${esc(hora(p.fecha))}</span>`;
-      const contexto = [sec && `${sec.deporteNombre} ${sec.titulo.toLowerCase()}`, fechaBreve(p.fecha), p.ronda].filter(Boolean).join(', ');
+      const marca = r ? `<span class="estampa ${r}">${ESTAMPA[r]}</span>` : '<span class="estampa F">Se viene</span>';
+      const derecha = p.jugado
+        ? `<span class="tanteador">${esc(p.esLocal ? p.gl : p.gv)}<span class="otro">–${esc(p.esLocal ? p.gv : p.gl)}</span></span>`
+        : `<span class="tanteador hora">${p.fecha ? esc(hora(p.fecha)) : '–'}</span>`;
+      const contexto = [sec && `${sec.deporteNombre} ${sec.titulo.toLowerCase()}`, fechaBreve(p.fecha), p.ronda].filter(Boolean).join(' · ');
       return `<li>${marca}<span class="quien">${p.esLocal ? 'vs' : 'en cancha de'} ${esc(rival(p))}<small>${esc(contexto)}</small></span>${derecha}</li>`;
     })
     .join('')}</ul>`;
@@ -149,7 +161,7 @@ function tabla(sec) {
   return `<div class="tabla-wrap"><table>
     <thead><tr><th>#</th><th class="eq">${esc(sec.tabla.nombre)}</th>${cols.map((c) => `<th class="${EXT.has(c) ? 'ext' : ''}">${COLS[c] || c}</th>`).join('')}</tr></thead>
     <tbody>${sec.tabla.filas
-      .map((f) => `<tr class="${f.esQuilmes ? 'qac' : ''}"><td>${esc(f.pos)}</td><td class="eq">${esc(nombre(f.equipo))}</td>${cols
+      .map((f) => `<tr class="${f.esQuilmes ? 'qac' : ''}"><td class="pos">${esc(f.pos)}</td><td class="eq">${f.esQuilmes ? `<span>${escudo()}${esc(nombre(f.equipo))}</span>` : esc(nombre(f.equipo))}</td>${cols
         .map((c) => `<td class="${c === 'pts' ? 'pts' : ''} ${EXT.has(c) ? 'ext' : ''}">${esc(c === 'dif' && f[c] > 0 ? `+${f[c]}` : f[c] ?? '')}</td>`)
         .join('')}</tr>`)
       .join('')}</tbody></table></div>`;
@@ -161,6 +173,15 @@ function aviso(sec) {
 }
 
 // ---------- Vistas ----------
+function pista(sec, f) {
+  const n = sec.tabla.filas.length;
+  const x = n > 1 ? ((f.pos - 1) / (n - 1)) * 100 : 0;
+  return `<div role="img" aria-label="Puesto ${f.pos} de ${n}">
+      <div class="pista"><div class="pista-linea">${'<i></i>'.repeat(n)}</div><span class="yo" style="left:${x}%">${escudo()}</span></div>
+      <div class="pista-ext"><span>1°</span><span>${n}°</span></div>
+    </div>`;
+}
+
 function vistaResumen() {
   const futuros = datos.secciones
     .flatMap((sec) => proximos(sec).map((p) => ({ p, sec })))
@@ -172,11 +193,13 @@ function vistaResumen() {
       const f = filaQuilmes(sec);
       if (!f) return '';
       const registro = sec.deporte === 'basquet' ? `${f.pg}G ${f.pp}P` : `${f.pg}G ${f.pe}E ${f.pp}P`;
-      return `<a class="equipo-card${f.pos === 1 ? ' lider' : ''}" href="#${sec.deporte}">
-          <span class="deporte">${esc(sec.deporteNombre)}, ${esc(sec.titulo.toLowerCase())}<small>${esc(sec.competencia)}</small></span>
-          <span class="puesto"><b>${esc(f.pos)}°</b><span>de ${sec.tabla.filas.length}<br>${esc(f.pts)} pts</span></span>
-          ${curva(sec)}
-          <span style="display:flex;justify-content:space-between;align-items:center;gap:8px">${forma(sec)}<small style="color:var(--suave)">${esc(registro)}</small></span>
+      return `<a class="equipo${f.pos === 1 ? ' lider' : ''}" href="#${sec.deporte}">
+          <div class="equipo-cab">
+            <h3>${esc(sec.deporteNombre)}, ${esc(sec.titulo.toLowerCase())}<small class="etiqueta">${esc(sec.competencia)}</small></h3>
+            <span class="ordinal">${esc(f.pos)}<sup>°</sup></span>
+          </div>
+          ${pista(sec, f)}
+          <div class="equipo-pie">${forma(sec)}<small><b>${esc(f.pts)} pts</b> · ${esc(registro)}</small></div>
         </a>`;
     })
     .join('');
@@ -188,22 +211,22 @@ function vistaResumen() {
 
   return `
     <section class="bloque">
-      <h2>Próximo partido</h2>
+      <h2 class="titulo">Próximo partido</h2>
       ${primero ? entrada(primero.p, primero.sec) : '<p class="vacio">No hay partidos programados por ahora. La página se actualiza sola cuando las ligas publican el fixture.</p>'}
-      ${resto.length ? `<ul class="siguientes">${resto.slice(0, 5).map(({ p, sec }) => {
+      ${resto.length ? `<ul class="agenda" aria-label="Después">${resto.slice(0, 5).map(({ p, sec }) => {
           const t = partes(p.fecha, { weekday: 'short', day: 'numeric', month: 'short' });
-          return `<li><span class="fecha-corta">${esc(t.day)}<small>${esc(sinPunto(t.weekday))} ${esc(sinPunto(t.month))}</small></span>
-            <span class="quien">${p.esLocal ? 'vs' : 'en cancha de'} ${esc(rival(p))}<small>${esc(sec.deporteNombre)} ${esc(sec.titulo.toLowerCase())}</small></span>
+          return `<li><span class="dia">${esc(t.day)}<small>${esc(sinPunto(t.weekday))} · ${esc(sinPunto(t.month))}</small></span>
+            <span class="quien">${p.esLocal ? 'vs' : 'en cancha de'} ${esc(rival(p))}<small>${esc(sec.deporteNombre)} · ${esc(sec.titulo.toLowerCase())}</small></span>
             <span class="hora">${esc(hora(p.fecha))}</span></li>`;
         }).join('')}</ul>` : ''}
     </section>
     <section class="bloque">
-      <h2>Cómo viene cada equipo</h2>
-      <p class="sub">Posición en la tabla, puntos sumados en la temporada y últimos cinco partidos.</p>
+      <h2 class="titulo">Cómo viene cada equipo</h2>
+      <p class="sub">Dónde está Quilmes en cada tabla y cómo le fue en los últimos cinco partidos.</p>
       <div class="equipos">${tarjetas}</div>
     </section>
     <section class="bloque">
-      <h2>Últimos resultados</h2>
+      <h2 class="titulo">Últimos resultados</h2>
       ${listaResultados(ultimos)}
     </section>`;
 }
@@ -211,7 +234,7 @@ function vistaResumen() {
 function vistaDeporte(deporte) {
   const secs = datos.secciones.filter((s) => s.deporte === deporte);
   if (!secs.length) return '<p class="vacio">Todavía no hay datos de este deporte.</p>';
-  return `<div class="portada"><h1>${esc(secs[0].deporteNombre)}</h1></div>` + secs
+  return `<div class="portada"><h1>${esc(secs[0].deporteNombre)}</h1>${escudo()}</div>` + secs
     .map((sec) => {
       const f = filaQuilmes(sec);
       const futuros = proximos(sec);
@@ -219,10 +242,10 @@ function vistaDeporte(deporte) {
       const todos = [...sec.partidos].sort((a, b) => (a.fecha || '').localeCompare(b.fecha || '')).map((p) => ({ p }));
       const dif = f ? (f.dif ?? (f.pf != null ? f.pf - f.pc : null)) : null;
       return `<section class="equipo-seccion">
-        <header><h2>${esc(sec.titulo)}</h2><span>${esc(sec.competencia)}</span></header>
+        <header><span class="etiqueta">${esc(sec.competencia)}</span><h2>${esc(sec.titulo)}</h2></header>
         ${aviso(sec)}
         <p class="categoria">${esc(sec.descripcion || '')} <span class="situacion">${esc(situacion(sec))}</span></p>
-        ${futuros[0] ? `<div class="bloque">${entrada(futuros[0], sec)}</div>` : ''}
+        ${futuros[0] ? entrada(futuros[0], sec) : ''}
         ${f ? `<div class="cifras">
             <div><b>${esc(f.pos)}°</b><small>Posición</small></div>
             <div><b>${esc(f.pts)}</b><small>Puntos</small></div>
@@ -264,10 +287,10 @@ async function cargar() {
 
 try {
   datos = await cargar();
-  document.getElementById('actualizado').textContent = `Actualizado ${fechaBreve(datos.generado).toLowerCase()}, ${hora(datos.generado)} h`;
+  document.getElementById('actualizado').textContent = `Edición del ${fechaBreve(datos.generado).toLowerCase()}, ${hora(datos.generado)} h`;
   window.addEventListener('hashchange', mostrar);
   mostrar();
-  setInterval(() => document.querySelectorAll('[data-cuenta]').forEach((el) => (el.textContent = cuenta(el.dataset.cuenta))), 30000);
+  setInterval(() => document.querySelectorAll('[data-cuenta]').forEach((el) => { el.textContent = cuenta(el.dataset.cuenta); el.closest('.sello')?.classList.toggle('ahora', el.textContent === 'Se está jugando'); }), 30000);
 } catch (e) {
   document.getElementById('actualizado').textContent = 'Sin datos';
   $contenido.innerHTML = `<div class="error-carga">No se pudieron cargar los datos (${esc(e.message)}). Probá recargar la página en unos minutos.</div>`;

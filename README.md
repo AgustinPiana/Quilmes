@@ -32,7 +32,7 @@ A partir de ahí se actualiza sola.
 
 ## Escudo
 
-La página muestra un monograma "QAC". Si querés usar una imagen tuya, guardala como `public/escudo.png` (cuadrada, fondo transparente) y aparece sola en la barra.
+El escudo está incrustado en `public/index.html` (un `<symbol id="escudo">`) y también como `public/escudo.svg` para el ícono de la pestaña. Viene de Wikimedia Commons, donde figura como dominio público.
 
 ## Comandos
 
