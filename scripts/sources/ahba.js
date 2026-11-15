@@ -112,8 +112,10 @@ async function leerTorneo(page, cfg, torneo, zona) {
   return {
     id: torneo.id,
     deporte: 'hockey',
+    deporteNombre: torneo.deporteNombre,
     titulo: torneo.titulo,
-    competencia: `${n.titulo} · ${n.subtitulo}`,
+    competencia: `Metropolitano ${n.subtitulo.split(' - ')[2] || ''}`.trim(),
+    descripcion: torneo.descripcion,
     fuente: 'AHBA',
     tabla: { nombre: n.titulo, columnas: ['pts', 'pj', 'pg', 'pe', 'pp', 'gf', 'gc', 'dif'], filas: n.filas },
     partidos: n.partidos,

@@ -2,15 +2,19 @@
   "zonaHoraria": "-03:00",
   "afa": {
     "id": "futbol",
-    "titulo": "Fútbol · Primera",
+    "deporteNombre": "Fútbol",
+    "titulo": "Primera masculina",
     "competencia": "Primera Nacional",
+    "descripcion": "La Primera Nacional es la segunda categoría del fútbol argentino. Juegan 36 equipos repartidos en dos zonas: los ganadores de cada zona se cruzan en una final por el primer ascenso a Primera División y un reducido define el segundo.",
     "canal": "nacionalb",
     "equipoId": 15
   },
   "febamba": {
     "id": "basquet",
-    "titulo": "Básquet · Mayores",
-    "competencia": "FEBAMBA · Superior",
+    "deporteNombre": "Básquet",
+    "titulo": "Mayores masculino",
+    "competencia": "Torneo Superior FEBAMBA",
+    "descripcion": "El Superior es el torneo de mayores de FEBAMBA, la federación que organiza el básquet del área metropolitana. Se juega por etapas y zonas regionales.",
     "competicionId": 2013,
     "compCatId": 5074,
     "nombreEquipo": "QUILMES ATLETICO CLUB",
@@ -21,8 +25,20 @@
     "clubId": "00000005",
     "nombreEquipo": "QUILMES",
     "torneos": [
-      { "id": "hockey-caballeros", "titulo": "Hockey · Caballeros", "codigo": "RUdVX3ViflQ=" },
-      { "id": "hockey-damas", "titulo": "Hockey · Damas", "codigo": "RUdVX3VlfV0=" }
+      {
+        "id": "hockey-caballeros",
+        "deporteNombre": "Hockey",
+        "titulo": "Caballeros",
+        "codigo": "RUdVX3ViflQ=",
+        "descripcion": "El Metropolitano A es la máxima categoría del hockey de Buenos Aires, organizada por la AHBA. Son 14 equipos que se enfrentan todos contra todos, ida y vuelta."
+      },
+      {
+        "id": "hockey-damas",
+        "deporteNombre": "Hockey",
+        "titulo": "Damas",
+        "codigo": "RUdVX3VlfV0=",
+        "descripcion": "El Metropolitano B es la segunda categoría del hockey femenino de Buenos Aires. Con el formato de 2025, las dos primeras ascendían a la A y la tercera jugaba un repechaje con un equipo de la A."
+      }
     ]
   }
 }

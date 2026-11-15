@@ -4,7 +4,7 @@
     {
       "id": "futbol",
       "deporte": "futbol",
-      "titulo": "Fútbol · Primera",
+      "titulo": "Primera masculina",
       "competencia": "Primera Nacional",
       "fuente": "AFA",
       "tabla": {
@@ -672,14 +672,16 @@
           "estado": "Finalizado"
         }
       ],
+      "deporteNombre": "Fútbol",
+      "descripcion": "La Primera Nacional es la segunda categoría del fútbol argentino. Juegan 36 equipos repartidos en dos zonas: los ganadores de cada zona se cruzan en una final por el primer ascenso a Primera División y un reducido define el segundo.",
       "actualizado": "2026-11-15T23:30:00.000Z",
       "desactualizado": false
     },
     {
       "id": "basquet",
       "deporte": "basquet",
-      "titulo": "Básquet · Mayores",
-      "competencia": "FEBAMBA · Superior",
+      "titulo": "Mayores masculino",
+      "competencia": "Torneo Superior FEBAMBA",
       "fuente": "FEBAMBA",
       "tabla": {
         "nombre": "COPA ORO · SUR 1",
@@ -960,14 +962,16 @@
           "lugar": "LOS ANDES - SANTIAGO AGOSTI"
         }
       ],
+      "deporteNombre": "Básquet",
+      "descripcion": "El Superior es el torneo de mayores de FEBAMBA, la federación que organiza el básquet del área metropolitana. Se juega por etapas y zonas regionales.",
       "actualizado": "2026-11-15T23:30:00.000Z",
       "desactualizado": false
     },
     {
       "id": "hockey-caballeros",
       "deporte": "hockey",
-      "titulo": "Hockey · Caballeros",
-      "competencia": "Caballeros A · 2026 - Primera - A - Masculino",
+      "titulo": "Caballeros",
+      "competencia": "Metropolitano A",
       "fuente": "AHBA",
       "tabla": {
         "nombre": "Caballeros A",
@@ -1454,14 +1458,16 @@
           "estado": "Finalizado"
         }
       ],
+      "deporteNombre": "Hockey",
+      "descripcion": "El Metropolitano A es la máxima categoría del hockey de Buenos Aires, organizada por la AHBA. Son 14 equipos que se enfrentan todos contra todos, ida y vuelta.",
       "actualizado": "2026-11-15T23:30:00.000Z",
       "desactualizado": false
     },
     {
       "id": "hockey-damas",
       "deporte": "hockey",
-      "titulo": "Hockey · Damas",
-      "competencia": "Damas B · 2026 - Primera - B - Femenino",
+      "titulo": "Damas",
+      "competencia": "Metropolitano B",
       "fuente": "AHBA",
       "tabla": {
         "nombre": "Damas B",
@@ -1948,6 +1954,8 @@
           "estado": "Finalizado"
         }
       ],
+      "deporteNombre": "Hockey",
+      "descripcion": "El Metropolitano B es la segunda categoría del hockey femenino de Buenos Aires. Con el formato de 2025, las dos primeras ascendían a la A y la tercera jugaba un repechaje con un equipo de la A.",
       "actualizado": "2026-11-15T23:30:00.000Z",
       "desactualizado": false
     }

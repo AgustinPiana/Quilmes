@@ -2,34 +2,37 @@
 <html lang="es-AR">
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
   <title>Agenda del Cervecero · Quilmes A.C.</title>
-  <meta name="description" content="Fixture, resultados y tablas de fútbol, básquet y hockey de Quilmes Atlético Club." />
-  <meta name="theme-color" content="#0b1f3a" />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <meta name="description" content="Próximos partidos, resultados y tablas de fútbol, básquet y hockey de Quilmes Atlético Club." />
+  <meta name="theme-color" content="#13295b" />
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <header class="top">
-    <div class="wrap">
-      <p class="eyebrow">Quilmes Atlético Club</p>
-      <h1>Agenda del Cervecero</h1>
-      <p class="actualizado" id="actualizado">Cargando datos…</p>
-    </div>
-    <nav class="tabs wrap" role="tablist" aria-label="Deportes">
-      <button role="tab" data-vista="resumen" aria-selected="true">Resumen</button>
-      <button role="tab" data-vista="futbol" aria-selected="false">Fútbol</button>
-      <button role="tab" data-vista="basquet" aria-selected="false">Básquet</button>
-      <button role="tab" data-vista="hockey" aria-selected="false">Hockey</button>
+  <header class="barra">
+    <a class="marca" href="#resumen" aria-label="Ir al inicio">
+      <span class="monograma" aria-hidden="true">
+        QAC
+        <!-- Si guardás el escudo como public/escudo.png, reemplaza al monograma. -->
+        <img src="escudo.png" alt="" onerror="this.remove()" />
+      </span>
+      <span class="marca-texto">
+        <strong>Agenda del Cervecero</strong>
+        <small id="actualizado">Cargando…</small>
+      </span>
+    </a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="#resumen" data-vista="resumen"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 11.5 12 5l8 6.5V20h-5v-5H9v5H4z"/></svg><span>Inicio</span></a>
+      <a href="#futbol" data-vista="futbol"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m12 8 3.2 2.3-1.2 3.7h-4l-1.2-3.7z"/></svg><span>Fútbol</span></a>
+      <a href="#basquet" data-vista="basquet"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5v17M6 6c3 3 3 9 0 12M18 6c-3 3-3 9 0 12"/></svg><span>Básquet</span></a>
+      <a href="#hockey" data-vista="hockey"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3.5 9.5 17.5a2.5 2.5 0 0 1-2.4 1.6H4.5"/><circle cx="17.5" cy="18" r="2"/></svg><span>Hockey</span></a>
     </nav>
   </header>
 
-  <main class="wrap" id="contenido" aria-live="polite"></main>
+  <main id="contenido" aria-live="polite"></main>
 
-  <footer class="wrap pie">
-    Datos: AFA, FEBAMBA y AHBA. Se actualizan solos tres veces por día. Página no oficial, hecha por un hincha.
+  <footer class="pie">
+    Página hecha por un hincha, sin relación oficial con el club. Datos de AFA, FEBAMBA y AHBA, actualizados tres veces por día.
   </footer>
 
   <script src="app.js" type="module"></script>

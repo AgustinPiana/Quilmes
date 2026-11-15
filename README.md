@@ -30,6 +30,10 @@ Si una fuente falla, el script conserva los datos anteriores de esa sección y l
 
 A partir de ahí se actualiza sola.
 
+## Escudo
+
+La página muestra un monograma "QAC". Si querés usar una imagen tuya, guardala como `public/escudo.png` (cuadrada, fondo transparente) y aparece sola en la barra.
+
 ## Comandos
 
 ```bash
@@ -39,6 +43,10 @@ npm run update                     # junta los datos y escribe public/data/quilm
 npm test                           # prueba los lectores con fragmentos reales de cada sitio
 npx serve public                   # ver la página en http://localhost:3000
 ```
+
+## Textos de cada categoría
+
+El resumen de cada categoría (qué torneo es y cómo se asciende) está en `config.json`, en el campo `descripcion` de cada sección. La línea con la posición actual se calcula sola.
 
 ## Cuando cambie la temporada
 
