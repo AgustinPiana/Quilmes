@@ -76,6 +76,8 @@ function fechaBreve(iso) {
   const p = partes(iso, { weekday: 'short', day: 'numeric', month: 'short' });
   return `${sinPunto(p.weekday)} ${p.day} ${sinPunto(p.month)}`;
 }
+/** Solo la primera letra en minúscula: "Caballeros B" → "caballeros B". */
+const minus = (t) => String(t || '').charAt(0).toLowerCase() + String(t || '').slice(1);
 const dos = (n) => String(n).padStart(2, '0');
 /** Largo de la palabra más larga: define el tamaño de los nombres grandes para que nunca se corten. */
 const largo = (t) => Math.max(5, ...String(t).split(/\s+/).map((w) => w.length));
@@ -247,7 +249,7 @@ function listaResultados(items) {
   return `<ul class="resultados">${items
     .map(({ p, sec }) => {
       const r = resultado(p);
-      const contexto = [sec && `${sec.deporteNombre} ${sec.titulo.toLowerCase()}`, fechaBreve(p.fecha), p.ronda].filter(Boolean).join(' · ');
+      const contexto = [sec && `${sec.deporteNombre} ${minus(sec.titulo)}`, fechaBreve(p.fecha), p.ronda].filter(Boolean).join(' · ');
       const derecha = p.jugado
         ? `<span class="marcador"><b>${esc(p.esLocal ? p.gl : p.gv)}<span>–${esc(p.esLocal ? p.gv : p.gl)}</span></b>${r ? `<span class="r ${r}" title="${PALABRA[r]}">${r}</span>` : ''}</span>`
         : `<span class="marcador pendiente"><b>${p.fecha ? esc(hora(p.fecha)) : '–'}</b></span>`;
@@ -296,14 +298,46 @@ function vistaResumen() {
     .sort((a, b) => (a.p.fecha || '9999').localeCompare(b.p.fecha || '9999'));
   const [primero, ...resto] = futuros;
 
-  const equipos = datos.secciones
+  return `
+    <section class="seccion" style="--i:0">
+      ${titulo('01', 'Próximo partido')}<div class="contenedor">
+      ${primero ? proximo(primero.p, primero.sec) : '<p class="vacio">No hay partidos programados por ahora. La página se actualiza sola cuando las ligas publican el fixture.</p>'}
+      ${resto.length ? `<ul class="siguen" aria-label="Después">${resto.slice(0, 5).map(({ p, sec }) => `<li>
+            <span class="cuando chica">${p.fecha ? `<b>${esc(partes(p.fecha, { day: 'numeric' }).day)}</b>${esc(sinPunto(partes(p.fecha, { weekday: 'short' }).weekday))} · ${esc(sinPunto(partes(p.fecha, { month: 'short' }).month))}` : '<b>–</b>A confirmar'}</span>
+            <span class="quien">${p.esLocal ? 'vs' : 'en cancha de'} ${esc(rival(p))}<small>${esc(sec.deporteNombre)} ${esc(minus(sec.titulo))}${p.ronda && !p.fecha ? ` · ${esc(p.ronda)}` : ''}</small></span>
+            <span class="hora">${p.fecha ? esc(hora(p.fecha)) : ''}</span></li>`).join('')}</ul>` : ''}
+    </div></section>
+    <section class="seccion" style="--i:1">
+      ${titulo('02', 'Cómo viene cada equipo', 'Posición y últimos cinco')}
+      <div class="contenedor">${filtros('equipos')}<div data-lista="equipos" aria-live="polite">${listaEquipos(filtro.equipos)}</div></div>
+    </section>
+    <section class="seccion" style="--i:2">
+      ${titulo('03', 'Últimos resultados')}
+      <div class="contenedor">${filtros('resultados')}<div data-lista="resultados" aria-live="polite">${ultimosResultados(filtro.resultados)}</div></div>
+    </section>`;
+}
+
+// ---------- Filtros por deporte del inicio ----------
+const filtro = { equipos: 'todos', resultados: 'todos' };
+const deportes = () => [...new Map(datos.secciones.map((s) => [s.deporte, s.deporteNombre])).entries()];
+const deLa = (dep) => datos.secciones.filter((s) => dep === 'todos' || s.deporte === dep);
+
+function filtros(grupo) {
+  const opciones = [['todos', 'Todos'], ...deportes()];
+  return `<div class="filtros" role="group" aria-label="Filtrar por deporte">${opciones
+    .map(([v, n]) => `<button type="button" data-filtro="${grupo}" data-valor="${esc(v)}" aria-pressed="${filtro[grupo] === v}">${ICONO[v] || '<svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="4" width="7" height="7"/><rect x="13" y="4" width="7" height="7"/><rect x="4" y="13" width="7" height="7"/><rect x="13" y="13" width="7" height="7"/></svg>'}<span>${esc(n)}</span></button>`)
+    .join('')}</div>`;
+}
+
+function listaEquipos(dep) {
+  const tarjetas = deLa(dep)
     .map((sec) => {
       const f = filaQuilmes(sec);
       if (!f) return '';
       const registro = sec.deporte === 'basquet' ? `${f.pg}G ${f.pp}P` : `${f.pg}G ${f.pe}E ${f.pp}P`;
       return `<a class="equipo" href="#${sec.deporte}">
           <div class="equipo-cab">
-            <h3>${esc(sec.deporteNombre)} ${esc(sec.titulo.toLowerCase())}<span class="flecha">→</span><small class="chica">${esc(sec.competencia)}</small></h3>
+            <h3>${esc(sec.deporteNombre)} ${esc(minus(sec.titulo))}<span class="flecha">→</span><small class="chica">${esc(sec.competencia)}</small></h3>
             <span class="ordinal">${esc(f.pos)}<sup>°</sup></span>
           </div>
           ${pista(sec, f)}
@@ -311,30 +345,28 @@ function vistaResumen() {
         </a>`;
     })
     .join('');
-
-  const ultimos = datos.secciones
-    .map((sec) => ({ p: jugados(sec)[0], sec }))
-    .filter((x) => x.p)
-    .sort((a, b) => b.p.fecha.localeCompare(a.p.fecha));
-
-  return `
-    <section class="seccion" style="--i:0">
-      ${titulo('01', 'Próximo partido')}<div class="contenedor">
-      ${primero ? proximo(primero.p, primero.sec) : '<p class="vacio">No hay partidos programados por ahora. La página se actualiza sola cuando las ligas publican el fixture.</p>'}
-      ${resto.length ? `<ul class="siguen" aria-label="Después">${resto.slice(0, 5).map(({ p, sec }) => `<li>
-            <span class="cuando chica">${p.fecha ? `<b>${esc(partes(p.fecha, { day: 'numeric' }).day)}</b>${esc(sinPunto(partes(p.fecha, { weekday: 'short' }).weekday))} · ${esc(sinPunto(partes(p.fecha, { month: 'short' }).month))}` : '<b>–</b>A confirmar'}</span>
-            <span class="quien">${p.esLocal ? 'vs' : 'en cancha de'} ${esc(rival(p))}<small>${esc(sec.deporteNombre)} ${esc(sec.titulo.toLowerCase())}${p.ronda && !p.fecha ? ` · ${esc(p.ronda)}` : ''}</small></span>
-            <span class="hora">${p.fecha ? esc(hora(p.fecha)) : ''}</span></li>`).join('')}</ul>` : ''}
-    </div></section>
-    <section class="seccion" style="--i:1">
-      ${titulo('02', 'Cómo viene cada equipo', 'Posición y últimos cinco')}
-      <div class="contenedor"><div class="equipos">${equipos}</div></div>
-    </section>
-    <section class="seccion" style="--i:2">
-      ${titulo('03', 'Últimos resultados')}
-      <div class="contenedor">${listaResultados(ultimos)}</div>
-    </section>`;
+  return tarjetas ? `<div class="equipos">${tarjetas}</div>` : '<p class="vacio">No hay tablas de este deporte.</p>';
 }
+
+// Todos: el último partido de cada equipo. Un deporte: sus 8 partidos más recientes.
+function ultimosResultados(dep) {
+  const items = dep === 'todos'
+    ? deLa(dep).map((sec) => ({ p: jugados(sec)[0], sec })).filter((x) => x.p)
+    : deLa(dep).flatMap((sec) => jugados(sec).map((p) => ({ p, sec })));
+  items.sort((a, b) => (b.p.fecha || '').localeCompare(a.p.fecha || ''));
+  return listaResultados(dep === 'todos' ? items : items.slice(0, 8));
+}
+
+document.addEventListener('click', (e) => {
+  const b = e.target.closest('[data-filtro]');
+  if (!b || !datos) return;
+  const grupo = b.dataset.filtro;
+  filtro[grupo] = b.dataset.valor;
+  document.querySelectorAll(`[data-filtro="${grupo}"]`).forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
+  const lista = document.querySelector(`[data-lista="${grupo}"]`);
+  lista.innerHTML = grupo === 'equipos' ? listaEquipos(filtro[grupo]) : ultimosResultados(filtro[grupo]);
+  lista.classList.remove('cambio'); void lista.offsetWidth; lista.classList.add('cambio');
+});
 
 function vistaDeporte(deporte) {
   const secs = datos.secciones.filter((s) => s.deporte === deporte);

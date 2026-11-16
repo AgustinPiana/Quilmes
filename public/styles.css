@@ -382,3 +382,25 @@ details.fixture .resultados { border-top: 0; }
   .js main > * { opacity: 1; transform: none; }
   .cinta-pista { transform: none; }
 }
+
+/* ---------- Filtros por deporte (inicio) ---------- */
+.filtros { display: flex; gap: 8px; margin: 0 0 26px; overflow-x: auto; scrollbar-width: none; padding-bottom: 2px; }
+.filtros::-webkit-scrollbar { display: none; }
+.filtros button {
+  display: inline-flex; align-items: center; gap: 8px; flex: none;
+  padding: 10px 14px 9px; border: 1px solid var(--gris-claro); background: var(--blanco); color: var(--gris);
+  font: 800 11.5px/1 var(--f); font-stretch: 125%; text-transform: uppercase; letter-spacing: .03em;
+  cursor: pointer; transition: background .25s, color .25s, border-color .25s;
+}
+.filtros svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linejoin: round; stroke-linecap: round; }
+.filtros button:hover { border-color: var(--fondo-azul); color: var(--fondo-azul); }
+.filtros button[aria-pressed="true"] { background: var(--fondo-azul); border-color: var(--fondo-azul); color: #fff; }
+@media (max-width: 480px) { .filtros button span { display: none; } .filtros button[aria-pressed="true"] span, .filtros button[data-valor="todos"] span { display: inline; } }
+@media (min-width: 900px) { .filtros { margin-bottom: 34px; } .filtros button { padding: 12px 18px 11px; font-size: 12px; } }
+
+/* Si la cantidad de equipos es impar, el último va centrado */
+@media (min-width: 760px) {
+  .equipos > .equipo:last-child:nth-child(odd) { grid-column: 1 / -1; justify-self: center; width: calc(50% - 28px); }
+}
+[data-lista].cambio > * { animation: aparece .45s cubic-bezier(.22,1,.36,1); }
+@keyframes aparece { from { opacity: 0; transform: translateY(8px); } }
