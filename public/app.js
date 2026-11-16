@@ -78,7 +78,7 @@ function fechaBreve(iso) {
 }
 const dos = (n) => String(n).padStart(2, '0');
 /** Largo de la palabra más larga: define el tamaño de los nombres grandes para que nunca se corten. */
-const largo = (t) => Math.max(5, ...String(t).split(/s+/).map((w) => w.length));
+const largo = (t) => Math.max(5, ...String(t).split(/\s+/).map((w) => w.length));
 const escudo = (clase = '') => `<svg class="escudo ${clase}" aria-hidden="true"><use href="#escudo"/></svg>`;
 
 function resultado(p) {
@@ -111,33 +111,24 @@ function situacion(sec) {
   return `Puesto ${f.pos} de ${filas.length} en ${sec.tabla.nombre}, a ${dif} ${dif === 1 ? 'punto' : 'puntos'} del primero.`;
 }
 
-// ---------- Reloj de cuenta regresiva ----------
-function faltan(iso) {
+// ---------- Cuándo se juega, en palabras ----------
+function cuando(iso) {
   const ms = new Date(iso).getTime() - Date.now();
-  if (ms <= 0) return null;
-  const s = Math.floor(ms / 1000);
-  return { d: Math.floor(s / 86400), h: Math.floor((s % 86400) / 3600), m: Math.floor((s % 3600) / 60), s: s % 60 };
+  if (ms <= 0) return { texto: 'En juego', vivo: true };
+  const dia = (d) => partes(d, { year: 'numeric', month: '2-digit', day: '2-digit' });
+  const a = dia(new Date()), b = dia(iso);
+  const dias = Math.round((Date.UTC(b.year, b.month - 1, b.day) - Date.UTC(a.year, a.month - 1, a.day)) / 864e5);
+  return { texto: dias <= 0 ? 'Hoy' : dias === 1 ? 'Mañana' : `En ${dias} días`, vivo: false };
 }
-function reloj(iso) {
-  const f = faltan(iso);
-  if (!f) return '<div class="en-juego">En juego</div>';
-  return `<div class="reloj" data-reloj="${esc(iso)}" role="timer" aria-label="Falta para el partido">
-      <div><b data-u="d">${dos(f.d)}</b><small class="chica">${f.d === 1 ? 'Día' : 'Días'}</small></div>
-      <div><b data-u="h">${dos(f.h)}</b><small class="chica">Horas</small></div>
-      <div><b data-u="m">${dos(f.m)}</b><small class="chica">Min</small></div>
-      <div><b data-u="s">${dos(f.s)}</b><small class="chica">Seg</small></div>
-    </div>`;
-}
-function tic() {
-  document.querySelectorAll('[data-reloj]').forEach((el) => {
-    const f = faltan(el.dataset.reloj);
-    if (!f) { el.outerHTML = '<div class="en-juego">En juego</div>'; return; }
-    for (const u of ['d', 'h', 'm', 's']) {
-      const b = el.querySelector(`[data-u="${u}"]`), v = dos(f[u]);
-      if (b.textContent !== v) b.textContent = v;
-    }
-  });
-}
+
+const ICONO = {
+  futbol: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m12 8 3.2 2.3-1.2 3.7h-4l-1.2-3.7z"/></svg>',
+  basquet: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5v17M6 6c3 3 3 9 0 12M18 6c-3 3-3 9 0 12"/></svg>',
+  hockey: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3.5 9.5 17.5a2.5 2.5 0 0 1-2.4 1.6H4.5"/><circle cx="17.5" cy="18" r="2"/></svg>',
+};
+
+const norm = (t) => String(t || '').toLowerCase().normalize('NFD').replace(/[^a-z0-9]/g, '');
+const filaDe = (sec, equipo) => sec.tabla?.filas.find((f) => norm(f.equipo) === norm(equipo)) || null;
 
 // ---------- Gráfico: ganados, empatados y perdidos, fecha a fecha ----------
 function lineas(sec) {
@@ -200,19 +191,48 @@ function pista(sec, f) {
 // ---------- Componentes ----------
 function proximo(p, sec) {
   const local = nombre(p.local), visita = nombre(p.visitante);
+  const otro = p.esLocal ? p.visitante : p.local;
   const n = Math.max(largo(local), largo(visita));
   const lado = (t) => `<strong class="${t === 'Quilmes' ? 'local' : 'visita'}" style="--n:${n}">${esc(t)}</strong>`;
-  return `<article class="hero" aria-label="Próximo partido: ${esc(local)} contra ${esc(visita)}, ${esc(fechaLarga(p.fecha))}">
-      <div class="hero-meta chica"><span>${esc(sec.deporteNombre)} · ${esc(sec.titulo)}</span><span>${p.esLocal ? 'De local' : 'De visitante'}</span></div>
+  const t = partes(p.fecha, { weekday: 'short', day: 'numeric', month: 'short' });
+  const c = cuando(p.fecha);
+
+  // Cara a cara con los datos de la tabla
+  const yo = filaQuilmes(sec), el = filaDe(sec, otro);
+  let duelo = '';
+  if (yo && el) {
+    const filas = [
+      ['Posición', yo.pos, el.pos, (a, b) => a < b, (v) => `${v}°`],
+      ['Puntos', yo.pts, el.pts, (a, b) => a > b, (v) => v],
+      ['Jugados', yo.pj, el.pj, () => null, (v) => v],
+      sec.deporte === 'basquet' ? ['Ganados', yo.pg, el.pg, (a, b) => a > b, (v) => v] : ['Dif. de gol', yo.dif, el.dif, (a, b) => a > b, (v) => (v > 0 ? `+${v}` : v)],
+    ];
+    const previo = jugados(sec).find((x) => norm(rival(x)) === norm(nombre(otro)));
+    duelo = `<table class="duelo">
+        <caption class="chica">Cara a cara en ${esc(sec.tabla.nombre)}</caption>
+        <thead><tr><th></th><th class="yo">Quilmes</th><th>${esc(nombre(otro))}</th></tr></thead>
+        <tbody>${filas.map(([k, a, b, mejor, f]) => {
+          const m = a == null || b == null ? null : mejor(a, b);
+          return `<tr><th>${k}</th><td class="${m ? 'mejor' : ''}">${esc(f(a ?? '–'))}</td><td class="otro">${esc(f(b ?? '–'))}</td></tr>`;
+        }).join('')}
+        ${previo ? `<tr class="cruce-ant"><th>Último cruce</th><td colspan="2">${PALABRA[resultado(previo)]} ${esc(marcadorPropio(previo))}, ${esc(fechaBreve(previo.fecha))}</td></tr>` : ''}
+        </tbody></table>`;
+  }
+
+  return `<article class="hero" aria-label="Próximo partido de ${esc(sec.deporteNombre.toLowerCase())}: ${esc(local)} contra ${esc(visita)}, ${esc(fechaLarga(p.fecha))}">
+      <div class="hero-cab">
+        <span class="deporte-tag">${ICONO[sec.deporte] || ''}${esc(sec.deporteNombre)}</span>
+        <span class="chica"><b>${esc(sec.titulo)}</b>${esc(sec.competencia)}${p.ronda ? ` · ${esc(p.ronda.toLowerCase())}` : ''}</span>
+      </div>
       <div class="cruce">${lado(local)}<span class="vs chica">${escudo()}contra</span>${lado(visita)}</div>
       <div class="hero-der">
-        ${reloj(p.fecha)}
-        <dl class="datos">
-          <div><dt>Día</dt><dd>${esc(fechaBreve(p.fecha))}</dd></div>
-          <div><dt>Hora</dt><dd>${esc(hora(p.fecha))} h</dd></div>
-          <div><dt>Torneo</dt><dd>${esc(sec.competencia)}${p.ronda ? `, ${esc(p.ronda.toLowerCase())}` : ''}</dd></div>
-          <div><dt>Cancha</dt><dd>${esc(p.lugar || (p.esLocal ? 'Quilmes' : `Cancha de ${rival(p)}`))}</dd></div>
-        </dl>
+        <div class="cuando-grande">
+          <div><b>${esc(sinPunto(t.weekday))} ${esc(t.day)}</b><small class="chica">${esc(sinPunto(t.month))}</small></div>
+          <div><b>${esc(hora(p.fecha))}</b><small class="chica">Hora</small></div>
+          <div class="falta${c.vivo ? ' vivo' : ''}"><b>${esc(c.texto)}</b><small class="chica">${p.esLocal ? 'De local' : 'De visitante'}</small></div>
+        </div>
+        ${p.lugar ? `<p class="lugar">Cancha: <b>${esc(p.lugar)}</b></p>` : ''}
+        ${duelo}
       </div>
     </article>`;
 }
@@ -250,7 +270,7 @@ function aviso(sec) {
   return `<div class="aviso">No se pudo actualizar esta sección en la última corrida. Los datos son del ${esc(fechaLarga(sec.actualizado))}.</div>`;
 }
 
-const titulo = (n, texto, extra = '') => `<header class="titulo"><span>${n}</span><h2>${texto}</h2>${extra ? `<p>${extra}</p>` : ''}</header>`;
+const titulo = (n, texto, extra = '') => `<header class="franja"><div class="contenedor"><span>${n}</span><h2>${texto}</h2>${extra ? `<p>${extra}</p>` : ''}</div></header>`;
 
 // Cinta de LED con los últimos resultados de todos los equipos
 function cinta() {
@@ -293,28 +313,28 @@ function vistaResumen() {
     .sort((a, b) => b.p.fecha.localeCompare(a.p.fecha));
 
   return `
-    <section class="seccion" style="--i:0">
-      ${titulo('01', 'Próximo partido')}
+    <section class="seccion azul" style="--i:0">
+      ${titulo('01', 'Próximo partido')}<div class="contenedor">
       ${primero ? proximo(primero.p, primero.sec) : '<p class="vacio">No hay partidos programados por ahora. La página se actualiza sola cuando las ligas publican el fixture.</p>'}
       ${resto.length ? `<ul class="siguen" aria-label="Después">${resto.slice(0, 5).map(({ p, sec }) => `<li>
             <span class="cuando chica"><b>${esc(partes(p.fecha, { day: 'numeric' }).day)}</b>${esc(sinPunto(partes(p.fecha, { weekday: 'short' }).weekday))} · ${esc(sinPunto(partes(p.fecha, { month: 'short' }).month))}</span>
             <span class="quien">${p.esLocal ? 'vs' : 'en cancha de'} ${esc(rival(p))}<small>${esc(sec.deporteNombre)} ${esc(sec.titulo.toLowerCase())}</small></span>
             <span class="hora">${esc(hora(p.fecha))}</span></li>`).join('')}</ul>` : ''}
-    </section>
+    </div></section>
     <section class="seccion" style="--i:1">
       ${titulo('02', 'Cómo viene cada equipo', 'Posición y últimos cinco')}
-      <div class="equipos">${equipos}</div>
+      <div class="contenedor"><div class="equipos">${equipos}</div></div>
     </section>
-    <section class="seccion" style="--i:2">
+    <section class="seccion azul" style="--i:2">
       ${titulo('03', 'Últimos resultados')}
-      ${listaResultados(ultimos)}
+      <div class="contenedor">${listaResultados(ultimos)}</div>
     </section>`;
 }
 
 function vistaDeporte(deporte) {
   const secs = datos.secciones.filter((s) => s.deporte === deporte);
   if (!secs.length) return '<p class="vacio">Todavía no hay datos de este deporte.</p>';
-  return `<div class="portada" style="--i:0"><h1 style="--n:${largo(secs[0].deporteNombre)}">${esc(secs[0].deporteNombre)}</h1>${escudo()}</div>` + secs
+  return `<div class="portada-franja azul" style="--i:0"><div class="contenedor portada"><h1 style="--n:${largo(secs[0].deporteNombre)}">${esc(secs[0].deporteNombre)}</h1>${escudo()}</div></div><div class="contenedor">` + secs
     .map((sec, i) => {
       const f = filaQuilmes(sec);
       const futuros = proximos(sec);
@@ -325,7 +345,7 @@ function vistaDeporte(deporte) {
         <header><span class="chica">${esc(sec.competencia)}</span><h2>${esc(sec.titulo)}</h2></header>
         ${aviso(sec)}
         <p class="categoria">${esc(sec.descripcion || '')} <span class="situacion">${esc(situacion(sec))}</span></p>
-        ${futuros[0] ? proximo(futuros[0], sec) : ''}
+        ${futuros[0] ? `<div class="panel-azul azul">${proximo(futuros[0], sec)}</div>` : ''}
         ${f ? `<div class="cifras">
             <div><b>${esc(f.pos)}°</b><small class="chica">Posición</small></div>
             <div><b>${esc(f.pts)}</b><small class="chica">Puntos</small></div>
@@ -346,7 +366,7 @@ function vistaDeporte(deporte) {
         </div>
       </section>`;
     })
-    .join('');
+    .join('') + '</div>';
 }
 
 function mostrar() {
@@ -375,10 +395,9 @@ try {
   document.getElementById('cinta').innerHTML = cinta();
   window.addEventListener('hashchange', mostrar);
   mostrar();
-  setInterval(tic, 1000);
 } catch (e) {
   document.getElementById('actualizado').textContent = 'Sin datos';
-  $contenido.innerHTML = `<div class="error-carga">No se pudieron cargar los datos (${esc(e.message)}). Probá recargar la página en unos minutos.</div>`;
+  $contenido.innerHTML = `<div class="contenedor error-carga">No se pudieron cargar los datos (${esc(e.message)}). Probá recargar la página en unos minutos.</div>`;
 } finally {
   loader.fin();
 }

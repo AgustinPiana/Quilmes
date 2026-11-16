@@ -120,28 +120,66 @@ a { color: inherit; }
           mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
 .cinta:empty { display: none; }
-.cinta-pista { display: inline-flex; padding: 11px 0; animation: cinta 40s linear infinite; }
+.cinta-pista { display: inline-flex; padding: 12px 0; animation: cinta 40s linear infinite; }
 .cinta:hover .cinta-pista { animation-play-state: paused; }
 .cinta-item { display: inline-flex; align-items: center; gap: 10px; padding: 0 26px; color: var(--gris); }
 .cinta-item b { color: var(--tinta); font-weight: 800; font-stretch: 62%; font-size: 15px; letter-spacing: .02em; }
 .cinta-item i { width: 7px; height: 7px; border-radius: 50%; background: var(--c); }
 @keyframes cinta { to { transform: translateX(-50%); } }
 
-main { max-width: var(--ancho); margin: 0 auto; padding: 28px 16px 20px; }
-@media (min-width: 900px) { main { padding: 54px 32px 30px; } }
+/* ---------- Franjas: secciones azules y blancas ---------- */
+main { padding: 0; }
+.contenedor { max-width: var(--ancho); margin: 0 auto; padding-left: 16px; padding-right: 16px; }
+@media (min-width: 900px) { .contenedor { padding-left: 32px; padding-right: 32px; } }
 
-/* Títulos de sección: número + nombre, mucho aire */
-.seccion { margin-bottom: 72px; }
-@media (min-width: 900px) { .seccion { margin-bottom: 110px; } }
-.titulo { display: flex; align-items: baseline; gap: 14px; margin: 0 0 22px; padding-bottom: 12px; border-bottom: 1px solid var(--tinta); }
-.titulo span { font: 800 13px/1 var(--f); font-stretch: 62%; color: var(--gris); }
-.titulo h2 { margin: 0; font: 800 15px/1 var(--f); font-stretch: 125%; text-transform: uppercase; letter-spacing: .02em; }
-.titulo p { margin: 0 0 0 auto; font-size: 12px; color: var(--gris); text-align: right; }
+/* Contexto azul: se redefinen los tonos y todo lo de adentro se adapta solo */
+.azul {
+  --tinta: #ffffff;
+  --azul: #ffffff;
+  --gris: #a6b0d6;
+  --gris-claro: #6c79b3;
+  --linea: rgba(255, 255, 255, .16);
+  --suave: rgba(255, 255, 255, .07);
+  --gano: #ffffff;
+  --empato: #7884b8;
+  background: var(--fondo-azul);
+  color: var(--tinta);
+}
+.azul .escudo { color: #fff; --escudo-claro: var(--fondo-azul); }
+.azul .r.G { color: var(--fondo-azul); }
+:root { --fondo-azul: #232f5f; --azul-hondo: #182250; }
+
+.seccion { padding-bottom: 76px; }
+.seccion > .contenedor { padding-top: 34px; }
+.seccion:not(.azul) { padding-top: 40px; } /* aire blanco para que la franja no se pegue a la sección azul de arriba */
+@media (min-width: 900px) { .seccion { padding-bottom: 120px; } .seccion > .contenedor { padding-top: 56px; } .seccion:not(.azul) { padding-top: 64px; } }
+footer.azul { --fondo-azul: var(--azul-hondo); }
+footer.azul .escudo { --escudo-claro: var(--azul-hondo); }
+
+/* La franja del título: ancha, azul, letra grande */
+.franja { background: var(--fondo-azul); color: #fff; }
+.azul .franja { background: var(--azul-hondo); }
+.franja .contenedor { display: flex; align-items: center; gap: 16px; padding-top: 26px; padding-bottom: 24px; }
+.franja span { font: 800 22px/1 var(--f); font-stretch: 62%; color: #8d98c8; align-self: flex-start; padding-top: 4px; }
+.franja h2 { margin: 0; font: 900 clamp(26px, 7.4vw, 80px)/.9 var(--f); font-stretch: 125%; text-transform: uppercase; letter-spacing: -.035em; min-width: 0; }
+.franja p { margin: 0 0 0 auto; font-size: 12px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; color: #a6b0d6; text-align: right; max-width: 160px; }
+@media (min-width: 900px) { .franja .contenedor { padding-top: 40px; padding-bottom: 36px; gap: 24px; } .franja span { font-size: 30px; } }
+@media (max-width: 600px) { .franja p { display: none; } }
 
 /* ---------- Próximo partido ---------- */
-.hero { display: grid; gap: 28px; }
-.hero-meta { display: flex; flex-wrap: wrap; gap: 6px 16px; }
-.hero-meta span + span::before { content: '/'; margin-right: 16px; color: var(--gris-claro); }
+.hero { display: grid; gap: 30px; }
+.hero > * { min-width: 0; }
+.hero-cab { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
+.deporte-tag {
+  display: inline-flex; align-items: center; gap: 10px;
+  background: #fff; color: var(--fondo-azul);
+  padding: 9px 16px 8px 12px;
+  font: 900 clamp(22px, 6.4vw, 38px)/1 var(--f); font-stretch: 125%; text-transform: uppercase; letter-spacing: -.02em;
+}
+.deporte-tag svg { width: 1.05em; height: 1.05em; fill: none; stroke: currentColor; stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+.hero-cab .chica { line-height: 1.5; }
+.hero-cab .chica b { display: block; color: var(--tinta); font-size: 13px; letter-spacing: .1em; }
+
 .cruce { display: grid; gap: 4px; container-type: inline-size; }
 .cruce strong {
   display: block;
@@ -154,34 +192,49 @@ main { max-width: var(--ancho); margin: 0 auto; padding: 28px 16px 20px; }
 .cruce .vs::after { content: ''; flex: 1; height: 1px; background: var(--linea); }
 .cruce .vs .escudo { width: 22px; }
 
-.hero-der { display: grid; gap: 28px; }
-.reloj { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--tinta); }
-.reloj div { padding: 14px 0 0; }
-.reloj div + div { padding-left: 12px; border-left: 1px solid var(--linea); }
-.reloj b { display: block; font: 800 clamp(52px, 15vw, 116px)/.85 var(--f); font-stretch: 62%; font-variant-numeric: tabular-nums; letter-spacing: -.02em; color: var(--tinta); }
-.reloj small { display: block; margin-top: 8px; }
-.en-juego { display: inline-flex; align-items: center; gap: 12px; padding-top: 14px; border-top: 1px solid var(--tinta); width: 100%; font: 900 clamp(40px, 11vw, 92px)/.9 var(--f); font-stretch: 125%; text-transform: uppercase; letter-spacing: -.03em; color: var(--perdio); }
-.en-juego::before { content: ''; width: .28em; height: .28em; border-radius: 50%; background: currentColor; animation: titila 1.2s ease-in-out infinite; }
-@keyframes titila { 50% { opacity: .2; } }
+.hero-der { display: grid; gap: 34px; container-type: inline-size; }
+.cuando-grande { display: grid; grid-template-columns: auto auto 1fr; border-top: 1px solid var(--tinta); }
+.cuando-grande div { padding: 14px 18px 0 0; }
+.cuando-grande div + div { padding-left: 12px; border-left: 1px solid var(--linea); }
+.cuando-grande b { display: block; font: 800 min(72px, 12.5cqw)/.85 var(--f); font-stretch: 62%; letter-spacing: -.01em; text-transform: uppercase; white-space: nowrap; }
+.cuando-grande small { display: block; margin-top: 8px; }
+.cuando-grande .falta b { color: var(--gris); font-size: min(56px, 9.5cqw); }
+.cuando-grande div { min-width: 0; }
+.cuando-grande .falta.vivo b { color: var(--perdio); }
+.lugar { margin: -18px 0 0; font-size: 14px; color: var(--gris); }
+.lugar b { color: var(--tinta); font-weight: 600; }
 
-.datos { display: grid; grid-template-columns: 1fr 1fr; gap: 18px 16px; margin: 0; }
-.datos div { display: grid; gap: 4px; align-content: start; }
-.datos dt { font-size: 10.5px; font-weight: 600; letter-spacing: .12em; text-transform: uppercase; color: var(--gris); }
-.datos dd { margin: 0; font-weight: 600; font-size: 15px; line-height: 1.3; }
+/* Cara a cara */
+.duelo { width: 100%; border-collapse: collapse; font-variant-numeric: tabular-nums; }
+.duelo caption { text-align: left; padding-bottom: 10px; }
+.duelo th, .duelo td { padding: 9px 0 9px 14px; border: 0; border-bottom: 1px solid var(--linea); text-align: right; white-space: nowrap; }
+.duelo thead th { padding-top: 0; font-size: 10.5px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--gris); border-bottom: 1px solid var(--tinta); }
+.duelo thead th.yo { color: var(--tinta); }
+.duelo tbody th, .duelo thead th:first-child { padding-left: 0; }
+.duelo tbody th { text-align: left; font-size: 13px; font-weight: 400; color: var(--gris); letter-spacing: 0; text-transform: none; }
+.duelo td { font: 800 24px/1 var(--f); font-stretch: 62%; width: 30%; }
+.duelo td.otro { color: var(--gris); }
+.duelo td.mejor { color: var(--tinta); }
+.duelo .cruce-ant td { font: 600 14px/1.3 var(--f); white-space: normal; }
 
 @media (min-width: 900px) {
-  .hero { grid-template-columns: 1.3fr 1fr; gap: 40px 64px; align-items: end; }
-  .hero-meta { grid-column: 1 / -1; }
-  .hero-der { gap: 36px; }
+  .hero { grid-template-columns: 1.25fr 1fr; gap: 44px 72px; align-items: start; }
+  .hero-cab { grid-column: 1 / -1; }
+  .hero > .cruce { align-self: end; }
 }
 
 /* Lo que sigue */
-.siguen { list-style: none; margin: 46px 0 0; padding: 0; border-top: 1px solid var(--linea); }
+.siguen { list-style: none; margin: 56px 0 0; padding: 0; border-top: 1px solid var(--linea); }
 .siguen li { display: grid; grid-template-columns: 74px 1fr auto; gap: 14px; align-items: baseline; padding: 14px 0; border-bottom: 1px solid var(--linea); }
-.siguen .cuando b { display: block; font: 800 26px/1 var(--f); font-stretch: 62%; }
+.siguen .cuando b { display: block; font: 800 26px/1 var(--f); font-stretch: 62%; color: var(--tinta); }
 .siguen .quien { font-weight: 600; line-height: 1.3; }
 .siguen .quien small { display: block; font-weight: 400; color: var(--gris); font-size: 13px; }
 .siguen .hora { font: 800 22px/1 var(--f); font-stretch: 62%; color: var(--azul); }
+
+/* En la página de cada deporte, el próximo partido va en un bloque azul */
+.panel-azul { padding: 26px 18px 30px; margin: 0 0 56px; }
+@media (min-width: 900px) { .panel-azul { padding: 40px 44px 44px; } }
+.panel-azul .cruce strong { font-size: min(96px, calc(100cqw / (var(--n, 7) * 1.02))); }
 
 /* ---------- Cómo viene cada equipo ---------- */
 .equipos { display: grid; }
@@ -226,7 +279,9 @@ main { max-width: var(--ancho); margin: 0 auto; padding: 28px 16px 20px; }
 .vacio { color: var(--gris); margin: 0; padding: 16px 0; border-top: 1px solid var(--linea); }
 
 /* ---------- Vista de deporte ---------- */
-.portada { container-type: inline-size; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; margin-bottom: 56px; }
+.portada-franja { margin-bottom: 48px; }
+.portada { container-type: inline-size; display: flex; align-items: flex-end; justify-content: space-between; gap: 16px; padding-top: 40px; padding-bottom: 34px; }
+@media (min-width: 900px) { .portada { padding-top: 64px; padding-bottom: 52px; } .portada-franja { margin-bottom: 72px; } }
 .portada h1 { margin: 0; font: 900 min(200px, calc((100cqw - clamp(40px, 9vw, 92px) - 16px) / (var(--n, 7) * 1.24)))/.8 var(--f); font-stretch: 125%; text-transform: uppercase; letter-spacing: -.045em; color: var(--azul); }
 .portada .escudo { width: clamp(40px, 9vw, 92px); flex: none; }
 
@@ -235,9 +290,6 @@ main { max-width: var(--ancho); margin: 0 auto; padding: 28px 16px 20px; }
 .equipo-seccion > header h2 { margin: 0; font: 900 clamp(26px, 7vw, 46px)/.95 var(--f); font-stretch: 125%; text-transform: uppercase; letter-spacing: -.03em; }
 .categoria { margin: 0 0 34px; max-width: 64ch; font-size: 15.5px; color: #4a5068; }
 .situacion { font-weight: 700; color: var(--azul); }
-.equipo-seccion .hero { margin-bottom: 56px; padding: 26px 0 0; border-top: 1px solid var(--linea); }
-.equipo-seccion .cruce strong { font-size: min(84px, calc(100cqw / (var(--n, 7) * 1.02))); }
-.equipo-seccion .reloj b { font-size: clamp(44px, 12vw, 88px); }
 
 .cifras { display: grid; grid-template-columns: repeat(4, 1fr); margin: 0 0 52px; border-top: 1px solid var(--tinta); }
 .cifras div { padding: 12px 0 0; }
@@ -306,7 +358,7 @@ details.fixture .resultados { border-top: 0; }
 
 .aviso { background: var(--suave); padding: 12px 14px; margin-bottom: 22px; font-size: 14px; border-left: 2px solid var(--perdio); }
 
-.pie { max-width: var(--ancho); margin: 0 auto; padding: 34px 16px 30px; display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: center; color: var(--gris); font-size: 12px; border-top: 1px solid var(--linea); overflow: hidden; }
+.pie { max-width: var(--ancho); margin: 0 auto; padding: 40px 16px 30px; display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: center; color: var(--gris); font-size: 12px; overflow: hidden; }
 .pie .escudo { width: 30px; }
 .pie p { margin: 0; }
 .pie .pie-ano { grid-column: 1 / -1; margin-top: 18px; font: 900 clamp(40px, 12.4vw, 150px)/.8 var(--f); font-stretch: 125%; letter-spacing: -.05em; color: var(--suave); white-space: nowrap; }
