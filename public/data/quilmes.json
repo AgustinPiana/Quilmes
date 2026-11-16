@@ -1156,6 +1156,428 @@
       "desactualizado": false
     },
     {
+      "id": "futbol-femenino",
+      "deporte": "futbol",
+      "deporteNombre": "Fútbol",
+      "titulo": "Primera femenina",
+      "competencia": "Primera C femenina",
+      "descripcion": "La Primera C es la tercera categoría del fútbol femenino de AFA. Se juega en dos zonas: las ganadoras de cada zona ascienden a la Primera B y se cruzan en una final. Los datos salen de DataFem.",
+      "fuente": "DataFem",
+      "tabla": {
+        "nombre": "Zona A",
+        "columnas": [
+          "pts",
+          "pj",
+          "pg",
+          "pe",
+          "pp",
+          "dif"
+        ],
+        "filas": [
+          {
+            "pos": 1,
+            "equipo": "Quilmes",
+            "equipoId": "quilmes",
+            "pts": 54,
+            "pj": 20,
+            "pg": 17,
+            "pe": 3,
+            "pp": 0,
+            "dif": 49,
+            "esQuilmes": true
+          },
+          {
+            "pos": 2,
+            "equipo": "Chacarita",
+            "equipoId": "chacarita-juniors",
+            "pts": 49,
+            "pj": 20,
+            "pg": 16,
+            "pe": 1,
+            "pp": 3,
+            "dif": 35,
+            "esQuilmes": false
+          },
+          {
+            "pos": 3,
+            "equipo": "Tigre",
+            "equipoId": "tigre",
+            "pts": 37,
+            "pj": 20,
+            "pg": 11,
+            "pe": 4,
+            "pp": 5,
+            "dif": 42,
+            "esQuilmes": false
+          },
+          {
+            "pos": 4,
+            "equipo": "Talleres (RE)",
+            "equipoId": "talleres-remedios-de-escalada",
+            "pts": 34,
+            "pj": 19,
+            "pg": 11,
+            "pe": 1,
+            "pp": 7,
+            "dif": 5,
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
+            "equipo": "Canning",
+            "equipoId": "country-canning",
+            "pts": 32,
+            "pj": 20,
+            "pg": 9,
+            "pe": 5,
+            "pp": 6,
+            "dif": 2,
+            "esQuilmes": false
+          },
+          {
+            "pos": 6,
+            "equipo": "Real Pilar",
+            "equipoId": "real-pilar",
+            "pts": 30,
+            "pj": 20,
+            "pg": 9,
+            "pe": 3,
+            "pp": 8,
+            "dif": 22,
+            "esQuilmes": false
+          },
+          {
+            "pos": 7,
+            "equipo": "Atlas",
+            "equipoId": "atlas",
+            "pts": 25,
+            "pj": 20,
+            "pg": 7,
+            "pe": 4,
+            "pp": 9,
+            "dif": -15,
+            "esQuilmes": false
+          },
+          {
+            "pos": 8,
+            "equipo": "Dep. Riestra",
+            "equipoId": "deportivo-riestra",
+            "pts": 21,
+            "pj": 20,
+            "pg": 6,
+            "pe": 3,
+            "pp": 11,
+            "dif": -17,
+            "esQuilmes": false
+          },
+          {
+            "pos": 9,
+            "equipo": "Cañuelas",
+            "equipoId": "canuelas",
+            "pts": 19,
+            "pj": 19,
+            "pg": 5,
+            "pe": 4,
+            "pp": 10,
+            "dif": -10,
+            "esQuilmes": false
+          },
+          {
+            "pos": 10,
+            "equipo": "Nueva Chicago",
+            "equipoId": "nueva-chicago",
+            "pts": 8,
+            "pj": 20,
+            "pg": 2,
+            "pe": 2,
+            "pp": 16,
+            "dif": -27,
+            "esQuilmes": false
+          },
+          {
+            "pos": 11,
+            "equipo": "Berazategui",
+            "equipoId": "berazategui",
+            "pts": 0,
+            "pj": 18,
+            "pg": 0,
+            "pe": 0,
+            "pp": 18,
+            "dif": -86,
+            "esQuilmes": false
+          }
+        ]
+      },
+      "partidos": [
+        {
+          "fecha": null,
+          "ronda": "Final · Vuelta",
+          "local": "Barracas Central",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": null,
+          "gv": null,
+          "jugado": false,
+          "estado": "A confirmar",
+          "lugar": "A confirmarProgramado"
+        },
+        {
+          "fecha": "2026-04-19T15:00:00-03:00",
+          "ronda": "Fecha 1",
+          "local": "Berazategui",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 0,
+          "gv": 11,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Berazategui Auxiliar"
+        },
+        {
+          "fecha": "2026-04-25T15:00:00-03:00",
+          "ronda": "Fecha 2",
+          "local": "Quilmes",
+          "visitante": "Tigre",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Fútbol Juvenil e Infantil del CAQ"
+        },
+        {
+          "fecha": "2026-05-16T15:00:00-03:00",
+          "ronda": "Fecha 4",
+          "local": "Quilmes",
+          "visitante": "Real Pilar",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Fútbol Juvenil e Infantil del CAQ"
+        },
+        {
+          "fecha": "2026-05-31T10:00:00-03:00",
+          "ronda": "Fecha 5",
+          "local": "Nueva Chicago",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 0,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Polideportivo Parque Alberdi"
+        },
+        {
+          "fecha": "2026-06-06T15:00:00-03:00",
+          "ronda": "Fecha 6",
+          "local": "Quilmes",
+          "visitante": "Cañuelas",
+          "esLocal": true,
+          "gl": 1,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Fútbol Juvenil e Infantil del CAQ"
+        },
+        {
+          "fecha": "2026-06-26T19:00:00-03:00",
+          "ronda": "Fecha 7",
+          "local": "Talleres (RE)",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Predio Javier Zanetti"
+        },
+        {
+          "fecha": "2026-07-04T15:00:00-03:00",
+          "ronda": "Fecha 8",
+          "local": "Quilmes",
+          "visitante": "Canning",
+          "esLocal": true,
+          "gl": 5,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Fútbol Juvenil e Infantil del CAQ"
+        },
+        {
+          "fecha": "2026-07-18T15:00:00-03:00",
+          "ronda": "Fecha 9",
+          "local": "Chacarita",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Polideportivo Ernesto Duchini"
+        },
+        {
+          "fecha": "2026-07-25T12:00:00-03:00",
+          "ronda": "Fecha 10",
+          "local": "Dep. Riestra",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Complejo La Candela"
+        },
+        {
+          "fecha": "2026-08-01T15:00:00-03:00",
+          "ronda": "Fecha 11",
+          "local": "Quilmes",
+          "visitante": "Atlas",
+          "esLocal": true,
+          "gl": 6,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Fútbol Juvenil e Infantil del CAQ"
+        },
+        {
+          "fecha": "2026-08-08T15:00:00-03:00",
+          "ronda": "Fecha 12",
+          "local": "Quilmes",
+          "visitante": "Berazategui",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Fútbol Juvenil e Infantil del CAQ"
+        },
+        {
+          "fecha": "2026-08-23T13:00:00-03:00",
+          "ronda": "Fecha 13",
+          "local": "Tigre",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 0,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Predio Nito San Andrés"
+        },
+        {
+          "fecha": "2026-09-06T15:15:00-03:00",
+          "ronda": "Fecha 15",
+          "local": "Real Pilar",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Predio Comunidad Deportiva Real Pilar"
+        },
+        {
+          "fecha": "2026-09-12T15:00:00-03:00",
+          "ronda": "Fecha 16",
+          "local": "Quilmes",
+          "visitante": "Nueva Chicago",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Fútbol Juvenil e Infantil del CAQ"
+        },
+        {
+          "fecha": "2026-09-19T15:00:00-03:00",
+          "ronda": "Fecha 17",
+          "local": "Cañuelas",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 0,
+          "gv": 4,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Estadio Jorge Arín"
+        },
+        {
+          "fecha": "2026-09-26T15:00:00-03:00",
+          "ronda": "Fecha 18",
+          "local": "Quilmes",
+          "visitante": "Talleres (RE)",
+          "esLocal": true,
+          "gl": 1,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Fútbol Juvenil e Infantil del CAQ"
+        },
+        {
+          "fecha": "2026-10-14T15:00:00-03:00",
+          "ronda": "Fecha 19",
+          "local": "Canning",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Predio Rancho Taxco"
+        },
+        {
+          "fecha": "2026-10-17T15:00:00-03:00",
+          "ronda": "Fecha 20",
+          "local": "Quilmes",
+          "visitante": "Chacarita",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Fútbol Juvenil e Infantil del CAQ"
+        },
+        {
+          "fecha": "2026-10-24T15:00:00-03:00",
+          "ronda": "Fecha 21",
+          "local": "Quilmes",
+          "visitante": "Dep. Riestra",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Fútbol Juvenil e Infantil del CAQ"
+        },
+        {
+          "fecha": "2026-11-01T10:00:00-03:00",
+          "ronda": "Fecha 22",
+          "local": "Atlas",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Estadio Ricardo Puga"
+        },
+        {
+          "fecha": "2026-11-14T15:00:00-03:00",
+          "ronda": "Final · Ida",
+          "local": "Quilmes",
+          "visitante": "Barracas Central",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado",
+          "lugar": "Fútbol Juvenil e Infantil del CAQ"
+        }
+      ],
+      "actualizado": "2026-11-16T01:34:55.900Z",
+      "desactualizado": false
+    },
+    {
       "id": "basquet",
       "deporte": "basquet",
       "titulo": "Mayores masculino",
@@ -1448,8 +1870,10 @@
     {
       "id": "hockey-caballeros",
       "deporte": "hockey",
+      "deporteNombre": "Hockey",
       "titulo": "Caballeros",
       "competencia": "Metropolitano A",
+      "descripcion": "El Metropolitano A es la máxima categoría del hockey de Buenos Aires, organizada por la AHBA. Son 14 equipos que se enfrentan todos contra todos, ida y vuelta.",
       "fuente": "AHBA",
       "tabla": {
         "nombre": "Caballeros A",
@@ -1658,7 +2082,9 @@
           "gl": 0,
           "gv": 2,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/7/7/3/7734a8567d95c36f.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-03-15T16:00:00-03:00",
@@ -1669,7 +2095,9 @@
           "gl": 1,
           "gv": 1,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/1/d/b/1db11118cb4f9ecf.png"
         },
         {
           "fecha": "2026-03-22T16:00:00-03:00",
@@ -1680,7 +2108,9 @@
           "gl": 1,
           "gv": 1,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/d/8/d/d8d2a2783e680e1f.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-03-29T16:00:00-03:00",
@@ -1691,7 +2121,9 @@
           "gl": 2,
           "gv": 2,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/9/2/a/92a7001067f4f4c4.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-04-12T16:00:00-03:00",
@@ -1702,7 +2134,9 @@
           "gl": 1,
           "gv": 3,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/1/e/a/1ea2b1e569ba79bb.webp"
         },
         {
           "fecha": "2026-04-19T16:00:00-03:00",
@@ -1713,7 +2147,9 @@
           "gl": 4,
           "gv": 0,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/f/4/f/f4f9bdccdc386b35.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-04-26T16:00:00-03:00",
@@ -1724,7 +2160,9 @@
           "gl": 3,
           "gv": 3,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/9/1/6/9167faf83b5c4f41.png"
         },
         {
           "fecha": "2026-05-03T16:00:00-03:00",
@@ -1735,7 +2173,9 @@
           "gl": 5,
           "gv": 1,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/b/2/7/b2764be549e53b6f.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-05-10T16:00:00-03:00",
@@ -1746,7 +2186,9 @@
           "gl": 3,
           "gv": 2,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/3/b/f/3bf1f3d5cf562283.png"
         },
         {
           "fecha": "2026-05-17T16:00:00-03:00",
@@ -1757,7 +2199,9 @@
           "gl": 2,
           "gv": 2,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/e/9/4/e94d172e500cab8a.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-05-31T15:30:00-03:00",
@@ -1768,7 +2212,9 @@
           "gl": 2,
           "gv": 1,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/f/6/b/f6bc44ddd1f61697.png"
         },
         {
           "fecha": "2026-06-07T16:00:00-03:00",
@@ -1779,7 +2225,9 @@
           "gl": 4,
           "gv": 2,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/0/7/407ad4a2a1673020.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-06-14T16:00:00-03:00",
@@ -1790,7 +2238,9 @@
           "gl": 3,
           "gv": 2,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/f/4/f/f4f9bdccdc386b35.png"
         },
         {
           "fecha": "2026-06-21T16:00:00-03:00",
@@ -1801,7 +2251,9 @@
           "gl": 2,
           "gv": 2,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/7/7/3/7734a8567d95c36f.png"
         },
         {
           "fecha": "2026-06-24T21:30:00-03:00",
@@ -1812,7 +2264,9 @@
           "gl": 2,
           "gv": 2,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/d/8/d/d8d2a2783e680e1f.png"
         },
         {
           "fecha": "2026-06-28T16:00:00-03:00",
@@ -1823,7 +2277,9 @@
           "gl": 3,
           "gv": 3,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/1/d/b/1db11118cb4f9ecf.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-07-12T16:00:00-03:00",
@@ -1834,7 +2290,9 @@
           "gl": 1,
           "gv": 3,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/9/2/a/92a7001067f4f4c4.png"
         },
         {
           "fecha": "2026-08-09T16:00:00-03:00",
@@ -1845,7 +2303,9 @@
           "gl": 3,
           "gv": 3,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/f/4/f/f4f9bdccdc386b35.png"
         },
         {
           "fecha": "2026-09-06T16:00:00-03:00",
@@ -1856,7 +2316,9 @@
           "gl": 3,
           "gv": 4,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/b/2/7/b2764be549e53b6f.png"
         },
         {
           "fecha": "2026-09-13T16:00:00-03:00",
@@ -1867,7 +2329,9 @@
           "gl": 2,
           "gv": 1,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/3/b/f/3bf1f3d5cf562283.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-09-23T21:30:00-03:00",
@@ -1878,7 +2342,9 @@
           "gl": 1,
           "gv": 0,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/9/1/6/9167faf83b5c4f41.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-10-04T16:00:00-03:00",
@@ -1889,7 +2355,9 @@
           "gl": 5,
           "gv": 3,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/f/6/b/f6bc44ddd1f61697.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-10-10T16:00:00-03:00",
@@ -1900,7 +2368,9 @@
           "gl": 2,
           "gv": 4,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/0/7/407ad4a2a1673020.png"
         },
         {
           "fecha": "2026-10-12T14:00:00-03:00",
@@ -1911,7 +2381,9 @@
           "gl": 4,
           "gv": 1,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/1/e/a/1ea2b1e569ba79bb.webp",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-10-21T21:00:00-03:00",
@@ -1922,7 +2394,9 @@
           "gl": 4,
           "gv": 3,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/e/9/4/e94d172e500cab8a.png"
         },
         {
           "fecha": "2026-10-25T16:00:00-03:00",
@@ -1933,19 +2407,491 @@
           "gl": 2,
           "gv": 4,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/f/4/f/f4f9bdccdc386b35.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         }
       ],
+      "actualizado": "2026-11-16T01:39:10.644Z",
+      "desactualizado": false
+    },
+    {
+      "id": "hockey-caballeros-b",
+      "deporte": "hockey",
       "deporteNombre": "Hockey",
-      "descripcion": "El Metropolitano A es la máxima categoría del hockey de Buenos Aires, organizada por la AHBA. Son 14 equipos que se enfrentan todos contra todos, ida y vuelta.",
-      "actualizado": "2026-11-15T23:30:00.000Z",
+      "titulo": "Caballeros B",
+      "competencia": "Metropolitano B · Copa de Plata",
+      "descripcion": "El segundo equipo de caballeros del club juega la Copa de Plata del Metropolitano B.",
+      "fuente": "AHBA",
+      "tabla": {
+        "nombre": "Caballeros B Copa de Plata",
+        "columnas": [
+          "pts",
+          "pj",
+          "pg",
+          "pe",
+          "pp",
+          "gf",
+          "gc",
+          "dif"
+        ],
+        "filas": [
+          {
+            "pos": 1,
+            "equipo": "S.I.T.A.S.",
+            "pts": 48,
+            "pj": 20,
+            "pg": 15,
+            "pe": 3,
+            "pp": 2,
+            "gf": 96,
+            "gc": 22,
+            "dif": 74,
+            "esQuilmes": false
+          },
+          {
+            "pos": 2,
+            "equipo": "BERAZATEGUI",
+            "pts": 42,
+            "pj": 20,
+            "pg": 13,
+            "pe": 3,
+            "pp": 4,
+            "gf": 71,
+            "gc": 35,
+            "dif": 36,
+            "esQuilmes": false
+          },
+          {
+            "pos": 3,
+            "equipo": "S. BARBARA B",
+            "pts": 42,
+            "pj": 21,
+            "pg": 13,
+            "pe": 3,
+            "pp": 5,
+            "gf": 70,
+            "gc": 36,
+            "dif": 34,
+            "esQuilmes": false
+          },
+          {
+            "pos": 4,
+            "equipo": "SAGLZ",
+            "pts": 41,
+            "pj": 20,
+            "pg": 12,
+            "pe": 5,
+            "pp": 3,
+            "gf": 65,
+            "gc": 34,
+            "dif": 31,
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
+            "equipo": "BCO. PROVINCIA B",
+            "pts": 32,
+            "pj": 21,
+            "pg": 9,
+            "pe": 5,
+            "pp": 7,
+            "gf": 48,
+            "gc": 47,
+            "dif": 1,
+            "esQuilmes": false
+          },
+          {
+            "pos": 6,
+            "equipo": "QUILMES B",
+            "pts": 32,
+            "pj": 20,
+            "pg": 8,
+            "pe": 8,
+            "pp": 4,
+            "gf": 37,
+            "gc": 22,
+            "dif": 15,
+            "esQuilmes": true
+          },
+          {
+            "pos": 7,
+            "equipo": "MARTÍN GÜEMES",
+            "pts": 29,
+            "pj": 20,
+            "pg": 9,
+            "pe": 2,
+            "pp": 9,
+            "gf": 52,
+            "gc": 52,
+            "dif": 0,
+            "esQuilmes": false
+          },
+          {
+            "pos": 8,
+            "equipo": "CERRO PILAR",
+            "pts": 26,
+            "pj": 20,
+            "pg": 7,
+            "pe": 5,
+            "pp": 8,
+            "gf": 45,
+            "gc": 48,
+            "dif": -3,
+            "esQuilmes": false
+          },
+          {
+            "pos": 9,
+            "equipo": "LUJAN R.C.",
+            "pts": 17,
+            "pj": 20,
+            "pg": 5,
+            "pe": 2,
+            "pp": 13,
+            "gf": 43,
+            "gc": 60,
+            "dif": -17,
+            "esQuilmes": false
+          },
+          {
+            "pos": 10,
+            "equipo": "MUN. F. VARELA",
+            "pts": 16,
+            "pj": 20,
+            "pg": 5,
+            "pe": 1,
+            "pp": 14,
+            "gf": 41,
+            "gc": 86,
+            "dif": -45,
+            "esQuilmes": false
+          },
+          {
+            "pos": 11,
+            "equipo": "EST. LA PLATA",
+            "pts": 13,
+            "pj": 20,
+            "pg": 4,
+            "pe": 1,
+            "pp": 15,
+            "gf": 46,
+            "gc": 78,
+            "dif": -32,
+            "esQuilmes": false
+          },
+          {
+            "pos": 12,
+            "equipo": "CAMPANA B.C.",
+            "pts": 5,
+            "pj": 20,
+            "pg": 1,
+            "pe": 2,
+            "pp": 17,
+            "gf": 16,
+            "gc": 110,
+            "dif": -94,
+            "esQuilmes": false
+          }
+        ]
+      },
+      "partidos": [
+        {
+          "fecha": "2026-06-14T16:00:00-03:00",
+          "ronda": "Fecha 1",
+          "local": "S.I.T.A.S.",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 3,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/d/e/4de215aba42e7477.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-06-21T16:00:00-03:00",
+          "ronda": "Fecha 2",
+          "local": "CAMPANA B.C.",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 0,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/f/9/4/f948350a69a99f09.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-06-28T16:00:00-03:00",
+          "ronda": "Fecha 3",
+          "local": "QUILMES B",
+          "visitante": "EST. LA PLATA",
+          "esLocal": true,
+          "gl": 6,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/0/9/8/0985958f304ea13a.png"
+        },
+        {
+          "fecha": "2026-07-05T16:00:00-03:00",
+          "ronda": "Fecha 4",
+          "local": "CERRO PILAR",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/a/a/4/aa4fb331314cecc0.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-07-09T16:00:00-03:00",
+          "ronda": "Fecha 5",
+          "local": "LUJAN R.C.",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/9/2/0/92054b678327dd9c.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-07-12T16:00:00-03:00",
+          "ronda": "Fecha 6",
+          "local": "MARTÍN GÜEMES",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/a/d/b/adbcdfe12687bd90.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-08-09T16:00:00-03:00",
+          "ronda": "Fecha 8",
+          "local": "MUN. F. VARELA",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/7/9/2792eb181fcaf023.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-08-16T16:00:00-03:00",
+          "ronda": "Fecha 9",
+          "local": "BERAZATEGUI",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/8/2/b/82b9bd01b6735c41.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-08-17T16:00:00-03:00",
+          "ronda": "Fecha 10",
+          "local": "QUILMES B",
+          "visitante": "CERRO PILAR",
+          "esLocal": true,
+          "gl": 0,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/a/a/4/aa4fb331314cecc0.png"
+        },
+        {
+          "fecha": "2026-08-23T16:00:00-03:00",
+          "ronda": "Fecha 12",
+          "local": "QUILMES B",
+          "visitante": "CAMPANA B.C.",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/f/9/4/f948350a69a99f09.png"
+        },
+        {
+          "fecha": "2026-09-06T16:00:00-03:00",
+          "ronda": "Fecha 13",
+          "local": "SAGLZ",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 3,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/c/9/5/c956bf219aa5cf5f.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-09-13T16:00:00-03:00",
+          "ronda": "Fecha 14",
+          "local": "QUILMES B",
+          "visitante": "S. BARBARA B",
+          "esLocal": true,
+          "gl": 1,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/f/6/b/f6bc44ddd1f61697.png"
+        },
+        {
+          "fecha": "2026-09-23T21:00:00-03:00",
+          "ronda": "Fecha 11",
+          "local": "QUILMES B",
+          "visitante": "MUN. F. VARELA",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/7/9/2792eb181fcaf023.png"
+        },
+        {
+          "fecha": "2026-10-04T16:00:00-03:00",
+          "ronda": "Fecha 16",
+          "local": "QUILMES B",
+          "visitante": "BERAZATEGUI",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/8/2/b/82b9bd01b6735c41.png"
+        },
+        {
+          "fecha": "2026-10-10T16:00:00-03:00",
+          "ronda": "Fecha 17",
+          "local": "S. BARBARA B",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 0,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/f/6/b/f6bc44ddd1f61697.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-10-12T16:00:00-03:00",
+          "ronda": "Fecha 7",
+          "local": "QUILMES B",
+          "visitante": "LUJAN R.C.",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/9/2/0/92054b678327dd9c.png"
+        },
+        {
+          "fecha": "2026-10-18T12:00:00-03:00",
+          "ronda": "Fecha 15",
+          "local": "BCO. PROVINCIA B",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/3/b/f/3bf1f3d5cf562283.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-10-30T22:00:00-03:00",
+          "ronda": "Fecha 18",
+          "local": "QUILMES B",
+          "visitante": "BCO. PROVINCIA B",
+          "esLocal": true,
+          "gl": 1,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/3/b/f/3bf1f3d5cf562283.png"
+        },
+        {
+          "fecha": "2026-11-04T22:00:00-03:00",
+          "ronda": "Fecha 19",
+          "local": "QUILMES B",
+          "visitante": "MARTÍN GÜEMES",
+          "esLocal": true,
+          "gl": 0,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/a/d/b/adbcdfe12687bd90.png"
+        },
+        {
+          "fecha": "2026-11-13T22:00:00-03:00",
+          "ronda": "Fecha 20",
+          "local": "QUILMES B",
+          "visitante": "SAGLZ",
+          "esLocal": true,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/c/9/5/c956bf219aa5cf5f.png"
+        },
+        {
+          "fecha": "2026-11-18T22:00:00-03:00",
+          "ronda": "Fecha 21",
+          "local": "EST. LA PLATA",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": null,
+          "gv": null,
+          "jugado": false,
+          "estado": "Programado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/0/9/8/0985958f304ea13a.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-11-29T16:00:00-03:00",
+          "ronda": "Fecha 22",
+          "local": "QUILMES B",
+          "visitante": "S.I.T.A.S.",
+          "esLocal": true,
+          "gl": null,
+          "gv": null,
+          "jugado": false,
+          "estado": "Programado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/d/e/4de215aba42e7477.png"
+        }
+      ],
+      "actualizado": "2026-11-16T01:39:10.644Z",
       "desactualizado": false
     },
     {
       "id": "hockey-damas",
       "deporte": "hockey",
+      "deporteNombre": "Hockey",
       "titulo": "Damas",
       "competencia": "Metropolitano B",
+      "descripcion": "El Metropolitano B es la segunda categoría del hockey femenino de Buenos Aires. Con el formato de 2025, las dos primeras ascendían a la A y la tercera jugaba un repechaje con un equipo de la A.",
       "fuente": "AHBA",
       "tabla": {
         "nombre": "Damas B",
@@ -2154,7 +3100,9 @@
           "gl": 4,
           "gv": 2,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/8/5/2855c5a35c3e4985.png"
         },
         {
           "fecha": "2026-03-14T16:00:00-03:00",
@@ -2165,7 +3113,9 @@
           "gl": 4,
           "gv": 1,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/b/4/e/b4ebb6a703f3d055.png"
         },
         {
           "fecha": "2026-03-21T16:00:00-03:00",
@@ -2176,7 +3126,9 @@
           "gl": 0,
           "gv": 1,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/0/2/2/0226efd57d457322.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-03-28T16:00:00-03:00",
@@ -2187,7 +3139,9 @@
           "gl": 2,
           "gv": 1,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/6/8/3/6837355c8905ea35.png"
         },
         {
           "fecha": "2026-04-11T16:00:00-03:00",
@@ -2198,7 +3152,9 @@
           "gl": 1,
           "gv": 2,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/f/f/b/ffb023bf431c1789.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-04-18T16:00:00-03:00",
@@ -2209,7 +3165,9 @@
           "gl": 3,
           "gv": 2,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/6/f/9/6f90d1d6db0a3c85.png"
         },
         {
           "fecha": "2026-04-25T16:00:00-03:00",
@@ -2220,7 +3178,9 @@
           "gl": 1,
           "gv": 1,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/9/1/6/9167faf83b5c4f41.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-05-02T16:00:00-03:00",
@@ -2231,7 +3191,9 @@
           "gl": 2,
           "gv": 0,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/7/e/1/7e1461896071840a.png"
         },
         {
           "fecha": "2026-05-09T10:30:00-03:00",
@@ -2242,7 +3204,9 @@
           "gl": 0,
           "gv": 1,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/b/2/7/b2764be549e53b6f.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-05-16T16:00:00-03:00",
@@ -2253,7 +3217,9 @@
           "gl": 3,
           "gv": 2,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/1/d/b/1db11118cb4f9ecf.png"
         },
         {
           "fecha": "2026-05-30T16:00:00-03:00",
@@ -2264,7 +3230,9 @@
           "gl": 1,
           "gv": 4,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/e/a/4/ea491ec9a1cfe7e3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-06-06T16:00:00-03:00",
@@ -2275,7 +3243,9 @@
           "gl": 2,
           "gv": 1,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/8/b/6/8b657a1c8b527b21.png"
         },
         {
           "fecha": "2026-06-13T16:00:00-03:00",
@@ -2286,7 +3256,9 @@
           "gl": 1,
           "gv": 2,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/0/7/407ad4a2a1673020.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-06-20T16:00:00-03:00",
@@ -2297,7 +3269,9 @@
           "gl": 1,
           "gv": 2,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/8/5/2855c5a35c3e4985.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-06-27T16:00:00-03:00",
@@ -2308,7 +3282,9 @@
           "gl": 4,
           "gv": 2,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/b/4/e/b4ebb6a703f3d055.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-07-04T16:00:00-03:00",
@@ -2319,7 +3295,9 @@
           "gl": 1,
           "gv": 1,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/0/2/2/0226efd57d457322.png"
         },
         {
           "fecha": "2026-07-11T16:00:00-03:00",
@@ -2330,7 +3308,9 @@
           "gl": 1,
           "gv": 1,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/6/8/3/6837355c8905ea35.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-07-18T16:00:00-03:00",
@@ -2341,7 +3321,9 @@
           "gl": 4,
           "gv": 2,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/f/f/b/ffb023bf431c1789.png"
         },
         {
           "fecha": "2026-08-08T16:00:00-03:00",
@@ -2352,7 +3334,9 @@
           "gl": 2,
           "gv": 2,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/6/f/9/6f90d1d6db0a3c85.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-09-05T16:00:00-03:00",
@@ -2363,7 +3347,9 @@
           "gl": 0,
           "gv": 1,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/7/e/1/7e1461896071840a.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-09-12T10:30:00-03:00",
@@ -2374,7 +3360,9 @@
           "gl": 2,
           "gv": 2,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/b/2/7/b2764be549e53b6f.png"
         },
         {
           "fecha": "2026-09-22T21:00:00-03:00",
@@ -2385,7 +3373,9 @@
           "gl": 3,
           "gv": 2,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/9/1/6/9167faf83b5c4f41.png"
         },
         {
           "fecha": "2026-09-26T16:00:00-03:00",
@@ -2396,7 +3386,9 @@
           "gl": 1,
           "gv": 1,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/1/d/b/1db11118cb4f9ecf.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-10-03T16:00:00-03:00",
@@ -2407,7 +3399,9 @@
           "gl": 2,
           "gv": 1,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/e/a/4/ea491ec9a1cfe7e3.png"
         },
         {
           "fecha": "2026-10-11T16:00:00-03:00",
@@ -2418,7 +3412,9 @@
           "gl": 3,
           "gv": 2,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/8/b/6/8b657a1c8b527b21.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
         {
           "fecha": "2026-10-31T16:00:00-03:00",
@@ -2429,12 +3425,560 @@
           "gl": 3,
           "gv": 1,
           "jugado": true,
-          "estado": "Finalizado"
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/0/7/407ad4a2a1673020.png"
         }
       ],
+      "actualizado": "2026-11-16T01:39:10.644Z",
+      "desactualizado": false
+    },
+    {
+      "id": "hockey-damas-b",
+      "deporte": "hockey",
       "deporteNombre": "Hockey",
-      "descripcion": "El Metropolitano B es la segunda categoría del hockey femenino de Buenos Aires. Con el formato de 2025, las dos primeras ascendían a la A y la tercera jugaba un repechaje con un equipo de la A.",
-      "actualizado": "2026-11-15T23:30:00.000Z",
+      "titulo": "Damas B",
+      "competencia": "Metropolitano D",
+      "descripcion": "El segundo equipo de damas del club juega el Metropolitano D, la cuarta categoría del hockey femenino de Buenos Aires.",
+      "fuente": "AHBA",
+      "tabla": {
+        "nombre": "Damas D1",
+        "columnas": [
+          "pts",
+          "pj",
+          "pg",
+          "pe",
+          "pp",
+          "gf",
+          "gc",
+          "dif"
+        ],
+        "filas": [
+          {
+            "pos": 1,
+            "equipo": "RIVER PLATE B",
+            "pts": 61,
+            "pj": 26,
+            "pg": 18,
+            "pe": 7,
+            "pp": 1,
+            "gf": 60,
+            "gc": 28,
+            "dif": 32,
+            "esQuilmes": false
+          },
+          {
+            "pos": 2,
+            "equipo": "QUILMES B",
+            "pts": 54,
+            "pj": 26,
+            "pg": 16,
+            "pe": 6,
+            "pp": 4,
+            "gf": 50,
+            "gc": 17,
+            "dif": 33,
+            "esQuilmes": true
+          },
+          {
+            "pos": 3,
+            "equipo": "G. Y E. LA PLATA",
+            "pts": 54,
+            "pj": 26,
+            "pg": 16,
+            "pe": 6,
+            "pp": 4,
+            "gf": 33,
+            "gc": 17,
+            "dif": 16,
+            "esQuilmes": false
+          },
+          {
+            "pos": 4,
+            "equipo": "SAN ANDRÉS",
+            "pts": 43,
+            "pj": 26,
+            "pg": 10,
+            "pe": 13,
+            "pp": 3,
+            "gf": 61,
+            "gc": 30,
+            "dif": 31,
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
+            "equipo": "PUEYRREDON",
+            "pts": 37,
+            "pj": 26,
+            "pg": 10,
+            "pe": 7,
+            "pp": 9,
+            "gf": 57,
+            "gc": 45,
+            "dif": 12,
+            "esQuilmes": false
+          },
+          {
+            "pos": 6,
+            "equipo": "SAN MARCOS",
+            "pts": 37,
+            "pj": 26,
+            "pg": 9,
+            "pe": 10,
+            "pp": 7,
+            "gf": 49,
+            "gc": 38,
+            "dif": 11,
+            "esQuilmes": false
+          },
+          {
+            "pos": 7,
+            "equipo": "LOS MATREROS",
+            "pts": 33,
+            "pj": 26,
+            "pg": 8,
+            "pe": 9,
+            "pp": 9,
+            "gf": 34,
+            "gc": 39,
+            "dif": -5,
+            "esQuilmes": false
+          },
+          {
+            "pos": 8,
+            "equipo": "CAMPANA B.C.",
+            "pts": 32,
+            "pj": 26,
+            "pg": 9,
+            "pe": 5,
+            "pp": 12,
+            "gf": 47,
+            "gc": 49,
+            "dif": -2,
+            "esQuilmes": false
+          },
+          {
+            "pos": 9,
+            "equipo": "R. AVELLANEDA",
+            "pts": 31,
+            "pj": 26,
+            "pg": 8,
+            "pe": 7,
+            "pp": 11,
+            "gf": 52,
+            "gc": 50,
+            "dif": 2,
+            "esQuilmes": false
+          },
+          {
+            "pos": 10,
+            "equipo": "PORTEÑO",
+            "pts": 30,
+            "pj": 26,
+            "pg": 7,
+            "pe": 9,
+            "pp": 10,
+            "gf": 30,
+            "gc": 41,
+            "dif": -11,
+            "esQuilmes": false
+          },
+          {
+            "pos": 11,
+            "equipo": "R. AVELLANEDA B",
+            "pts": 26,
+            "pj": 26,
+            "pg": 5,
+            "pe": 11,
+            "pp": 10,
+            "gf": 34,
+            "gc": 49,
+            "dif": -15,
+            "esQuilmes": false
+          },
+          {
+            "pos": 12,
+            "equipo": "VELEZ B",
+            "pts": 25,
+            "pj": 26,
+            "pg": 5,
+            "pe": 10,
+            "pp": 11,
+            "gf": 28,
+            "gc": 46,
+            "dif": -18,
+            "esQuilmes": false
+          },
+          {
+            "pos": 13,
+            "equipo": "O. GEORGIAN",
+            "pts": 18,
+            "pj": 26,
+            "pg": 5,
+            "pe": 3,
+            "pp": 18,
+            "gf": 19,
+            "gc": 53,
+            "dif": -34,
+            "esQuilmes": false
+          },
+          {
+            "pos": 14,
+            "equipo": "BERAZATEGUI",
+            "pts": 9,
+            "pj": 26,
+            "pg": 0,
+            "pe": 9,
+            "pp": 17,
+            "gf": 16,
+            "gc": 68,
+            "dif": -52,
+            "esQuilmes": false
+          }
+        ]
+      },
+      "partidos": [
+        {
+          "fecha": "2026-03-07T10:30:00-03:00",
+          "ronda": "Fecha 1",
+          "local": "O. GEORGIAN",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 4,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/b/8/0/b80936e786dd2a9d.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-03-14T16:00:00-03:00",
+          "ronda": "Fecha 2",
+          "local": "G. Y E. LA PLATA",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/f/0/4f0444be47228800.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-03-21T16:00:00-03:00",
+          "ronda": "Fecha 3",
+          "local": "QUILMES B",
+          "visitante": "PUEYRREDON",
+          "esLocal": true,
+          "gl": 1,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/0/8/9/089f9ebe4abd2226.png"
+        },
+        {
+          "fecha": "2026-03-28T16:00:00-03:00",
+          "ronda": "Fecha 4",
+          "local": "R. AVELLANEDA B",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 0,
+          "gv": 4,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/d/6/4/d64527b0dd89aebc.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-04-11T16:00:00-03:00",
+          "ronda": "Fecha 5",
+          "local": "QUILMES B",
+          "visitante": "VELEZ B",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/6/f/9/6f90d1d6db0a3c85.png"
+        },
+        {
+          "fecha": "2026-04-18T16:00:00-03:00",
+          "ronda": "Fecha 6",
+          "local": "LOS MATREROS",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 0,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/6/c/2/6c2140bcbd3b137b.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-04-25T16:00:00-03:00",
+          "ronda": "Fecha 7",
+          "local": "QUILMES B",
+          "visitante": "SAN ANDRÉS",
+          "esLocal": true,
+          "gl": 1,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/3/6/4/364c3153f6e5305e.png"
+        },
+        {
+          "fecha": "2026-05-02T16:00:00-03:00",
+          "ronda": "Fecha 8",
+          "local": "RIVER PLATE B",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/d/5/a/d5a61b6e6963f2a2.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-05-09T16:00:00-03:00",
+          "ronda": "Fecha 9",
+          "local": "QUILMES B",
+          "visitante": "BERAZATEGUI",
+          "esLocal": true,
+          "gl": 0,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/8/2/b/82b9bd01b6735c41.png"
+        },
+        {
+          "fecha": "2026-05-16T16:00:00-03:00",
+          "ronda": "Fecha 10",
+          "local": "CAMPANA B.C.",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/f/9/4/f948350a69a99f09.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-05-30T10:30:00-03:00",
+          "ronda": "Fecha 11",
+          "local": "QUILMES B",
+          "visitante": "R. AVELLANEDA",
+          "esLocal": true,
+          "gl": 1,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/d/6/4/d64527b0dd89aebc.png"
+        },
+        {
+          "fecha": "2026-06-06T16:00:00-03:00",
+          "ronda": "Fecha 12",
+          "local": "PORTEÑO",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/1/f/4/1f46183743ebbcf3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-06-13T16:00:00-03:00",
+          "ronda": "Fecha 13",
+          "local": "QUILMES B",
+          "visitante": "SAN MARCOS",
+          "esLocal": true,
+          "gl": 0,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/7/e/3/7e3cd384a873ff5d.png"
+        },
+        {
+          "fecha": "2026-06-20T10:30:00-03:00",
+          "ronda": "Fecha 14",
+          "local": "QUILMES B",
+          "visitante": "O. GEORGIAN",
+          "esLocal": true,
+          "gl": 4,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/b/8/0/b80936e786dd2a9d.png"
+        },
+        {
+          "fecha": "2026-06-27T16:00:00-03:00",
+          "ronda": "Fecha 15",
+          "local": "QUILMES B",
+          "visitante": "G. Y E. LA PLATA",
+          "esLocal": true,
+          "gl": 0,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/f/0/4f0444be47228800.png"
+        },
+        {
+          "fecha": "2026-07-04T16:00:00-03:00",
+          "ronda": "Fecha 16",
+          "local": "PUEYRREDON",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 0,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/0/8/9/089f9ebe4abd2226.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-07-11T16:00:00-03:00",
+          "ronda": "Fecha 17",
+          "local": "QUILMES B",
+          "visitante": "R. AVELLANEDA B",
+          "esLocal": true,
+          "gl": 5,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/d/6/4/d64527b0dd89aebc.png"
+        },
+        {
+          "fecha": "2026-07-18T16:00:00-03:00",
+          "ronda": "Fecha 18",
+          "local": "VELEZ B",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 0,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/6/f/9/6f90d1d6db0a3c85.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-08-08T16:00:00-03:00",
+          "ronda": "Fecha 19",
+          "local": "QUILMES B",
+          "visitante": "LOS MATREROS",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/6/c/2/6c2140bcbd3b137b.png"
+        },
+        {
+          "fecha": "2026-09-05T16:00:00-03:00",
+          "ronda": "Fecha 21",
+          "local": "QUILMES B",
+          "visitante": "RIVER PLATE B",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/d/5/a/d5a61b6e6963f2a2.png"
+        },
+        {
+          "fecha": "2026-09-12T10:30:00-03:00",
+          "ronda": "Fecha 22",
+          "local": "BERAZATEGUI",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 0,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/8/2/b/82b9bd01b6735c41.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-09-19T16:00:00-03:00",
+          "ronda": "Fecha 20",
+          "local": "SAN ANDRÉS",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/3/6/4/364c3153f6e5305e.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-10-11T16:00:00-03:00",
+          "ronda": "Fecha 25",
+          "local": "QUILMES B",
+          "visitante": "PORTEÑO",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/1/f/4/1f46183743ebbcf3.png"
+        },
+        {
+          "fecha": "2026-10-17T16:00:00-03:00",
+          "ronda": "Fecha 24",
+          "local": "R. AVELLANEDA",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/d/6/4/d64527b0dd89aebc.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        },
+        {
+          "fecha": "2026-10-24T16:00:00-03:00",
+          "ronda": "Fecha 23",
+          "local": "QUILMES B",
+          "visitante": "CAMPANA B.C.",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/f/9/4/f948350a69a99f09.png"
+        },
+        {
+          "fecha": "2026-10-31T16:00:00-03:00",
+          "ronda": "Fecha 26",
+          "local": "SAN MARCOS",
+          "visitante": "QUILMES B",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
+          "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/7/e/3/7e3cd384a873ff5d.png",
+          "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
+        }
+      ],
+      "actualizado": "2026-11-16T01:39:10.644Z",
       "desactualizado": false
     }
   ],

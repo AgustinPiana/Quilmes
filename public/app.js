@@ -193,7 +193,8 @@ function proximo(p, sec) {
   const local = nombre(p.local), visita = nombre(p.visitante);
   const otro = p.esLocal ? p.visitante : p.local;
   const n = Math.max(largo(local), largo(visita));
-  const lado = (t) => `<strong class="${t === 'Quilmes' ? 'local' : 'visita'}" style="--n:${n}">${esc(t)}</strong>`;
+  // El equipo propio se reconoce por esLocal (así "Quilmes B" también sale en azul).
+  const lado = (t, propio) => `<strong class="${propio ? 'local' : 'visita'}" style="--n:${n}">${esc(t)}</strong>`;
   const t = partes(p.fecha, { weekday: 'short', day: 'numeric', month: 'short' });
   const c = cuando(p.fecha);
 
@@ -210,7 +211,7 @@ function proximo(p, sec) {
     const previo = jugados(sec).find((x) => norm(rival(x)) === norm(nombre(otro)));
     duelo = `<table class="duelo">
         <caption class="chica">Cara a cara en ${esc(sec.tabla.nombre)}</caption>
-        <thead><tr><th></th><th class="yo">Quilmes</th><th>${esc(nombre(otro))}</th></tr></thead>
+        <thead><tr><th></th><th class="yo">${esc(nombre(yo.equipo))}</th><th>${esc(nombre(otro))}</th></tr></thead>
         <tbody>${filas.map(([k, a, b, mejor, f]) => {
           const m = a == null || b == null ? null : mejor(a, b);
           return `<tr><th>${k}</th><td class="${m ? 'mejor' : ''}">${esc(f(a ?? '–'))}</td><td class="otro">${esc(f(b ?? '–'))}</td></tr>`;
@@ -224,7 +225,7 @@ function proximo(p, sec) {
         <span class="deporte-tag">${ICONO[sec.deporte] || ''}${esc(sec.deporteNombre)}</span>
         <span class="chica"><b>${esc(sec.titulo)}</b>${esc(sec.competencia)}${p.ronda ? ` · ${esc(p.ronda.toLowerCase())}` : ''}</span>
       </div>
-      <div class="cruce">${lado(local)}<span class="vs chica">${escudo()}contra</span>${lado(visita)}</div>
+      <div class="cruce">${lado(local, p.esLocal)}<span class="vs chica">${escudo()}contra</span>${lado(visita, !p.esLocal)}</div>
       <div class="hero-der">
         <div class="cuando-grande">
           <div><b>${esc(sinPunto(t.weekday))} ${esc(t.day)}</b><small class="chica">${esc(sinPunto(t.month))}</small></div>
@@ -334,14 +335,18 @@ function vistaResumen() {
 function vistaDeporte(deporte) {
   const secs = datos.secciones.filter((s) => s.deporte === deporte);
   if (!secs.length) return '<p class="vacio">Todavía no hay datos de este deporte.</p>';
-  return `<div class="portada-franja azul" style="--i:0"><div class="contenedor portada"><h1 style="--n:${largo(secs[0].deporteNombre)}">${esc(secs[0].deporteNombre)}</h1>${escudo()}</div></div><div class="contenedor">` + secs
+  // Índice: un acceso por equipo, con su posición. Se mueve con scroll (el # de la URL elige el deporte).
+  const indice = secs.length > 1 ? `<nav class="indice" aria-label="Equipos de ${esc(secs[0].deporteNombre.toLowerCase())}"><div class="contenedor"><ol>${secs
+    .map((sec, i) => { const f = filaQuilmes(sec); return `<li><a href="#${esc(deporte)}" data-ir="eq-${esc(sec.id)}"><span>${dos(i + 1)}</span>${esc(sec.titulo)}${f ? `<b>${esc(f.pos)}°</b>` : ''}</a></li>`; })
+    .join('')}</ol></div></nav>` : '';
+  return `<div class="portada-franja azul" style="--i:0"><div class="contenedor portada"><h1 style="--n:${largo(secs[0].deporteNombre)}">${esc(secs[0].deporteNombre)}</h1>${escudo()}</div></div>${indice}<div class="contenedor">` + secs
     .map((sec, i) => {
       const f = filaQuilmes(sec);
       const futuros = proximos(sec);
       const ult = jugados(sec).slice(0, 5).map((p) => ({ p }));
-      const todos = [...sec.partidos].sort((a, b) => (a.fecha || '').localeCompare(b.fecha || '')).map((p) => ({ p }));
+      const todos = [...sec.partidos].sort((a, b) => (a.fecha || '9999').localeCompare(b.fecha || '9999')).map((p) => ({ p }));
       const dif = f ? (f.dif ?? (f.pf != null ? f.pf - f.pc : null)) : null;
-      return `<section class="equipo-seccion" style="--i:${i + 1}">
+      return `<section class="equipo-seccion" id="eq-${esc(sec.id)}" style="--i:${i + 1}">
         <header><span class="chica">${esc(sec.competencia)}</span><h2>${esc(sec.titulo)}</h2></header>
         ${aviso(sec)}
         <p class="categoria">${esc(sec.descripcion || '')} <span class="situacion">${esc(situacion(sec))}</span></p>
@@ -378,6 +383,7 @@ function mostrar() {
   $contenido.innerHTML = vista === 'resumen' ? vistaResumen() : vistaDeporte(vista);
   window.scrollTo(0, 0);
   if (yaMostrado) requestAnimationFrame(() => requestAnimationFrame(() => html.classList.add('mostrado')));
+  seguirIndice();
 }
 
 // ---------- Arranque ----------
@@ -389,6 +395,24 @@ async function cargar() {
 }
 
 document.getElementById('ano').textContent = new Date().getFullYear();
+
+// Índice de cada deporte: baja hasta el equipo y marca cuál se está viendo.
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('[data-ir]');
+  if (!a) return;
+  e.preventDefault();
+  document.getElementById(a.dataset.ir)?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+});
+let observador = null;
+function seguirIndice() {
+  observador?.disconnect();
+  const links = [...document.querySelectorAll('.indice [data-ir]')];
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  observador = new IntersectionObserver((entradas) => {
+    for (const en of entradas) if (en.isIntersecting) links.forEach((l) => l.toggleAttribute('aria-current', l.dataset.ir === en.target.id));
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  document.querySelectorAll('.equipo-seccion[id]').forEach((s) => observador.observe(s));
+}
 try {
   datos = await cargar();
   document.getElementById('actualizado').textContent = `Actualizado ${fechaBreve(datos.generado).toLowerCase()}, ${hora(datos.generado)} h`;

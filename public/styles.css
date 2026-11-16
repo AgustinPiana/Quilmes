@@ -285,7 +285,19 @@ footer.azul .escudo { --escudo-claro: var(--azul-hondo); }
 .portada h1 { margin: 0; font: 900 min(200px, calc((100cqw - clamp(40px, 9vw, 92px) - 16px) / (var(--n, 7) * 1.24)))/.8 var(--f); font-stretch: 125%; text-transform: uppercase; letter-spacing: -.045em; color: var(--azul); }
 .portada .escudo { width: clamp(40px, 9vw, 92px); flex: none; }
 
-.equipo-seccion { margin-bottom: 96px; }
+.equipo-seccion { margin-bottom: 96px; scroll-margin-top: 72px; }
+
+/* Índice de equipos dentro de cada deporte */
+.indice { position: sticky; top: 0; z-index: 15; background: rgba(255,255,255,.96); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--linea); margin: -48px 0 44px; }
+.indice ol { list-style: none; margin: 0; padding: 0; display: flex; gap: 6px 26px; overflow-x: auto; scrollbar-width: none; }
+.indice ol::-webkit-scrollbar { display: none; }
+.indice a { position: relative; display: flex; align-items: baseline; gap: 8px; padding: 16px 0 15px; text-decoration: none; white-space: nowrap; font: 800 12px/1 var(--f); font-stretch: 125%; text-transform: uppercase; letter-spacing: .02em; color: var(--gris); }
+.indice a span { font-stretch: 62%; font-size: 12px; color: var(--gris-claro); }
+.indice a b { font: 800 16px/1 var(--f); font-stretch: 62%; color: var(--azul); }
+.indice a::after { content: ''; position: absolute; left: 0; right: 0; bottom: -1px; height: 3px; background: var(--fondo-azul); transform: scaleX(0); transform-origin: left; transition: transform .35s var(--curva); }
+.indice a:hover, .indice a[aria-current] { color: var(--tinta); }
+.indice a[aria-current]::after { transform: none; }
+@media (min-width: 900px) { .indice { margin: -72px 0 64px; } .indice a { font-size: 13px; padding: 20px 0 19px; } }
 .equipo-seccion > header { display: grid; gap: 8px; margin-bottom: 18px; }
 .equipo-seccion > header h2 { margin: 0; font: 900 clamp(26px, 7vw, 46px)/.95 var(--f); font-stretch: 125%; text-transform: uppercase; letter-spacing: -.03em; }
 .categoria { margin: 0 0 34px; max-width: 64ch; font-size: 15.5px; color: #4a5068; }

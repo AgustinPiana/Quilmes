@@ -6,8 +6,9 @@ Página para seguir en un solo lugar el fixture, los resultados y las tablas de 
 |---|---|---|
 | Fútbol · Primera Nacional | AFA (`info.afa.org.ar`) | HTML estático de tabla y fixture |
 | Fútbol · Reserva | Promiedos (`promiedos.com.ar`) | JSON que trae cada página (`__NEXT_DATA__`) |
+| Fútbol · Primera C femenina | DataFem (`datafem.com.ar`) | HTML de tabla y fixture, una página por fecha |
 | Básquet · Superior (Mayores) | FEBAMBA (`febamba.com`) | Fixture por fechas + APIs públicas de fases y grupos |
-| Hockey · Caballeros A y Damas B | AHBA (`tournamenttracker.buenosaireshockey.ar`) | Navegador automático (Playwright) que lee la página ya armada |
+| Hockey · Caballeros y Damas (Quilmes y Quilmes B) | AHBA (`tournamenttracker.buenosaireshockey.ar`) | Navegador automático (Playwright) que lee la página ya armada |
 
 Costo: **$0**. GitHub Actions junta los datos 3 veces por día y Vercel publica la página.
 
@@ -55,10 +56,11 @@ Todo lo que cambia año a año está en `config.json`:
 
 - **Fútbol:** `afa.canal` (`nacionalb` = Primera Nacional). Si Quilmes asciende, cambia el canal.
 - **Reserva:** `reserva.equipoId` / `equipoUrl` salen de la URL del equipo en Promiedos (`promiedos.com.ar/team/quilmes-ac-(reserves)/jdeca`) y `ligaId` / `ligaUrl` de la del torneo.
+- **Femenino:** `femenino.temporada`, `categoria` (`primera-c`) y `zonaTabla` salen de datafem.com.ar. Si el equipo asciende, cambia `categoria` (ej. `primera-b`).
 - **Básquet:** `febamba.competicionId` y `compCatId` salen de la URL del torneo en febamba.com
   (ej. `febamba.com/detalle-torneo/2013/superior-2026` → `competicionId` 2013; `compCatId` es el valor del selector de categoría).
   El grupo del QAC lo encuentra solo.
-- **Hockey:** `ahba.torneos[].codigo` es el pedazo de la URL del torneo en el sitio de AHBA
+- **Hockey:** cada torneo tiene su `nombreEquipo` (`QUILMES` o `QUILMES B`) tal como figura en la tabla de AHBA. `ahba.torneos[].codigo` es el pedazo de la URL del torneo en el sitio de AHBA
   (entrá con el club Quilmes elegido, abrí el torneo y copiá lo que está entre la `/` y el `?`).
 
 ## Pendiente

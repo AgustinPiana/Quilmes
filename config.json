@@ -20,6 +20,31 @@
     "ligaUrl": "liga-profesional-reserva",
     "ligaId": "hhbc"
   },
+  "femenino": {
+    "id": "futbol-femenino",
+    "deporteNombre": "Fútbol",
+    "titulo": "Primera femenina",
+    "competencia": "Primera C femenina",
+    "descripcion": "La Primera C es la tercera categoría del fútbol femenino de AFA. Se juega en dos zonas: las ganadoras de cada zona ascienden a la Primera B y se cruzan en una final. Los datos salen de DataFem.",
+    "categoria": "primera-c",
+    "temporada": 2026,
+    "equipo": "quilmes",
+    "zonaTabla": "Zona A",
+    "torneos": [
+      {
+        "id": "zona-a",
+        "nombre": "Fecha"
+      },
+      {
+        "id": "final",
+        "nombre": "Final",
+        "etiquetas": [
+          "Ida",
+          "Vuelta"
+        ]
+      }
+    ]
+  },
   "febamba": {
     "id": "basquet",
     "deporteNombre": "Básquet",
@@ -44,11 +69,28 @@
         "descripcion": "El Metropolitano A es la máxima categoría del hockey de Buenos Aires, organizada por la AHBA. Son 14 equipos que se enfrentan todos contra todos, ida y vuelta."
       },
       {
+        "id": "hockey-caballeros-b",
+        "deporteNombre": "Hockey",
+        "titulo": "Caballeros B",
+        "codigo": "RUdVX3Zhe1w=",
+        "nombreEquipo": "QUILMES B",
+        "competencia": "Metropolitano B · Copa de Plata",
+        "descripcion": "El segundo equipo de caballeros del club juega la Copa de Plata del Metropolitano B."
+      },
+      {
         "id": "hockey-damas",
         "deporteNombre": "Hockey",
         "titulo": "Damas",
         "codigo": "RUdVX3VlfV0=",
         "descripcion": "El Metropolitano B es la segunda categoría del hockey femenino de Buenos Aires. Con el formato de 2025, las dos primeras ascendían a la A y la tercera jugaba un repechaje con un equipo de la A."
+      },
+      {
+        "id": "hockey-damas-b",
+        "deporteNombre": "Hockey",
+        "titulo": "Damas B",
+        "codigo": "RUdVX3VleFA=",
+        "nombreEquipo": "QUILMES B",
+        "descripcion": "El segundo equipo de damas del club juega el Metropolitano D, la cuarta categoría del hockey femenino de Buenos Aires."
       }
     ]
   }

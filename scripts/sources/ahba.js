@@ -107,14 +107,15 @@ async function leerTorneo(page, cfg, torneo, zona) {
   await page.waitForSelector('.ms-DetailsList [role=row]', { timeout: 30000 });
   const grilla = await page.evaluate(extraerTablaEnPagina);
 
-  const n = normalizarHockey({ titulo, subtitulo, crudos, grilla }, cfg.nombreEquipo, zona);
+  // Cada torneo puede tener su propio nombre de equipo (ej. "QUILMES B" en las divisiones de abajo).
+  const n = normalizarHockey({ titulo, subtitulo, crudos, grilla }, torneo.nombreEquipo || cfg.nombreEquipo, zona);
   if (n.partidos.length === 0 && n.filas.length === 0) throw new Error(`AHBA: sin datos en ${torneo.titulo}`);
   return {
     id: torneo.id,
     deporte: 'hockey',
     deporteNombre: torneo.deporteNombre,
     titulo: torneo.titulo,
-    competencia: `Metropolitano ${n.subtitulo.split(' - ')[2] || ''}`.trim(),
+    competencia: torneo.competencia || `Metropolitano ${n.subtitulo.split(' - ')[2] || ''}`.trim(),
     descripcion: torneo.descripcion,
     fuente: 'AHBA',
     tabla: { nombre: n.titulo, columnas: ['pts', 'pj', 'pg', 'pe', 'pp', 'gf', 'gc', 'dif'], filas: n.filas },
@@ -124,7 +125,8 @@ async function leerTorneo(page, cfg, torneo, zona) {
 
 /** Devuelve un resultado por torneo: { ok, seccion } o { ok:false, id, error }. */
 export async function leerAhba(cfg, zona) {
-  const browser = await chromium.launch();
+  // PW_CHANNEL=msedge permite probar en una PC con Edge sin bajar el Chromium de Playwright.
+  const browser = await chromium.launch(process.env.PW_CHANNEL ? { channel: process.env.PW_CHANNEL } : {});
   const resultados = [];
   try {
     const page = await browser.newPage({ viewport: { width: 1280, height: 900 }, locale: 'es-AR' });
