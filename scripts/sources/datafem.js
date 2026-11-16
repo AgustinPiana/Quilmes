@@ -90,7 +90,8 @@ export function parsePartidos(html, slugEquipo, { ronda = null, zona = '-03:00' 
       gv: jugado ? numero(goles[1]) : null,
       jugado,
       estado: estado || (jugado ? 'Finalizado' : 'Programado'),
-      lugar: limpiar($el.parent().children().first().text()) || null,
+      // Sin programar, la página pone "A confirmar" donde va la cancha.
+      lugar: (() => { const l = limpiar($el.parent().children().first().text()); return !l || /confirmar|programado/i.test(l) ? null : l; })(),
     });
   });
   return [...partidos.values()];

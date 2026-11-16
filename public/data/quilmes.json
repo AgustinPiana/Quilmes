@@ -1310,18 +1310,6 @@
       },
       "partidos": [
         {
-          "fecha": null,
-          "ronda": "Final · Vuelta",
-          "local": "Barracas Central",
-          "visitante": "Quilmes",
-          "esLocal": false,
-          "gl": null,
-          "gv": null,
-          "jugado": false,
-          "estado": "A confirmar",
-          "lugar": "A confirmarProgramado"
-        },
-        {
           "fecha": "2026-04-19T15:00:00-03:00",
           "ronda": "Fecha 1",
           "local": "Berazategui",
@@ -1572,9 +1560,21 @@
           "jugado": true,
           "estado": "Finalizado",
           "lugar": "Fútbol Juvenil e Infantil del CAQ"
+        },
+        {
+          "fecha": null,
+          "ronda": "Final · Vuelta",
+          "local": "Barracas Central",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": null,
+          "gv": null,
+          "jugado": false,
+          "estado": "A confirmar",
+          "lugar": null
         }
       ],
-      "actualizado": "2026-11-16T01:34:55.900Z",
+      "actualizado": "2026-11-16T01:58:54.082Z",
       "desactualizado": false
     },
     {

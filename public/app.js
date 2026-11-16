@@ -93,7 +93,10 @@ const COLOR = { G: 'var(--gano)', E: 'var(--empato)', P: 'var(--perdio)' };
 
 function proximos(sec) {
   const limite = Date.now() - 3 * 3600e3;
-  return sec.partidos.filter((p) => !p.jugado && p.fecha && new Date(p.fecha).getTime() >= limite);
+  const conFecha = sec.partidos.filter((p) => !p.jugado && p.fecha && new Date(p.fecha).getTime() >= limite);
+  // Partidos sin día todavía (ej. la vuelta de una final "a confirmar"): van después de los que ya tienen fecha.
+  const sinFecha = sec.partidos.filter((p) => !p.jugado && !p.fecha);
+  return [...conFecha, ...sinFecha];
 }
 const jugados = (sec) => sec.partidos.filter((p) => p.jugado).sort((a, b) => (b.fecha || '').localeCompare(a.fecha || ''));
 const filaQuilmes = (sec) => sec.tabla?.filas.find((f) => f.esQuilmes) || null;
@@ -195,8 +198,8 @@ function proximo(p, sec) {
   const n = Math.max(largo(local), largo(visita));
   // El equipo propio se reconoce por esLocal (así "Quilmes B" también sale en azul).
   const lado = (t, propio) => `<strong class="${propio ? 'local' : 'visita'}" style="--n:${n}">${esc(t)}</strong>`;
-  const t = partes(p.fecha, { weekday: 'short', day: 'numeric', month: 'short' });
-  const c = cuando(p.fecha);
+  const t = p.fecha ? partes(p.fecha, { weekday: 'short', day: 'numeric', month: 'short' }) : null;
+  const c = p.fecha ? cuando(p.fecha) : null;
 
   // Cara a cara con los datos de la tabla
   const yo = filaQuilmes(sec), el = filaDe(sec, otro);
@@ -228,9 +231,10 @@ function proximo(p, sec) {
       <div class="cruce">${lado(local, p.esLocal)}<span class="vs chica">${escudo()}contra</span>${lado(visita, !p.esLocal)}</div>
       <div class="hero-der">
         <div class="cuando-grande">
-          <div><b>${esc(sinPunto(t.weekday))} ${esc(t.day)}</b><small class="chica">${esc(sinPunto(t.month))}</small></div>
+          ${t ? `<div><b>${esc(sinPunto(t.weekday))} ${esc(t.day)}</b><small class="chica">${esc(sinPunto(t.month))}</small></div>
           <div><b>${esc(hora(p.fecha))}</b><small class="chica">Hora</small></div>
-          <div class="falta${c.vivo ? ' vivo' : ''}"><b>${esc(c.texto)}</b><small class="chica">${p.esLocal ? 'De local' : 'De visitante'}</small></div>
+          <div class="falta${c.vivo ? ' vivo' : ''}"><b>${esc(c.texto)}</b><small class="chica">${p.esLocal ? 'De local' : 'De visitante'}</small></div>`
+          : `<div><b>A confirmar</b><small class="chica">Día y hora · ${p.esLocal ? 'De local' : 'De visitante'}</small></div>`}
         </div>
         ${p.lugar ? `<p class="lugar">Cancha: <b>${esc(p.lugar)}</b></p>` : ''}
         ${duelo}
@@ -289,7 +293,7 @@ function cinta() {
 function vistaResumen() {
   const futuros = datos.secciones
     .flatMap((sec) => proximos(sec).map((p) => ({ p, sec })))
-    .sort((a, b) => a.p.fecha.localeCompare(b.p.fecha));
+    .sort((a, b) => (a.p.fecha || '9999').localeCompare(b.p.fecha || '9999'));
   const [primero, ...resto] = futuros;
 
   const equipos = datos.secciones
@@ -318,9 +322,9 @@ function vistaResumen() {
       ${titulo('01', 'Próximo partido')}<div class="contenedor">
       ${primero ? proximo(primero.p, primero.sec) : '<p class="vacio">No hay partidos programados por ahora. La página se actualiza sola cuando las ligas publican el fixture.</p>'}
       ${resto.length ? `<ul class="siguen" aria-label="Después">${resto.slice(0, 5).map(({ p, sec }) => `<li>
-            <span class="cuando chica"><b>${esc(partes(p.fecha, { day: 'numeric' }).day)}</b>${esc(sinPunto(partes(p.fecha, { weekday: 'short' }).weekday))} · ${esc(sinPunto(partes(p.fecha, { month: 'short' }).month))}</span>
-            <span class="quien">${p.esLocal ? 'vs' : 'en cancha de'} ${esc(rival(p))}<small>${esc(sec.deporteNombre)} ${esc(sec.titulo.toLowerCase())}</small></span>
-            <span class="hora">${esc(hora(p.fecha))}</span></li>`).join('')}</ul>` : ''}
+            <span class="cuando chica">${p.fecha ? `<b>${esc(partes(p.fecha, { day: 'numeric' }).day)}</b>${esc(sinPunto(partes(p.fecha, { weekday: 'short' }).weekday))} · ${esc(sinPunto(partes(p.fecha, { month: 'short' }).month))}` : '<b>–</b>A confirmar'}</span>
+            <span class="quien">${p.esLocal ? 'vs' : 'en cancha de'} ${esc(rival(p))}<small>${esc(sec.deporteNombre)} ${esc(sec.titulo.toLowerCase())}${p.ronda && !p.fecha ? ` · ${esc(p.ronda)}` : ''}</small></span>
+            <span class="hora">${p.fecha ? esc(hora(p.fecha)) : ''}</span></li>`).join('')}</ul>` : ''}
     </div></section>
     <section class="seccion" style="--i:1">
       ${titulo('02', 'Cómo viene cada equipo', 'Posición y últimos cinco')}
