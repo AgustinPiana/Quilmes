@@ -292,21 +292,30 @@ function cinta() {
 }
 
 // ---------- Vistas ----------
-function vistaResumen() {
-  const futuros = datos.secciones
+// Próximo partido (grande) y los que siguen, de todos los deportes o de uno solo.
+function listaProximos(dep) {
+  const futuros = deLa(dep)
     .flatMap((sec) => proximos(sec).map((p) => ({ p, sec })))
     .sort((a, b) => (a.p.fecha || '9999').localeCompare(b.p.fecha || '9999'));
   const [primero, ...resto] = futuros;
+  if (!primero) {
+    return dep === 'todos'
+      ? '<p class="vacio">No hay partidos programados por ahora. La página se actualiza sola cuando las ligas publican el fixture.</p>'
+      : '<p class="vacio">No hay partidos programados de este deporte por ahora.</p>';
+  }
+  return `${proximo(primero.p, primero.sec)}
+      ${resto.length ? `<ul class="siguen" aria-label="Después">${resto.slice(0, 5).map(({ p, sec }) => `<li>
+            <span class="cuando chica">${p.fecha ? `<b>${esc(partes(p.fecha, { day: 'numeric' }).day)}</b>${esc(sinPunto(partes(p.fecha, { weekday: 'short' }).weekday))} · ${esc(sinPunto(partes(p.fecha, { month: 'short' }).month))}` : '<b>–</b>A confirmar'}</span>
+            <span class="quien">${p.esLocal ? 'vs' : 'en cancha de'} ${esc(rival(p))}<small>${esc(sec.deporteNombre)} ${esc(minus(sec.titulo))}${p.ronda && !p.fecha ? ` · ${esc(p.ronda)}` : ''}</small></span>
+            <span class="hora">${p.fecha ? esc(hora(p.fecha)) : ''}</span></li>`).join('')}</ul>` : ''}`;
+}
 
+function vistaResumen() {
   return `
     ${titularesHTML()}
     <section class="seccion" style="--i:0">
       ${titulo('01', 'Próximo partido')}<div class="contenedor">
-      ${primero ? proximo(primero.p, primero.sec) : '<p class="vacio">No hay partidos programados por ahora. La página se actualiza sola cuando las ligas publican el fixture.</p>'}
-      ${resto.length ? `<ul class="siguen" aria-label="Después">${resto.slice(0, 5).map(({ p, sec }) => `<li>
-            <span class="cuando chica">${p.fecha ? `<b>${esc(partes(p.fecha, { day: 'numeric' }).day)}</b>${esc(sinPunto(partes(p.fecha, { weekday: 'short' }).weekday))} · ${esc(sinPunto(partes(p.fecha, { month: 'short' }).month))}` : '<b>–</b>A confirmar'}</span>
-            <span class="quien">${p.esLocal ? 'vs' : 'en cancha de'} ${esc(rival(p))}<small>${esc(sec.deporteNombre)} ${esc(minus(sec.titulo))}${p.ronda && !p.fecha ? ` · ${esc(p.ronda)}` : ''}</small></span>
-            <span class="hora">${p.fecha ? esc(hora(p.fecha)) : ''}</span></li>`).join('')}</ul>` : ''}
+      ${filtros('proximos')}<div data-lista="proximos" aria-live="polite">${listaProximos(filtro.proximos)}</div>
     </div></section>
     <section class="seccion" style="--i:1">
       ${titulo('02', 'Cómo viene cada equipo', 'Posición y últimos cinco')}
@@ -369,7 +378,7 @@ function titularesHTML() {
 }
 
 // ---------- Filtros por deporte del inicio ----------
-const filtro = { equipos: 'todos', resultados: 'todos' };
+const filtro = { proximos: 'todos', equipos: 'todos', resultados: 'todos' };
 const deportes = () => [...new Map(datos.secciones.map((s) => [s.deporte, s.deporteNombre])).entries()];
 const deLa = (dep) => datos.secciones.filter((s) => dep === 'todos' || s.deporte === dep);
 
@@ -415,7 +424,8 @@ document.addEventListener('click', (e) => {
   filtro[grupo] = b.dataset.valor;
   document.querySelectorAll(`[data-filtro="${grupo}"]`).forEach((x) => x.setAttribute('aria-pressed', String(x === b)));
   const lista = document.querySelector(`[data-lista="${grupo}"]`);
-  lista.innerHTML = grupo === 'equipos' ? listaEquipos(filtro[grupo]) : ultimosResultados(filtro[grupo]);
+  const armar = { proximos: listaProximos, equipos: listaEquipos, resultados: ultimosResultados }[grupo];
+  lista.innerHTML = armar(filtro[grupo]);
   lista.classList.remove('cambio'); void lista.offsetWidth; lista.classList.add('cambio');
 });
 
