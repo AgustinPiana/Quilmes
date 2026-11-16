@@ -299,6 +299,7 @@ function vistaResumen() {
   const [primero, ...resto] = futuros;
 
   return `
+    ${titularesHTML()}
     <section class="seccion" style="--i:0">
       ${titulo('01', 'Próximo partido')}<div class="contenedor">
       ${primero ? proximo(primero.p, primero.sec) : '<p class="vacio">No hay partidos programados por ahora. La página se actualiza sola cuando las ligas publican el fixture.</p>'}
@@ -315,6 +316,56 @@ function vistaResumen() {
       ${titulo('03', 'Últimos resultados')}
       <div class="contenedor">${filtros('resultados')}<div data-lista="resultados" aria-live="polite">${ultimosResultados(filtro.resultados)}</div></div>
     </section>`;
+}
+
+// ---------- Titulares automáticos: rachas y datos salientes ----------
+// Cada candidato tiene un peso; se muestran los más fuertes (uno por equipo como máximo).
+function titulares() {
+  const nombreEq = (sec) => `${sec.deporteNombre} ${minus(sec.titulo)}`;
+  const out = [];
+  for (const sec of datos.secciones) {
+    const js = jugados(sec); // del más reciente al más viejo
+    if (!js.length) continue;
+    const rs = js.map(resultado);
+    const seguidos = (ok) => { let n = 0; for (const r of rs) { if (!ok(r)) break; n++; } return n; };
+    const f = filaQuilmes(sec);
+    const termino = !proximos(sec).length;
+    const cands = [];
+
+    const ganados = seguidos((r) => r === 'G');
+    const invicto = seguidos((r) => r !== 'P');
+    const sinGanar = seguidos((r) => r !== 'G');
+    const perdidos = seguidos((r) => r === 'P');
+    if (ganados >= 3) cands.push({ peso: 50 + ganados, valor: ganados, texto: 'victorias seguidas', tono: 'bueno' });
+    else if (invicto >= 4) cands.push({ peso: 40 + invicto, valor: invicto, texto: 'partidos invicto', tono: 'bueno' });
+    if (perdidos >= 3) cands.push({ peso: 35 + perdidos, valor: perdidos, texto: 'derrotas seguidas', tono: 'malo' });
+    else if (sinGanar >= 4) cands.push({ peso: 30 + sinGanar, valor: sinGanar, texto: 'partidos sin ganar', tono: 'malo' });
+
+    if (f && f.pp === 0 && f.pj >= 6) cands.push({ peso: 70 + f.pj, valor: '0', texto: `derrotas en ${f.pj} partidos`, tono: 'bueno' });
+    if (f && f.pos === 1) cands.push({ peso: termino ? 80 : 60, valor: '1°', texto: termino ? `terminó primero · ${sec.competencia}` : `primero en ${sec.tabla.nombre}`, tono: 'bueno' });
+
+    const local = sec.partidos.filter((p) => p.jugado && p.esLocal).map(resultado);
+    if (local.length >= 5 && local.every((r) => r === 'G')) cands.push({ peso: 55 + local.length, valor: `${local.length}/${local.length}`, texto: 'ganados de local', tono: 'bueno' });
+
+    const ult = js[0];
+    const dias = (Date.now() - new Date(ult.fecha).getTime()) / 864e5;
+    const prop = ult.esLocal ? ult.gl : ult.gv, otro = ult.esLocal ? ult.gv : ult.gl;
+    const goleada = sec.deporte === 'basquet' ? 20 : 4;
+    if (dias <= 14 && prop - otro >= goleada) cands.push({ peso: 45 + prop - otro, valor: `${prop}-${otro}`, texto: `goleada a ${rival(ult)}`, tono: 'bueno' });
+
+    cands.sort((a, b) => b.peso - a.peso);
+    if (cands[0]) out.push({ ...cands[0], equipo: nombreEq(sec), deporte: sec.deporte });
+  }
+  return out.sort((a, b) => b.peso - a.peso).slice(0, 6);
+}
+
+function titularesHTML() {
+  const t = titulares();
+  if (!t.length) return '';
+  return `<section class="titulares" style="--i:0" aria-label="Rachas y datos de los equipos"><div class="contenedor">
+      <p class="chica titulares-cab">En racha</p>
+      <ul>${t.map((x) => `<li class="${x.tono}"><a href="#${esc(x.deporte)}"><b>${esc(x.valor)}</b><span>${esc(x.texto)}</span><small class="chica">${esc(x.equipo)}</small></a></li>`).join('')}</ul>
+    </div></section>`;
 }
 
 // ---------- Filtros por deporte del inicio ----------
@@ -460,4 +511,9 @@ try {
   $contenido.innerHTML = `<div class="contenedor error-carga">No se pudieron cargar los datos (${esc(e.message)}). Probá recargar la página en unos minutos.</div>`;
 } finally {
   loader.fin();
+}
+
+// App instalable: registra el service worker (no en las capturas de prueba).
+if ('serviceWorker' in navigator && !document.documentElement.classList.contains('static')) {
+  addEventListener('load', () => navigator.serviceWorker.register('/sw.js').catch(() => {}));
 }

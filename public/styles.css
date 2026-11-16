@@ -404,3 +404,24 @@ details.fixture .resultados { border-top: 0; }
 }
 [data-lista].cambio > * { animation: aparece .45s cubic-bezier(.22,1,.36,1); }
 @keyframes aparece { from { opacity: 0; transform: translateY(8px); } }
+
+/* ---------- En racha: titulares automáticos ---------- */
+.titulares { padding: 26px 0 34px; }
+.titulares-cab { margin: 0 0 14px; display: flex; align-items: center; gap: 10px; }
+.titulares-cab::before { content: ''; width: 8px; height: 8px; border-radius: 50%; background: var(--perdio); animation: titila 1.6s ease-in-out infinite; }
+.titulares ul { list-style: none; margin: 0; padding: 0; display: grid; grid-auto-flow: column; grid-auto-columns: minmax(170px, 64%); gap: 0; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; border-top: 1px solid var(--tinta); border-bottom: 1px solid var(--linea); }
+.titulares ul::-webkit-scrollbar { display: none; }
+.titulares li { scroll-snap-align: start; }
+.titulares li + li { border-left: 1px solid var(--linea); }
+.titulares a { display: grid; gap: 6px; align-content: start; height: 100%; padding: 16px 16px 18px; text-decoration: none; transition: background .25s; }
+.titulares li:first-child a { padding-left: 0; }
+.titulares a:hover { background: var(--suave); }
+.titulares b { font: 800 clamp(46px, 13vw, 72px)/.85 var(--f); font-stretch: 62%; letter-spacing: -.02em; color: var(--azul); }
+.titulares .malo b { color: var(--perdio); }
+.titulares span { overflow-wrap: anywhere; font: 800 11.5px/1.25 var(--f); font-stretch: 125%; text-transform: uppercase; letter-spacing: -.005em; }
+@keyframes titila { 50% { opacity: .25; } }
+@media (min-width: 900px) {
+  .titulares { padding: 40px 0 56px; }
+  .titulares span { font-size: 12.5px; }
+  .titulares ul { grid-auto-flow: row; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); overflow: visible; }
+}
