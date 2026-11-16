@@ -1,11 +1,13 @@
 {
-  "generado": "2026-11-15T23:30:00.000Z",
+  "generado": "2026-11-16T11:49:05.082Z",
   "secciones": [
     {
       "id": "futbol",
       "deporte": "futbol",
+      "deporteNombre": "Fútbol",
       "titulo": "Primera masculina",
       "competencia": "Primera Nacional",
+      "descripcion": "La Primera Nacional es la segunda categoría del fútbol argentino. Juegan 36 equipos repartidos en dos zonas: los ganadores de cada zona se cruzan en una final por el primer ascenso a Primera División y un reducido define el segundo.",
       "fuente": "AFA",
       "tabla": {
         "nombre": "Zona B",
@@ -23,7 +25,7 @@
           {
             "pos": 1,
             "equipo": "Tristán Suárez",
-            "equipoId": null,
+            "equipoId": 630,
             "pts": 64,
             "pj": 36,
             "pg": 16,
@@ -37,7 +39,7 @@
           {
             "pos": 2,
             "equipo": "Atlanta",
-            "equipoId": null,
+            "equipoId": 670,
             "pts": 62,
             "pj": 36,
             "pg": 19,
@@ -51,7 +53,7 @@
           {
             "pos": 3,
             "equipo": "Temperley",
-            "equipoId": null,
+            "equipoId": 682,
             "pts": 61,
             "pj": 36,
             "pg": 16,
@@ -65,7 +67,7 @@
           {
             "pos": 4,
             "equipo": "Gimnasia (J)",
-            "equipoId": null,
+            "equipoId": 102,
             "pts": 58,
             "pj": 36,
             "pg": 16,
@@ -79,7 +81,7 @@
           {
             "pos": 5,
             "equipo": "Midland",
-            "equipoId": null,
+            "equipoId": 785,
             "pts": 55,
             "pj": 36,
             "pg": 15,
@@ -93,7 +95,7 @@
           {
             "pos": 6,
             "equipo": "Deportivo Maipú",
-            "equipoId": null,
+            "equipoId": 862,
             "pts": 52,
             "pj": 36,
             "pg": 14,
@@ -107,7 +109,7 @@
           {
             "pos": 7,
             "equipo": "Colegiales",
-            "equipoId": null,
+            "equipoId": 687,
             "pts": 52,
             "pj": 36,
             "pg": 14,
@@ -121,7 +123,7 @@
           {
             "pos": 8,
             "equipo": "Gimnasia y Tiro",
-            "equipoId": null,
+            "equipoId": 865,
             "pts": 52,
             "pj": 36,
             "pg": 14,
@@ -135,7 +137,7 @@
           {
             "pos": 9,
             "equipo": "San Martín (SJ)",
-            "equipoId": null,
+            "equipoId": 134,
             "pts": 51,
             "pj": 36,
             "pg": 13,
@@ -149,7 +151,7 @@
           {
             "pos": 10,
             "equipo": "San Martín (T)",
-            "equipoId": null,
+            "equipoId": 490,
             "pts": 47,
             "pj": 36,
             "pg": 11,
@@ -163,7 +165,7 @@
           {
             "pos": 11,
             "equipo": "Atlético Rafaela",
-            "equipoId": null,
+            "equipoId": 99,
             "pts": 47,
             "pj": 36,
             "pg": 12,
@@ -177,7 +179,7 @@
           {
             "pos": 12,
             "equipo": "Agropecuario Argentino",
-            "equipoId": null,
+            "equipoId": 3683,
             "pts": 46,
             "pj": 36,
             "pg": 12,
@@ -205,7 +207,7 @@
           {
             "pos": 14,
             "equipo": "Chacarita",
-            "equipoId": null,
+            "equipoId": 127,
             "pts": 42,
             "pj": 36,
             "pg": 12,
@@ -219,7 +221,7 @@
           {
             "pos": 15,
             "equipo": "Almagro",
-            "equipoId": null,
+            "equipoId": 1,
             "pts": 42,
             "pj": 36,
             "pg": 11,
@@ -233,7 +235,7 @@
           {
             "pos": 16,
             "equipo": "Patronato",
-            "equipoId": null,
+            "equipoId": 869,
             "pts": 38,
             "pj": 36,
             "pg": 7,
@@ -247,7 +249,7 @@
           {
             "pos": 17,
             "equipo": "Nueva Chicago",
-            "equipoId": null,
+            "equipoId": 128,
             "pts": 37,
             "pj": 36,
             "pg": 9,
@@ -261,7 +263,7 @@
           {
             "pos": 18,
             "equipo": "Güemes (SE)",
-            "equipoId": null,
+            "equipoId": 1489,
             "pts": 27,
             "pj": 36,
             "pg": 6,
@@ -672,9 +674,7 @@
           "estado": "Finalizado"
         }
       ],
-      "deporteNombre": "Fútbol",
-      "descripcion": "La Primera Nacional es la segunda categoría del fútbol argentino. Juegan 36 equipos repartidos en dos zonas: los ganadores de cada zona se cruzan en una final por el primer ascenso a Primera División y un reducido define el segundo.",
-      "actualizado": "2026-11-15T23:30:00.000Z",
+      "actualizado": "2026-11-16T11:49:05.082Z",
       "desactualizado": false
     },
     {
@@ -954,7 +954,7 @@
       },
       "partidos": [
         {
-          "fecha": "2026-07-13T15:00:00-03:00",
+          "fecha": "2026-07-13T14:00:00-03:00",
           "ronda": "Fecha 1",
           "local": "Quilmes",
           "visitante": "Central Córdoba",
@@ -965,7 +965,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-07-23T15:00:00-03:00",
+          "fecha": "2026-07-23T14:00:00-03:00",
           "ronda": "Fecha 2",
           "local": "Estudiantes de La Plata",
           "visitante": "Quilmes",
@@ -976,7 +976,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-08-05T15:00:00-03:00",
+          "fecha": "2026-08-05T14:00:00-03:00",
           "ronda": "Fecha 3",
           "local": "Quilmes",
           "visitante": "Colón",
@@ -987,7 +987,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-08-13T15:00:00-03:00",
+          "fecha": "2026-08-13T14:00:00-03:00",
           "ronda": "Fecha 4",
           "local": "Quilmes",
           "visitante": "Platense",
@@ -998,7 +998,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-08-19T15:00:00-03:00",
+          "fecha": "2026-08-19T14:00:00-03:00",
           "ronda": "Fecha 5",
           "local": "Atlético de Rafaela",
           "visitante": "Quilmes",
@@ -1009,7 +1009,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-08-26T15:00:00-03:00",
+          "fecha": "2026-08-26T14:00:00-03:00",
           "ronda": "Fecha 6",
           "local": "Quilmes",
           "visitante": "Independiente",
@@ -1020,7 +1020,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-09-03T19:00:00-03:00",
+          "fecha": "2026-09-03T18:00:00-03:00",
           "ronda": "Fecha 7",
           "local": "Boca Juniors",
           "visitante": "Quilmes",
@@ -1031,7 +1031,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-09-08T15:00:00-03:00",
+          "fecha": "2026-09-08T14:00:00-03:00",
           "ronda": "Fecha 8",
           "local": "Quilmes",
           "visitante": "Ferro Carril Oeste",
@@ -1042,7 +1042,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-09-16T15:00:00-03:00",
+          "fecha": "2026-09-16T14:00:00-03:00",
           "ronda": "Fecha 9",
           "local": "Huracán",
           "visitante": "Quilmes",
@@ -1053,7 +1053,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-09-23T15:00:00-03:00",
+          "fecha": "2026-09-23T14:00:00-03:00",
           "ronda": "Fecha 10",
           "local": "Aldosivi",
           "visitante": "Quilmes",
@@ -1064,7 +1064,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-09-30T15:00:00-03:00",
+          "fecha": "2026-09-30T14:00:00-03:00",
           "ronda": "Fecha 11",
           "local": "Quilmes",
           "visitante": "Estudiantes RC",
@@ -1075,7 +1075,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-10-06T15:00:00-03:00",
+          "fecha": "2026-10-06T14:00:00-03:00",
           "ronda": "Fecha 12",
           "local": "Defensa y Justicia",
           "visitante": "Quilmes",
@@ -1086,7 +1086,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-10-13T15:00:00-03:00",
+          "fecha": "2026-10-13T14:00:00-03:00",
           "ronda": "Fecha 13",
           "local": "Quilmes",
           "visitante": "Newell's Old Boys",
@@ -1097,7 +1097,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-10-21T15:00:00-03:00",
+          "fecha": "2026-10-21T14:00:00-03:00",
           "ronda": "Fecha 14",
           "local": "Lanús",
           "visitante": "Quilmes",
@@ -1108,7 +1108,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-10-29T15:00:00-03:00",
+          "fecha": "2026-10-29T14:00:00-03:00",
           "ronda": "Fecha 15",
           "local": "Quilmes",
           "visitante": "Belgrano",
@@ -1119,7 +1119,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-11-04T15:00:00-03:00",
+          "fecha": "2026-11-04T13:00:00-03:00",
           "ronda": "Fecha 16",
           "local": "Deportivo Riestra",
           "visitante": "Quilmes",
@@ -1130,7 +1130,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-11-10T15:00:00-03:00",
+          "fecha": "2026-11-10T13:00:00-03:00",
           "ronda": "Fecha 17",
           "local": "Quilmes",
           "visitante": "Independiente Rivadavia",
@@ -1141,7 +1141,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-11-17T17:00:00-03:00",
+          "fecha": "2026-11-17T15:00:00-03:00",
           "ronda": "Fecha 18",
           "local": "San Martín SJ",
           "visitante": "Quilmes",
@@ -1152,7 +1152,7 @@
           "estado": "Prog."
         }
       ],
-      "actualizado": "2026-11-16T01:24:51.258Z",
+      "actualizado": "2026-11-16T11:49:05.082Z",
       "desactualizado": false
     },
     {
@@ -1574,14 +1574,16 @@
           "lugar": null
         }
       ],
-      "actualizado": "2026-11-16T01:58:54.082Z",
+      "actualizado": "2026-11-16T11:49:05.082Z",
       "desactualizado": false
     },
     {
       "id": "basquet",
       "deporte": "basquet",
+      "deporteNombre": "Básquet",
       "titulo": "Mayores masculino",
       "competencia": "Torneo Superior FEBAMBA",
+      "descripcion": "El Superior es el torneo de mayores de FEBAMBA, la federación que organiza el básquet del área metropolitana. Se juega por etapas y zonas regionales.",
       "fuente": "FEBAMBA",
       "tabla": {
         "nombre": "COPA ORO · SUR 1",
@@ -1604,10 +1606,24 @@
             "pc": 720,
             "pts": 23,
             "pct": 91.6,
+            "escudo": "https://www.febamba.com/escudos/63/94315",
             "esQuilmes": false
           },
           {
             "pos": 2,
+            "equipo": "VARELA JRS",
+            "pj": 13,
+            "pg": 10,
+            "pp": 3,
+            "pf": 945,
+            "pc": 805,
+            "pts": 23,
+            "pct": 76.9,
+            "escudo": "https://www.febamba.com/escudos/104/95057",
+            "esQuilmes": false
+          },
+          {
+            "pos": 3,
             "equipo": "BERAZATEGUI",
             "pj": 12,
             "pg": 10,
@@ -1616,22 +1632,24 @@
             "pc": 673,
             "pts": 22,
             "pct": 83.3,
-            "esQuilmes": false
-          },
-          {
-            "pos": 3,
-            "equipo": "VARELA JRS",
-            "pj": 12,
-            "pg": 9,
-            "pp": 3,
-            "pf": 883,
-            "pc": 751,
-            "pts": 21,
-            "pct": 75,
+            "escudo": "https://www.febamba.com/escudos/225/95081",
             "esQuilmes": false
           },
           {
             "pos": 4,
+            "equipo": "C.S.D.y C. Moreno",
+            "pj": 13,
+            "pg": 5,
+            "pp": 8,
+            "pf": 922,
+            "pc": 895,
+            "pts": 18,
+            "pct": 38.4,
+            "escudo": "https://www.febamba.com/escudos/293/94941",
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
             "equipo": "COOPERARIOS DE QUILMES",
             "pj": 12,
             "pg": 6,
@@ -1640,10 +1658,11 @@
             "pc": 822,
             "pts": 18,
             "pct": 50,
+            "escudo": "https://www.febamba.com/escudos/405/97708",
             "esQuilmes": false
           },
           {
-            "pos": 5,
+            "pos": 6,
             "equipo": "JUVENTUD UNIDA",
             "pj": 13,
             "pg": 5,
@@ -1652,10 +1671,11 @@
             "pc": 857,
             "pts": 18,
             "pct": 38.4,
+            "escudo": "https://www.febamba.com/escudos/2676/97008",
             "esQuilmes": false
           },
           {
-            "pos": 6,
+            "pos": 7,
             "equipo": "BERNAL",
             "pj": 13,
             "pg": 4,
@@ -1664,18 +1684,7 @@
             "pc": 850,
             "pts": 17,
             "pct": 30.7,
-            "esQuilmes": false
-          },
-          {
-            "pos": 7,
-            "equipo": "C.S.D.y C. Moreno",
-            "pj": 12,
-            "pg": 5,
-            "pp": 7,
-            "pf": 868,
-            "pc": 833,
-            "pts": 17,
-            "pct": 41.6,
+            "escudo": "https://www.febamba.com/escudos/278/97355",
             "esQuilmes": false
           },
           {
@@ -1688,6 +1697,7 @@
             "pc": 820,
             "pts": 17,
             "pct": 41.6,
+            "escudo": "https://www.febamba.com/escudos/82/94325",
             "esQuilmes": true
           },
           {
@@ -1700,6 +1710,7 @@
             "pc": 946,
             "pts": 12,
             "pct": 0,
+            "escudo": "https://www.febamba.com/escudos/156/94441",
             "esQuilmes": false
           }
         ]
@@ -1715,7 +1726,9 @@
           "gv": 69,
           "jugado": true,
           "estado": "Finalizado",
-          "lugar": "Quilmes A.C. Sede Central"
+          "lugar": "Quilmes A.C. Sede Central",
+          "escudoLocal": "https://www.febamba.com/escudos/82/94325",
+          "escudoVisitante": "https://www.febamba.com/escudos/405/97708"
         },
         {
           "fecha": "2026-09-25T22:00:00-03:00",
@@ -1727,7 +1740,9 @@
           "gv": 59,
           "jugado": true,
           "estado": "Finalizado",
-          "lugar": "Club Social Deportivo Y Cultural Moreno"
+          "lugar": "Club Social Deportivo Y Cultural Moreno",
+          "escudoLocal": "https://www.febamba.com/escudos/293/94941",
+          "escudoVisitante": "https://www.febamba.com/escudos/82/94325"
         },
         {
           "fecha": "2026-09-28T21:30:00-03:00",
@@ -1739,7 +1754,9 @@
           "gv": 50,
           "jugado": true,
           "estado": "Finalizado",
-          "lugar": "Quilmes A.C. Sede Central"
+          "lugar": "Quilmes A.C. Sede Central",
+          "escudoLocal": "https://www.febamba.com/escudos/82/94325",
+          "escudoVisitante": "https://www.febamba.com/escudos/225/95081"
         },
         {
           "fecha": "2026-10-02T21:30:00-03:00",
@@ -1751,7 +1768,9 @@
           "gv": 53,
           "jugado": true,
           "estado": "Finalizado",
-          "lugar": "Valentin Gomez-C.A.Bernal-Campo deportivo"
+          "lugar": "Valentin Gomez-C.A.Bernal-Campo deportivo",
+          "escudoLocal": "https://www.febamba.com/escudos/278/97355",
+          "escudoVisitante": "https://www.febamba.com/escudos/82/94325"
         },
         {
           "fecha": "2026-10-09T21:30:00-03:00",
@@ -1763,7 +1782,9 @@
           "gv": 46,
           "jugado": true,
           "estado": "Finalizado",
-          "lugar": "Quilmes A.C. Sede Central"
+          "lugar": "Quilmes A.C. Sede Central",
+          "escudoLocal": "https://www.febamba.com/escudos/82/94325",
+          "escudoVisitante": "https://www.febamba.com/escudos/156/94441"
         },
         {
           "fecha": "2026-10-23T21:30:00-03:00",
@@ -1775,7 +1796,9 @@
           "gv": 74,
           "jugado": true,
           "estado": "Finalizado",
-          "lugar": "Quilmes A.C. Sede Central"
+          "lugar": "Quilmes A.C. Sede Central",
+          "escudoLocal": "https://www.febamba.com/escudos/82/94325",
+          "escudoVisitante": "https://www.febamba.com/escudos/104/95057"
         },
         {
           "fecha": "2026-11-02T20:30:00-03:00",
@@ -1787,7 +1810,9 @@
           "gv": 71,
           "jugado": true,
           "estado": "Finalizado",
-          "lugar": "Microestadio Antonio Rotilli-Club A.Lanus"
+          "lugar": "Microestadio Antonio Rotilli-Club A.Lanus",
+          "escudoLocal": "https://www.febamba.com/escudos/63/94315",
+          "escudoVisitante": "https://www.febamba.com/escudos/82/94325"
         },
         {
           "fecha": "2026-11-06T21:30:00-03:00",
@@ -1799,7 +1824,9 @@
           "gv": 78,
           "jugado": true,
           "estado": "Finalizado",
-          "lugar": "Quilmes A.C. Sede Central"
+          "lugar": "Quilmes A.C. Sede Central",
+          "escudoLocal": "https://www.febamba.com/escudos/82/94325",
+          "escudoVisitante": "https://www.febamba.com/escudos/2676/97008"
         },
         {
           "fecha": "2026-11-13T21:30:00-03:00",
@@ -1811,7 +1838,9 @@
           "gv": 63,
           "jugado": true,
           "estado": "Finalizado",
-          "lugar": "Luis Arribas-Cooperarios de Quilmes"
+          "lugar": "Luis Arribas-Cooperarios de Quilmes",
+          "escudoLocal": "https://www.febamba.com/escudos/405/97708",
+          "escudoVisitante": "https://www.febamba.com/escudos/82/94325"
         },
         {
           "fecha": "2026-11-16T21:30:00-03:00",
@@ -1823,7 +1852,9 @@
           "gv": null,
           "jugado": false,
           "estado": "Programado",
-          "lugar": "Quilmes A.C. Sede Central"
+          "lugar": "Quilmes A.C. Sede Central",
+          "escudoLocal": "https://www.febamba.com/escudos/82/94325",
+          "escudoVisitante": "https://www.febamba.com/escudos/293/94941"
         },
         {
           "fecha": "2026-11-20T21:30:00-03:00",
@@ -1835,7 +1866,9 @@
           "gv": null,
           "jugado": false,
           "estado": "Programado",
-          "lugar": "Club Soc. Y Dep. Berazategui"
+          "lugar": "Club Soc. Y Dep. Berazategui",
+          "escudoLocal": "https://www.febamba.com/escudos/225/95081",
+          "escudoVisitante": "https://www.febamba.com/escudos/82/94325"
         },
         {
           "fecha": "2026-11-23T21:30:00-03:00",
@@ -1847,7 +1880,9 @@
           "gv": null,
           "jugado": false,
           "estado": "Programado",
-          "lugar": "Quilmes A.C. Sede Central"
+          "lugar": "Quilmes A.C. Sede Central",
+          "escudoLocal": "https://www.febamba.com/escudos/82/94325",
+          "escudoVisitante": "https://www.febamba.com/escudos/278/97355"
         },
         {
           "fecha": "2026-11-25T21:30:00-03:00",
@@ -1859,12 +1894,12 @@
           "gv": null,
           "jugado": false,
           "estado": "Programado",
-          "lugar": "LOS ANDES - SANTIAGO AGOSTI"
+          "lugar": "LOS ANDES - SANTIAGO AGOSTI",
+          "escudoLocal": "https://www.febamba.com/escudos/156/94441",
+          "escudoVisitante": "https://www.febamba.com/escudos/82/94325"
         }
       ],
-      "deporteNombre": "Básquet",
-      "descripcion": "El Superior es el torneo de mayores de FEBAMBA, la federación que organiza el básquet del área metropolitana. Se juega por etapas y zonas regionales.",
-      "actualizado": "2026-11-15T23:30:00.000Z",
+      "actualizado": "2026-11-16T11:49:05.082Z",
       "desactualizado": false
     },
     {
@@ -2412,7 +2447,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         }
       ],
-      "actualizado": "2026-11-16T01:39:10.644Z",
+      "actualizado": "2026-11-16T11:49:05.082Z",
       "desactualizado": false
     },
     {
@@ -2882,7 +2917,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/d/e/4de215aba42e7477.png"
         }
       ],
-      "actualizado": "2026-11-16T01:39:10.644Z",
+      "actualizado": "2026-11-16T11:49:05.082Z",
       "desactualizado": false
     },
     {
@@ -3430,7 +3465,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/0/7/407ad4a2a1673020.png"
         }
       ],
-      "actualizado": "2026-11-16T01:39:10.644Z",
+      "actualizado": "2026-11-16T11:49:05.082Z",
       "desactualizado": false
     },
     {
@@ -3978,7 +4013,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         }
       ],
-      "actualizado": "2026-11-16T01:39:10.644Z",
+      "actualizado": "2026-11-16T11:49:05.082Z",
       "desactualizado": false
     }
   ],
