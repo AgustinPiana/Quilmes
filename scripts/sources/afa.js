@@ -80,8 +80,10 @@ export async function leerAfa(cfg, zona) {
   return {
     id: cfg.id,
     deporte: 'futbol',
+    deporteNombre: cfg.deporteNombre,
     titulo: cfg.titulo,
     competencia: cfg.competencia,
+    descripcion: cfg.descripcion,
     fuente: 'AFA',
     tabla: {
       nombre: grupo.nombre,

@@ -1,17 +1,52 @@
-// Agenda del Cervecero — lee data/quilmes.json y arma las vistas.
+// Agenda del Cervecero: lee data/quilmes.json y arma las vistas.
 
 const TZ = 'America/Argentina/Buenos_Aires';
-const NOMBRE_DEPORTE = { futbol: 'Fútbol', basquet: 'Básquet', hockey: 'Hockey' };
+const VISTAS = ['resumen', 'futbol', 'basquet', 'hockey'];
 const ES_QUILMES = /^(quilmes|quilmes atletico club)$/i;
-
 const $contenido = document.getElementById('contenido');
+const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 let datos = null;
+
+// ---------- Pantalla de carga ----------
+// Cuenta de 1887 al año actual mientras llegan los datos (mínimo 2 s la primera vez, 1 s después).
+const loader = (() => {
+  const el = document.querySelector('[data-loader]');
+  const listo = () => document.documentElement.classList.add('mostrado');
+  if (!el || document.documentElement.classList.contains('static')) return { fin: listo };
+  const ano = el.querySelector('[data-ano]'), barra = el.querySelector('[data-barra]');
+  const hasta = new Date().getFullYear();
+  const visto = (() => { try { const v = sessionStorage.getItem('qac-loader'); sessionStorage.setItem('qac-loader', '1'); return !!v; } catch { return false; } })();
+  const MIN = reduce ? 0 : visto ? 1000 : 2000;
+  const t0 = performance.now();
+  let cargado = false, cerrado = false;
+  document.documentElement.style.overflow = 'hidden';
+  const cerrar = () => {
+    if (cerrado) return;
+    cerrado = true;
+    el.classList.add('listo');
+    document.documentElement.style.overflow = '';
+    setTimeout(listo, 350);
+    setTimeout(() => el.remove(), 1100);
+  };
+  const paso = (t) => {
+    const k = Math.min(1, (t - t0) / Math.max(MIN, 1));
+    const v = cargado ? k : Math.min(k, 0.9);
+    const e = 1 - Math.pow(1 - v, 3);
+    barra.style.transform = `scaleX(${e})`;
+    ano.textContent = Math.round(1887 + (hasta - 1887) * e);
+    if (v >= 1) setTimeout(cerrar, 300); else requestAnimationFrame(paso);
+  };
+  requestAnimationFrame(paso);
+  setTimeout(() => { cargado = true; }, 4000); // nunca más de 4 s
+  el.addEventListener('click', () => { cargado = true; });
+  return { fin: () => { cargado = true; } };
+})();
 
 // ---------- Utilidades ----------
 const esc = (s) =>
   String(s ?? '').replace(/[&<>"']/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;' })[c]);
 
-/** "QUILMES ATLETICO CLUB" → "Quilmes"; "TRISTAN SUAREZ" → "Tristan Suarez"; deja siglas tal cual. */
+/** Nombres en mayúsculas → formato título; Quilmes siempre como "Quilmes"; siglas tal cual. */
 function nombre(n) {
   if (!n) return '';
   if (ES_QUILMES.test(n.trim())) return 'Quilmes';
@@ -20,186 +55,339 @@ function nombre(n) {
     .toLowerCase()
     .split(' ')
     .map((p, i) =>
-      p.includes('.')
-        ? p.toUpperCase()
-        : i > 0 && ['de', 'del', 'y', 'la', 'las', 'los'].includes(p)
-          ? p
-          : p.charAt(0).toUpperCase() + p.slice(1),
+      p.includes('.') ? p.toUpperCase()
+        : i > 0 && ['de', 'del', 'y', 'la', 'las', 'los'].includes(p) ? p
+        : p.charAt(0).toUpperCase() + p.slice(1),
     )
     .join(' ');
 }
 
-const fmtDia = new Intl.DateTimeFormat('es-AR', { timeZone: TZ, weekday: 'short', day: '2-digit', month: '2-digit' });
-const fmtHora = new Intl.DateTimeFormat('es-AR', { timeZone: TZ, hour: '2-digit', minute: '2-digit', hour12: false });
-const fmtActualizado = new Intl.DateTimeFormat('es-AR', { timeZone: TZ, dateStyle: 'medium', timeStyle: 'short' });
-
-function fecha(iso) {
-  if (!iso) return 'A confirmar';
-  const d = new Date(iso);
-  const dia = fmtDia.format(d).replace('.', '');
-  return `${dia.charAt(0).toUpperCase() + dia.slice(1)} · ${fmtHora.format(d)} h`;
+const partes = (iso, opciones) =>
+  Object.fromEntries(new Intl.DateTimeFormat('es-AR', { timeZone: TZ, ...opciones }).formatToParts(new Date(iso)).map((p) => [p.type, p.value]));
+const hora = (iso) => { const p = partes(iso, { hour: '2-digit', minute: '2-digit', hour12: false }); return `${p.hour}:${p.minute}`; };
+const sinPunto = (s) => (s || '').replace('.', '');
+function fechaLarga(iso) {
+  if (!iso) return 'Fecha a confirmar';
+  const p = partes(iso, { weekday: 'long', day: 'numeric', month: 'long' });
+  return `${p.weekday} ${p.day} de ${p.month}, ${hora(iso)} h`;
 }
+function fechaBreve(iso) {
+  if (!iso) return 'A confirmar';
+  const p = partes(iso, { weekday: 'short', day: 'numeric', month: 'short' });
+  return `${sinPunto(p.weekday)} ${p.day} ${sinPunto(p.month)}`;
+}
+const dos = (n) => String(n).padStart(2, '0');
+/** Largo de la palabra más larga: define el tamaño de los nombres grandes para que nunca se corten. */
+const largo = (t) => Math.max(5, ...String(t).split(/\s+/).map((w) => w.length));
+const escudo = (clase = '') => `<svg class="escudo ${clase}" aria-hidden="true"><use href="#escudo"/></svg>`;
 
 function resultado(p) {
   if (!p.jugado || p.gl == null || p.gv == null) return null;
-  const propio = p.esLocal ? p.gl : p.gv;
-  const rival = p.esLocal ? p.gv : p.gl;
-  return propio > rival ? 'G' : propio < rival ? 'P' : 'E';
+  const propio = p.esLocal ? p.gl : p.gv, otro = p.esLocal ? p.gv : p.gl;
+  return propio > otro ? 'G' : propio < otro ? 'P' : 'E';
 }
 const rival = (p) => nombre(p.esLocal ? p.visitante : p.local);
+const marcadorPropio = (p) => `${p.esLocal ? p.gl : p.gv}-${p.esLocal ? p.gv : p.gl}`;
+const PALABRA = { G: 'Ganó', E: 'Empató', P: 'Perdió' };
+const COLOR = { G: 'var(--gano)', E: 'var(--empato)', P: 'var(--perdio)' };
 
-function proximo(sec) {
-  const limite = Date.now() - 3 * 3600 * 1000; // un partido sigue "próximo" hasta 3 h después de empezar
-  return sec.partidos.find((p) => !p.jugado && (!p.fecha || new Date(p.fecha).getTime() >= limite)) || null;
+function proximos(sec) {
+  const limite = Date.now() - 3 * 3600e3;
+  const conFecha = sec.partidos.filter((p) => !p.jugado && p.fecha && new Date(p.fecha).getTime() >= limite);
+  // Partidos sin día todavía (ej. la vuelta de una final "a confirmar"): van después de los que ya tienen fecha.
+  const sinFecha = sec.partidos.filter((p) => !p.jugado && !p.fecha);
+  return [...conFecha, ...sinFecha];
 }
 const jugados = (sec) => sec.partidos.filter((p) => p.jugado).sort((a, b) => (b.fecha || '').localeCompare(a.fecha || ''));
 const filaQuilmes = (sec) => sec.tabla?.filas.find((f) => f.esQuilmes) || null;
 
+function situacion(sec) {
+  const f = filaQuilmes(sec);
+  if (!f) return '';
+  const filas = sec.tabla.filas;
+  if (f.pos === 1) {
+    const segundo = filas.find((x) => x.pos === 2);
+    const ventaja = segundo ? f.pts - segundo.pts : 0;
+    return `Puntero de ${sec.tabla.nombre}${ventaja > 0 ? `, ${ventaja} ${ventaja === 1 ? 'punto' : 'puntos'} arriba del segundo` : ''}.`;
+  }
+  const dif = filas[0].pts - f.pts;
+  return `Puesto ${f.pos} de ${filas.length} en ${sec.tabla.nombre}, a ${dif} ${dif === 1 ? 'punto' : 'puntos'} del primero.`;
+}
+
+// ---------- Cuándo se juega, en palabras ----------
+function cuando(iso) {
+  const ms = new Date(iso).getTime() - Date.now();
+  if (ms <= 0) return { texto: 'En juego', vivo: true };
+  const dia = (d) => partes(d, { year: 'numeric', month: '2-digit', day: '2-digit' });
+  const a = dia(new Date()), b = dia(iso);
+  const dias = Math.round((Date.UTC(b.year, b.month - 1, b.day) - Date.UTC(a.year, a.month - 1, a.day)) / 864e5);
+  return { texto: dias <= 0 ? 'Hoy' : dias === 1 ? 'Mañana' : `En ${dias} días`, vivo: false };
+}
+
+const ICONO = {
+  futbol: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m12 8 3.2 2.3-1.2 3.7h-4l-1.2-3.7z"/></svg>',
+  basquet: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5v17M6 6c3 3 3 9 0 12M18 6c-3 3-3 9 0 12"/></svg>',
+  hockey: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3.5 9.5 17.5a2.5 2.5 0 0 1-2.4 1.6H4.5"/><circle cx="17.5" cy="18" r="2"/></svg>',
+};
+
+const norm = (t) => String(t || '').toLowerCase().normalize('NFD').replace(/[^a-z0-9]/g, '');
+const filaDe = (sec, equipo) => sec.tabla?.filas.find((f) => norm(f.equipo) === norm(equipo)) || null;
+
+// ---------- Gráfico: ganados, empatados y perdidos, fecha a fecha ----------
+function lineas(sec) {
+  const lista = jugados(sec).slice().reverse();
+  if (lista.length < 2) return '<p class="vacio">Faltan partidos para armar el gráfico.</p>';
+  const W = 320, H = 150, der = 26, arriba = 8;
+  const acum = { G: [0], E: [0], P: [0] };
+  for (const p of lista) {
+    const r = resultado(p);
+    for (const k of ['G', 'E', 'P']) acum[k].push(acum[k].at(-1) + (k === r ? 1 : 0));
+  }
+  const tipos = sec.deporte === 'basquet' ? ['G', 'P'] : ['G', 'E', 'P'];
+  const max = Math.max(...tipos.map((k) => acum[k].at(-1)), 1);
+  const n = lista.length;
+  const x = (i) => (i / n) * (W - der);
+  const y = (v) => H - (v / max) * (H - arriba);
+  const guias = [...new Set([0, Math.round(max / 2), max])];
+  // si dos líneas terminan juntas, separo las etiquetas
+  const finales = tipos.map((k) => ({ k, v: acum[k].at(-1), y: y(acum[k].at(-1)) })).sort((a, b) => a.y - b.y);
+  for (let i = 1; i < finales.length; i++) if (finales[i].y - finales[i - 1].y < 14) finales[i].y = finales[i - 1].y + 14;
+  const nombreTipo = { G: 'Ganados', E: 'Empatados', P: 'Perdidos' };
+  return `<svg class="lineas" viewBox="-18 0 ${W + 18} ${H + 18}" role="img" aria-label="${tipos.map((k) => `${nombreTipo[k]}: ${acum[k].at(-1)}`).join(', ')}, en ${n} partidos">
+      ${guias.map((g) => `<line class="eje" x1="0" x2="${W - der}" y1="${y(g)}" y2="${y(g)}"/><text x="-6" y="${y(g) + 3}" text-anchor="end">${g}</text>`).join('')}
+      <line class="base" x1="0" x2="${W - der}" y1="${H}" y2="${H}"/>
+      <text x="0" y="${H + 14}">Fecha 1</text><text x="${W - der}" y="${H + 14}" text-anchor="end">${n}</text>
+      ${tipos.map((k) => `<path class="${k}" pathLength="1" d="${acum[k].map((v, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(v).toFixed(1)}`).join(' ')}"/>`).join('')}
+      ${tipos.map((k) => `<circle class="${k}" cx="${x(n)}" cy="${y(acum[k].at(-1))}" r="3.5"/>`).join('')}
+      ${finales.map((f) => `<text class="fin ${f.k}" x="${W - der + 8}" y="${f.y + 5}">${f.v}</text>`).join('')}
+    </svg>
+    <div class="leyenda">${tipos.map((k) => `<span style="--c:${COLOR[k]}"><i></i>${nombreTipo[k]}</span>`).join('')}</div>`;
+}
+
+// ADN de la temporada: una barra por partido, alta si ganó, media si empató, baja si perdió.
+function adn(sec) {
+  const lista = jugados(sec).slice().reverse();
+  if (!lista.length) return '';
+  const alto = { G: '100%', E: '55%', P: '22%' };
+  return `<div class="adn" role="img" aria-label="Resultados de la temporada en orden: ${lista.map((p) => PALABRA[resultado(p)]).join(', ')}">${lista
+    .map((p, i) => { const r = resultado(p); return `<i style="--h:${alto[r]};--c:${COLOR[r]};--n:${i}" title="${PALABRA[r]} ${esc(marcadorPropio(p))} con ${esc(rival(p))}"></i>`; })
+    .join('')}</div>
+    <div class="adn-ext chica"><span>Primera fecha</span><span>Última</span></div>`;
+}
+
+const forma = (sec, n = 5) => {
+  const lista = jugados(sec).slice(0, n).reverse();
+  return `<div class="forma" aria-label="Últimos ${lista.length} partidos, el más reciente a la derecha">${lista
+    .map((p) => `<span class="r ${resultado(p)}" title="${PALABRA[resultado(p)]} ${esc(marcadorPropio(p))} con ${esc(rival(p))}">${resultado(p)}</span>`)
+    .join('')}</div>`;
+};
+
+function pista(sec, f) {
+  const n = sec.tabla.filas.length;
+  const x = n > 1 ? ((f.pos - 1) / (n - 1)) * 100 : 0;
+  return `<div role="img" aria-label="Puesto ${f.pos} de ${n}">
+      <div class="pista"><div class="pista-linea">${'<i></i>'.repeat(n)}</div><span class="yo" style="left:${x}%">${escudo()}</span></div>
+      <div class="pista-ext"><span>1°</span><span>${n}°</span></div>
+    </div>`;
+}
+
 // ---------- Componentes ----------
-function htmlMarcador(p) {
-  const qL = ES_QUILMES.test(p.local) ? ' qac' : '';
-  const qV = ES_QUILMES.test(p.visitante) ? ' qac' : '';
-  const centro = p.jugado
-    ? `<span class="goles">${esc(p.gl)} - ${esc(p.gv)}</span>`
-    : `<span class="goles vs">vs</span>`;
-  return `<div class="marcador">
-      <span class="equipo${qL}">${esc(nombre(p.local))}</span>
-      ${centro}
-      <span class="equipo visit${qV}">${esc(nombre(p.visitante))}</span>
-    </div>`;
+function proximo(p, sec) {
+  const local = nombre(p.local), visita = nombre(p.visitante);
+  const otro = p.esLocal ? p.visitante : p.local;
+  const n = Math.max(largo(local), largo(visita));
+  // El equipo propio se reconoce por esLocal (así "Quilmes B" también sale en azul).
+  const lado = (t, propio) => `<strong class="${propio ? 'local' : 'visita'}" style="--n:${n}">${esc(t)}</strong>`;
+  const t = p.fecha ? partes(p.fecha, { weekday: 'short', day: 'numeric', month: 'short' }) : null;
+  const c = p.fecha ? cuando(p.fecha) : null;
+
+  // Cara a cara con los datos de la tabla
+  const yo = filaQuilmes(sec), el = filaDe(sec, otro);
+  let duelo = '';
+  if (yo && el) {
+    const filas = [
+      ['Posición', yo.pos, el.pos, (a, b) => a < b, (v) => `${v}°`],
+      ['Puntos', yo.pts, el.pts, (a, b) => a > b, (v) => v],
+      ['Jugados', yo.pj, el.pj, () => null, (v) => v],
+      sec.deporte === 'basquet' ? ['Ganados', yo.pg, el.pg, (a, b) => a > b, (v) => v] : ['Dif. de gol', yo.dif, el.dif, (a, b) => a > b, (v) => (v > 0 ? `+${v}` : v)],
+    ];
+    const previo = jugados(sec).find((x) => norm(rival(x)) === norm(nombre(otro)));
+    duelo = `<table class="duelo">
+        <caption class="chica">Cara a cara en ${esc(sec.tabla.nombre)}</caption>
+        <thead><tr><th></th><th class="yo">${esc(nombre(yo.equipo))}</th><th>${esc(nombre(otro))}</th></tr></thead>
+        <tbody>${filas.map(([k, a, b, mejor, f]) => {
+          const m = a == null || b == null ? null : mejor(a, b);
+          return `<tr><th>${k}</th><td class="${m ? 'mejor' : ''}">${esc(f(a ?? '–'))}</td><td class="otro">${esc(f(b ?? '–'))}</td></tr>`;
+        }).join('')}
+        ${previo ? `<tr class="cruce-ant"><th>Último cruce</th><td colspan="2">${PALABRA[resultado(previo)]} ${esc(marcadorPropio(previo))}, ${esc(fechaBreve(previo.fecha))}</td></tr>` : ''}
+        </tbody></table>`;
+  }
+
+  return `<article class="hero" aria-label="Próximo partido de ${esc(sec.deporteNombre.toLowerCase())}: ${esc(local)} contra ${esc(visita)}, ${esc(fechaLarga(p.fecha))}">
+      <div class="hero-cab">
+        <span class="deporte-tag">${ICONO[sec.deporte] || ''}${esc(sec.deporteNombre)}</span>
+        <span class="chica"><b>${esc(sec.titulo)}</b>${esc(sec.competencia)}${p.ronda ? ` · ${esc(p.ronda.toLowerCase())}` : ''}</span>
+      </div>
+      <div class="cruce">${lado(local, p.esLocal)}<span class="vs chica">${escudo()}contra</span>${lado(visita, !p.esLocal)}</div>
+      <div class="hero-der">
+        <div class="cuando-grande">
+          ${t ? `<div><b>${esc(sinPunto(t.weekday))} ${esc(t.day)}</b><small class="chica">${esc(sinPunto(t.month))}</small></div>
+          <div><b>${esc(hora(p.fecha))}</b><small class="chica">Hora</small></div>
+          <div class="falta${c.vivo ? ' vivo' : ''}"><b>${esc(c.texto)}</b><small class="chica">${p.esLocal ? 'De local' : 'De visitante'}</small></div>`
+          : `<div><b>A confirmar</b><small class="chica">Día y hora · ${p.esLocal ? 'De local' : 'De visitante'}</small></div>`}
+        </div>
+        ${p.lugar ? `<p class="lugar">Cancha: <b>${esc(p.lugar)}</b></p>` : ''}
+        ${duelo}
+      </div>
+    </article>`;
 }
 
-function htmlPartido(p, sec, { destacado = false, mostrarDeporte = false } = {}) {
-  const partes = [];
-  if (mostrarDeporte) partes.push(`<span class="dep">${esc(sec.titulo)}</span>`);
-  partes.push(`<span>${esc(fecha(p.fecha))}</span>`);
-  if (p.ronda) partes.push(`<span>${esc(p.ronda)}</span>`);
-  return `<div class="card partido${destacado ? ' proximo-destacado' : ''}">
-      <div class="cuando">${partes.join('')}</div>
-      ${htmlMarcador(p)}
-      ${p.lugar ? `<div class="lugar">${esc(p.lugar)}</div>` : ''}
-    </div>`;
-}
-
-function htmlLista(partidos) {
-  if (!partidos.length) return '<p class="vacio">Sin partidos.</p>';
-  return `<ul class="lista">${partidos
-    .map((p) => {
+function listaResultados(items) {
+  if (!items.length) return '<p class="vacio">Todavía no hay resultados.</p>';
+  return `<ul class="resultados">${items
+    .map(({ p, sec }) => {
       const r = resultado(p);
-      const chip = r ? `<span class="chip ${r}" title="${{ G: 'Ganó', E: 'Empató', P: 'Perdió' }[r]}">${r}</span>` : '<span class="chip F" title="Por jugar">·</span>';
-      const res = p.jugado ? `${p.esLocal ? p.gl : p.gv} - ${p.esLocal ? p.gv : p.gl}` : fmtHora.format(new Date(p.fecha)) + ' h';
-      return `<li>${chip}
-          <span><span class="rival">${p.esLocal ? 'vs' : 'en'} ${esc(rival(p))}</span>
-            <span class="meta">${esc(fecha(p.fecha))}${p.ronda ? ' · ' + esc(p.ronda) : ''}</span></span>
-          <span class="res">${esc(res)}</span></li>`;
+      const contexto = [sec && `${sec.deporteNombre} ${sec.titulo.toLowerCase()}`, fechaBreve(p.fecha), p.ronda].filter(Boolean).join(' · ');
+      const derecha = p.jugado
+        ? `<span class="marcador"><b>${esc(p.esLocal ? p.gl : p.gv)}<span>–${esc(p.esLocal ? p.gv : p.gl)}</span></b>${r ? `<span class="r ${r}" title="${PALABRA[r]}">${r}</span>` : ''}</span>`
+        : `<span class="marcador pendiente"><b>${p.fecha ? esc(hora(p.fecha)) : '–'}</b></span>`;
+      return `<li><span class="quien">${p.esLocal ? 'vs' : 'en cancha de'} ${esc(rival(p))}<small>${esc(contexto)}</small></span>${derecha}</li>`;
     })
     .join('')}</ul>`;
 }
 
-function htmlForma(sec, n = 5) {
-  const ult = jugados(sec).slice(0, n).reverse();
-  if (!ult.length) return '';
-  return `<div class="forma" aria-label="Últimos resultados">${ult
-    .map((p) => `<span class="chip ${resultado(p)}" title="${esc(rival(p))}">${resultado(p)}</span>`)
-    .join('')}</div>`;
-}
-
-const ETIQUETAS = { pts: 'Pts', pj: 'PJ', pg: 'PG', pe: 'PE', pp: 'PP', gf: 'GF', gc: 'GC', dif: 'Dif', pf: 'PF', pc: 'PC' };
-const EXTENDIDAS = new Set(['gf', 'gc', 'pf', 'pc', 'pe']);
-
-function htmlTabla(sec) {
+const COLS = { pts: 'Pts', pj: 'PJ', pg: 'G', pe: 'E', pp: 'P', gf: 'GF', gc: 'GC', dif: 'Dif', pf: 'PF', pc: 'PC' };
+const EXT = new Set(['pg', 'pe', 'pp', 'gf', 'gc', 'pf', 'pc']);
+function tabla(sec) {
   if (!sec.tabla?.filas?.length) return '<p class="vacio">Tabla no disponible.</p>';
   const cols = sec.tabla.columnas;
-  const th = cols.map((c) => `<th class="${EXTENDIDAS.has(c) ? 'col-ext' : ''}">${ETIQUETAS[c] || c}</th>`).join('');
-  const filas = sec.tabla.filas
-    .map(
-      (f) => `<tr class="${f.esQuilmes ? 'qac' : ''}">
-        <td>${esc(f.pos)}</td><td class="eq">${esc(nombre(f.equipo))}</td>
-        ${cols.map((c) => `<td class="${c === 'pts' ? 'pts' : ''} ${EXTENDIDAS.has(c) ? 'col-ext' : ''}">${esc(f[c] ?? '')}</td>`).join('')}
-      </tr>`,
-    )
-    .join('');
   return `<div class="tabla-wrap"><table>
-      <thead><tr><th>#</th><th class="eq">${esc(sec.tabla.nombre)}</th>${th}</tr></thead>
-      <tbody>${filas}</tbody></table></div>`;
+    <thead><tr><th>#</th><th class="eq">${esc(sec.tabla.nombre)}</th>${cols.map((c) => `<th class="${EXT.has(c) ? 'ext' : ''}">${COLS[c] || c}</th>`).join('')}</tr></thead>
+    <tbody>${sec.tabla.filas
+      .map((f) => `<tr class="${f.esQuilmes ? 'qac' : ''}"><td class="pos">${esc(f.pos)}</td><td class="eq">${f.esQuilmes ? `<span>${escudo()}${esc(nombre(f.equipo))}</span>` : esc(nombre(f.equipo))}</td>${cols
+        .map((c) => `<td class="${c === 'pts' ? 'pts' : ''} ${EXT.has(c) ? 'ext' : ''}">${esc(c === 'dif' && f[c] > 0 ? `+${f[c]}` : f[c] ?? '')}</td>`)
+        .join('')}</tr>`)
+      .join('')}</tbody></table></div>`;
 }
 
-function htmlAviso(sec) {
+function aviso(sec) {
   if (!sec.desactualizado) return '';
-  return `<div class="aviso">No se pudo actualizar esta sección en la última corrida. Se muestran los datos del ${esc(
-    fmtActualizado.format(new Date(sec.actualizado)),
-  )}.</div>`;
+  return `<div class="aviso">No se pudo actualizar esta sección en la última corrida. Los datos son del ${esc(fechaLarga(sec.actualizado))}.</div>`;
+}
+
+const titulo = (n, texto, extra = '') => `<header class="franja"><div class="contenedor"><span>${n}</span><h2>${texto}</h2>${extra ? `<p>${extra}</p>` : ''}</div></header>`;
+
+// Cinta de LED con los últimos resultados de todos los equipos
+function cinta() {
+  const items = datos.secciones
+    .flatMap((sec) => jugados(sec).slice(0, 3).map((p) => ({ p, sec })))
+    .sort((a, b) => b.p.fecha.localeCompare(a.p.fecha))
+    .slice(0, 8)
+    .map(({ p, sec }) => `<span class="cinta-item" style="--c:${COLOR[resultado(p)]}"><i></i>${esc(sec.deporteNombre)} ${esc(sec.titulo.split(' ')[0])}<b>Quilmes ${esc(marcadorPropio(p))} ${esc(rival(p))}</b></span>`)
+    .join('');
+  if (!items) return '';
+  return `<div class="cinta-pista" aria-hidden="true">${items}${items}</div>`;
 }
 
 // ---------- Vistas ----------
 function vistaResumen() {
-  const proximos = datos.secciones
-    .map((s) => ({ s, p: proximo(s) }))
-    .filter((x) => x.p)
-    .sort((a, b) => (a.p.fecha || '').localeCompare(b.p.fecha || ''));
-  const ultimos = datos.secciones
-    .map((s) => ({ s, p: jugados(s)[0] }))
-    .filter((x) => x.p)
-    .sort((a, b) => (b.p.fecha || '').localeCompare(a.p.fecha || ''));
+  const futuros = datos.secciones
+    .flatMap((sec) => proximos(sec).map((p) => ({ p, sec })))
+    .sort((a, b) => (a.p.fecha || '9999').localeCompare(b.p.fecha || '9999'));
+  const [primero, ...resto] = futuros;
 
-  const tarjetasPos = datos.secciones
-    .map((s) => {
-      const f = filaQuilmes(s);
+  const equipos = datos.secciones
+    .map((sec) => {
+      const f = filaQuilmes(sec);
       if (!f) return '';
-      const extra = s.deporte === 'basquet' ? `${f.pg}G ${f.pp}P` : `${f.pg}G ${f.pe}E ${f.pp}P`;
-      return `<div class="card"><h3>${esc(s.titulo)}</h3>
-          <div class="posicion"><span class="num">${esc(f.pos)}°</span>
-            <span class="det">${esc(s.tabla.nombre)}<br>${esc(f.pts)} pts · ${esc(extra)}</span></div>
-          ${htmlForma(s)}</div>`;
+      const registro = sec.deporte === 'basquet' ? `${f.pg}G ${f.pp}P` : `${f.pg}G ${f.pe}E ${f.pp}P`;
+      return `<a class="equipo" href="#${sec.deporte}">
+          <div class="equipo-cab">
+            <h3>${esc(sec.deporteNombre)} ${esc(sec.titulo.toLowerCase())}<span class="flecha">→</span><small class="chica">${esc(sec.competencia)}</small></h3>
+            <span class="ordinal">${esc(f.pos)}<sup>°</sup></span>
+          </div>
+          ${pista(sec, f)}
+          <div class="equipo-pie">${forma(sec)}<span><b>${esc(f.pts)} pts</b> · ${esc(registro)}</span></div>
+        </a>`;
     })
     .join('');
 
+  const ultimos = datos.secciones
+    .map((sec) => ({ p: jugados(sec)[0], sec }))
+    .filter((x) => x.p)
+    .sort((a, b) => b.p.fecha.localeCompare(a.p.fecha));
+
   return `
-    <section class="bloque">
-      <h2>Próximos partidos</h2>
-      ${proximos.length
-        ? `<div class="grid">${proximos.map((x, i) => htmlPartido(x.p, x.s, { destacado: i === 0, mostrarDeporte: true })).join('')}</div>`
-        : '<p class="vacio">No hay partidos programados por ahora.</p>'}
+    <section class="seccion" style="--i:0">
+      ${titulo('01', 'Próximo partido')}<div class="contenedor">
+      ${primero ? proximo(primero.p, primero.sec) : '<p class="vacio">No hay partidos programados por ahora. La página se actualiza sola cuando las ligas publican el fixture.</p>'}
+      ${resto.length ? `<ul class="siguen" aria-label="Después">${resto.slice(0, 5).map(({ p, sec }) => `<li>
+            <span class="cuando chica">${p.fecha ? `<b>${esc(partes(p.fecha, { day: 'numeric' }).day)}</b>${esc(sinPunto(partes(p.fecha, { weekday: 'short' }).weekday))} · ${esc(sinPunto(partes(p.fecha, { month: 'short' }).month))}` : '<b>–</b>A confirmar'}</span>
+            <span class="quien">${p.esLocal ? 'vs' : 'en cancha de'} ${esc(rival(p))}<small>${esc(sec.deporteNombre)} ${esc(sec.titulo.toLowerCase())}${p.ronda && !p.fecha ? ` · ${esc(p.ronda)}` : ''}</small></span>
+            <span class="hora">${p.fecha ? esc(hora(p.fecha)) : ''}</span></li>`).join('')}</ul>` : ''}
+    </div></section>
+    <section class="seccion" style="--i:1">
+      ${titulo('02', 'Cómo viene cada equipo', 'Posición y últimos cinco')}
+      <div class="contenedor"><div class="equipos">${equipos}</div></div>
     </section>
-    <section class="bloque">
-      <h2>Últimos resultados</h2>
-      <div class="grid">${ultimos.map((x) => htmlPartido(x.p, x.s, { mostrarDeporte: true })).join('')}</div>
-    </section>
-    <section class="bloque">
-      <h2>Posiciones</h2>
-      <div class="grid">${tarjetasPos}</div>
+    <section class="seccion" style="--i:2">
+      ${titulo('03', 'Últimos resultados')}
+      <div class="contenedor">${listaResultados(ultimos)}</div>
     </section>`;
 }
 
 function vistaDeporte(deporte) {
   const secs = datos.secciones.filter((s) => s.deporte === deporte);
-  if (!secs.length) return `<p class="vacio">Todavía no hay datos de ${esc(NOMBRE_DEPORTE[deporte])}.</p>`;
-  return secs
-    .map((s) => {
-      const prox = proximo(s);
-      const ult = jugados(s).slice(0, 5);
-      const todos = [...s.partidos].sort((a, b) => (a.fecha || '').localeCompare(b.fecha || ''));
-      return `<section class="seccion">
-        <div class="seccion-head"><h2 class="seccion-titulo">${esc(s.titulo)}</h2><span class="comp">${esc(s.competencia)}</span></div>
-        ${htmlAviso(s)}
-        <div class="dos-col">
+  if (!secs.length) return '<p class="vacio">Todavía no hay datos de este deporte.</p>';
+  // Índice: un acceso por equipo, con su posición. Se mueve con scroll (el # de la URL elige el deporte).
+  const indice = secs.length > 1 ? `<nav class="indice" aria-label="Equipos de ${esc(secs[0].deporteNombre.toLowerCase())}"><div class="contenedor"><ol>${secs
+    .map((sec, i) => { const f = filaQuilmes(sec); return `<li><a href="#${esc(deporte)}" data-ir="eq-${esc(sec.id)}"><span>${dos(i + 1)}</span>${esc(sec.titulo)}${f ? `<b>${esc(f.pos)}°</b>` : ''}</a></li>`; })
+    .join('')}</ol></div></nav>` : '';
+  return `<div class="portada-franja azul" style="--i:0"><div class="contenedor portada"><h1 style="--n:${largo(secs[0].deporteNombre)}">${esc(secs[0].deporteNombre)}</h1>${escudo()}</div></div>${indice}<div class="contenedor">` + secs
+    .map((sec, i) => {
+      const f = filaQuilmes(sec);
+      const futuros = proximos(sec);
+      const ult = jugados(sec).slice(0, 5).map((p) => ({ p }));
+      const todos = [...sec.partidos].sort((a, b) => (a.fecha || '9999').localeCompare(b.fecha || '9999')).map((p) => ({ p }));
+      const dif = f ? (f.dif ?? (f.pf != null ? f.pf - f.pc : null)) : null;
+      return `<section class="equipo-seccion" id="eq-${esc(sec.id)}" style="--i:${i + 1}">
+        <header><span class="chica">${esc(sec.competencia)}</span><h2>${esc(sec.titulo)}</h2></header>
+        ${aviso(sec)}
+        <p class="categoria">${esc(sec.descripcion || '')} <span class="situacion">${esc(situacion(sec))}</span></p>
+        ${futuros[0] ? `<div class="panel-blanco">${proximo(futuros[0], sec)}</div>` : ''}
+        ${f ? `<div class="cifras">
+            <div><b>${esc(f.pos)}°</b><small class="chica">Posición</small></div>
+            <div><b>${esc(f.pts)}</b><small class="chica">Puntos</small></div>
+            <div><b>${esc(f.pj)}</b><small class="chica">Jugados</small></div>
+            <div><b>${dif == null ? '–' : esc(dif > 0 ? `+${dif}` : dif)}</b><small class="chica">${sec.deporte === 'basquet' ? 'Dif. tantos' : 'Dif. gol'}</small></div>
+          </div>` : ''}
+        <div class="columnas">
           <div>
-            ${prox ? htmlPartido(prox, s, { destacado: true }) : '<div class="card"><h3>Próximo partido</h3><p class="vacio">Sin partidos programados.</p></div>'}
-            <div class="card" style="margin-top:12px"><h3>Últimos resultados</h3>${htmlLista(ult)}</div>
+            <div class="bloque"><div class="bloque-cab"><h3>Fecha a fecha</h3><span class="chica">Acumulado</span></div>${lineas(sec)}</div>
+            <div class="bloque"><div class="bloque-cab"><h3>ADN de la temporada</h3><span class="chica">${jugados(sec).length} partidos</span></div>${adn(sec)}</div>
+            <div class="bloque"><div class="bloque-cab"><h3>Últimos partidos</h3></div>${listaResultados(ult)}</div>
           </div>
-          <div class="card"><h3>Tabla de posiciones</h3>${htmlTabla(s)}
-            <details class="fixture"><summary>Fixture completo (${todos.length} partidos)</summary>${htmlLista(todos)}</details>
+          <div>
+            <div class="bloque"><div class="bloque-cab"><h3>Tabla de posiciones</h3><span class="chica">${esc(sec.tabla?.nombre || '')}</span></div>${tabla(sec)}
+              <details class="fixture"><summary>Fixture completo · ${todos.length} partidos</summary>${listaResultados(todos)}</details>
+            </div>
           </div>
         </div>
       </section>`;
     })
-    .join('');
+    .join('') + '</div>';
 }
 
-function mostrar(vista) {
-  document.querySelectorAll('.tabs button').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.vista === vista)));
+function mostrar() {
+  const vista = VISTAS.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'resumen';
+  document.querySelectorAll('.nav a').forEach((a) => (a.dataset.vista === vista ? a.setAttribute('aria-current', 'page') : a.removeAttribute('aria-current')));
+  const html = document.documentElement;
+  const yaMostrado = html.classList.contains('mostrado');
+  if (yaMostrado) html.classList.remove('mostrado');
   $contenido.innerHTML = vista === 'resumen' ? vistaResumen() : vistaDeporte(vista);
-  if (location.hash.slice(1) !== vista) history.replaceState(null, '', `#${vista}`);
+  window.scrollTo(0, 0);
+  if (yaMostrado) requestAnimationFrame(() => requestAnimationFrame(() => html.classList.add('mostrado')));
+  seguirIndice();
 }
 
 // ---------- Arranque ----------
@@ -210,15 +398,34 @@ async function cargar() {
   return r.json();
 }
 
+document.getElementById('ano').textContent = new Date().getFullYear();
+
+// Índice de cada deporte: baja hasta el equipo y marca cuál se está viendo.
+document.addEventListener('click', (e) => {
+  const a = e.target.closest('[data-ir]');
+  if (!a) return;
+  e.preventDefault();
+  document.getElementById(a.dataset.ir)?.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+});
+let observador = null;
+function seguirIndice() {
+  observador?.disconnect();
+  const links = [...document.querySelectorAll('.indice [data-ir]')];
+  if (!links.length || !('IntersectionObserver' in window)) return;
+  observador = new IntersectionObserver((entradas) => {
+    for (const en of entradas) if (en.isIntersecting) links.forEach((l) => l.toggleAttribute('aria-current', l.dataset.ir === en.target.id));
+  }, { rootMargin: '-30% 0px -60% 0px' });
+  document.querySelectorAll('.equipo-seccion[id]').forEach((s) => observador.observe(s));
+}
 try {
   datos = await cargar();
-  document.getElementById('actualizado').textContent = `Actualizado: ${fmtActualizado.format(new Date(datos.generado))}`;
-  document.querySelectorAll('.tabs button').forEach((b) => b.addEventListener('click', () => mostrar(b.dataset.vista)));
-  const VISTAS = ['resumen', 'futbol', 'basquet', 'hockey'];
-  const desdeHash = () => mostrar(VISTAS.includes(location.hash.slice(1)) ? location.hash.slice(1) : 'resumen');
-  window.addEventListener('hashchange', desdeHash);
-  desdeHash();
+  document.getElementById('actualizado').textContent = `Actualizado ${fechaBreve(datos.generado).toLowerCase()}, ${hora(datos.generado)} h`;
+  document.getElementById('cinta').innerHTML = cinta();
+  window.addEventListener('hashchange', mostrar);
+  mostrar();
 } catch (e) {
-  document.getElementById('actualizado').textContent = 'No se pudieron cargar los datos';
-  $contenido.innerHTML = `<div class="error-carga">No pude leer <code>data/quilmes.json</code> (${esc(e.message)}).</div>`;
+  document.getElementById('actualizado').textContent = 'Sin datos';
+  $contenido.innerHTML = `<div class="contenedor error-carga">No se pudieron cargar los datos (${esc(e.message)}). Probá recargar la página en unos minutos.</div>`;
+} finally {
+  loader.fin();
 }

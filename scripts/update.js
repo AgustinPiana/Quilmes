@@ -4,6 +4,8 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { leerAfa } from './sources/afa.js';
 import { leerFebamba } from './sources/febamba.js';
 import { leerAhba } from './sources/ahba.js';
+import { leerPromiedos } from './sources/promiedos.js';
+import { leerDatafem } from './sources/datafem.js';
 
 const RUTA = new URL('../public/data/quilmes.json', import.meta.url);
 const config = JSON.parse(await readFile(new URL('../config.json', import.meta.url), 'utf8'));
@@ -42,6 +44,8 @@ async function intentar(id, fn) {
 }
 
 await intentar(config.afa.id, () => leerAfa(config.afa, zona));
+await intentar(config.reserva.id, () => leerPromiedos(config.reserva, zona));
+await intentar(config.femenino.id, () => leerDatafem(config.femenino, zona));
 await intentar(config.febamba.id, () => leerFebamba(config.febamba, zona));
 try {
   for (const r of await leerAhba(config.ahba, zona)) agregar(r.ok ? r.seccion.id : r.id, r);

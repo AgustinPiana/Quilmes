@@ -81,8 +81,10 @@ export async function leerFebamba(cfg, zona) {
   return {
     id: cfg.id,
     deporte: 'basquet',
+    deporteNombre: cfg.deporteNombre,
     titulo: cfg.titulo,
     competencia: cfg.competencia,
+    descripcion: cfg.descripcion,
     fuente: 'FEBAMBA',
     tabla: tabla && { nombre: tabla.nombre, columnas: ['pts', 'pj', 'pg', 'pp', 'pf', 'pc'], filas: tabla.filas },
     partidos,
