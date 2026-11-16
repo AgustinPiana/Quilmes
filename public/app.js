@@ -313,7 +313,7 @@ function vistaResumen() {
     .sort((a, b) => b.p.fecha.localeCompare(a.p.fecha));
 
   return `
-    <section class="seccion azul" style="--i:0">
+    <section class="seccion" style="--i:0">
       ${titulo('01', 'Próximo partido')}<div class="contenedor">
       ${primero ? proximo(primero.p, primero.sec) : '<p class="vacio">No hay partidos programados por ahora. La página se actualiza sola cuando las ligas publican el fixture.</p>'}
       ${resto.length ? `<ul class="siguen" aria-label="Después">${resto.slice(0, 5).map(({ p, sec }) => `<li>
@@ -325,7 +325,7 @@ function vistaResumen() {
       ${titulo('02', 'Cómo viene cada equipo', 'Posición y últimos cinco')}
       <div class="contenedor"><div class="equipos">${equipos}</div></div>
     </section>
-    <section class="seccion azul" style="--i:2">
+    <section class="seccion" style="--i:2">
       ${titulo('03', 'Últimos resultados')}
       <div class="contenedor">${listaResultados(ultimos)}</div>
     </section>`;
@@ -345,7 +345,7 @@ function vistaDeporte(deporte) {
         <header><span class="chica">${esc(sec.competencia)}</span><h2>${esc(sec.titulo)}</h2></header>
         ${aviso(sec)}
         <p class="categoria">${esc(sec.descripcion || '')} <span class="situacion">${esc(situacion(sec))}</span></p>
-        ${futuros[0] ? `<div class="panel-azul azul">${proximo(futuros[0], sec)}</div>` : ''}
+        ${futuros[0] ? `<div class="panel-blanco">${proximo(futuros[0], sec)}</div>` : ''}
         ${f ? `<div class="cifras">
             <div><b>${esc(f.pos)}°</b><small class="chica">Posición</small></div>
             <div><b>${esc(f.pts)}</b><small class="chica">Puntos</small></div>

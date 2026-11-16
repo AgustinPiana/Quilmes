@@ -151,8 +151,9 @@ main { padding: 0; }
 
 .seccion { padding-bottom: 76px; }
 .seccion > .contenedor { padding-top: 34px; }
-.seccion:not(.azul) { padding-top: 40px; } /* aire blanco para que la franja no se pegue a la sección azul de arriba */
-@media (min-width: 900px) { .seccion { padding-bottom: 120px; } .seccion > .contenedor { padding-top: 56px; } .seccion:not(.azul) { padding-top: 64px; } }
+.seccion { padding-top: 0; }
+.seccion + .seccion { padding-top: 0; } /* aire blanco para que la franja no se pegue a la sección azul de arriba */
+@media (min-width: 900px) { .seccion { padding-bottom: 120px; } .seccion > .contenedor { padding-top: 56px; } }
 footer.azul { --fondo-azul: var(--azul-hondo); }
 footer.azul .escudo { --escudo-claro: var(--azul-hondo); }
 
@@ -172,7 +173,7 @@ footer.azul .escudo { --escudo-claro: var(--azul-hondo); }
 .hero-cab { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 18px; }
 .deporte-tag {
   display: inline-flex; align-items: center; gap: 10px;
-  background: #fff; color: var(--fondo-azul);
+  background: var(--fondo-azul); color: #fff;
   padding: 9px 16px 8px 12px;
   font: 900 clamp(22px, 6.4vw, 38px)/1 var(--f); font-stretch: 125%; text-transform: uppercase; letter-spacing: -.02em;
 }
@@ -232,9 +233,8 @@ footer.azul .escudo { --escudo-claro: var(--azul-hondo); }
 .siguen .hora { font: 800 22px/1 var(--f); font-stretch: 62%; color: var(--azul); }
 
 /* En la página de cada deporte, el próximo partido va en un bloque azul */
-.panel-azul { padding: 26px 18px 30px; margin: 0 0 56px; }
-@media (min-width: 900px) { .panel-azul { padding: 40px 44px 44px; } }
-.panel-azul .cruce strong { font-size: min(96px, calc(100cqw / (var(--n, 7) * 1.02))); }
+.panel-blanco { padding: 28px 0 0; margin: 0 0 56px; border-top: 1px solid var(--linea); }
+.panel-blanco .cruce strong { font-size: min(96px, calc(100cqw / (var(--n, 7) * 1.02))); }
 
 /* ---------- Cómo viene cada equipo ---------- */
 .equipos { display: grid; }
