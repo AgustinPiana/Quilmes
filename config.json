@@ -9,6 +9,17 @@
     "canal": "nacionalb",
     "equipoId": 15
   },
+  "reserva": {
+    "id": "futbol-reserva",
+    "deporteNombre": "Fútbol",
+    "titulo": "Reserva",
+    "competencia": "Torneo de Reserva",
+    "descripcion": "El torneo de Reserva se juega en dos etapas, Apertura y Clausura, con los equipos divididos en dos grupos. Los datos salen de Promiedos.",
+    "equipoUrl": "quilmes-ac-(reserves)",
+    "equipoId": "jdeca",
+    "ligaUrl": "liga-profesional-reserva",
+    "ligaId": "hhbc"
+  },
   "febamba": {
     "id": "basquet",
     "deporteNombre": "Básquet",
