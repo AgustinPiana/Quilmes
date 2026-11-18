@@ -4015,6 +4015,2377 @@
       ],
       "actualizado": "2026-11-17T21:28:23.473Z",
       "desactualizado": false
+    },
+    {
+      "id": "natacion-master",
+      "deporte": "natacion",
+      "deporteNombre": "Natación",
+      "titulo": "Master",
+      "competencia": "Metropolitano Master FENABA",
+      "descripcion": "El Metropolitano Master es el torneo de FENABA para nadadores adultos. Se nada por jornadas a lo largo del año y en cada una se suman puntos por equipo.",
+      "fuente": "FENABA",
+      "tabla": {
+        "nombre": "8ª jornada · puntaje por equipos",
+        "columnas": [
+          "pts"
+        ],
+        "filas": [
+          {
+            "pos": 1,
+            "equipo": "Libertador Argentina Master",
+            "pts": 710,
+            "esQuilmes": false
+          },
+          {
+            "pos": 2,
+            "equipo": "Asoc. Atlética Arg. Juniors",
+            "pts": 514,
+            "esQuilmes": false
+          },
+          {
+            "pos": 3,
+            "equipo": "Academia Natacion BS AS",
+            "pts": 347,
+            "esQuilmes": false
+          },
+          {
+            "pos": 4,
+            "equipo": "Poseidon Swim & Gym",
+            "pts": 286,
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
+            "equipo": "Quilmes Atlético Club",
+            "pts": 180,
+            "esQuilmes": true
+          },
+          {
+            "pos": 6,
+            "equipo": "Club A. San Lorenzo de Almagro",
+            "pts": 166,
+            "esQuilmes": false
+          },
+          {
+            "pos": 7,
+            "equipo": "Sport Club Congreso",
+            "pts": 118,
+            "esQuilmes": false
+          },
+          {
+            "pos": 8,
+            "equipo": "Natacion Power Swim",
+            "pts": 115,
+            "esQuilmes": false
+          },
+          {
+            "pos": 9,
+            "equipo": "Uthgra Nadadores Del Sur",
+            "pts": 84,
+            "esQuilmes": false
+          },
+          {
+            "pos": 10,
+            "equipo": "Club Argentino DE Quilmes",
+            "pts": 78,
+            "esQuilmes": false
+          },
+          {
+            "pos": 11,
+            "equipo": "Club Atlético River Plate",
+            "pts": 63,
+            "esQuilmes": false
+          },
+          {
+            "pos": 12,
+            "equipo": "Cooperarios",
+            "pts": 55,
+            "esQuilmes": false
+          },
+          {
+            "pos": 13,
+            "equipo": "Club Ferro Carril Oeste",
+            "pts": 48,
+            "esQuilmes": false
+          },
+          {
+            "pos": 14,
+            "equipo": "Club Atletico Once Unidos",
+            "pts": 36,
+            "esQuilmes": false
+          },
+          {
+            "pos": 15,
+            "equipo": "Aegir Swimming",
+            "pts": 34,
+            "esQuilmes": false
+          },
+          {
+            "pos": 16,
+            "equipo": "Ateneo Popular de Versailles",
+            "pts": 32,
+            "esQuilmes": false
+          },
+          {
+            "pos": 17,
+            "equipo": "Club Atletico Defensores Glew",
+            "pts": 28,
+            "esQuilmes": false
+          },
+          {
+            "pos": 18,
+            "equipo": "Club Atlético Velez Sarsfield",
+            "pts": 22,
+            "esQuilmes": false
+          },
+          {
+            "pos": 19,
+            "equipo": "Quinto Estilo Ruta Club",
+            "pts": 16,
+            "esQuilmes": false
+          },
+          {
+            "pos": 20,
+            "equipo": "Natacion Castelar",
+            "pts": 11,
+            "esQuilmes": false
+          },
+          {
+            "pos": 21,
+            "equipo": "Circulo Policia Federal",
+            "pts": 9,
+            "esQuilmes": false
+          },
+          {
+            "pos": 22,
+            "equipo": "Gimnasia y Esgrima de Bs. As.",
+            "pts": 7,
+            "esQuilmes": false
+          },
+          {
+            "pos": 23,
+            "equipo": "Marea Roja San Vicente",
+            "pts": 5,
+            "esQuilmes": false
+          }
+        ]
+      },
+      "jornadas": [
+        {
+          "url": "https://www.fenaba.org.ar/documents/resultados/METROMASTER2026-1/",
+          "numero": 1,
+          "nombre": "1ª jornada",
+          "fecha": "2026-03-07T12:00:00-03:00",
+          "puesto": null,
+          "puntos": null,
+          "equipos": null,
+          "tabla": [],
+          "oro": 9,
+          "plata": 2,
+          "bronce": 7,
+          "nadadas": 32,
+          "podios": [
+            {
+              "puesto": 1,
+              "nadador": "Merediz, Monica Graci",
+              "prueba": "Mujeres 50-54 · 100 CC Metro Espalda",
+              "tiempo": "1:37.62"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Mangini, Luis Galileo",
+              "prueba": "Hombres 18-24 · 100 CC Metro Espalda",
+              "tiempo": "1:20.94"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Garcia Vazquez, Diego",
+              "prueba": "Hombres 50-54 · 100 CC Metro Espalda",
+              "tiempo": "1:27.87"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Pereda, Pablo M",
+              "prueba": "Hombres 60-64 · 100 CC Metro Espalda",
+              "tiempo": "1:31.51"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Merediz, Monica Graci",
+              "prueba": "Mujeres 50-54 · 100 CC Metro Pecho",
+              "tiempo": "1:42.77"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Aldrey, Carina Emilce",
+              "prueba": "Mujeres 55-59 · 100 CC Metro Pecho",
+              "tiempo": "2:02.23"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Schneider, Maximilian",
+              "prueba": "Hombres 45-49 · 100 CC Metro Pecho",
+              "tiempo": "1:25.85"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Brandi, Dario Omar M",
+              "prueba": "Hombres 55-59 · 100 CC Metro Pecho",
+              "tiempo": "1:34.19"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Pereda, Pablo M",
+              "prueba": "Hombres 60-64 · 100 CC Metro Pecho",
+              "tiempo": "1:35.32"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Luna, Graciela Silvin",
+              "prueba": "Mujeres 55-59 · 100 CC Metro Espalda",
+              "tiempo": "1:45.58"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Camino, Maria Victori",
+              "prueba": "Mujeres 35-39 · 100 CC Metro Pecho",
+              "tiempo": "1:37.86"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Mazzella, Graciela Si",
+              "prueba": "Mujeres 50-54 · 100 CC Metro Espalda",
+              "tiempo": "1:54.32"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Aldrey, Carina Emilce",
+              "prueba": "Mujeres 55-59 · 100 CC Metro Espalda",
+              "tiempo": "2:06.49"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Schneider, Maximilian",
+              "prueba": "Hombres 45-49 · 100 CC Metro Espalda",
+              "tiempo": "1:22.35"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Brandi, Dario Omar M",
+              "prueba": "Hombres 55-59 · 100 CC Metro Espalda",
+              "tiempo": "1:39.36"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Camino, Maria Victori",
+              "prueba": "Mujeres 35-39 · 100 CC Metro Espalda",
+              "tiempo": "1:29.55"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Luna, Graciela Silvin",
+              "prueba": "Mujeres 55-59 · 100 CC Metro Pecho",
+              "tiempo": "2:12.19"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Furdas, Juan Pablo M",
+              "prueba": "Hombres 45-49 · 100 CC Metro Pecho",
+              "tiempo": "1:30.39"
+            }
+          ]
+        },
+        {
+          "url": "https://www.fenaba.org.ar/documents/resultados/METRO-MASTER-2026-2/",
+          "numero": 2,
+          "nombre": "2ª jornada",
+          "fecha": "2026-04-03T12:00:00-03:00",
+          "puesto": 5,
+          "puntos": 182,
+          "equipos": 29,
+          "tabla": [
+            {
+              "pos": 1,
+              "equipo": "Libertador Argentina Master",
+              "pts": 741,
+              "esQuilmes": false
+            },
+            {
+              "pos": 2,
+              "equipo": "Asoc. Atlética Arg. Juniors",
+              "pts": 392,
+              "esQuilmes": false
+            },
+            {
+              "pos": 3,
+              "equipo": "Academia Natacion BS AS",
+              "pts": 381,
+              "esQuilmes": false
+            },
+            {
+              "pos": 4,
+              "equipo": "Club A. San Lorenzo de Almagro",
+              "pts": 323,
+              "esQuilmes": false
+            },
+            {
+              "pos": 5,
+              "equipo": "Quilmes Atlético Club",
+              "pts": 182,
+              "esQuilmes": true
+            },
+            {
+              "pos": 6,
+              "equipo": "Sport Club Congreso",
+              "pts": 140,
+              "esQuilmes": false
+            },
+            {
+              "pos": 7,
+              "equipo": "Poseidon Swim & Gym",
+              "pts": 131,
+              "esQuilmes": false
+            },
+            {
+              "pos": 8,
+              "equipo": "Quinto Estilo Ruta Club",
+              "pts": 117,
+              "esQuilmes": false
+            },
+            {
+              "pos": 9,
+              "equipo": "Club Argentino DE Quilmes",
+              "pts": 108,
+              "esQuilmes": false
+            },
+            {
+              "pos": 10,
+              "equipo": "Cooperarios",
+              "pts": 92,
+              "esQuilmes": false
+            },
+            {
+              "pos": 11,
+              "equipo": "Natacion Power Swim",
+              "pts": 76,
+              "esQuilmes": false
+            },
+            {
+              "pos": 12,
+              "equipo": "Adn Montego",
+              "pts": 68,
+              "esQuilmes": false
+            },
+            {
+              "pos": 13,
+              "equipo": "Uthgra Nadadores Del Sur",
+              "pts": 55,
+              "esQuilmes": false
+            },
+            {
+              "pos": 14,
+              "equipo": "Echesortu Foot Ball Club",
+              "pts": 29,
+              "esQuilmes": false
+            },
+            {
+              "pos": 15,
+              "equipo": "Estudiantes DE LA Plata",
+              "pts": 25,
+              "esQuilmes": false
+            },
+            {
+              "pos": 16,
+              "equipo": "Municipio de Lomas de Zamora",
+              "pts": 23,
+              "esQuilmes": false
+            },
+            {
+              "pos": 17,
+              "equipo": "Club Ferro Carril Oeste",
+              "pts": 20,
+              "esQuilmes": false
+            },
+            {
+              "pos": 18,
+              "equipo": "Club Atlético Velez Sarsfield",
+              "pts": 19,
+              "esQuilmes": false
+            },
+            {
+              "pos": 19,
+              "equipo": "La Patriada",
+              "pts": 17,
+              "esQuilmes": false
+            },
+            {
+              "pos": 20,
+              "equipo": "Marea Roja San Vicente",
+              "pts": 16,
+              "esQuilmes": false
+            },
+            {
+              "pos": 20,
+              "equipo": "Club Atletico Adrogue",
+              "pts": 16,
+              "esQuilmes": false
+            },
+            {
+              "pos": 22,
+              "equipo": "Club Atletico San Miguel",
+              "pts": 13,
+              "esQuilmes": false
+            },
+            {
+              "pos": 23,
+              "equipo": "Ateneo Popular de Versailles",
+              "pts": 12,
+              "esQuilmes": false
+            },
+            {
+              "pos": 24,
+              "equipo": "Estoa La Plata",
+              "pts": 9,
+              "esQuilmes": false
+            },
+            {
+              "pos": 24,
+              "equipo": "Reynado-Udo",
+              "pts": 9,
+              "esQuilmes": false
+            },
+            {
+              "pos": 26,
+              "equipo": "Aso Del Litoral DE Natacion",
+              "pts": 7,
+              "esQuilmes": false
+            },
+            {
+              "pos": 27,
+              "equipo": "Club Nautico San Isidro",
+              "pts": 6,
+              "esQuilmes": false
+            },
+            {
+              "pos": 28,
+              "equipo": "Sociedad Italiana DE Tiro AL S",
+              "pts": 5,
+              "esQuilmes": false
+            },
+            {
+              "pos": 29,
+              "equipo": "Gimnasia y Esgrima de Bs. As.",
+              "pts": 4,
+              "esQuilmes": false
+            }
+          ],
+          "oro": 9,
+          "plata": 4,
+          "bronce": 6,
+          "nadadas": 32,
+          "podios": [
+            {
+              "puesto": 1,
+              "nadador": "Merediz, Monica Graci",
+              "prueba": "Mujeres 50-54 · 100 CC Metro CI",
+              "tiempo": "1:32.08"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Hruby, Betiana Andrea",
+              "prueba": "Mujeres 60-64 · 100 CC Metro CI",
+              "tiempo": "1:51.50"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Schneider, Maximilian",
+              "prueba": "Hombres 45-49 · 100 CC Metro CI",
+              "tiempo": "1:16.33"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Garcia Vazquez, Diego",
+              "prueba": "Hombres 50-54 · 100 CC Metro CI",
+              "tiempo": "1:23.82"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Pereda, Pablo M",
+              "prueba": "Hombres 60-64 · 100 CC Metro CI",
+              "tiempo": "1:28.18"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Merediz, Monica Graci",
+              "prueba": "Mujeres 50-54 · 200 CC Metro Espalda",
+              "tiempo": "3:27.98"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Luna, Graciela Silvin",
+              "prueba": "Mujeres 55-59 · 200 CC Metro Espalda",
+              "tiempo": "3:45.08"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Garcia Vazquez, Diego",
+              "prueba": "Hombres 50-54 · 200 CC Metro Espalda",
+              "tiempo": "3:06.61"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Pereda, Pablo M",
+              "prueba": "Hombres 60-64 · 200 CC Metro Espalda",
+              "tiempo": "3:26.15"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Luna, Graciela Silvin",
+              "prueba": "Mujeres 55-59 · 100 CC Metro CI",
+              "tiempo": "1:50.68"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Mangini, Luis Galileo",
+              "prueba": "Hombres 20-24 · 100 CC Metro CI",
+              "tiempo": "1:21.00"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Hruby, Betiana Andrea",
+              "prueba": "Mujeres 60-64 · 200 CC Metro Espalda",
+              "tiempo": "4:27.64"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Mangini, Luis Galileo",
+              "prueba": "Hombres 20-24 · 200 CC Metro Espalda",
+              "tiempo": "2:52.71"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Serraino, Maria Victo",
+              "prueba": "Mujeres 30-34 · 100 CC Metro CI",
+              "tiempo": "1:33.77"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Mazzella, Graciela Si",
+              "prueba": "Mujeres 50-54 · 100 CC Metro CI",
+              "tiempo": "1:48.81"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Aldrey, Carina Emilce",
+              "prueba": "Mujeres 55-59 · 100 CC Metro CI",
+              "tiempo": "1:53.21"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Aldrey, Carina Emilce",
+              "prueba": "Mujeres 55-59 · 200 CC Metro Espalda",
+              "tiempo": "4:30.15"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Schneider, Maximilian",
+              "prueba": "Hombres 45-49 · 200 CC Metro Espalda",
+              "tiempo": "3:07.37"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Miranda, Andres Jose",
+              "prueba": "Hombres 55-59 · 200 CC Metro Espalda",
+              "tiempo": "3:48.09"
+            }
+          ]
+        },
+        {
+          "url": "https://www.fenaba.org.ar/documents/resultados/METRO-MASTER-2026-3/",
+          "numero": 3,
+          "nombre": "3ª jornada",
+          "fecha": "2026-05-16T12:00:00-03:00",
+          "puesto": 5,
+          "puntos": 205,
+          "equipos": 32,
+          "tabla": [
+            {
+              "pos": 1,
+              "equipo": "Libertador Argentina Master",
+              "pts": 698,
+              "esQuilmes": false
+            },
+            {
+              "pos": 2,
+              "equipo": "Academia Natacion BS AS",
+              "pts": 491,
+              "esQuilmes": false
+            },
+            {
+              "pos": 3,
+              "equipo": "Asoc. Atlética Arg. Juniors",
+              "pts": 341,
+              "esQuilmes": false
+            },
+            {
+              "pos": 4,
+              "equipo": "Sport Club Congreso",
+              "pts": 217,
+              "esQuilmes": false
+            },
+            {
+              "pos": 5,
+              "equipo": "Quilmes Atlético Club",
+              "pts": 205,
+              "esQuilmes": true
+            },
+            {
+              "pos": 6,
+              "equipo": "Club A. San Lorenzo de Almagro",
+              "pts": 197,
+              "esQuilmes": false
+            },
+            {
+              "pos": 7,
+              "equipo": "Poseidon Swim & Gym",
+              "pts": 164,
+              "esQuilmes": false
+            },
+            {
+              "pos": 8,
+              "equipo": "Quinto Estilo Ruta Club",
+              "pts": 161,
+              "esQuilmes": false
+            },
+            {
+              "pos": 9,
+              "equipo": "Cooperarios",
+              "pts": 101,
+              "esQuilmes": false
+            },
+            {
+              "pos": 10,
+              "equipo": "Natacion Power Swim",
+              "pts": 95,
+              "esQuilmes": false
+            },
+            {
+              "pos": 11,
+              "equipo": "Club Argentino DE Quilmes",
+              "pts": 84.5,
+              "esQuilmes": false
+            },
+            {
+              "pos": 12,
+              "equipo": "Adn Montego",
+              "pts": 79,
+              "esQuilmes": false
+            },
+            {
+              "pos": 13,
+              "equipo": "Uthgra Nadadores Del Sur",
+              "pts": 69,
+              "esQuilmes": false
+            },
+            {
+              "pos": 14,
+              "equipo": "Club Atletico Defensores Glew",
+              "pts": 67.5,
+              "esQuilmes": false
+            },
+            {
+              "pos": 15,
+              "equipo": "Club Atlético Velez Sarsfield",
+              "pts": 62,
+              "esQuilmes": false
+            },
+            {
+              "pos": 16,
+              "equipo": "Ateneo Popular de Versailles",
+              "pts": 61,
+              "esQuilmes": false
+            },
+            {
+              "pos": 17,
+              "equipo": "Club Ferro Carril Oeste",
+              "pts": 60,
+              "esQuilmes": false
+            },
+            {
+              "pos": 18,
+              "equipo": "Municipio de Lomas de Zamora",
+              "pts": 40,
+              "esQuilmes": false
+            },
+            {
+              "pos": 19,
+              "equipo": "Echesortu Foot Ball Club",
+              "pts": 34,
+              "esQuilmes": false
+            },
+            {
+              "pos": 20,
+              "equipo": "Gimnasia y Esgrima de Bs. As.",
+              "pts": 26,
+              "esQuilmes": false
+            },
+            {
+              "pos": 20,
+              "equipo": "Marea Roja San Vicente",
+              "pts": 26,
+              "esQuilmes": false
+            },
+            {
+              "pos": 22,
+              "equipo": "Club Nautico San Isidro",
+              "pts": 20,
+              "esQuilmes": false
+            },
+            {
+              "pos": 23,
+              "equipo": "Club Nautico Sportivo Avellane",
+              "pts": 18,
+              "esQuilmes": false
+            },
+            {
+              "pos": 24,
+              "equipo": "Jockey Club",
+              "pts": 17,
+              "esQuilmes": false
+            },
+            {
+              "pos": 25,
+              "equipo": "Club Atletico Once Unidos",
+              "pts": 15,
+              "esQuilmes": false
+            },
+            {
+              "pos": 26,
+              "equipo": "Velez Sarsfield Norte",
+              "pts": 12,
+              "esQuilmes": false
+            },
+            {
+              "pos": 26,
+              "equipo": "Reynado-Udo",
+              "pts": 12,
+              "esQuilmes": false
+            },
+            {
+              "pos": 28,
+              "equipo": "La Patriada",
+              "pts": 11,
+              "esQuilmes": false
+            },
+            {
+              "pos": 28,
+              "equipo": "Estoa La Plata",
+              "pts": 11,
+              "esQuilmes": false
+            },
+            {
+              "pos": 30,
+              "equipo": "Club Soc. Dep. Don Bosco",
+              "pts": 7,
+              "esQuilmes": false
+            },
+            {
+              "pos": 31,
+              "equipo": "Club Atletico Marplatense",
+              "pts": 6,
+              "esQuilmes": false
+            },
+            {
+              "pos": 32,
+              "equipo": "Club Atlético River Plate",
+              "pts": 3,
+              "esQuilmes": false
+            }
+          ],
+          "oro": 7,
+          "plata": 7,
+          "bronce": 4,
+          "nadadas": 34,
+          "podios": [
+            {
+              "puesto": 1,
+              "nadador": "Merediz, Monica",
+              "prueba": "Mujeres 50-54 · 200 CC Metro CI PROMOCIONAL",
+              "tiempo": "3:23.90"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Esquivel, Migue",
+              "prueba": "Hombres 18-24 · 200 CC Metro CI PROMOCIONAL",
+              "tiempo": "2:46.02"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Schneider, Maxi",
+              "prueba": "Hombres 45-49 · 200 CC Metro CI PROMOCIONAL",
+              "tiempo": "2:55.07"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Pereda, Pablo M",
+              "prueba": "Hombres 60-64 · 200 CC Metro CI PROMOCIONAL",
+              "tiempo": "3:18.21"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Merediz, Monica",
+              "prueba": "Mujeres 50-54 · 100 CC Metro Libre PROMOCIONAL",
+              "tiempo": "1:23.24"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Esquivel, Migue",
+              "prueba": "Hombres 18-24 · 100 CC Metro Libre PROMOCIONAL",
+              "tiempo": "1:02.59"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Pereda, Pablo M",
+              "prueba": "Hombres 60-64 · 100 CC Metro Libre PROMOCIONAL",
+              "tiempo": "1:13.78"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Serraino, Maria",
+              "prueba": "Mujeres 30-34 · 200 CC Metro CI PROMOCIONAL",
+              "tiempo": "3:29.90"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Luna, Graciela",
+              "prueba": "Mujeres 55-59 · 200 CC Metro CI PROMOCIONAL",
+              "tiempo": "4:03.11"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Hruby, Betiana",
+              "prueba": "Mujeres 60-64 · 200 CC Metro CI PROMOCIONAL",
+              "tiempo": "4:16.63"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Mangini, Luis G",
+              "prueba": "Hombres 18-24 · 200 CC Metro CI PROMOCIONAL",
+              "tiempo": "2:54.04"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Serraino, Maria",
+              "prueba": "Mujeres 30-34 · 100 CC Metro Libre PROMOCIONAL",
+              "tiempo": "1:21.66"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Hruby, Betiana",
+              "prueba": "Mujeres 60-64 · 100 CC Metro Libre PROMOCIONAL",
+              "tiempo": "1:40.49"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Schneider, Maxi",
+              "prueba": "Hombres 45-49 · 100 CC Metro Libre PROMOCIONAL",
+              "tiempo": "1:06.28"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Brandi, Dario O",
+              "prueba": "Hombres 55-59 · 200 CC Metro CI PROMOCIONAL",
+              "tiempo": "3:22.98"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Mazzella, Graci",
+              "prueba": "Mujeres 50-54 · 100 CC Metro Libre PROMOCIONAL",
+              "tiempo": "1:33.38"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Mangini, Luis G",
+              "prueba": "Hombres 18-24 · 100 CC Metro Libre PROMOCIONAL",
+              "tiempo": "1:08.90"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Brandi, Dario O",
+              "prueba": "Hombres 55-59 · 100 CC Metro Libre PROMOCIONAL",
+              "tiempo": "1:17.06"
+            }
+          ]
+        },
+        {
+          "url": "https://www.fenaba.org.ar/documents/resultados/METRO-MASTER-2026-4/",
+          "numero": 4,
+          "nombre": "4ª jornada",
+          "fecha": "2026-06-06T12:00:00-03:00",
+          "puesto": 8,
+          "puntos": 146,
+          "equipos": 34,
+          "tabla": [
+            {
+              "pos": 1,
+              "equipo": "Libertador Argentina Master",
+              "pts": 869,
+              "esQuilmes": false
+            },
+            {
+              "pos": 2,
+              "equipo": "Asoc. Atlética Arg. Juniors",
+              "pts": 404,
+              "esQuilmes": false
+            },
+            {
+              "pos": 3,
+              "equipo": "Academia Natacion BS AS",
+              "pts": 360,
+              "esQuilmes": false
+            },
+            {
+              "pos": 4,
+              "equipo": "Poseidon Swim & Gym",
+              "pts": 252,
+              "esQuilmes": false
+            },
+            {
+              "pos": 5,
+              "equipo": "Club A. San Lorenzo de Almagro",
+              "pts": 247,
+              "esQuilmes": false
+            },
+            {
+              "pos": 6,
+              "equipo": "Sport Club Congreso",
+              "pts": 208,
+              "esQuilmes": false
+            },
+            {
+              "pos": 7,
+              "equipo": "Quinto Estilo Ruta Club",
+              "pts": 169,
+              "esQuilmes": false
+            },
+            {
+              "pos": 8,
+              "equipo": "Quilmes Atlético Club",
+              "pts": 146,
+              "esQuilmes": true
+            },
+            {
+              "pos": 9,
+              "equipo": "Club Argentino DE Quilmes",
+              "pts": 129,
+              "esQuilmes": false
+            },
+            {
+              "pos": 10,
+              "equipo": "Club Atlético Velez Sarsfield",
+              "pts": 103,
+              "esQuilmes": false
+            },
+            {
+              "pos": 11,
+              "equipo": "Natacion Power Swim",
+              "pts": 97,
+              "esQuilmes": false
+            },
+            {
+              "pos": 12,
+              "equipo": "Uthgra Nadadores Del Sur",
+              "pts": 87,
+              "esQuilmes": false
+            },
+            {
+              "pos": 13,
+              "equipo": "Cooperarios",
+              "pts": 82,
+              "esQuilmes": false
+            },
+            {
+              "pos": 14,
+              "equipo": "Club Atletico Defensores Glew",
+              "pts": 71,
+              "esQuilmes": false
+            },
+            {
+              "pos": 15,
+              "equipo": "Club Ferro Carril Oeste",
+              "pts": 57,
+              "esQuilmes": false
+            },
+            {
+              "pos": 15,
+              "equipo": "Ateneo Popular de Versailles",
+              "pts": 57,
+              "esQuilmes": false
+            },
+            {
+              "pos": 17,
+              "equipo": "Adn Montego",
+              "pts": 56,
+              "esQuilmes": false
+            },
+            {
+              "pos": 18,
+              "equipo": "Jockey Club",
+              "pts": 55,
+              "esQuilmes": false
+            },
+            {
+              "pos": 19,
+              "equipo": "Pescados Rabiosos",
+              "pts": 32,
+              "esQuilmes": false
+            },
+            {
+              "pos": 20,
+              "equipo": "Echesortu Foot Ball Club",
+              "pts": 31,
+              "esQuilmes": false
+            },
+            {
+              "pos": 21,
+              "equipo": "Club Atlético River Plate",
+              "pts": 30,
+              "esQuilmes": false
+            },
+            {
+              "pos": 22,
+              "equipo": "Gimnasia y Esgrima de Bs. As.",
+              "pts": 29,
+              "esQuilmes": false
+            },
+            {
+              "pos": 23,
+              "equipo": "Marea Roja San Vicente",
+              "pts": 26,
+              "esQuilmes": false
+            },
+            {
+              "pos": 24,
+              "equipo": "Club Atletico Adrogue",
+              "pts": 24,
+              "esQuilmes": false
+            },
+            {
+              "pos": 25,
+              "equipo": "La Patriada",
+              "pts": 23,
+              "esQuilmes": false
+            },
+            {
+              "pos": 26,
+              "equipo": "Club Atletico Once Unidos",
+              "pts": 22,
+              "esQuilmes": false
+            },
+            {
+              "pos": 27,
+              "equipo": "Velez Sarsfield Norte",
+              "pts": 21,
+              "esQuilmes": false
+            },
+            {
+              "pos": 28,
+              "equipo": "Municipio de Lomas de Zamora",
+              "pts": 17,
+              "esQuilmes": false
+            },
+            {
+              "pos": 29,
+              "equipo": "Club Atl Obras Sanitarias",
+              "pts": 14,
+              "esQuilmes": false
+            },
+            {
+              "pos": 30,
+              "equipo": "Natacion Castelar",
+              "pts": 13,
+              "esQuilmes": false
+            },
+            {
+              "pos": 31,
+              "equipo": "Club Atletico Marplatense",
+              "pts": 12,
+              "esQuilmes": false
+            },
+            {
+              "pos": 32,
+              "equipo": "Club Nautico Sportivo Avellane",
+              "pts": 9,
+              "esQuilmes": false
+            },
+            {
+              "pos": 33,
+              "equipo": "Monster Team",
+              "pts": 8,
+              "esQuilmes": false
+            },
+            {
+              "pos": 34,
+              "equipo": "Estudiantes DE LA Plata",
+              "pts": 6,
+              "esQuilmes": false
+            }
+          ],
+          "oro": 5,
+          "plata": 6,
+          "bronce": 4,
+          "nadadas": 26,
+          "podios": [
+            {
+              "puesto": 1,
+              "nadador": "Mangini, Luis G",
+              "prueba": "Hombres 20-24 · 100 CC Metro Mariposa PROMOCIONAL",
+              "tiempo": "1:15.46"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Esquivel, Migue",
+              "prueba": "Hombres 20-24 · 200 CC Metro Pecho PROMOCIONAL",
+              "tiempo": "3:05.81"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Schneider, Maxi",
+              "prueba": "Hombres 45-49 · 200 CC Metro Pecho PROMOCIONAL",
+              "tiempo": "3:13.98"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Esquivel, Migue",
+              "prueba": "Hombres 20-24 · 200 CC Metro Libre PROMOCIONAL",
+              "tiempo": "2:26.83"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Pereda, Pablo M",
+              "prueba": "Hombres 60-64 · 200 CC Metro Libre PROMOCIONAL",
+              "tiempo": "2:46.64"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Lagala, Luciano",
+              "prueba": "Hombres 30-34 · 100 CC Metro Mariposa PROMOCIONAL",
+              "tiempo": "1:17.39"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Schneider, Maxi",
+              "prueba": "Hombres 45-49 · 100 CC Metro Mariposa PROMOCIONAL",
+              "tiempo": "1:21.84"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Brandi, Dario O",
+              "prueba": "Hombres 55-59 · 100 CC Metro Mariposa PROMOCIONAL",
+              "tiempo": "1:35.72"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Brandi, Dario O",
+              "prueba": "Hombres 55-59 · 200 CC Metro Pecho PROMOCIONAL",
+              "tiempo": "3:29.21"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Mangini, Luis G",
+              "prueba": "Hombres 20-24 · 200 CC Metro Libre PROMOCIONAL",
+              "tiempo": "2:31.62"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Garcia Vazquez",
+              "prueba": "Hombres 50-54 · 200 CC Metro Libre PROMOCIONAL",
+              "tiempo": "2:47.49"
+            },
+            {
+              "puesto": 3,
+              "nadador": "MC Namara Dineg",
+              "prueba": "Hombres 30-34 · 200 CC Metro Pecho PROMOCIONAL",
+              "tiempo": "3:12.00"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Bovolo, Luis Ed",
+              "prueba": "Hombres 40-44 · 200 CC Metro Pecho PROMOCIONAL",
+              "tiempo": "3:23.14"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Furdas, Juan Pa",
+              "prueba": "Hombres 45-49 · 200 CC Metro Pecho PROMOCIONAL",
+              "tiempo": "3:22.34"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Miranda, Andres",
+              "prueba": "Hombres 55-59 · 200 CC Metro Pecho PROMOCIONAL",
+              "tiempo": "3:37.67"
+            }
+          ]
+        },
+        {
+          "url": "https://www.fenaba.org.ar/documents/resultados/METRO-MASTER-2026-5/",
+          "numero": 5,
+          "nombre": "5ª jornada",
+          "fecha": "2026-07-04T12:00:00-03:00",
+          "puesto": 5,
+          "puntos": 202,
+          "equipos": 25,
+          "tabla": [
+            {
+              "pos": 1,
+              "equipo": "Libertador Argentina Master",
+              "pts": 794,
+              "esQuilmes": false
+            },
+            {
+              "pos": 2,
+              "equipo": "Asoc. Atlética Arg. Juniors",
+              "pts": 417,
+              "esQuilmes": false
+            },
+            {
+              "pos": 3,
+              "equipo": "Academia Natacion BS AS",
+              "pts": 277,
+              "esQuilmes": false
+            },
+            {
+              "pos": 4,
+              "equipo": "Poseidon Swim & Gym",
+              "pts": 268,
+              "esQuilmes": false
+            },
+            {
+              "pos": 5,
+              "equipo": "Quilmes Atlético Club",
+              "pts": 202,
+              "esQuilmes": true
+            },
+            {
+              "pos": 6,
+              "equipo": "Club A. San Lorenzo de Almagro",
+              "pts": 184,
+              "esQuilmes": false
+            },
+            {
+              "pos": 7,
+              "equipo": "Sport Club Congreso",
+              "pts": 132,
+              "esQuilmes": false
+            },
+            {
+              "pos": 8,
+              "equipo": "Quinto Estilo Ruta Club",
+              "pts": 126,
+              "esQuilmes": false
+            },
+            {
+              "pos": 9,
+              "equipo": "Club Argentino DE Quilmes",
+              "pts": 119,
+              "esQuilmes": false
+            },
+            {
+              "pos": 10,
+              "equipo": "Natacion Power Swim",
+              "pts": 109,
+              "esQuilmes": false
+            },
+            {
+              "pos": 11,
+              "equipo": "Cooperarios",
+              "pts": 93,
+              "esQuilmes": false
+            },
+            {
+              "pos": 12,
+              "equipo": "Club Ferro Carril Oeste",
+              "pts": 73,
+              "esQuilmes": false
+            },
+            {
+              "pos": 13,
+              "equipo": "Uthgra Nadadores Del Sur",
+              "pts": 63,
+              "esQuilmes": false
+            },
+            {
+              "pos": 14,
+              "equipo": "Club Atletico Defensores Glew",
+              "pts": 50,
+              "esQuilmes": false
+            },
+            {
+              "pos": 14,
+              "equipo": "Club Atlético Velez Sarsfield",
+              "pts": 50,
+              "esQuilmes": false
+            },
+            {
+              "pos": 16,
+              "equipo": "Club Atlético River Plate",
+              "pts": 39,
+              "esQuilmes": false
+            },
+            {
+              "pos": 17,
+              "equipo": "Ateneo Popular de Versailles",
+              "pts": 33,
+              "esQuilmes": false
+            },
+            {
+              "pos": 18,
+              "equipo": "Marea Roja San Vicente",
+              "pts": 31,
+              "esQuilmes": false
+            },
+            {
+              "pos": 19,
+              "equipo": "Gimnasia y Esgrima de Bs. As.",
+              "pts": 26,
+              "esQuilmes": false
+            },
+            {
+              "pos": 20,
+              "equipo": "Monster Team",
+              "pts": 14,
+              "esQuilmes": false
+            },
+            {
+              "pos": 21,
+              "equipo": "Velez Sarsfield Norte",
+              "pts": 12,
+              "esQuilmes": false
+            },
+            {
+              "pos": 22,
+              "equipo": "Municipio de Lomas de Zamora",
+              "pts": 11,
+              "esQuilmes": false
+            },
+            {
+              "pos": 23,
+              "equipo": "Club Soc. Dep. Don Bosco",
+              "pts": 9,
+              "esQuilmes": false
+            },
+            {
+              "pos": 23,
+              "equipo": "Natacion Castelar",
+              "pts": 9,
+              "esQuilmes": false
+            },
+            {
+              "pos": 25,
+              "equipo": "Estoa La Plata",
+              "pts": 5,
+              "esQuilmes": false
+            }
+          ],
+          "oro": 9,
+          "plata": 6,
+          "bronce": 5,
+          "nadadas": 34,
+          "podios": [
+            {
+              "puesto": 1,
+              "nadador": "Merediz, Monica",
+              "prueba": "Mujeres 50-54 · 100 Espalda PROMOCIONAL",
+              "tiempo": "1:44.13"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Hruby, Betiana",
+              "prueba": "Mujeres 60-64 · 100 Espalda PROMOCIONAL",
+              "tiempo": "2:01.70"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Esquivel, Migue",
+              "prueba": "Hombres 20-24 · 100 Espalda PROMOCIONAL",
+              "tiempo": "1:22.30"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Pereda, Pablo M",
+              "prueba": "Hombres 60-64 · 100 Espalda PROMOCIONAL",
+              "tiempo": "1:34.17"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Merediz, Monica",
+              "prueba": "Mujeres 50-54 · 100 Pecho PROMOCIONAL",
+              "tiempo": "1:48.00"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Hruby, Betiana",
+              "prueba": "Mujeres 60-64 · 100 Pecho PROMOCIONAL",
+              "tiempo": "2:02.39"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Esquivel, Migue",
+              "prueba": "Hombres 20-24 · 100 Pecho PROMOCIONAL",
+              "tiempo": "1:29.62"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Schneider, Maxi",
+              "prueba": "Hombres 45-49 · 100 Pecho PROMOCIONAL",
+              "tiempo": "1:28.01"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Pereda, Pablo M",
+              "prueba": "Hombres 60-64 · 100 Pecho PROMOCIONAL",
+              "tiempo": "1:38.59"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Mangini, Luis G",
+              "prueba": "Hombres 20-24 · 100 Espalda PROMOCIONAL",
+              "tiempo": "1:25.70"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Schneider, Maxi",
+              "prueba": "Hombres 45-49 · 100 Espalda PROMOCIONAL",
+              "tiempo": "1:26.08"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Garcia Vazquez",
+              "prueba": "Hombres 50-54 · 100 Espalda PROMOCIONAL",
+              "tiempo": "1:31.74"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Serraino, Maria",
+              "prueba": "Mujeres 30-34 · 100 Pecho PROMOCIONAL",
+              "tiempo": "1:47.08"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Guzman, Jeremia",
+              "prueba": "Hombres 45-49 · 100 Pecho PROMOCIONAL",
+              "tiempo": "1:35.36"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Brandi, Dario O",
+              "prueba": "Hombres 55-59 · 100 Pecho PROMOCIONAL",
+              "tiempo": "1:37.49"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Serraino, Maria",
+              "prueba": "Mujeres 30-34 · 100 Espalda PROMOCIONAL",
+              "tiempo": "1:49.38"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Baldoni, Marcel",
+              "prueba": "Hombres 45-49 · 100 Espalda PROMOCIONAL",
+              "tiempo": "1:28.92"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Brandi, Dario O",
+              "prueba": "Hombres 55-59 · 100 Espalda PROMOCIONAL",
+              "tiempo": "1:39.09"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Bovolo, Luis Ed",
+              "prueba": "Hombres 40-44 · 100 Pecho PROMOCIONAL",
+              "tiempo": "1:35.36"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Furdas, Juan Pa",
+              "prueba": "Hombres 45-49 · 100 Pecho PROMOCIONAL",
+              "tiempo": "x1:35.40"
+            }
+          ]
+        },
+        {
+          "url": "https://www.fenaba.org.ar/documents/resultados/METRO-MASTER-2026-6/",
+          "numero": 6,
+          "nombre": "6ª jornada",
+          "fecha": "2026-08-08T12:00:00-03:00",
+          "puesto": 6,
+          "puntos": 270.5,
+          "equipos": 33,
+          "tabla": [
+            {
+              "pos": 1,
+              "equipo": "Libertador Argentina Master",
+              "pts": 1079,
+              "esQuilmes": false
+            },
+            {
+              "pos": 2,
+              "equipo": "Asoc. Atlética Arg. Juniors",
+              "pts": 544,
+              "esQuilmes": false
+            },
+            {
+              "pos": 3,
+              "equipo": "Academia Natacion BS AS",
+              "pts": 461,
+              "esQuilmes": false
+            },
+            {
+              "pos": 4,
+              "equipo": "Poseidon Swim & Gym",
+              "pts": 412,
+              "esQuilmes": false
+            },
+            {
+              "pos": 5,
+              "equipo": "Club A. San Lorenzo de Almagro",
+              "pts": 284,
+              "esQuilmes": false
+            },
+            {
+              "pos": 6,
+              "equipo": "Quilmes Atlético Club",
+              "pts": 270.5,
+              "esQuilmes": true
+            },
+            {
+              "pos": 7,
+              "equipo": "Sport Club Congreso",
+              "pts": 246,
+              "esQuilmes": false
+            },
+            {
+              "pos": 8,
+              "equipo": "Natacion Power Swim",
+              "pts": 189,
+              "esQuilmes": false
+            },
+            {
+              "pos": 9,
+              "equipo": "Quinto Estilo Ruta Club",
+              "pts": 148,
+              "esQuilmes": false
+            },
+            {
+              "pos": 10,
+              "equipo": "Club Ferro Carril Oeste",
+              "pts": 137,
+              "esQuilmes": false
+            },
+            {
+              "pos": 11,
+              "equipo": "Club Atletico Defensores Glew",
+              "pts": 118.5,
+              "esQuilmes": false
+            },
+            {
+              "pos": 12,
+              "equipo": "Club Atletico Adrogue",
+              "pts": 106,
+              "esQuilmes": false
+            },
+            {
+              "pos": 13,
+              "equipo": "Uthgra Nadadores Del Sur",
+              "pts": 83,
+              "esQuilmes": false
+            },
+            {
+              "pos": 14,
+              "equipo": "Cooperarios",
+              "pts": 73,
+              "esQuilmes": false
+            },
+            {
+              "pos": 15,
+              "equipo": "Club Argentino DE Quilmes",
+              "pts": 58,
+              "esQuilmes": false
+            },
+            {
+              "pos": 16,
+              "equipo": "Club Atlético Velez Sarsfield",
+              "pts": 56,
+              "esQuilmes": false
+            },
+            {
+              "pos": 17,
+              "equipo": "Club Atlético River Plate",
+              "pts": 53,
+              "esQuilmes": false
+            },
+            {
+              "pos": 18,
+              "equipo": "Ateneo Popular de Versailles",
+              "pts": 51,
+              "esQuilmes": false
+            },
+            {
+              "pos": 19,
+              "equipo": "Marea Roja San Vicente",
+              "pts": 49,
+              "esQuilmes": false
+            },
+            {
+              "pos": 20,
+              "equipo": "Delfines Natación",
+              "pts": 36,
+              "esQuilmes": false
+            },
+            {
+              "pos": 21,
+              "equipo": "Club Soc. Dep. Don Bosco",
+              "pts": 26,
+              "esQuilmes": false
+            },
+            {
+              "pos": 21,
+              "equipo": "Club Atletico Once Unidos",
+              "pts": 26,
+              "esQuilmes": false
+            },
+            {
+              "pos": 23,
+              "equipo": "Blaum Swim",
+              "pts": 23,
+              "esQuilmes": false
+            },
+            {
+              "pos": 23,
+              "equipo": "Sitas Natacion",
+              "pts": 23,
+              "esQuilmes": false
+            },
+            {
+              "pos": 25,
+              "equipo": "Adn Montego",
+              "pts": 21,
+              "esQuilmes": false
+            },
+            {
+              "pos": 26,
+              "equipo": "Estoa La Plata",
+              "pts": 19,
+              "esQuilmes": false
+            },
+            {
+              "pos": 26,
+              "equipo": "Aegir Swimming",
+              "pts": 19,
+              "esQuilmes": false
+            },
+            {
+              "pos": 28,
+              "equipo": "Club Atletico Marplatense",
+              "pts": 12,
+              "esQuilmes": false
+            },
+            {
+              "pos": 28,
+              "equipo": "Club Atl. Obras Sanitarias",
+              "pts": 12,
+              "esQuilmes": false
+            },
+            {
+              "pos": 28,
+              "equipo": "Gimnasia y Esgrima de Bs. As.",
+              "pts": 12,
+              "esQuilmes": false
+            },
+            {
+              "pos": 28,
+              "equipo": "Velez Sarsfield Norte",
+              "pts": 12,
+              "esQuilmes": false
+            },
+            {
+              "pos": 32,
+              "equipo": "Cen Deportivo Huracan San Jus",
+              "pts": 6,
+              "esQuilmes": false
+            },
+            {
+              "pos": 32,
+              "equipo": "Club Portugues",
+              "pts": 6,
+              "esQuilmes": false
+            }
+          ],
+          "oro": 10,
+          "plata": 9,
+          "bronce": 6,
+          "nadadas": 46,
+          "podios": [
+            {
+              "puesto": 1,
+              "nadador": "Merediz, Monica",
+              "prueba": "Mujeres 50-54 · 50 Pecho PROMOCIONAL",
+              "tiempo": "47.94"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Esquivel, Migue",
+              "prueba": "Hombres 20-24 · 50 Pecho PROMOCIONAL",
+              "tiempo": "38.20"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Guzman, Jeremia",
+              "prueba": "Hombres 45-49 · 50 Pecho PROMOCIONAL",
+              "tiempo": "40.21"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Esquivel, Migue",
+              "prueba": "Hombres 20-24 · 50 Libre PROMOCIONAL",
+              "tiempo": "28.70"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Merediz, Monica",
+              "prueba": "Mujeres 50-54 · 50 Espalda PROMOCIONAL",
+              "tiempo": "48.72"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Luna, Graciela",
+              "prueba": "Mujeres 55-59 · 50 Espalda PROMOCIONAL",
+              "tiempo": "50.86"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Esquivel, Migue",
+              "prueba": "Hombres 20-24 · 50 Espalda PROMOCIONAL",
+              "tiempo": "39.04"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Garcia Vazquez",
+              "prueba": "Hombres 50-54 · 50 Espalda PROMOCIONAL",
+              "tiempo": "41.72"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Luna, Graciela",
+              "prueba": "Mujeres 55-59 · 50 Mariposa PROMOCIONAL",
+              "tiempo": "55.61"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Mangini, Luis G",
+              "prueba": "Hombres 20-24 · 50 Mariposa PROMOCIONAL",
+              "tiempo": "34.46"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Camino, Maria V",
+              "prueba": "Mujeres 35-39 · 50 Pecho",
+              "tiempo": "44.17"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Furdas, Juan Pa",
+              "prueba": "Hombres 45-49 · 50 Pecho PROMOCIONAL",
+              "tiempo": "40.74"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Merediz, Monica",
+              "prueba": "Mujeres 50-54 · 50 Libre PROMOCIONAL",
+              "tiempo": "38.61"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Luna, Graciela",
+              "prueba": "Mujeres 55-59 · 50 Libre PROMOCIONAL",
+              "tiempo": "43.17"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Baldoni, Marcel",
+              "prueba": "Hombres 45-49 · 50 Libre PROMOCIONAL",
+              "tiempo": "31.44"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Brandi, Dario O",
+              "prueba": "Hombres 55-59 · 50 Libre PROMOCIONAL",
+              "tiempo": "33.03"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Camino, Maria V",
+              "prueba": "Mujeres 35-39 · 50 Espalda",
+              "tiempo": "43.89"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Mangini, Luis G",
+              "prueba": "Hombres 20-24 · 50 Espalda PROMOCIONAL",
+              "tiempo": "41.18"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Baldoni, Marcel",
+              "prueba": "Hombres 45-49 · 50 Espalda PROMOCIONAL",
+              "tiempo": "40.36"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Mazzella, Graci",
+              "prueba": "Mujeres 50-54 · 50 Pecho PROMOCIONAL",
+              "tiempo": "53.06"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Brandi, Dario O",
+              "prueba": "Hombres 55-59 · 50 Pecho PROMOCIONAL",
+              "tiempo": "44.50"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Mazzella, Graci",
+              "prueba": "Mujeres 50-54 · 50 Libre PROMOCIONAL",
+              "tiempo": "40.59"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Mangini, Luis G",
+              "prueba": "Hombres 20-24 · 50 Libre PROMOCIONAL",
+              "tiempo": "31.46"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Lagala, Luciano",
+              "prueba": "Hombres 30-34 · 50 Espalda PROMOCIONAL",
+              "tiempo": "39.08"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Garcia Vazquez",
+              "prueba": "Hombres 50-54 · 50 Mariposa PROMOCIONAL",
+              "tiempo": "40.85"
+            }
+          ]
+        },
+        {
+          "url": "https://www.fenaba.org.ar/documents/resultados/METRO-MASTER-2026-7/",
+          "numero": 7,
+          "nombre": "7ª jornada",
+          "fecha": "2026-09-19T12:00:00-03:00",
+          "puesto": 5,
+          "puntos": 120,
+          "equipos": 21,
+          "tabla": [
+            {
+              "pos": 1,
+              "equipo": "Libertador Argentina Master",
+              "pts": 570,
+              "esQuilmes": false
+            },
+            {
+              "pos": 2,
+              "equipo": "Asoc. Atlética Arg. Juniors",
+              "pts": 294,
+              "esQuilmes": false
+            },
+            {
+              "pos": 3,
+              "equipo": "Academia Natacion BS AS",
+              "pts": 291,
+              "esQuilmes": false
+            },
+            {
+              "pos": 4,
+              "equipo": "Poseidon Swim & Gym",
+              "pts": 202,
+              "esQuilmes": false
+            },
+            {
+              "pos": 5,
+              "equipo": "Quilmes Atlético Club",
+              "pts": 120,
+              "esQuilmes": true
+            },
+            {
+              "pos": 5,
+              "equipo": "Sport Club Congreso",
+              "pts": 120,
+              "esQuilmes": false
+            },
+            {
+              "pos": 7,
+              "equipo": "Natacion Power Swim",
+              "pts": 111,
+              "esQuilmes": false
+            },
+            {
+              "pos": 7,
+              "equipo": "Club A. San Lorenzo de Almagro",
+              "pts": 111,
+              "esQuilmes": false
+            },
+            {
+              "pos": 9,
+              "equipo": "Club Argentino DE Quilmes",
+              "pts": 98,
+              "esQuilmes": false
+            },
+            {
+              "pos": 10,
+              "equipo": "Cooperarios",
+              "pts": 83,
+              "esQuilmes": false
+            },
+            {
+              "pos": 11,
+              "equipo": "Club Atletico Defensores Glew",
+              "pts": 55,
+              "esQuilmes": false
+            },
+            {
+              "pos": 12,
+              "equipo": "Club Ferro Carril Oeste",
+              "pts": 54,
+              "esQuilmes": false
+            },
+            {
+              "pos": 13,
+              "equipo": "Quinto Estilo Ruta Club",
+              "pts": 51,
+              "esQuilmes": false
+            },
+            {
+              "pos": 14,
+              "equipo": "Uthgra Nadadores Del Sur",
+              "pts": 28,
+              "esQuilmes": false
+            },
+            {
+              "pos": 15,
+              "equipo": "Ateneo Popular de Versailles",
+              "pts": 27,
+              "esQuilmes": false
+            },
+            {
+              "pos": 16,
+              "equipo": "Club Atlético River Plate",
+              "pts": 25,
+              "esQuilmes": false
+            },
+            {
+              "pos": 17,
+              "equipo": "Club Atletico Once Unidos",
+              "pts": 23,
+              "esQuilmes": false
+            },
+            {
+              "pos": 18,
+              "equipo": "Club Atlético Velez Sarsfield",
+              "pts": 17,
+              "esQuilmes": false
+            },
+            {
+              "pos": 19,
+              "equipo": "Club Atletico Marplatense",
+              "pts": 14,
+              "esQuilmes": false
+            },
+            {
+              "pos": 20,
+              "equipo": "Sitas Natacion",
+              "pts": 10,
+              "esQuilmes": false
+            },
+            {
+              "pos": 21,
+              "equipo": "Municipio de Lomas de Zamora",
+              "pts": 5,
+              "esQuilmes": false
+            }
+          ],
+          "oro": 8,
+          "plata": 4,
+          "bronce": 2,
+          "nadadas": 16,
+          "podios": [
+            {
+              "puesto": 1,
+              "nadador": "Esquivel, Miguel Ange",
+              "prueba": "Hombres 18-24 · 400 Libre PROMO",
+              "tiempo": "5:25.28"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Pereda, Pablo M",
+              "prueba": "Hombres 60-64 · 400 Libre PROMO",
+              "tiempo": "6:11.33"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Luna, Graciela Silvin",
+              "prueba": "Mujeres 55-59 · 200 Espalda PROMO",
+              "tiempo": "3:54.36"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Mangini, Luis Galileo",
+              "prueba": "Hombres 18-24 · 200 Espalda PROMO",
+              "tiempo": "3:09.34"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Schneider, Maximilian",
+              "prueba": "Hombres 45-49 · 200 Espalda PROMO",
+              "tiempo": "3:13.09"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Pereda, Pablo M",
+              "prueba": "Hombres 60-64 · 200 Espalda PROMO",
+              "tiempo": "3:31.71"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Esquivel, Miguel Ange",
+              "prueba": "Hombres 18-24 · 100 Libre PROMO",
+              "tiempo": "1:03.81"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Schneider, Maximilian",
+              "prueba": "Hombres 45-49 · 100 Libre PROMO",
+              "tiempo": "1:07.93"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Mangini, Luis Galileo",
+              "prueba": "Hombres 18-24 · 400 Libre PROMO",
+              "tiempo": "5:45.62"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Garcia Vazquez, Diego",
+              "prueba": "Hombres 50-54 · 400 Libre PROMO",
+              "tiempo": "6:09.23"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Garcia Vazquez, Diego",
+              "prueba": "Hombres 50-54 · 200 Espalda PROMO",
+              "tiempo": "3:19.37"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Luna, Graciela Silvin",
+              "prueba": "Mujeres 55-59 · 100 Libre PROMO",
+              "tiempo": "1:39.50"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Camino, Maria Victori",
+              "prueba": "Mujeres 35-39 · 100 Libre",
+              "tiempo": "1:15.38"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Miranda, Andres Jose",
+              "prueba": "Hombres 55-59 · 100 Libre PROMO",
+              "tiempo": "1:20.03"
+            }
+          ]
+        },
+        {
+          "url": "https://www.fenaba.org.ar/documents/resultados/Metro-Master-2026-jornada8/",
+          "numero": 8,
+          "nombre": "8ª jornada",
+          "fecha": "2026-11-07T12:00:00-03:00",
+          "puesto": 5,
+          "puntos": 180,
+          "equipos": 23,
+          "tabla": [
+            {
+              "pos": 1,
+              "equipo": "Libertador Argentina Master",
+              "pts": 710,
+              "esQuilmes": false
+            },
+            {
+              "pos": 2,
+              "equipo": "Asoc. Atlética Arg. Juniors",
+              "pts": 514,
+              "esQuilmes": false
+            },
+            {
+              "pos": 3,
+              "equipo": "Academia Natacion BS AS",
+              "pts": 347,
+              "esQuilmes": false
+            },
+            {
+              "pos": 4,
+              "equipo": "Poseidon Swim & Gym",
+              "pts": 286,
+              "esQuilmes": false
+            },
+            {
+              "pos": 5,
+              "equipo": "Quilmes Atlético Club",
+              "pts": 180,
+              "esQuilmes": true
+            },
+            {
+              "pos": 6,
+              "equipo": "Club A. San Lorenzo de Almagro",
+              "pts": 166,
+              "esQuilmes": false
+            },
+            {
+              "pos": 7,
+              "equipo": "Sport Club Congreso",
+              "pts": 118,
+              "esQuilmes": false
+            },
+            {
+              "pos": 8,
+              "equipo": "Natacion Power Swim",
+              "pts": 115,
+              "esQuilmes": false
+            },
+            {
+              "pos": 9,
+              "equipo": "Uthgra Nadadores Del Sur",
+              "pts": 84,
+              "esQuilmes": false
+            },
+            {
+              "pos": 10,
+              "equipo": "Club Argentino DE Quilmes",
+              "pts": 78,
+              "esQuilmes": false
+            },
+            {
+              "pos": 11,
+              "equipo": "Club Atlético River Plate",
+              "pts": 63,
+              "esQuilmes": false
+            },
+            {
+              "pos": 12,
+              "equipo": "Cooperarios",
+              "pts": 55,
+              "esQuilmes": false
+            },
+            {
+              "pos": 13,
+              "equipo": "Club Ferro Carril Oeste",
+              "pts": 48,
+              "esQuilmes": false
+            },
+            {
+              "pos": 14,
+              "equipo": "Club Atletico Once Unidos",
+              "pts": 36,
+              "esQuilmes": false
+            },
+            {
+              "pos": 15,
+              "equipo": "Aegir Swimming",
+              "pts": 34,
+              "esQuilmes": false
+            },
+            {
+              "pos": 16,
+              "equipo": "Ateneo Popular de Versailles",
+              "pts": 32,
+              "esQuilmes": false
+            },
+            {
+              "pos": 17,
+              "equipo": "Club Atletico Defensores Glew",
+              "pts": 28,
+              "esQuilmes": false
+            },
+            {
+              "pos": 18,
+              "equipo": "Club Atlético Velez Sarsfield",
+              "pts": 22,
+              "esQuilmes": false
+            },
+            {
+              "pos": 19,
+              "equipo": "Quinto Estilo Ruta Club",
+              "pts": 16,
+              "esQuilmes": false
+            },
+            {
+              "pos": 20,
+              "equipo": "Natacion Castelar",
+              "pts": 11,
+              "esQuilmes": false
+            },
+            {
+              "pos": 21,
+              "equipo": "Circulo Policia Federal",
+              "pts": 9,
+              "esQuilmes": false
+            },
+            {
+              "pos": 22,
+              "equipo": "Gimnasia y Esgrima de Bs. As.",
+              "pts": 7,
+              "esQuilmes": false
+            },
+            {
+              "pos": 23,
+              "equipo": "Marea Roja San Vicente",
+              "pts": 5,
+              "esQuilmes": false
+            }
+          ],
+          "oro": 12,
+          "plata": 3,
+          "bronce": 5,
+          "nadadas": 26,
+          "podios": [
+            {
+              "puesto": 1,
+              "nadador": "Mangini, Luis G",
+              "prueba": "Hombres 20-24 · 100 Mariposa",
+              "tiempo": "1:21.60"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Pereda, Pablo M",
+              "prueba": "Hombres 60-64 · 100 Mariposa",
+              "tiempo": "1:42.24"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Merediz, Monica",
+              "prueba": "Mujeres 50-54 · 200 Pecho",
+              "tiempo": "3:51.79"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Hruby, Betiana",
+              "prueba": "Mujeres 60-64 · 200 Pecho",
+              "tiempo": "4:27.91"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Brandi, Dario O",
+              "prueba": "Hombres 55-59 · 200 Pecho",
+              "tiempo": "3:35.75"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Serraino, Maria",
+              "prueba": "Mujeres 30-34 · 200 Libre",
+              "tiempo": "3:06.09"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Merediz, Monica",
+              "prueba": "Mujeres 50-54 · 200 Libre",
+              "tiempo": "3:13.05"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Luna, Graciela",
+              "prueba": "Mujeres 55-59 · 200 Libre",
+              "tiempo": "3:34.98"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Hruby, Betiana",
+              "prueba": "Mujeres 60-64 · 200 Libre",
+              "tiempo": "3:52.96"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Mangini, Luis G",
+              "prueba": "Hombres 20-24 · 200 Libre",
+              "tiempo": "2:41.05"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Garcia Vazquez",
+              "prueba": "Hombres 50-54 · 200 Libre",
+              "tiempo": "2:44.31"
+            },
+            {
+              "puesto": 1,
+              "nadador": "Pereda, Pablo M",
+              "prueba": "Hombres 60-64 · 200 Libre",
+              "tiempo": "2:51.26"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Lagala, Luciano",
+              "prueba": "Hombres 30-34 · 100 Mariposa",
+              "tiempo": "1:20.21"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Brandi, Dario O",
+              "prueba": "Hombres 55-59 · 100 Mariposa",
+              "tiempo": "1:43.59"
+            },
+            {
+              "puesto": 2,
+              "nadador": "Serraino, Maria",
+              "prueba": "Mujeres 30-34 · 200 Pecho",
+              "tiempo": "3:51.30"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Schneider, Carl",
+              "prueba": "Hombres 50-54 · 100 Mariposa",
+              "tiempo": "1:32.39"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Schneider, Vict",
+              "prueba": "Hombres 55-59 · 100 Mariposa",
+              "tiempo": "1:27.85"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Bovolo, Luis Ed",
+              "prueba": "Hombres 40-44 · 200 Pecho",
+              "tiempo": "3:27.93"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Furdas, Juan Pa",
+              "prueba": "Hombres 45-49 · 200 Pecho",
+              "tiempo": "3:35.25"
+            },
+            {
+              "puesto": 3,
+              "nadador": "Miranda, Andres",
+              "prueba": "Hombres 55-59 · 200 Pecho",
+              "tiempo": "3:42.32"
+            }
+          ]
+        }
+      ],
+      "partidos": [],
+      "actualizado": "2026-11-18T00:41:42.202Z",
+      "desactualizado": false
     }
   ],
   "errores": []

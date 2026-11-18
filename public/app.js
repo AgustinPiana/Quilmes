@@ -1,7 +1,7 @@
 // Agenda del Cervecero: lee data/quilmes.json y arma las vistas.
 
 const TZ = 'America/Argentina/Buenos_Aires';
-const VISTAS = ['resumen', 'futbol', 'basquet', 'hockey'];
+const VISTAS = ['resumen', 'futbol', 'basquet', 'hockey', 'natacion'];
 const ES_QUILMES = /^(quilmes|quilmes atletico club)$/i;
 const $contenido = document.getElementById('contenido');
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -130,7 +130,15 @@ const ICONO = {
   futbol: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m12 8 3.2 2.3-1.2 3.7h-4l-1.2-3.7z"/></svg>',
   basquet: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5v17M6 6c3 3 3 9 0 12M18 6c-3 3-3 9 0 12"/></svg>',
   hockey: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3.5 9.5 17.5a2.5 2.5 0 0 1-2.4 1.6H4.5"/><circle cx="17.5" cy="18" r="2"/></svg>',
+  natacion: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="17" cy="6.5" r="2"/><path d="m4 12.5 5-4.5 3.5 2.5L15 8M3 16.5c1.5 0 1.5-1.2 3-1.2s1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2M3 20.5c1.5 0 1.5-1.2 3-1.2s1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2"/></svg>',
 };
+
+// ---------- Natación: se compite por jornadas, no por partidos ----------
+const esNatacion = (sec) => Array.isArray(sec.jornadas);
+const ultimaJornada = (sec) => sec.jornadas?.at(-1) || null;
+const totalMedallas = (j) => (j?.oro || 0) + (j?.plata || 0) + (j?.bronce || 0);
+const medallas = (j) => `<span class="medallas" aria-label="${j.oro} oros, ${j.plata} platas, ${j.bronce} bronces"><i class="oro">${j.oro}</i><i class="plata">${j.plata}</i><i class="bronce">${j.bronce}</i></span>`;
+const fechaDe = (x) => (x.p ? x.p.fecha : x.j?.fecha) || '';
 
 const norm = (t) => String(t || '').toLowerCase().normalize('NFD').replace(/[^a-z0-9]/g, '');
 const filaDe = (sec, equipo) => sec.tabla?.filas.find((f) => norm(f.equipo) === norm(equipo)) || null;
@@ -247,7 +255,11 @@ function proximo(p, sec) {
 function listaResultados(items) {
   if (!items.length) return '<p class="vacio">Todavía no hay resultados.</p>';
   return `<ul class="resultados">${items
-    .map(({ p, sec }) => {
+    .map(({ p, j, sec }) => {
+      if (j) {
+        const contexto = [sec && `${sec.deporteNombre} ${minus(sec.titulo)}`, fechaBreve(j.fecha), j.equipos ? `${j.equipos} equipos` : null].filter(Boolean).join(' · ');
+        return `<li><span class="quien">${esc(sec.competencia)} · ${esc(j.nombre)}<small>${esc(contexto)}</small></span><span class="marcador">${medallas(j)}<b>${j.puesto ? `${esc(j.puesto)}°` : '–'}</b></span></li>`;
+      }
       const r = resultado(p);
       const contexto = [sec && `${sec.deporteNombre} ${minus(sec.titulo)}`, fechaBreve(p.fecha), p.ronda].filter(Boolean).join(' · ');
       const derecha = p.jugado
@@ -282,10 +294,12 @@ const titulo = (n, texto, extra = '') => `<header class="franja"><div class="con
 // Cinta de LED con los últimos resultados de todos los equipos
 function cinta() {
   const items = datos.secciones
-    .flatMap((sec) => jugados(sec).slice(0, 3).map((p) => ({ p, sec })))
-    .sort((a, b) => b.p.fecha.localeCompare(a.p.fecha))
+    .flatMap((sec) => (esNatacion(sec) ? (ultimaJornada(sec) ? [{ j: ultimaJornada(sec), sec }] : []) : jugados(sec).slice(0, 3).map((p) => ({ p, sec }))))
+    .sort((a, b) => fechaDe(b).localeCompare(fechaDe(a)))
     .slice(0, 8)
-    .map(({ p, sec }) => `<span class="cinta-item" style="--c:${COLOR[resultado(p)]}"><i></i>${esc(sec.deporteNombre)} ${esc(sec.titulo.split(' ')[0])}<b>Quilmes ${esc(marcadorPropio(p))} ${esc(rival(p))}</b></span>`)
+    .map(({ p, j, sec }) => j
+      ? `<span class="cinta-item" style="--c:var(--gano)"><i></i>${esc(sec.deporteNombre)} ${esc(sec.titulo)}<b>Quilmes ${j.puesto ? `${esc(j.puesto)}° · ` : ''}${esc(j.oro)} oros · ${esc(j.nombre)}</b></span>`
+      : `<span class="cinta-item" style="--c:${COLOR[resultado(p)]}"><i></i>${esc(sec.deporteNombre)} ${esc(sec.titulo.split(' ')[0])}<b>Quilmes ${esc(marcadorPropio(p))} ${esc(rival(p))}</b></span>`)
     .join('');
   if (!items) return '';
   return `<div class="cinta-pista" aria-hidden="true">${items}${items}</div>`;
@@ -301,7 +315,7 @@ function listaProximos(dep) {
   if (!primero) {
     return dep === 'todos'
       ? '<p class="vacio">No hay partidos programados por ahora. La página se actualiza sola cuando las ligas publican el fixture.</p>'
-      : '<p class="vacio">No hay partidos programados de este deporte por ahora.</p>';
+      : `<p class="vacio">No hay ${dep === 'natacion' ? 'jornadas programadas' : 'partidos programados'} de este deporte por ahora.</p>`;
   }
   return `${proximo(primero.p, primero.sec)}
       ${resto.length ? `<ul class="siguen" aria-label="Después">${resto.slice(0, 5).map(({ p, sec }) => `<li>
@@ -333,6 +347,12 @@ function titulares() {
   const nombreEq = (sec) => `${sec.deporteNombre} ${minus(sec.titulo)}`;
   const out = [];
   for (const sec of datos.secciones) {
+    if (esNatacion(sec)) {
+      const total = sec.jornadas.reduce((n, j) => n + totalMedallas(j), 0);
+      const oros = sec.jornadas.reduce((n, j) => n + (j.oro || 0), 0);
+      if (total) out.push({ peso: 58, valor: total, texto: `medallas en la temporada · ${oros} de oro`, tono: 'bueno', equipo: nombreEq(sec), deporte: sec.deporte });
+      continue;
+    }
     const js = jugados(sec); // del más reciente al más viejo
     if (!js.length) continue;
     const rs = js.map(resultado);
@@ -394,14 +414,15 @@ function listaEquipos(dep) {
     .map((sec) => {
       const f = filaQuilmes(sec);
       if (!f) return '';
-      const registro = sec.deporte === 'basquet' ? `${f.pg}G ${f.pp}P` : `${f.pg}G ${f.pe}E ${f.pp}P`;
+      const uj = ultimaJornada(sec);
+      const registro = esNatacion(sec) ? `${uj?.nombre || ''}` : sec.deporte === 'basquet' ? `${f.pg}G ${f.pp}P` : `${f.pg}G ${f.pe}E ${f.pp}P`;
       return `<a class="equipo" href="#${sec.deporte}">
           <div class="equipo-cab">
             <h3>${esc(sec.deporteNombre)} ${esc(minus(sec.titulo))}<span class="flecha">→</span><small class="chica">${esc(sec.competencia)}</small></h3>
             <span class="ordinal">${esc(f.pos)}<sup>°</sup></span>
           </div>
           ${pista(sec, f)}
-          <div class="equipo-pie">${forma(sec)}<span><b>${esc(f.pts)} pts</b> · ${esc(registro)}</span></div>
+          <div class="equipo-pie">${esNatacion(sec) && uj ? medallas(uj) : forma(sec)}<span><b>${esc(f.pts)} pts</b> · ${esc(registro)}</span></div>
         </a>`;
     })
     .join('');
@@ -411,9 +432,9 @@ function listaEquipos(dep) {
 // Todos: el último partido de cada equipo. Un deporte: sus 8 partidos más recientes.
 function ultimosResultados(dep) {
   const items = dep === 'todos'
-    ? deLa(dep).map((sec) => ({ p: jugados(sec)[0], sec })).filter((x) => x.p)
-    : deLa(dep).flatMap((sec) => jugados(sec).map((p) => ({ p, sec })));
-  items.sort((a, b) => (b.p.fecha || '').localeCompare(a.p.fecha || ''));
+    ? deLa(dep).map((sec) => (esNatacion(sec) ? { j: ultimaJornada(sec), sec } : { p: jugados(sec)[0], sec })).filter((x) => x.p || x.j)
+    : deLa(dep).flatMap((sec) => (esNatacion(sec) ? sec.jornadas.map((j) => ({ j, sec })) : jugados(sec).map((p) => ({ p, sec }))));
+  items.sort((a, b) => fechaDe(b).localeCompare(fechaDe(a)));
   return listaResultados(dep === 'todos' ? items : items.slice(0, 8));
 }
 
@@ -429,6 +450,71 @@ document.addEventListener('click', (e) => {
   lista.classList.remove('cambio'); void lista.offsetWidth; lista.classList.add('cambio');
 });
 
+// Puesto del club jornada a jornada (1° arriba).
+function puestos(sec) {
+  const js = sec.jornadas.filter((j) => j.puesto);
+  if (js.length < 2) return '<p class="vacio">Faltan jornadas para armar el gráfico.</p>';
+  const W = 320, H = 150, der = 10;
+  const peor = Math.max(...js.map((j) => j.puesto), 6) + 1;
+  const x = (i) => (i / (js.length - 1)) * (W - der);
+  const y = (p) => ((p - 1) / (peor - 1)) * H;
+  const d = js.map((j, i) => `${i ? 'L' : 'M'}${x(i).toFixed(1)},${y(j.puesto).toFixed(1)}`).join(' ');
+  return `<svg class="lineas" viewBox="-18 -12 ${W + 30} ${H + 32}" role="img" aria-label="Puesto por jornada: ${js.map((j) => `${j.nombre} ${j.puesto}°`).join(', ')}">
+      ${[1, Math.round(peor / 2), peor].map((g) => `<line class="eje" x1="0" x2="${W - der}" y1="${y(g)}" y2="${y(g)}"/><text x="-6" y="${y(g) + 3}" text-anchor="end">${g}°</text>`).join('')}
+      <path class="G" pathLength="1" d="${d}"/>
+      ${js.map((j, i) => `<circle class="G" cx="${x(i)}" cy="${y(j.puesto)}" r="3.5"/><text class="fin G" x="${x(i)}" y="${y(j.puesto) - 8}" text-anchor="middle">${j.puesto}°</text><text x="${x(i)}" y="${H + 16}" text-anchor="middle">${j.numero || i + 1}ª</text>`).join('')}
+    </svg>`;
+}
+
+// Medallero: una columna por jornada, oro arriba.
+function medallero(sec) {
+  const max = Math.max(...sec.jornadas.map(totalMedallas), 1);
+  return `<div class="medallero" role="img" aria-label="Medallas por jornada">${sec.jornadas
+    .map((j) => `<div title="${esc(j.nombre)}: ${j.oro} oros, ${j.plata} platas, ${j.bronce} bronces"><b>${totalMedallas(j)}</b><span style="--h:${(totalMedallas(j) / max) * 100}%"><i class="bronce" style="flex:${j.bronce}"></i><i class="plata" style="flex:${j.plata}"></i><i class="oro" style="flex:${j.oro}"></i></span><small>${j.numero || ''}ª</small></div>`)
+    .join('')}</div>
+    <div class="leyenda"><span style="--c:var(--oro)"><i></i>Oro</span><span style="--c:var(--plata)"><i></i>Plata</span><span style="--c:var(--bronce)"><i></i>Bronce</span></div>`;
+}
+
+function podios(j) {
+  if (!j?.podios?.length) return '<p class="vacio">Sin podios en esta jornada.</p>';
+  const fila = (x) => `<li><span class="podio-m ${['', 'oro', 'plata', 'bronce'][x.puesto]}">${x.puesto}</span><span class="quien">${esc(nombre(x.nadador))}<small>${esc(x.prueba || '')}</small></span><b>${esc(x.tiempo)}</b></li>`;
+  const primeros = j.podios.slice(0, 6), resto = j.podios.slice(6);
+  return `<ul class="podios">${primeros.map(fila).join('')}</ul>${resto.length ? `<details class="fixture"><summary>Todos los podios · ${j.podios.length}</summary><ul class="podios">${resto.map(fila).join('')}</ul></details>` : ''}`;
+}
+
+function seccionNatacion(sec, i) {
+  const js = sec.jornadas;
+  const uj = ultimaJornada(sec);
+  const total = js.reduce((n, j) => n + totalMedallas(j), 0);
+  const oros = js.reduce((n, j) => n + (j.oro || 0), 0);
+  const mejor = Math.min(...js.filter((j) => j.puesto).map((j) => j.puesto));
+  const lider = sec.tabla?.filas?.[0];
+  const situ = uj?.puesto ? `En la ${uj.nombre} terminó ${uj.puesto}° de ${uj.equipos} equipos${lider && !lider.esQuilmes ? `; ganó ${nombre(lider.equipo)}` : ''}.` : '';
+  return `<section class="equipo-seccion" id="eq-${esc(sec.id)}" style="--i:${i + 1}">
+      <header><span class="chica">${esc(sec.competencia)}</span><h2>${esc(sec.titulo)}</h2></header>
+      ${aviso(sec)}
+      <p class="categoria">${esc(sec.descripcion || '')} <span class="situacion">${esc(situ)}</span></p>
+      <div class="cifras">
+        <div><b>${uj?.puesto ? `${esc(uj.puesto)}°` : '–'}</b><small class="chica">Última jornada</small></div>
+        <div><b>${Number.isFinite(mejor) ? `${mejor}°` : '–'}</b><small class="chica">Mejor puesto</small></div>
+        <div><b>${total}</b><small class="chica">Medallas</small></div>
+        <div><b>${oros}</b><small class="chica">De oro</small></div>
+      </div>
+      <div class="columnas">
+        <div>
+          <div class="bloque"><div class="bloque-cab"><h3>Puesto jornada a jornada</h3><span class="chica">Por equipos</span></div>${puestos(sec)}</div>
+          <div class="bloque"><div class="bloque-cab"><h3>Medallero</h3><span class="chica">${js.length} jornadas</span></div>${medallero(sec)}</div>
+          <div class="bloque"><div class="bloque-cab"><h3>Podios · ${esc(uj?.nombre || '')}</h3><span class="chica">${esc(fechaBreve(uj?.fecha))}</span></div>${podios(uj)}</div>
+        </div>
+        <div>
+          <div class="bloque"><div class="bloque-cab"><h3>Puntaje por equipos</h3><span class="chica">${esc(uj?.nombre || '')}</span></div>${tabla(sec)}
+            <details class="fixture"><summary>Todas las jornadas · ${js.length}</summary>${listaResultados([...js].reverse().map((j) => ({ j, sec })))}</details>
+          </div>
+        </div>
+      </div>
+    </section>`;
+}
+
 function vistaDeporte(deporte) {
   const secs = datos.secciones.filter((s) => s.deporte === deporte);
   if (!secs.length) return '<p class="vacio">Todavía no hay datos de este deporte.</p>';
@@ -438,6 +524,7 @@ function vistaDeporte(deporte) {
     .join('')}</ol></div></nav>` : '';
   return `<div class="portada-franja azul" style="--i:0"><div class="contenedor portada"><h1 style="--n:${largo(secs[0].deporteNombre)}">${esc(secs[0].deporteNombre)}</h1>${escudo()}</div></div>${indice}<div class="contenedor">` + secs
     .map((sec, i) => {
+      if (esNatacion(sec)) return seccionNatacion(sec, i);
       const f = filaQuilmes(sec);
       const futuros = proximos(sec);
       const ult = jugados(sec).slice(0, 5).map((p) => ({ p }));

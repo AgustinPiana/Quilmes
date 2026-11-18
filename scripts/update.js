@@ -6,6 +6,7 @@ import { leerFebamba } from './sources/febamba.js';
 import { leerAhba } from './sources/ahba.js';
 import { leerPromiedos } from './sources/promiedos.js';
 import { leerDatafem } from './sources/datafem.js';
+import { leerFenaba } from './sources/fenaba.js';
 
 const RUTA = new URL('../public/data/quilmes.json', import.meta.url);
 const config = JSON.parse(await readFile(new URL('../config.json', import.meta.url), 'utf8'));
@@ -26,7 +27,8 @@ const errores = [];
 function agregar(id, resultado) {
   if (resultado.ok) {
     secciones.push({ ...resultado.seccion, actualizado: ahora, desactualizado: false });
-    console.log(`✔ ${id}: ${resultado.seccion.partidos.length} partidos, ${resultado.seccion.tabla?.filas.length ?? 0} equipos en tabla`);
+    const s = resultado.seccion;
+    console.log(`✔ ${id}: ${s.jornadas ? `${s.jornadas.length} jornadas` : `${s.partidos.length} partidos`}, ${s.tabla?.filas.length ?? 0} equipos en tabla`);
     return;
   }
   errores.push(`${id}: ${resultado.error}`);
@@ -47,6 +49,7 @@ await intentar(config.afa.id, () => leerAfa(config.afa, zona));
 await intentar(config.reserva.id, () => leerPromiedos(config.reserva, zona));
 await intentar(config.femenino.id, () => leerDatafem(config.femenino, zona));
 await intentar(config.febamba.id, () => leerFebamba(config.febamba, zona));
+await intentar(config.natacion.id, () => leerFenaba(config.natacion, zona, previa(config.natacion.id)));
 try {
   for (const r of await leerAhba(config.ahba, zona)) agregar(r.ok ? r.seccion.id : r.id, r);
 } catch (e) {

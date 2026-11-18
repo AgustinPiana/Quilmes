@@ -93,5 +93,16 @@
         "descripcion": "El segundo equipo de damas del club juega el Metropolitano D, la cuarta categoría del hockey femenino de Buenos Aires."
       }
     ]
+  },
+  "natacion": {
+    "id": "natacion-master",
+    "deporteNombre": "Natación",
+    "titulo": "Master",
+    "competencia": "Metropolitano Master FENABA",
+    "descripcion": "El Metropolitano Master es el torneo de FENABA para nadadores adultos. Se nada por jornadas a lo largo del año y en cada una se suman puntos por equipo.",
+    "temporada": 2026,
+    "torneo": "metro.?master",
+    "sigla": "QAC",
+    "nombreClub": "quilmes atl[eé]tico club"
   }
 }
