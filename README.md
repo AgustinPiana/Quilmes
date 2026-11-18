@@ -10,12 +10,12 @@ Página para seguir en un solo lugar el fixture, los resultados y las tablas de 
 | Básquet · Superior (Mayores) | FEBAMBA (`febamba.com`) | Fixture por fechas + APIs públicas de fases y grupos |
 | Hockey · Caballeros y Damas (Quilmes y Quilmes B) | AHBA (`tournamenttracker.buenosaireshockey.ar`) | Navegador automático (Playwright) que lee la página ya armada |
 
-Costo: **$0**. GitHub Actions junta los datos 3 veces por día y Vercel publica la página.
+Costo: **$0**. GitHub Actions junta los datos 6 veces por día y Vercel publica la página.
 
 ## Cómo funciona
 
 ```
-GitHub Actions (10:00, 18:00 y 00:30 h)
+GitHub Actions (09, 13, 17, 20, 22 y 00 h)
    └─ npm run update  →  public/data/quilmes.json  →  commit
                                                        └─ Vercel publica de nuevo
 Página (public/)  →  lee data/quilmes.json
