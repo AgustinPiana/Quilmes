@@ -83,8 +83,7 @@ a { color: inherit; }
 .nav {
   position: fixed; left: 0; right: 0; bottom: 0; z-index: 20;
   display: grid; grid-template-columns: repeat(5, 1fr);
-  background: rgba(255,255,255,.94);
-  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+  background: var(--blanco);
   border-top: 1px solid var(--linea);
   padding-bottom: env(safe-area-inset-bottom);
 }
@@ -119,8 +118,6 @@ a { color: inherit; }
   border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea);
   overflow: hidden; white-space: nowrap;
   font-size: 12px; font-weight: 600; letter-spacing: .08em; text-transform: uppercase;
-  -webkit-mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
-          mask-image: linear-gradient(90deg, transparent, #000 6%, #000 94%, transparent);
 }
 .cinta:empty { display: none; }
 .cinta-pista { display: inline-flex; padding: 12px 0; animation: cinta 40s linear infinite; }
@@ -291,7 +288,7 @@ footer.azul .escudo { --escudo-claro: var(--azul-hondo); }
 .equipo-seccion { margin-bottom: 96px; scroll-margin-top: 72px; }
 
 /* Índice de equipos dentro de cada deporte */
-.indice { position: sticky; top: 0; z-index: 15; background: rgba(255,255,255,.96); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); border-bottom: 1px solid var(--linea); margin: -48px 0 44px; }
+.indice { position: sticky; top: 0; z-index: 15; background: var(--blanco); border-bottom: 1px solid var(--linea); margin: -48px 0 44px; }
 .indice ol { list-style: none; margin: 0; padding: 0; display: flex; gap: 6px 26px; overflow-x: auto; scrollbar-width: none; }
 .indice ol::-webkit-scrollbar { display: none; }
 .indice a { position: relative; display: flex; align-items: baseline; gap: 8px; padding: 16px 0 15px; text-decoration: none; white-space: nowrap; font: 800 12px/1 var(--f); font-stretch: 125%; text-transform: uppercase; letter-spacing: .02em; color: var(--gris); }

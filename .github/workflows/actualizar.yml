@@ -2,8 +2,12 @@ name: Actualizar datos
 
 on:
   schedule:
-    # Horarios en UTC → en Argentina: 22:00, 00:00, 09:00, 13:00, 17:00 y 20:00.
-    - cron: '0 1,3,12,16,20,23 * * *'
+    # GitHub usa hora UTC (Argentina = UTC-3). Objetivo en Argentina: 09, 13, 17, 20, 22 y 00 h.
+    # GitHub atrasa o saltea las tareas programadas en punto cuando está cargado, así que:
+    #  - corre a los :07 (minuto poco usado) …
+    - cron: '7 1,3,12,16,20,23 * * *'
+    #  - … y repite a los :37 como respaldo (si no hay cambios, no hace nada).
+    - cron: '37 1,3,12,16,20,23 * * *'
   workflow_dispatch: # botón "Run workflow" para correrlo a mano
 
 permissions:
