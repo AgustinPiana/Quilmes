@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-18T20:02:35.658Z",
+  "generado": "2026-11-19T02:23:03.353Z",
   "secciones": [
     {
       "id": "futbol",
@@ -674,7 +674,7 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-18T20:02:35.658Z",
+      "actualizado": "2026-11-19T02:23:03.353Z",
       "desactualizado": false
     },
     {
@@ -1152,7 +1152,7 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-18T20:02:35.658Z",
+      "actualizado": "2026-11-19T02:23:03.353Z",
       "desactualizado": false
     },
     {
@@ -1574,7 +1574,7 @@
           "lugar": "Centro Recreativo 19 de Mayo AEFIP"
         }
       ],
-      "actualizado": "2026-11-18T20:02:35.658Z",
+      "actualizado": "2026-11-19T02:23:03.353Z",
       "desactualizado": false
     },
     {
@@ -1637,6 +1637,19 @@
           },
           {
             "pos": 4,
+            "equipo": "COOPERARIOS DE QUILMES",
+            "pj": 13,
+            "pg": 7,
+            "pp": 6,
+            "pf": 874,
+            "pc": 886,
+            "pts": 20,
+            "pct": 53.8,
+            "escudo": "https://www.febamba.com/escudos/405/97708",
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
             "equipo": "JUVENTUD UNIDA",
             "pj": 14,
             "pg": 5,
@@ -1649,7 +1662,7 @@
             "esQuilmes": false
           },
           {
-            "pos": 5,
+            "pos": 6,
             "equipo": "BERNAL",
             "pj": 14,
             "pg": 5,
@@ -1662,7 +1675,7 @@
             "esQuilmes": false
           },
           {
-            "pos": 6,
+            "pos": 7,
             "equipo": "C.S.D.y C. Moreno",
             "pj": 14,
             "pg": 5,
@@ -1675,7 +1688,7 @@
             "esQuilmes": false
           },
           {
-            "pos": 7,
+            "pos": 8,
             "equipo": "QUILMES ATLETICO CLUB",
             "pj": 13,
             "pg": 6,
@@ -1688,27 +1701,14 @@
             "esQuilmes": true
           },
           {
-            "pos": 8,
-            "equipo": "COOPERARIOS DE QUILMES",
-            "pj": 12,
-            "pg": 6,
-            "pp": 6,
-            "pf": 800,
-            "pc": 822,
-            "pts": 18,
-            "pct": 50,
-            "escudo": "https://www.febamba.com/escudos/405/97708",
-            "esQuilmes": false
-          },
-          {
             "pos": 9,
             "equipo": "LOS ANDES",
-            "pj": 13,
+            "pj": 14,
             "pg": 0,
-            "pp": 13,
-            "pf": 714,
-            "pc": 1039,
-            "pts": 13,
+            "pp": 14,
+            "pf": 778,
+            "pc": 1113,
+            "pts": 14,
             "pct": 0,
             "escudo": "https://www.febamba.com/escudos/156/94441",
             "esQuilmes": false
@@ -1885,7 +1885,7 @@
           "escudoVisitante": "https://www.febamba.com/escudos/82/94325"
         }
       ],
-      "actualizado": "2026-11-18T20:02:35.658Z",
+      "actualizado": "2026-11-19T02:23:03.353Z",
       "desactualizado": false
     },
     {
@@ -4256,7 +4256,7 @@
         }
       ],
       "partidos": [],
-      "actualizado": "2026-11-18T20:02:35.658Z",
+      "actualizado": "2026-11-19T02:23:03.353Z",
       "desactualizado": false
     },
     {
@@ -4804,7 +4804,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         }
       ],
-      "actualizado": "2026-11-18T20:02:35.658Z",
+      "actualizado": "2026-11-19T02:23:03.353Z",
       "desactualizado": false
     },
     {
@@ -5253,10 +5253,10 @@
           "local": "EST. LA PLATA",
           "visitante": "QUILMES B",
           "esLocal": false,
-          "gl": null,
-          "gv": null,
-          "jugado": false,
-          "estado": "Programado",
+          "gl": 1,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado",
           "escudoLocal": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/0/9/8/0985958f304ea13a.png",
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         },
@@ -5274,7 +5274,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/d/e/4de215aba42e7477.png"
         }
       ],
-      "actualizado": "2026-11-18T20:02:35.658Z",
+      "actualizado": "2026-11-19T02:23:03.353Z",
       "desactualizado": false
     },
     {
@@ -5822,7 +5822,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/0/7/407ad4a2a1673020.png"
         }
       ],
-      "actualizado": "2026-11-18T20:02:35.658Z",
+      "actualizado": "2026-11-19T02:23:03.353Z",
       "desactualizado": false
     },
     {
@@ -6370,7 +6370,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         }
       ],
-      "actualizado": "2026-11-18T20:02:35.658Z",
+      "actualizado": "2026-11-19T02:23:03.353Z",
       "desactualizado": false
     }
   ],
