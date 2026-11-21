@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-21T12:45:26.979Z",
+  "generado": "2026-11-21T16:00:40.675Z",
   "secciones": [
     {
       "id": "futbol",
@@ -674,7 +674,7 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-21T12:45:26.979Z",
+      "actualizado": "2026-11-21T16:00:40.675Z",
       "desactualizado": false
     },
     {
@@ -954,7 +954,7 @@
       },
       "partidos": [
         {
-          "fecha": "2026-07-13T13:00:00-03:00",
+          "fecha": "2026-07-13T11:00:00-03:00",
           "ronda": "Fecha 1",
           "local": "Quilmes",
           "visitante": "Central Córdoba",
@@ -965,7 +965,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-07-23T13:00:00-03:00",
+          "fecha": "2026-07-23T11:00:00-03:00",
           "ronda": "Fecha 2",
           "local": "Estudiantes de La Plata",
           "visitante": "Quilmes",
@@ -976,7 +976,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-08-05T13:00:00-03:00",
+          "fecha": "2026-08-05T11:00:00-03:00",
           "ronda": "Fecha 3",
           "local": "Quilmes",
           "visitante": "Colón",
@@ -987,7 +987,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-08-13T13:00:00-03:00",
+          "fecha": "2026-08-13T11:00:00-03:00",
           "ronda": "Fecha 4",
           "local": "Quilmes",
           "visitante": "Platense",
@@ -998,7 +998,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-08-19T13:00:00-03:00",
+          "fecha": "2026-08-19T11:00:00-03:00",
           "ronda": "Fecha 5",
           "local": "Atlético de Rafaela",
           "visitante": "Quilmes",
@@ -1009,7 +1009,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-08-26T13:00:00-03:00",
+          "fecha": "2026-08-26T11:00:00-03:00",
           "ronda": "Fecha 6",
           "local": "Quilmes",
           "visitante": "Independiente",
@@ -1020,7 +1020,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-09-03T17:00:00-03:00",
+          "fecha": "2026-09-03T15:00:00-03:00",
           "ronda": "Fecha 7",
           "local": "Boca Juniors",
           "visitante": "Quilmes",
@@ -1031,7 +1031,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-09-08T13:00:00-03:00",
+          "fecha": "2026-09-08T11:00:00-03:00",
           "ronda": "Fecha 8",
           "local": "Quilmes",
           "visitante": "Ferro Carril Oeste",
@@ -1042,7 +1042,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-09-16T13:00:00-03:00",
+          "fecha": "2026-09-16T11:00:00-03:00",
           "ronda": "Fecha 9",
           "local": "Huracán",
           "visitante": "Quilmes",
@@ -1053,7 +1053,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-09-23T13:00:00-03:00",
+          "fecha": "2026-09-23T11:00:00-03:00",
           "ronda": "Fecha 10",
           "local": "Aldosivi",
           "visitante": "Quilmes",
@@ -1064,7 +1064,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-09-30T13:00:00-03:00",
+          "fecha": "2026-09-30T11:00:00-03:00",
           "ronda": "Fecha 11",
           "local": "Quilmes",
           "visitante": "Estudiantes RC",
@@ -1075,7 +1075,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-10-06T13:00:00-03:00",
+          "fecha": "2026-10-06T11:00:00-03:00",
           "ronda": "Fecha 12",
           "local": "Defensa y Justicia",
           "visitante": "Quilmes",
@@ -1086,7 +1086,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-10-13T13:00:00-03:00",
+          "fecha": "2026-10-13T11:00:00-03:00",
           "ronda": "Fecha 13",
           "local": "Quilmes",
           "visitante": "Newell's Old Boys",
@@ -1097,7 +1097,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-10-21T13:00:00-03:00",
+          "fecha": "2026-10-21T11:00:00-03:00",
           "ronda": "Fecha 14",
           "local": "Lanús",
           "visitante": "Quilmes",
@@ -1108,7 +1108,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-10-29T13:00:00-03:00",
+          "fecha": "2026-10-29T11:00:00-03:00",
           "ronda": "Fecha 15",
           "local": "Quilmes",
           "visitante": "Belgrano",
@@ -1119,7 +1119,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-11-04T12:00:00-03:00",
+          "fecha": "2026-11-04T10:00:00-03:00",
           "ronda": "Fecha 16",
           "local": "Deportivo Riestra",
           "visitante": "Quilmes",
@@ -1130,7 +1130,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-11-10T12:00:00-03:00",
+          "fecha": "2026-11-10T10:00:00-03:00",
           "ronda": "Fecha 17",
           "local": "Quilmes",
           "visitante": "Independiente Rivadavia",
@@ -1141,7 +1141,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-11-17T14:00:00-03:00",
+          "fecha": "2026-11-17T12:00:00-03:00",
           "ronda": "Fecha 18",
           "local": "San Martín SJ",
           "visitante": "Quilmes",
@@ -1152,7 +1152,7 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-21T12:45:26.979Z",
+      "actualizado": "2026-11-21T16:00:40.675Z",
       "desactualizado": false
     },
     {
@@ -1574,7 +1574,7 @@
           "lugar": "Centro Recreativo 19 de Mayo AEFIP"
         }
       ],
-      "actualizado": "2026-11-21T12:45:26.979Z",
+      "actualizado": "2026-11-21T16:00:40.675Z",
       "desactualizado": false
     },
     {
@@ -1885,7 +1885,7 @@
           "escudoVisitante": "https://www.febamba.com/escudos/82/94325"
         }
       ],
-      "actualizado": "2026-11-21T12:45:26.979Z",
+      "actualizado": "2026-11-21T16:00:40.675Z",
       "desactualizado": false
     },
     {
@@ -4256,7 +4256,7 @@
         }
       ],
       "partidos": [],
-      "actualizado": "2026-11-21T12:45:26.979Z",
+      "actualizado": "2026-11-21T16:00:40.675Z",
       "desactualizado": false
     },
     {
@@ -4804,7 +4804,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         }
       ],
-      "actualizado": "2026-11-21T12:45:26.979Z",
+      "actualizado": "2026-11-21T16:00:40.675Z",
       "desactualizado": false
     },
     {
@@ -5274,7 +5274,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/d/e/4de215aba42e7477.png"
         }
       ],
-      "actualizado": "2026-11-21T12:45:26.979Z",
+      "actualizado": "2026-11-21T16:00:40.675Z",
       "desactualizado": false
     },
     {
@@ -5822,7 +5822,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/0/7/407ad4a2a1673020.png"
         }
       ],
-      "actualizado": "2026-11-21T12:45:26.979Z",
+      "actualizado": "2026-11-21T16:00:40.675Z",
       "desactualizado": false
     },
     {
@@ -6370,7 +6370,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         }
       ],
-      "actualizado": "2026-11-21T12:45:26.979Z",
+      "actualizado": "2026-11-21T16:00:40.675Z",
       "desactualizado": false
     }
   ],
