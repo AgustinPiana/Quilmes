@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-21T01:45:25.207Z",
+  "generado": "2026-11-21T03:00:30.627Z",
   "secciones": [
     {
       "id": "futbol",
@@ -674,7 +674,7 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-21T01:45:25.207Z",
+      "actualizado": "2026-11-21T03:00:30.627Z",
       "desactualizado": false
     },
     {
@@ -954,7 +954,7 @@
       },
       "partidos": [
         {
-          "fecha": "2026-07-13T13:00:00-03:00",
+          "fecha": "2026-07-13T12:00:00-03:00",
           "ronda": "Fecha 1",
           "local": "Quilmes",
           "visitante": "Central Córdoba",
@@ -965,7 +965,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-07-23T13:00:00-03:00",
+          "fecha": "2026-07-23T12:00:00-03:00",
           "ronda": "Fecha 2",
           "local": "Estudiantes de La Plata",
           "visitante": "Quilmes",
@@ -976,7 +976,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-08-05T13:00:00-03:00",
+          "fecha": "2026-08-05T12:00:00-03:00",
           "ronda": "Fecha 3",
           "local": "Quilmes",
           "visitante": "Colón",
@@ -987,7 +987,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-08-13T13:00:00-03:00",
+          "fecha": "2026-08-13T12:00:00-03:00",
           "ronda": "Fecha 4",
           "local": "Quilmes",
           "visitante": "Platense",
@@ -998,7 +998,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-08-19T13:00:00-03:00",
+          "fecha": "2026-08-19T12:00:00-03:00",
           "ronda": "Fecha 5",
           "local": "Atlético de Rafaela",
           "visitante": "Quilmes",
@@ -1009,7 +1009,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-08-26T13:00:00-03:00",
+          "fecha": "2026-08-26T12:00:00-03:00",
           "ronda": "Fecha 6",
           "local": "Quilmes",
           "visitante": "Independiente",
@@ -1020,7 +1020,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-09-03T17:00:00-03:00",
+          "fecha": "2026-09-03T16:00:00-03:00",
           "ronda": "Fecha 7",
           "local": "Boca Juniors",
           "visitante": "Quilmes",
@@ -1031,7 +1031,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-09-08T13:00:00-03:00",
+          "fecha": "2026-09-08T12:00:00-03:00",
           "ronda": "Fecha 8",
           "local": "Quilmes",
           "visitante": "Ferro Carril Oeste",
@@ -1042,7 +1042,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-09-16T13:00:00-03:00",
+          "fecha": "2026-09-16T12:00:00-03:00",
           "ronda": "Fecha 9",
           "local": "Huracán",
           "visitante": "Quilmes",
@@ -1053,7 +1053,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-09-23T13:00:00-03:00",
+          "fecha": "2026-09-23T12:00:00-03:00",
           "ronda": "Fecha 10",
           "local": "Aldosivi",
           "visitante": "Quilmes",
@@ -1064,7 +1064,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-09-30T13:00:00-03:00",
+          "fecha": "2026-09-30T12:00:00-03:00",
           "ronda": "Fecha 11",
           "local": "Quilmes",
           "visitante": "Estudiantes RC",
@@ -1075,7 +1075,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-10-06T13:00:00-03:00",
+          "fecha": "2026-10-06T12:00:00-03:00",
           "ronda": "Fecha 12",
           "local": "Defensa y Justicia",
           "visitante": "Quilmes",
@@ -1086,7 +1086,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-10-13T13:00:00-03:00",
+          "fecha": "2026-10-13T12:00:00-03:00",
           "ronda": "Fecha 13",
           "local": "Quilmes",
           "visitante": "Newell's Old Boys",
@@ -1097,7 +1097,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-10-21T13:00:00-03:00",
+          "fecha": "2026-10-21T12:00:00-03:00",
           "ronda": "Fecha 14",
           "local": "Lanús",
           "visitante": "Quilmes",
@@ -1108,7 +1108,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-10-29T13:00:00-03:00",
+          "fecha": "2026-10-29T12:00:00-03:00",
           "ronda": "Fecha 15",
           "local": "Quilmes",
           "visitante": "Belgrano",
@@ -1119,7 +1119,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-11-04T12:00:00-03:00",
+          "fecha": "2026-11-04T11:00:00-03:00",
           "ronda": "Fecha 16",
           "local": "Deportivo Riestra",
           "visitante": "Quilmes",
@@ -1130,7 +1130,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-11-10T12:00:00-03:00",
+          "fecha": "2026-11-10T11:00:00-03:00",
           "ronda": "Fecha 17",
           "local": "Quilmes",
           "visitante": "Independiente Rivadavia",
@@ -1141,7 +1141,7 @@
           "estado": "Finalizado"
         },
         {
-          "fecha": "2026-11-17T14:00:00-03:00",
+          "fecha": "2026-11-17T13:00:00-03:00",
           "ronda": "Fecha 18",
           "local": "San Martín SJ",
           "visitante": "Quilmes",
@@ -1152,7 +1152,7 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-21T01:45:25.207Z",
+      "actualizado": "2026-11-21T03:00:30.627Z",
       "desactualizado": false
     },
     {
@@ -1574,7 +1574,7 @@
           "lugar": "Centro Recreativo 19 de Mayo AEFIP"
         }
       ],
-      "actualizado": "2026-11-21T01:45:25.207Z",
+      "actualizado": "2026-11-21T03:00:30.627Z",
       "desactualizado": false
     },
     {
@@ -1599,44 +1599,57 @@
           {
             "pos": 1,
             "equipo": "LANUS",
-            "pj": 13,
+            "pj": 14,
             "pg": 12,
-            "pp": 1,
-            "pf": 992,
-            "pc": 772,
-            "pts": 25,
-            "pct": 92.3,
+            "pp": 2,
+            "pf": 1060,
+            "pc": 843,
+            "pts": 26,
+            "pct": 85.7,
             "escudo": "https://www.febamba.com/escudos/63/94315",
             "esQuilmes": false
           },
           {
             "pos": 2,
             "equipo": "VARELA JRS",
-            "pj": 13,
-            "pg": 10,
+            "pj": 14,
+            "pg": 11,
             "pp": 3,
-            "pf": 945,
-            "pc": 805,
-            "pts": 23,
-            "pct": 76.9,
+            "pf": 1016,
+            "pc": 873,
+            "pts": 25,
+            "pct": 78.5,
             "escudo": "https://www.febamba.com/escudos/104/95057",
             "esQuilmes": false
           },
           {
             "pos": 3,
             "equipo": "BERAZATEGUI",
-            "pj": 12,
-            "pg": 10,
+            "pj": 13,
+            "pg": 11,
             "pp": 2,
-            "pf": 829,
-            "pc": 673,
-            "pts": 22,
-            "pct": 83.3,
+            "pf": 906,
+            "pc": 739,
+            "pts": 24,
+            "pct": 84.6,
             "escudo": "https://www.febamba.com/escudos/225/95081",
             "esQuilmes": false
           },
           {
             "pos": 4,
+            "equipo": "C.S.D.y C. Moreno",
+            "pj": 15,
+            "pg": 6,
+            "pp": 9,
+            "pf": 1054,
+            "pc": 1012,
+            "pts": 21,
+            "pct": 40,
+            "escudo": "https://www.febamba.com/escudos/293/94941",
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
             "equipo": "COOPERARIOS DE QUILMES",
             "pj": 13,
             "pg": 7,
@@ -1649,7 +1662,33 @@
             "esQuilmes": false
           },
           {
-            "pos": 5,
+            "pos": 6,
+            "equipo": "BERNAL",
+            "pj": 15,
+            "pg": 5,
+            "pp": 10,
+            "pf": 882,
+            "pc": 984,
+            "pts": 20,
+            "pct": 33.3,
+            "escudo": "https://www.febamba.com/escudos/278/97355",
+            "esQuilmes": false
+          },
+          {
+            "pos": 7,
+            "equipo": "QUILMES ATLETICO CLUB",
+            "pj": 14,
+            "pg": 6,
+            "pp": 8,
+            "pf": 946,
+            "pc": 955,
+            "pts": 20,
+            "pct": 42.8,
+            "escudo": "https://www.febamba.com/escudos/82/94325",
+            "esQuilmes": true
+          },
+          {
+            "pos": 8,
             "equipo": "JUVENTUD UNIDA",
             "pj": 14,
             "pg": 5,
@@ -1660,45 +1699,6 @@
             "pct": 35.7,
             "escudo": "https://www.febamba.com/escudos/2676/97008",
             "esQuilmes": false
-          },
-          {
-            "pos": 6,
-            "equipo": "BERNAL",
-            "pj": 14,
-            "pg": 5,
-            "pp": 9,
-            "pf": 832,
-            "pc": 910,
-            "pts": 19,
-            "pct": 35.7,
-            "escudo": "https://www.febamba.com/escudos/278/97355",
-            "esQuilmes": false
-          },
-          {
-            "pos": 7,
-            "equipo": "C.S.D.y C. Moreno",
-            "pj": 14,
-            "pg": 5,
-            "pp": 9,
-            "pf": 980,
-            "pc": 962,
-            "pts": 19,
-            "pct": 35.7,
-            "escudo": "https://www.febamba.com/escudos/293/94941",
-            "esQuilmes": false
-          },
-          {
-            "pos": 8,
-            "equipo": "QUILMES ATLETICO CLUB",
-            "pj": 13,
-            "pg": 6,
-            "pp": 7,
-            "pf": 880,
-            "pc": 878,
-            "pts": 19,
-            "pct": 46.1,
-            "escudo": "https://www.febamba.com/escudos/82/94325",
-            "esQuilmes": true
           },
           {
             "pos": 9,
@@ -1848,8 +1848,8 @@
           "local": "BERAZATEGUI",
           "visitante": "QUILMES ATLETICO CLUB",
           "esLocal": false,
-          "gl": 74,
-          "gv": 58,
+          "gl": 77,
+          "gv": 66,
           "jugado": true,
           "estado": "Finalizado",
           "lugar": "Club Soc. Y Dep. Berazategui",
@@ -1885,7 +1885,7 @@
           "escudoVisitante": "https://www.febamba.com/escudos/82/94325"
         }
       ],
-      "actualizado": "2026-11-21T01:45:25.207Z",
+      "actualizado": "2026-11-21T03:00:30.627Z",
       "desactualizado": false
     },
     {
@@ -4256,7 +4256,7 @@
         }
       ],
       "partidos": [],
-      "actualizado": "2026-11-21T01:45:25.207Z",
+      "actualizado": "2026-11-21T03:00:30.627Z",
       "desactualizado": false
     },
     {
@@ -4804,7 +4804,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         }
       ],
-      "actualizado": "2026-11-21T01:45:25.207Z",
+      "actualizado": "2026-11-21T03:00:30.627Z",
       "desactualizado": false
     },
     {
@@ -5274,7 +5274,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/d/e/4de215aba42e7477.png"
         }
       ],
-      "actualizado": "2026-11-21T01:45:25.207Z",
+      "actualizado": "2026-11-21T03:00:30.627Z",
       "desactualizado": false
     },
     {
@@ -5822,7 +5822,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/0/7/407ad4a2a1673020.png"
         }
       ],
-      "actualizado": "2026-11-21T01:45:25.207Z",
+      "actualizado": "2026-11-21T03:00:30.627Z",
       "desactualizado": false
     },
     {
@@ -6370,7 +6370,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         }
       ],
-      "actualizado": "2026-11-21T01:45:25.207Z",
+      "actualizado": "2026-11-21T03:00:30.627Z",
       "desactualizado": false
     }
   ],
