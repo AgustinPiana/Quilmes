@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-23T00:45:30.339Z",
+  "generado": "2026-11-23T01:00:31.790Z",
   "secciones": [
     {
       "id": "futbol",
@@ -674,7 +674,7 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-23T00:45:30.339Z",
+      "actualizado": "2026-11-23T01:00:31.790Z",
       "desactualizado": false
     },
     {
@@ -1152,7 +1152,7 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-23T00:45:30.339Z",
+      "actualizado": "2026-11-23T01:00:31.790Z",
       "desactualizado": false
     },
     {
@@ -1574,7 +1574,7 @@
           "lugar": "Centro Recreativo 19 de Mayo AEFIP"
         }
       ],
-      "actualizado": "2026-11-23T00:45:30.339Z",
+      "actualizado": "2026-11-23T01:00:31.790Z",
       "desactualizado": false
     },
     {
@@ -1611,6 +1611,19 @@
           },
           {
             "pos": 2,
+            "equipo": "BERAZATEGUI",
+            "pj": 14,
+            "pg": 12,
+            "pp": 2,
+            "pf": 991,
+            "pc": 798,
+            "pts": 26,
+            "pct": 85.7,
+            "escudo": "https://www.febamba.com/escudos/225/95081",
+            "esQuilmes": false
+          },
+          {
+            "pos": 3,
             "equipo": "VARELA JRS",
             "pj": 14,
             "pg": 11,
@@ -1620,19 +1633,6 @@
             "pts": 25,
             "pct": 78.5,
             "escudo": "https://www.febamba.com/escudos/104/95057",
-            "esQuilmes": false
-          },
-          {
-            "pos": 3,
-            "equipo": "BERAZATEGUI",
-            "pj": 13,
-            "pg": 11,
-            "pp": 2,
-            "pf": 906,
-            "pc": 739,
-            "pts": 24,
-            "pct": 84.6,
-            "escudo": "https://www.febamba.com/escudos/225/95081",
             "esQuilmes": false
           },
           {
@@ -1651,13 +1651,13 @@
           {
             "pos": 5,
             "equipo": "COOPERARIOS DE QUILMES",
-            "pj": 13,
+            "pj": 14,
             "pg": 7,
-            "pp": 6,
-            "pf": 874,
-            "pc": 886,
-            "pts": 20,
-            "pct": 53.8,
+            "pp": 7,
+            "pf": 933,
+            "pc": 971,
+            "pts": 21,
+            "pct": 50,
             "escudo": "https://www.febamba.com/escudos/405/97708",
             "esQuilmes": false
           },
@@ -1885,7 +1885,7 @@
           "escudoVisitante": "https://www.febamba.com/escudos/82/94325"
         }
       ],
-      "actualizado": "2026-11-23T00:45:30.339Z",
+      "actualizado": "2026-11-23T01:00:31.790Z",
       "desactualizado": false
     },
     {
@@ -4256,7 +4256,7 @@
         }
       ],
       "partidos": [],
-      "actualizado": "2026-11-23T00:45:30.339Z",
+      "actualizado": "2026-11-23T01:00:31.790Z",
       "desactualizado": false
     },
     {
@@ -4804,7 +4804,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         }
       ],
-      "actualizado": "2026-11-23T00:45:30.339Z",
+      "actualizado": "2026-11-23T01:00:31.790Z",
       "desactualizado": false
     },
     {
@@ -5274,7 +5274,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/d/e/4de215aba42e7477.png"
         }
       ],
-      "actualizado": "2026-11-23T00:45:30.339Z",
+      "actualizado": "2026-11-23T01:00:31.790Z",
       "desactualizado": false
     },
     {
@@ -5822,7 +5822,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/0/7/407ad4a2a1673020.png"
         }
       ],
-      "actualizado": "2026-11-23T00:45:30.339Z",
+      "actualizado": "2026-11-23T01:00:31.790Z",
       "desactualizado": false
     },
     {
@@ -6370,7 +6370,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         }
       ],
-      "actualizado": "2026-11-23T00:45:30.339Z",
+      "actualizado": "2026-11-23T01:00:31.790Z",
       "desactualizado": false
     }
   ],
