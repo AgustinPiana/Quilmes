@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-24T00:20:05.117Z",
+  "generado": "2026-11-24T01:00:32.091Z",
   "secciones": [
     {
       "id": "futbol",
@@ -674,7 +674,7 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-24T00:20:05.117Z",
+      "actualizado": "2026-11-24T01:00:32.091Z",
       "desactualizado": false
     },
     {
@@ -1152,7 +1152,7 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-24T00:20:05.117Z",
+      "actualizado": "2026-11-24T01:00:32.091Z",
       "desactualizado": false
     },
     {
@@ -1574,7 +1574,7 @@
           "lugar": "Centro Recreativo 19 de Mayo AEFIP"
         }
       ],
-      "actualizado": "2026-11-24T00:20:05.117Z",
+      "actualizado": "2026-11-24T01:00:32.091Z",
       "desactualizado": false
     },
     {
@@ -1599,13 +1599,13 @@
           {
             "pos": 1,
             "equipo": "LANUS",
-            "pj": 14,
-            "pg": 12,
+            "pj": 15,
+            "pg": 13,
             "pp": 2,
-            "pf": 1060,
-            "pc": 843,
-            "pts": 26,
-            "pct": 85.7,
+            "pf": 1165,
+            "pc": 890,
+            "pts": 28,
+            "pct": 86.6,
             "escudo": "https://www.febamba.com/escudos/63/94315",
             "esQuilmes": false
           },
@@ -1663,6 +1663,19 @@
           },
           {
             "pos": 6,
+            "equipo": "JUVENTUD UNIDA",
+            "pj": 15,
+            "pg": 5,
+            "pp": 10,
+            "pf": 875,
+            "pc": 1044,
+            "pts": 20,
+            "pct": 33.3,
+            "escudo": "https://www.febamba.com/escudos/2676/97008",
+            "esQuilmes": false
+          },
+          {
+            "pos": 7,
             "equipo": "BERNAL",
             "pj": 15,
             "pg": 5,
@@ -1675,7 +1688,7 @@
             "esQuilmes": false
           },
           {
-            "pos": 7,
+            "pos": 8,
             "equipo": "QUILMES ATLETICO CLUB",
             "pj": 14,
             "pg": 6,
@@ -1686,19 +1699,6 @@
             "pct": 42.8,
             "escudo": "https://www.febamba.com/escudos/82/94325",
             "esQuilmes": true
-          },
-          {
-            "pos": 8,
-            "equipo": "JUVENTUD UNIDA",
-            "pj": 14,
-            "pg": 5,
-            "pp": 9,
-            "pf": 828,
-            "pc": 939,
-            "pts": 19,
-            "pct": 35.7,
-            "escudo": "https://www.febamba.com/escudos/2676/97008",
-            "esQuilmes": false
           },
           {
             "pos": 9,
@@ -1862,10 +1862,10 @@
           "local": "QUILMES ATLETICO CLUB",
           "visitante": "BERNAL",
           "esLocal": true,
-          "gl": null,
-          "gv": null,
-          "jugado": false,
-          "estado": "Programado",
+          "gl": 31,
+          "gv": 29,
+          "jugado": true,
+          "estado": "Finalizado",
           "lugar": "Quilmes A.C. Sede Central",
           "escudoLocal": "https://www.febamba.com/escudos/82/94325",
           "escudoVisitante": "https://www.febamba.com/escudos/278/97355"
@@ -1885,7 +1885,7 @@
           "escudoVisitante": "https://www.febamba.com/escudos/82/94325"
         }
       ],
-      "actualizado": "2026-11-24T00:20:05.117Z",
+      "actualizado": "2026-11-24T01:00:32.091Z",
       "desactualizado": false
     },
     {
@@ -4256,7 +4256,7 @@
         }
       ],
       "partidos": [],
-      "actualizado": "2026-11-24T00:20:05.117Z",
+      "actualizado": "2026-11-24T01:00:32.091Z",
       "desactualizado": false
     },
     {
@@ -4804,7 +4804,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         }
       ],
-      "actualizado": "2026-11-24T00:20:05.117Z",
+      "actualizado": "2026-11-24T01:00:32.091Z",
       "desactualizado": false
     },
     {
@@ -5274,7 +5274,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/d/e/4de215aba42e7477.png"
         }
       ],
-      "actualizado": "2026-11-24T00:20:05.117Z",
+      "actualizado": "2026-11-24T01:00:32.091Z",
       "desactualizado": false
     },
     {
@@ -5822,7 +5822,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/0/7/407ad4a2a1673020.png"
         }
       ],
-      "actualizado": "2026-11-24T00:20:05.117Z",
+      "actualizado": "2026-11-24T01:00:32.091Z",
       "desactualizado": false
     },
     {
@@ -6370,7 +6370,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         }
       ],
-      "actualizado": "2026-11-24T00:20:05.117Z",
+      "actualizado": "2026-11-24T01:00:32.091Z",
       "desactualizado": false
     }
   ],
