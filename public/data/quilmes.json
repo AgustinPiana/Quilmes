@@ -1,5 +1,5 @@
 {
-  "generado": "2026-11-26T23:30:50.721Z",
+  "generado": "2026-11-26T23:45:24.614Z",
   "secciones": [
     {
       "id": "futbol",
@@ -674,7 +674,7 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-26T23:30:50.721Z",
+      "actualizado": "2026-11-26T23:45:24.614Z",
       "desactualizado": false
     },
     {
@@ -1152,7 +1152,7 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-26T23:30:50.721Z",
+      "actualizado": "2026-11-26T23:45:24.614Z",
       "desactualizado": false
     },
     {
@@ -1574,7 +1574,7 @@
           "lugar": "Centro Recreativo 19 de Mayo AEFIP"
         }
       ],
-      "actualizado": "2026-11-26T23:30:50.721Z",
+      "actualizado": "2026-11-26T23:45:24.614Z",
       "desactualizado": false
     },
     {
@@ -1871,7 +1871,7 @@
           "escudoVisitante": "https://www.febamba.com/escudos/82/94325"
         }
       ],
-      "actualizado": "2026-11-26T23:30:50.721Z",
+      "actualizado": "2026-11-26T23:45:24.614Z",
       "desactualizado": false
     },
     {
@@ -4242,9 +4242,8 @@
         }
       ],
       "partidos": [],
-      "actualizado": "2026-11-26T23:15:32.154Z",
-      "desactualizado": true,
-      "error": "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+      "actualizado": "2026-11-26T23:45:24.614Z",
+      "desactualizado": false
     },
     {
       "id": "hockey-caballeros",
@@ -4791,7 +4790,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         }
       ],
-      "actualizado": "2026-11-26T23:30:50.721Z",
+      "actualizado": "2026-11-26T23:45:24.614Z",
       "desactualizado": false
     },
     {
@@ -5261,7 +5260,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/d/e/4de215aba42e7477.png"
         }
       ],
-      "actualizado": "2026-11-26T23:30:50.721Z",
+      "actualizado": "2026-11-26T23:45:24.614Z",
       "desactualizado": false
     },
     {
@@ -5809,7 +5808,7 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/4/0/7/407ad4a2a1673020.png"
         }
       ],
-      "actualizado": "2026-11-26T23:30:50.721Z",
+      "actualizado": "2026-11-26T23:45:24.614Z",
       "desactualizado": false
     },
     {
@@ -6357,11 +6356,9 @@
           "escudoVisitante": "https://d3ojtsl5tb0s7a.cloudfront.net/images/federacion/2/1/8/218e9126e8ccb3a3.png"
         }
       ],
-      "actualizado": "2026-11-26T23:30:50.721Z",
+      "actualizado": "2026-11-26T23:45:24.614Z",
       "desactualizado": false
     }
   ],
-  "errores": [
-    "natacion-master: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-  ]
+  "errores": []
 }
