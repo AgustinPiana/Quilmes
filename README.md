@@ -10,7 +10,7 @@ Página para seguir en un solo lugar el fixture, los resultados y las tablas de 
 | Básquet · Superior (Mayores) | FEBAMBA (`febamba.com`) | Fixture por fechas + APIs públicas de fases y grupos |
 | Hockey · Caballeros (A y B) y Damas (A, B, C y D) | AHBA (`tournamenttracker.buenosaireshockey.ar`) | Navegador automático (Playwright) que lee la página ya armada |
 | Natación · Metropolitano Master | FENABA (`fenaba.org.ar`) | API de resultados + páginas de Hy-Tek de cada jornada (puntaje por equipos y podios de "QAC") |
-| Tenis · Interclubes por edad (+40 y +70) | AAT (`deportivoaat.com.ar`) | Página de la categoría (llaves) + JSON de cada grupo (series y posiciones) |
+| Tenis · todos los interclubes del año (A y B) | AAT (`deportivoaat.com.ar`) | Página del club (equipos) + página de cada categoría (llaves) + JSON de cada grupo |
 
 Costo: **$0**. GitHub Actions junta los datos 6 veces por día y Vercel publica la página.
 
@@ -60,7 +60,7 @@ Todo lo que cambia año a año está en `config.json`:
 - **Reserva:** `reserva.equipoId` / `equipoUrl` salen de la URL del equipo en Promiedos (`promiedos.com.ar/team/quilmes-ac-(reserves)/jdeca`) y `ligaId` / `ligaUrl` de la del torneo.
 - **Femenino:** `femenino.temporada`, `categoria` (`primera-c`) y `zonaTabla` salen de datafem.com.ar. Si el equipo asciende, cambia `categoria` (ej. `primera-b`).
 - **Natación:** `natacion.temporada` (el año) y `natacion.torneo` (texto que identifica las jornadas, hoy `metro.?master`). Las jornadas nuevas aparecen solas.
-- **Tenis:** `tenis.categorias[]` lleva `idTorneo`, `idCategoria` e `idNivel` de la URL del fixture de cada categoría en deportivoaat.com.ar (Torneos → la categoría). Quilmes figura como `QUILMES ATLETICO`; ojo con `NAUTICO QUILMES`, que es otro club.
+- **Tenis:** no hay que tocar nada. `tenis.idEntidad` (128) es Quilmes en la AAT; de su página (`vEntidad.php?idEntidad=128`) salen solas todas las categorías del año. Las terminadas hace más de un mes no se vuelven a bajar.
 - **Básquet:** `febamba.competicionId` y `compCatId` salen de la URL del torneo en febamba.com
   (ej. `febamba.com/detalle-torneo/2013/superior-2026` → `competicionId` 2013; `compCatId` es el valor del selector de categoría).
   El grupo del QAC lo encuentra solo.

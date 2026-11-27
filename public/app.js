@@ -351,7 +351,7 @@ function vistaResumen() {
 function titulares() {
   const nombreEq = (sec) => `${sec.deporteNombre} ${minus(sec.titulo)}`;
   const out = [];
-  for (const sec of datos.secciones) {
+  for (const sec of datos.secciones.filter(enActividad)) {
     if (esNatacion(sec)) {
       const total = sec.jornadas.reduce((n, j) => n + totalMedallas(j), 0);
       const oros = sec.jornadas.reduce((n, j) => n + (j.oro || 0), 0);
@@ -405,7 +405,15 @@ function titularesHTML() {
 // ---------- Filtros por deporte del inicio ----------
 const filtro = { proximos: 'todos', equipos: 'todos', resultados: 'todos' };
 const deportes = () => [...new Map(datos.secciones.map((s) => [s.deporte, s.deporteNombre])).entries()];
-const deLa = (dep) => datos.secciones.filter((s) => dep === 'todos' || s.deporte === dep);
+// Tenis tiene muchos equipos: en "Todos" solo se muestran los que están en actividad
+// (con partido por jugar o jugado en las últimas 3 semanas). Con el filtro "Tenis" se ven todos.
+function enActividad(sec) {
+  if (sec.deporte !== 'tenis') return true;
+  if (proximos(sec).length) return true;
+  const ult = jugados(sec).find((p) => p.fecha);
+  return !!ult && Date.now() - new Date(ult.fecha).getTime() < 21 * 864e5;
+}
+const deLa = (dep) => datos.secciones.filter((s) => (dep === 'todos' ? enActividad(s) : s.deporte === dep));
 
 function filtros(grupo) {
   const opciones = [['todos', 'Todos'], ...deportes()];
@@ -525,7 +533,7 @@ function vistaDeporte(deporte) {
   if (!secs.length) return '<p class="vacio">Todavía no hay datos de este deporte.</p>';
   // Índice: un acceso por equipo, con su posición. Se mueve con scroll (el # de la URL elige el deporte).
   const indice = secs.length > 1 ? `<nav class="indice" aria-label="Equipos de ${esc(secs[0].deporteNombre.toLowerCase())}"><div class="contenedor"><ol>${secs
-    .map((sec, i) => { const f = filaQuilmes(sec); return `<li><a href="#${esc(deporte)}" data-ir="eq-${esc(sec.id)}"><span>${dos(i + 1)}</span>${esc(sec.titulo)}${f ? `<b>${esc(f.pos)}°</b>` : ''}</a></li>`; })
+    .map((sec, i) => { const f = filaQuilmes(sec); return `<li><a href="#${esc(deporte)}" data-ir="eq-${esc(sec.id)}"><span>${dos(i + 1)}</span>${esc(deporte === 'tenis' ? sec.titulo.replace(/^Caballeros\s+/, '') : sec.titulo)}${f ? `<b>${esc(f.pos)}°</b>` : ''}</a></li>`; })
     .join('')}</ol></div></nav>` : '';
   return `<div class="portada-franja azul" style="--i:0"><div class="contenedor portada"><h1 style="--n:${largo(secs[0].deporteNombre)}">${esc(secs[0].deporteNombre)}</h1>${escudo()}</div></div>${indice}<div class="contenedor">` + secs
     .map((sec, i) => {

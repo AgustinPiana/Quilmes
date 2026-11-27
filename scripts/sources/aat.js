@@ -1,7 +1,9 @@
 // Tenis: Interclubes de la Asociación Argentina de Tenis (deportivoaat.com.ar). Todo público:
+//   app/vEntidad.php?idEntidad=                         → página del club: todos sus equipos con el link a cada categoría
 //   app/vFixture2.php?idTorneo=&idCategoria=&idNivel=   → página de la categoría: grupos y llaves (HTML)
 //   app/xml/ajaxTraerFixtureGrupo.php?…&idGrupo=        → series y posiciones de un grupo (JSON)
 // El JSON solo responde con la cookie de la página y el encabezado X-Requested-With (como hace el navegador).
+// Las categorías se descubren solas desde la página del club: no hay que cargarlas a mano.
 import { limpiar, numero as num } from '../lib/util.js';
 
 /** Acepta números o textos ("5", 5, "+15"). */
@@ -23,8 +25,17 @@ async function pedir(url, extra = {}) {
   }
 }
 
+const sinLado = (n) => limpiar(n).replace(/\s*\((L|V)\)\s*$/, '').trim();
 /** "QUILMES ATLETICO-A" → "QUILMES ATLETICO" (saca la letra del equipo). */
-export const club = (n) => limpiar(n).replace(/\s*\((L|V)\)\s*$/, '').replace(/-[A-Z]$/, '').trim();
+export const club = (n) => sinLado(n).replace(/-[A-Z]$/, '').trim();
+/** Nombre para mostrar: sin la "-A"; los equipos B, C… conservan la letra ("Quilmes B"). */
+export function mostrar(n, nombreClub) {
+  const m = sinLado(n).match(/^(.*?)-([A-Z])$/);
+  const base = m ? m[1].trim() : sinLado(n);
+  const letra = m ? m[2] : 'A';
+  const nom = base === nombreClub ? 'Quilmes' : base;
+  return letra === 'A' ? nom : `${nom} ${letra}`;
+}
 
 /** Grupos de la categoría (los argumentos de mostrarDiv en la página). */
 export function grupos(html) {
@@ -34,7 +45,7 @@ export function grupos(html) {
 /**
  * Llaves (campeonato, repechajes…). El HTML viene mal formado, así que se lee por texto:
  * cada "<h2> Llave … </h2>" va seguido de tablas "align=center", una por ronda, con celdas td.llave.
- * Una celda de la ronda siguiente es el ganador del par anterior y trae "Score: L-V" de ese cruce.
+ * Una celda de la ronda siguiente es el ganador del par anterior y trae el "Score" de ese cruce.
  */
 export function llaves(html) {
   const out = [];
@@ -49,7 +60,7 @@ export function llaves(html) {
         const nombreEq = limpiar(texto.replace(/Score:[\s\S]*$/, ''));
         const score = (texto.match(/Score:\s*(\d+)\s*-\s*(\d+)/) || []).slice(1).map(Number);
         const lado = (nombreEq.match(/\((L|V)\)\s*$/) || [])[1] || null;
-        return { equipo: /^bye$/i.test(nombreEq) || !nombreEq ? null : club(nombreEq), lado, score: score.length ? score : null };
+        return { equipo: /^bye$/i.test(nombreEq) || !nombreEq ? null : sinLado(nombreEq), lado, score: score.length ? score : null };
       });
       if (celdas.length) rondas.push(celdas);
     }
@@ -60,8 +71,8 @@ export function llaves(html) {
 
 const NOMBRE_RONDA = (faltan) => ['Final', 'Semifinal', 'Cuartos de final', 'Octavos de final'][faltan] || 'Primera ronda';
 
-/** Cruces de las llaves donde jugó el club (sin fecha: la AAT no la publica en la llave). */
-export function crucesDelClub(lls, nombreClub) {
+/** Cruces de las llaves donde jugó el equipo (ej. "QUILMES ATLETICO-B"). Sin fecha: la AAT no la publica en la llave. */
+export function crucesDelClub(lls, equipo, nombreClub = club(equipo)) {
   const out = [];
   for (const ll of lls) {
     for (let k = 0; k < ll.rondas.length - 1; k++) {
@@ -69,7 +80,7 @@ export function crucesDelClub(lls, nombreClub) {
       for (let i = 0; i < r.length; i += 2) {
         const a = r[i], b = r[i + 1];
         if (!a?.equipo || !b?.equipo) continue; // bye
-        if (a.equipo !== nombreClub && b.equipo !== nombreClub) continue;
+        if (a.equipo !== equipo && b.equipo !== equipo) continue;
         const [L, V] = a.lado === 'V' || b.lado === 'L' ? [b, a] : [a, b];
         const ganador = sig[i / 2];
         const jugado = !!(ganador?.equipo && ganador.score);
@@ -79,8 +90,9 @@ export function crucesDelClub(lls, nombreClub) {
         out.push({
           fecha: null,
           ronda: `${ll.nombre.replace(/^Llave\s*/i, 'Llave ')} · ${NOMBRE_RONDA(ll.rondas.length - 2 - k)}`,
-          local: L.equipo, visitante: V.equipo,
-          esLocal: L.equipo === nombreClub,
+          local: mostrar(L.equipo, nombreClub),
+          visitante: mostrar(V.equipo, nombreClub),
+          esLocal: L.equipo === equipo,
           gl: jugado ? (ganoLocal ? g : p) : null,
           gv: jugado ? (ganoLocal ? p : g) : null,
           jugado,
@@ -92,30 +104,33 @@ export function crucesDelClub(lls, nombreClub) {
   return out;
 }
 
-/** Del JSON de un grupo: tabla y series del club. */
-export function datosDelGrupo(j, nombreClub, letraGrupo, zona = '-03:00') {
+/** Del JSON de un grupo: tabla y series del equipo. */
+export function datosDelGrupo(j, equipo, letraGrupo, zona = '-03:00', nombreClub = club(equipo)) {
   const filas = (j.posiciones || []).map((p, i) => {
     const pj = numero(p.seriesJugadas), pg = numero(p.seriesGanadas);
     return {
       pos: i + 1,
-      equipo: club(p.equipo),
+      equipo: mostrar(p.equipo, nombreClub),
       pts: numero(p.puntos), pj, pg, pp: pj != null && pg != null ? pj - pg : null,
       dif: numero(p.difSet),
       dg: numero(p.difGame),
-      esQuilmes: club(p.equipo) === nombreClub,
+      esQuilmes: sinLado(p.equipo) === equipo,
     };
   });
+  const de = (s, lado) => `${limpiar(s['nombreEnt' + lado])}-${limpiar(s['nombreEq' + lado]) || 'A'}`;
   const partidos = (j.series || [])
-    .filter((s) => club(s.nombreEntL) === nombreClub || club(s.nombreEntV) === nombreClub)
+    .filter((s) => de(s, 'L') === equipo || de(s, 'V') === equipo)
     .map((s) => {
       const gl = numero(s.puntosL), gv = numero(s.puntosV);
       const jugado = gl != null && gv != null && (gl + gv > 0 || s.wo === '1');
       return {
         fecha: s.fec ? `${s.fec}T${/^\d{2}:\d{2}$/.test(s.Hora || '') ? s.Hora : '12:00'}:00${zona}` : null,
-        ronda: `Grupo ${s.Grupo || letraGrupo} · Fecha ${numero(s.numero) + 1}`,
-        local: club(s.nombreEntL), visitante: club(s.nombreEntV),
-        esLocal: club(s.nombreEntL) === nombreClub,
-        gl: jugado ? gl : null, gv: jugado ? gv : null,
+        ronda: `Grupo ${s.Grupo || letraGrupo}`,
+        local: mostrar(de(s, 'L'), nombreClub),
+        visitante: mostrar(de(s, 'V'), nombreClub),
+        esLocal: de(s, 'L') === equipo,
+        gl: jugado ? gl : null,
+        gv: jugado ? gv : null,
         jugado,
         estado: jugado ? 'Finalizado' : s.reprogramada === '1' ? 'Reprogramado' : 'Programado',
       };
@@ -123,12 +138,60 @@ export function datosDelGrupo(j, nombreClub, letraGrupo, zona = '-03:00') {
   return { filas, partidos };
 }
 
-export async function leerAat(cfg, zona) {
+/**
+ * Equipos del club en la página de la entidad (vEntidad.php?idEntidad=…): filas como
+ * "QUILMES ATLETICO-A | Interclub Mayores - Agosto2026-Caballeros +45-Segunda (2026)" con el link a la categoría.
+ * Las filas de "próximos partidos" tienen dos equipos y se saltean.
+ */
+export function equiposDeEntidad(html) {
+  const out = [];
+  for (const m of html.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)) {
+    const fila = m[1];
+    const links = [...fila.matchAll(/vEquipo\.php\?idEquipo=(\d+)&(?:amp;)?idTorneo=(\d+)&(?:amp;)?idCategoria=(\d+)&(?:amp;)?idNivel=(\d+)/g)];
+    if (links.length !== 1) continue;
+    const celdas = [...fila.matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map((c) => limpiar(c[1].replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' '))).filter(Boolean);
+    const equipo = celdas.find((c) => /-[A-Z]$/.test(c));
+    const comp = celdas.map((c) => c.match(/^(.*?)\s*\((\d{4})\)$/)).find(Boolean);
+    if (!equipo || !comp) continue;
+    const [, idEquipo, idTorneo, idCategoria, idNivel] = links[0].map(Number);
+    const p = comp[1].match(/^(.*)-([^-]+)-([^-]+)$/) || [null, comp[1], '', ''];
+    out.push({ idEquipo, idTorneo, idCategoria, idNivel, equipo, anio: Number(comp[2]), torneo: limpiar(p[1]), categoria: limpiar(p[2]), nivel: limpiar(p[3]) });
+  }
+  return out;
+}
+
+/** "Interclub Mayores - Agosto2026" → "Interclub Mayores · Agosto 2026"; "1er Cuat" → "1er cuatrimestre". */
+export const torneoProlijo = (t) => limpiar(t)
+  .replace(/\s+-\s+/g, ' · ')
+  .replace(/([a-z])(\d{4})/gi, '$1 $2')
+  .replace(/\bCuat\b\.?/i, 'cuatrimestre');
+
+const ORDEN_NIVEL = ['Primera', 'Intermedia', 'Segunda', 'Tercera', 'Cuarta', 'Quinta', 'Sexta', 'Unica'];
+const edad = (c) => parseInt(String(c).replace(/\D+/g, ''), 10) || 0;
+/** Una categoría terminada hace más de 30 días ya no cambia: se reutiliza lo guardado. */
+const terminada = (sec) => !!sec?.partidos?.length && sec.partidos.every((p) => p.jugado)
+  && Math.max(0, ...sec.partidos.filter((p) => p.fecha).map((p) => new Date(p.fecha).getTime())) < Date.now() - 30 * 864e5;
+
+/** previa(id): la sección del último quilmes.json, para no volver a bajar categorías terminadas. */
+export async function leerAat(cfg, zona, previa = () => null) {
   const nombreClub = cfg.nombreClub;
+  const todos = equiposDeEntidad(await (await pedir(`${BASE}/vEntidad.php?idEntidad=${cfg.idEntidad}`)).text())
+    .filter((e) => club(e.equipo) === nombreClub);
+  if (!todos.length) throw new Error(`AAT: el club ${cfg.idEntidad} no tiene equipos cargados`);
+  const anio = Math.max(...todos.map((e) => e.anio));
+  const equipos = todos
+    .filter((e) => e.anio === anio)
+    .sort((a, b) => b.idTorneo - a.idTorneo || edad(a.categoria) - edad(b.categoria)
+      || ORDEN_NIVEL.indexOf(a.nivel) - ORDEN_NIVEL.indexOf(b.nivel) || a.equipo.localeCompare(b.equipo));
+
   const secciones = [];
-  for (const t of cfg.categorias) {
+  for (const e of equipos) {
+    const letra = e.equipo.slice(-1);
+    const id = `tenis-${e.idTorneo}-${e.idCategoria}-${e.idNivel}-${letra.toLowerCase()}`;
+    const vieja = previa(id);
+    if (terminada(vieja)) { secciones.push({ ok: true, seccion: vieja }); continue; }
     try {
-      const q = `idTorneo=${t.idTorneo}&idCategoria=${t.idCategoria}&idNivel=${t.idNivel}`;
+      const q = `idTorneo=${e.idTorneo}&idCategoria=${e.idCategoria}&idNivel=${e.idNivel}`;
       const r = await pedir(`${BASE}/vFixture2.php?${q}`);
       const cookie = (r.headers.getSetCookie?.() || []).map((c) => c.split(';')[0]).join('; ');
       const html = await r.text();
@@ -137,31 +200,33 @@ export async function leerAat(cfg, zona) {
         const j = await (await pedir(`${BASE}/xml/ajaxTraerFixtureGrupo.php?${q}&idGrupo=${g}`, {
           'X-Requested-With': 'XMLHttpRequest', Referer: `${BASE}/vFixture2.php?${q}`, ...(cookie ? { Cookie: cookie } : {}),
         })).json();
-        if ((j.posiciones || []).some((p) => club(p.equipo) === nombreClub)) { grupo = { j, letra: j.series?.[0]?.Grupo || '' }; break; }
-        await new Promise((res) => setTimeout(res, 200));
+        if ((j.posiciones || []).some((p) => sinLado(p.equipo) === e.equipo)) { grupo = { j, letra: j.series?.[0]?.Grupo || '' }; break; }
+        await new Promise((res) => setTimeout(res, 150));
       }
-      if (!grupo) throw new Error(`AAT: no encontré a ${nombreClub} en ${t.titulo}`);
-      const d = datosDelGrupo(grupo.j, nombreClub, grupo.letra, zona);
+      if (!grupo) throw new Error(`AAT: no encontré a ${e.equipo} en ${e.categoria} ${e.nivel}`);
+      const d = datosDelGrupo(grupo.j, e.equipo, grupo.letra, zona, nombreClub);
       // Fase de grupos numerada por orden de fecha; después, los cruces de la llave.
-      const grupo1 = d.partidos.sort((a, b) => (a.fecha || '').localeCompare(b.fecha || '')).map((p, i) => ({ ...p, ronda: `Grupo ${grupo.letra} · Fecha ${i + 1}` }));
-      const partidos = [...grupo1, ...crucesDelClub(llaves(html), nombreClub)];
+      const fase = d.partidos
+        .sort((a, b) => (a.fecha || '9999').localeCompare(b.fecha || '9999'))
+        .map((p, i) => ({ ...p, ronda: `Grupo ${grupo.letra} · Fecha ${i + 1}` }));
       secciones.push({
         ok: true,
         seccion: {
-          id: t.id,
+          id,
           deporte: 'tenis',
           deporteNombre: 'Tenis',
-          titulo: t.titulo,
-          competencia: t.competencia,
-          descripcion: t.descripcion,
+          titulo: `${e.categoria} · ${e.nivel.replace(/^Unica$/i, 'Única')}${letra !== 'A' ? ` · Equipo ${letra}` : ''}`,
+          competencia: `AAT · ${torneoProlijo(e.torneo)}`,
+          descripcion: 'Interclubes de la Asociación Argentina de Tenis. Cada serie se juega a singles y dobles; los mejores de cada grupo pasan a la llave.',
           fuente: 'AAT',
           tabla: { nombre: `Grupo ${grupo.letra}`, columnas: ['pts', 'pj', 'pg', 'pp', 'dif', 'dg'], filas: d.filas },
-          partidos,
+          partidos: [...fase, ...crucesDelClub(llaves(html), e.equipo, nombreClub)],
         },
       });
-    } catch (e) {
-      secciones.push({ ok: false, id: t.id, error: e.message });
+    } catch (err) {
+      secciones.push({ ok: false, id, error: err.message });
     }
+    await new Promise((res) => setTimeout(res, 200)); // sin apurar al sitio
   }
   return secciones;
 }

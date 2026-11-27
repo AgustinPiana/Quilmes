@@ -1875,12 +1875,1136 @@
       "desactualizado": false
     },
     {
-      "id": "tenis-40",
+      "id": "tenis-152-19-2-a",
       "deporte": "tenis",
       "deporteNombre": "Tenis",
-      "titulo": "Caballeros +40",
-      "competencia": "Interclubes AAT · +40 Segunda",
-      "descripcion": "Interclubes por edad de la Asociación Argentina de Tenis (1er cuatrimestre). Cada serie se juega a singles y dobles; los primeros de cada grupo pasan a la llave.",
+      "titulo": "Caballeros +35 · Segunda",
+      "competencia": "AAT · Interclub Mayores · Agosto 2026",
+      "descripcion": "Interclubes de la Asociación Argentina de Tenis. Cada serie se juega a singles y dobles; los mejores de cada grupo pasan a la llave.",
+      "fuente": "AAT",
+      "tabla": {
+        "nombre": "Grupo B",
+        "columnas": [
+          "pts",
+          "pj",
+          "pg",
+          "pp",
+          "dif",
+          "dg"
+        ],
+        "filas": [
+          {
+            "pos": 1,
+            "equipo": "EL JAGUEL",
+            "pts": 11,
+            "pj": 6,
+            "pg": 5,
+            "pp": 1,
+            "dif": 22,
+            "dg": 79,
+            "esQuilmes": false
+          },
+          {
+            "pos": 2,
+            "equipo": "ADROGUE TENNIS CLUB",
+            "pts": 11,
+            "pj": 6,
+            "pg": 5,
+            "pp": 1,
+            "dif": 8,
+            "dg": 19,
+            "esQuilmes": false
+          },
+          {
+            "pos": 3,
+            "equipo": "Quilmes",
+            "pts": 9,
+            "pj": 6,
+            "pg": 2,
+            "pp": 4,
+            "dif": 7,
+            "dg": 56,
+            "esQuilmes": true
+          },
+          {
+            "pos": 4,
+            "equipo": "HARRODS, GATH Y CHAVES",
+            "pts": 9,
+            "pj": 6,
+            "pg": 3,
+            "pp": 3,
+            "dif": -3,
+            "dg": 5,
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
+            "equipo": "VELEZ SARSFIELD",
+            "pts": 7,
+            "pj": 6,
+            "pg": 1,
+            "pp": 5,
+            "dif": -14,
+            "dg": -71,
+            "esQuilmes": false
+          },
+          {
+            "pos": 6,
+            "equipo": "CIUDAD DE CAMPANA",
+            "pts": 6,
+            "pj": 6,
+            "pg": 4,
+            "pp": 2,
+            "dif": -4,
+            "dg": -39,
+            "esQuilmes": false
+          },
+          {
+            "pos": 7,
+            "equipo": "A. SAN LORENZO DE ALMAGRO",
+            "pts": 4,
+            "pj": 6,
+            "pg": 0,
+            "pp": 6,
+            "dif": -23,
+            "dg": -95,
+            "esQuilmes": false
+          }
+        ]
+      },
+      "partidos": [
+        {
+          "fecha": "2026-08-23T12:30:00-03:00",
+          "ronda": "Grupo B · Fecha 1",
+          "local": "Quilmes",
+          "visitante": "A. SAN LORENZO DE ALMAGRO",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-08-30T14:15:00-03:00",
+          "ronda": "Grupo B · Fecha 2",
+          "local": "EL JAGUEL",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-09-06T16:00:00-03:00",
+          "ronda": "Grupo B · Fecha 3",
+          "local": "ADROGUE TENNIS CLUB",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-09-13T12:30:00-03:00",
+          "ronda": "Grupo B · Fecha 4",
+          "local": "Quilmes",
+          "visitante": "HARRODS, GATH Y CHAVES",
+          "esLocal": true,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-10-11T16:00:00-03:00",
+          "ronda": "Grupo B · Fecha 5",
+          "local": "VELEZ SARSFIELD",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-10-25T12:30:00-03:00",
+          "ronda": "Grupo B · Fecha 6",
+          "local": "Quilmes",
+          "visitante": "CIUDAD DE CAMPANA",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        }
+      ],
+      "actualizado": "2026-11-27T22:54:17.885Z",
+      "desactualizado": false
+    },
+    {
+      "id": "tenis-152-16-2-a",
+      "deporte": "tenis",
+      "deporteNombre": "Tenis",
+      "titulo": "Caballeros +45 · Segunda",
+      "competencia": "AAT · Interclub Mayores · Agosto 2026",
+      "descripcion": "Interclubes de la Asociación Argentina de Tenis. Cada serie se juega a singles y dobles; los mejores de cada grupo pasan a la llave.",
+      "fuente": "AAT",
+      "tabla": {
+        "nombre": "Grupo B",
+        "columnas": [
+          "pts",
+          "pj",
+          "pg",
+          "pp",
+          "dif",
+          "dg"
+        ],
+        "filas": [
+          {
+            "pos": 1,
+            "equipo": "ITALIANO",
+            "pts": 12,
+            "pj": 7,
+            "pg": 5,
+            "pp": 2,
+            "dif": 20,
+            "dg": 62,
+            "esQuilmes": false
+          },
+          {
+            "pos": 2,
+            "equipo": "CLUB PRIV. DINAMICA TENIS",
+            "pts": 12,
+            "pj": 7,
+            "pg": 5,
+            "pp": 2,
+            "dif": 15,
+            "dg": 81,
+            "esQuilmes": false
+          },
+          {
+            "pos": 3,
+            "equipo": "Quilmes",
+            "pts": 12,
+            "pj": 7,
+            "pg": 5,
+            "pp": 2,
+            "dif": 6,
+            "dg": 22,
+            "esQuilmes": true
+          },
+          {
+            "pos": 4,
+            "equipo": "CIRCULO POLICIA FEDERAL",
+            "pts": 11,
+            "pj": 7,
+            "pg": 4,
+            "pp": 3,
+            "dif": 4,
+            "dg": 14,
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
+            "equipo": "C.CIUDAD DE BS.AS.",
+            "pts": 11,
+            "pj": 7,
+            "pg": 4,
+            "pp": 3,
+            "dif": 2,
+            "dg": 7,
+            "esQuilmes": false
+          },
+          {
+            "pos": 6,
+            "equipo": "BANCO PROV.DE BS. AS.",
+            "pts": 11,
+            "pj": 7,
+            "pg": 4,
+            "pp": 3,
+            "dif": 1,
+            "dg": 12,
+            "esQuilmes": false
+          },
+          {
+            "pos": 7,
+            "equipo": "VELEZ SARSFIELD B",
+            "pts": 8,
+            "pj": 7,
+            "pg": 1,
+            "pp": 6,
+            "dif": -24,
+            "dg": -99,
+            "esQuilmes": false
+          },
+          {
+            "pos": 8,
+            "equipo": "BELGRANO ATHLETIC CLUB",
+            "pts": 5,
+            "pj": 7,
+            "pg": 0,
+            "pp": 7,
+            "dif": -25,
+            "dg": -99,
+            "esQuilmes": false
+          }
+        ]
+      },
+      "partidos": [
+        {
+          "fecha": "2026-08-22T12:30:00-03:00",
+          "ronda": "Grupo B · Fecha 1",
+          "local": "CLUB PRIV. DINAMICA TENIS",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-08-29T12:30:00-03:00",
+          "ronda": "Grupo B · Fecha 2",
+          "local": "Quilmes",
+          "visitante": "BELGRANO ATHLETIC CLUB",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-09-05T12:30:00-03:00",
+          "ronda": "Grupo B · Fecha 3",
+          "local": "Quilmes",
+          "visitante": "BANCO PROV.DE BS. AS.",
+          "esLocal": true,
+          "gl": 0,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-09-26T16:00:00-03:00",
+          "ronda": "Grupo B · Fecha 4",
+          "local": "Quilmes",
+          "visitante": "ITALIANO",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-10-17T14:15:00-03:00",
+          "ronda": "Grupo B · Fecha 5",
+          "local": "VELEZ SARSFIELD B",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 0,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-10-24T16:00:00-03:00",
+          "ronda": "Grupo B · Fecha 6",
+          "local": "Quilmes",
+          "visitante": "CIRCULO POLICIA FEDERAL",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-10-31T16:00:00-03:00",
+          "ronda": "Grupo B · Fecha 7",
+          "local": "C.CIUDAD DE BS.AS.",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        }
+      ],
+      "actualizado": "2026-11-27T22:54:17.885Z",
+      "desactualizado": false
+    },
+    {
+      "id": "tenis-152-16-4-a",
+      "deporte": "tenis",
+      "deporteNombre": "Tenis",
+      "titulo": "Caballeros +45 · Cuarta",
+      "competencia": "AAT · Interclub Mayores · Agosto 2026",
+      "descripcion": "Interclubes de la Asociación Argentina de Tenis. Cada serie se juega a singles y dobles; los mejores de cada grupo pasan a la llave.",
+      "fuente": "AAT",
+      "tabla": {
+        "nombre": "Grupo B",
+        "columnas": [
+          "pts",
+          "pj",
+          "pg",
+          "pp",
+          "dif",
+          "dg"
+        ],
+        "filas": [
+          {
+            "pos": 1,
+            "equipo": "LOS COOPERARIOS",
+            "pts": 13,
+            "pj": 7,
+            "pg": 6,
+            "pp": 1,
+            "dif": 31,
+            "dg": 146,
+            "esQuilmes": false
+          },
+          {
+            "pos": 2,
+            "equipo": "C. A. INDEPENDIENTE DE ESCOBAR",
+            "pts": 13,
+            "pj": 7,
+            "pg": 6,
+            "pp": 1,
+            "dif": 26,
+            "dg": 125,
+            "esQuilmes": false
+          },
+          {
+            "pos": 3,
+            "equipo": "C. ASTURIANO DE BS.AS.",
+            "pts": 12,
+            "pj": 7,
+            "pg": 5,
+            "pp": 2,
+            "dif": 14,
+            "dg": 37,
+            "esQuilmes": false
+          },
+          {
+            "pos": 4,
+            "equipo": "URQUIZA TENIS CLUB",
+            "pts": 11,
+            "pj": 7,
+            "pg": 4,
+            "pp": 3,
+            "dif": -5,
+            "dg": -13,
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
+            "equipo": "JOCKEY CLUB ARGENTINO",
+            "pts": 9,
+            "pj": 7,
+            "pg": 3,
+            "pp": 4,
+            "dif": -11,
+            "dg": -47,
+            "esQuilmes": false
+          },
+          {
+            "pos": 6,
+            "equipo": "Quilmes",
+            "pts": 8,
+            "pj": 7,
+            "pg": 3,
+            "pp": 4,
+            "dif": -9,
+            "dg": -42,
+            "esQuilmes": true
+          },
+          {
+            "pos": 7,
+            "equipo": "ITALIANO B",
+            "pts": 8,
+            "pj": 7,
+            "pg": 1,
+            "pp": 6,
+            "dif": -16,
+            "dg": -54,
+            "esQuilmes": false
+          },
+          {
+            "pos": 8,
+            "equipo": "TENILUDIUS",
+            "pts": 3,
+            "pj": 7,
+            "pg": 0,
+            "pp": 7,
+            "dif": -30,
+            "dg": -152,
+            "esQuilmes": false
+          }
+        ]
+      },
+      "partidos": [
+        {
+          "fecha": "2026-08-22T12:30:00-03:00",
+          "ronda": "Grupo B · Fecha 1",
+          "local": "Quilmes",
+          "visitante": "LOS COOPERARIOS",
+          "esLocal": true,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-08-29T12:30:00-03:00",
+          "ronda": "Grupo B · Fecha 2",
+          "local": "TENILUDIUS",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-09-05T14:15:00-03:00",
+          "ronda": "Grupo B · Fecha 3",
+          "local": "JOCKEY CLUB ARGENTINO",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-09-12T12:30:00-03:00",
+          "ronda": "Grupo B · Fecha 4",
+          "local": "C. ASTURIANO DE BS.AS.",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-09-19T12:30:00-03:00",
+          "ronda": "Grupo B · Fecha 5",
+          "local": "Quilmes",
+          "visitante": "ITALIANO B",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-09-26T14:15:00-03:00",
+          "ronda": "Grupo B · Fecha 6",
+          "local": "Quilmes",
+          "visitante": "URQUIZA TENIS CLUB",
+          "esLocal": true,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-10-17T16:00:00-03:00",
+          "ronda": "Grupo B · Fecha 7",
+          "local": "C. A. INDEPENDIENTE DE ESCOBAR",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        }
+      ],
+      "actualizado": "2026-11-27T22:54:17.885Z",
+      "desactualizado": false
+    },
+    {
+      "id": "tenis-152-21-7-a",
+      "deporte": "tenis",
+      "deporteNombre": "Tenis",
+      "titulo": "Caballeros +55 · Intermedia",
+      "competencia": "AAT · Interclub Mayores · Agosto 2026",
+      "descripcion": "Interclubes de la Asociación Argentina de Tenis. Cada serie se juega a singles y dobles; los mejores de cada grupo pasan a la llave.",
+      "fuente": "AAT",
+      "tabla": {
+        "nombre": "Grupo A",
+        "columnas": [
+          "pts",
+          "pj",
+          "pg",
+          "pp",
+          "dif",
+          "dg"
+        ],
+        "filas": [
+          {
+            "pos": 1,
+            "equipo": "OLIVOS TENIS CLUB",
+            "pts": 13,
+            "pj": 7,
+            "pg": 6,
+            "pp": 1,
+            "dif": 27,
+            "dg": 71,
+            "esQuilmes": false
+          },
+          {
+            "pos": 2,
+            "equipo": "ADROGUE TENNIS CLUB",
+            "pts": 11,
+            "pj": 6,
+            "pg": 5,
+            "pp": 1,
+            "dif": 18,
+            "dg": 70,
+            "esQuilmes": false
+          },
+          {
+            "pos": 3,
+            "equipo": "GIMNASIA Y ESG. DE BS.AS.",
+            "pts": 11,
+            "pj": 6,
+            "pg": 5,
+            "pp": 1,
+            "dif": 10,
+            "dg": 51,
+            "esQuilmes": false
+          },
+          {
+            "pos": 4,
+            "equipo": "CIRCULO GENERAL BELGRANO",
+            "pts": 10,
+            "pj": 7,
+            "pg": 3,
+            "pp": 4,
+            "dif": -4,
+            "dg": -11,
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
+            "equipo": "Quilmes",
+            "pts": 10,
+            "pj": 7,
+            "pg": 3,
+            "pp": 4,
+            "dif": -11,
+            "dg": -64,
+            "esQuilmes": true
+          },
+          {
+            "pos": 6,
+            "equipo": "CENTRO RECREATIVO ECA",
+            "pts": 9,
+            "pj": 7,
+            "pg": 2,
+            "pp": 5,
+            "dif": -9,
+            "dg": -37,
+            "esQuilmes": false
+          },
+          {
+            "pos": 7,
+            "equipo": "EL PLATA TENIS CLUB",
+            "pts": 9,
+            "pj": 7,
+            "pg": 2,
+            "pp": 5,
+            "dif": -10,
+            "dg": -3,
+            "esQuilmes": false
+          },
+          {
+            "pos": 8,
+            "equipo": "EL JAGUEL",
+            "pts": 8,
+            "pj": 7,
+            "pg": 1,
+            "pp": 6,
+            "dif": -21,
+            "dg": -77,
+            "esQuilmes": false
+          }
+        ]
+      },
+      "partidos": [
+        {
+          "fecha": "2026-08-30T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 1",
+          "local": "GIMNASIA Y ESG. DE BS.AS.",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-09-20T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 2",
+          "local": "Quilmes",
+          "visitante": "OLIVOS TENIS CLUB",
+          "esLocal": true,
+          "gl": 0,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-10-11T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 3",
+          "local": "Quilmes",
+          "visitante": "EL PLATA TENIS CLUB",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-10-12T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 4",
+          "local": "CENTRO RECREATIVO ECA",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-10-25T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 5",
+          "local": "Quilmes",
+          "visitante": "CIRCULO GENERAL BELGRANO",
+          "esLocal": true,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-11-08T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 6",
+          "local": "EL JAGUEL",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-11-22T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 7",
+          "local": "ADROGUE TENNIS CLUB",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        }
+      ],
+      "actualizado": "2026-11-27T22:54:17.885Z",
+      "desactualizado": false
+    },
+    {
+      "id": "tenis-152-21-2-a",
+      "deporte": "tenis",
+      "deporteNombre": "Tenis",
+      "titulo": "Caballeros +55 · Segunda",
+      "competencia": "AAT · Interclub Mayores · Agosto 2026",
+      "descripcion": "Interclubes de la Asociación Argentina de Tenis. Cada serie se juega a singles y dobles; los mejores de cada grupo pasan a la llave.",
+      "fuente": "AAT",
+      "tabla": {
+        "nombre": "Grupo C",
+        "columnas": [
+          "pts",
+          "pj",
+          "pg",
+          "pp",
+          "dif",
+          "dg"
+        ],
+        "filas": [
+          {
+            "pos": 1,
+            "equipo": "COMUNICACIONES",
+            "pts": 13,
+            "pj": 7,
+            "pg": 6,
+            "pp": 1,
+            "dif": 26,
+            "dg": 115,
+            "esQuilmes": false
+          },
+          {
+            "pos": 2,
+            "equipo": "SAN FERNANDO",
+            "pts": 12,
+            "pj": 7,
+            "pg": 5,
+            "pp": 2,
+            "dif": 16,
+            "dg": 52,
+            "esQuilmes": false
+          },
+          {
+            "pos": 3,
+            "equipo": "ATLETICO MONTE GRANDE",
+            "pts": 12,
+            "pj": 7,
+            "pg": 5,
+            "pp": 2,
+            "dif": 7,
+            "dg": 40,
+            "esQuilmes": false
+          },
+          {
+            "pos": 4,
+            "equipo": "UNIVERS. DE BS.AS (CUBA)",
+            "pts": 11,
+            "pj": 7,
+            "pg": 4,
+            "pp": 3,
+            "dif": 0,
+            "dg": 17,
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
+            "equipo": "CENTRO NAVAL",
+            "pts": 10,
+            "pj": 7,
+            "pg": 3,
+            "pp": 4,
+            "dif": -3,
+            "dg": -10,
+            "esQuilmes": false
+          },
+          {
+            "pos": 6,
+            "equipo": "GAZCON LAWN TENNIS CLUB",
+            "pts": 9,
+            "pj": 7,
+            "pg": 2,
+            "pp": 5,
+            "dif": -6,
+            "dg": -16,
+            "esQuilmes": false
+          },
+          {
+            "pos": 7,
+            "equipo": "Quilmes",
+            "pts": 9,
+            "pj": 7,
+            "pg": 2,
+            "pp": 5,
+            "dif": -9,
+            "dg": -22,
+            "esQuilmes": true
+          },
+          {
+            "pos": 8,
+            "equipo": "LAS CABAÑAS",
+            "pts": 1,
+            "pj": 7,
+            "pg": 1,
+            "pp": 6,
+            "dif": -31,
+            "dg": -176,
+            "esQuilmes": false
+          }
+        ]
+      },
+      "partidos": [
+        {
+          "fecha": "2026-09-13T10:45:00-03:00",
+          "ronda": "Grupo C · Fecha 1",
+          "local": "SAN FERNANDO",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-09-20T12:30:00-03:00",
+          "ronda": "Grupo C · Fecha 2",
+          "local": "Quilmes",
+          "visitante": "UNIVERS. DE BS.AS (CUBA)",
+          "esLocal": true,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-10-04T10:45:00-03:00",
+          "ronda": "Grupo C · Fecha 3",
+          "local": "GAZCON LAWN TENNIS CLUB",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-10-11T12:30:00-03:00",
+          "ronda": "Grupo C · Fecha 4",
+          "local": "Quilmes",
+          "visitante": "COMUNICACIONES",
+          "esLocal": true,
+          "gl": 0,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-10-25T10:45:00-03:00",
+          "ronda": "Grupo C · Fecha 5",
+          "local": "ATLETICO MONTE GRANDE",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-11-15T12:30:00-03:00",
+          "ronda": "Grupo C · Fecha 6",
+          "local": "CENTRO NAVAL",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-11-22T12:30:00-03:00",
+          "ronda": "Grupo C · Fecha 7",
+          "local": "Quilmes",
+          "visitante": "LAS CABAÑAS",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        }
+      ],
+      "actualizado": "2026-11-27T22:54:17.885Z",
+      "desactualizado": false
+    },
+    {
+      "id": "tenis-152-83-2-a",
+      "deporte": "tenis",
+      "deporteNombre": "Tenis",
+      "titulo": "Caballeros +65 · Segunda",
+      "competencia": "AAT · Interclub Mayores · Agosto 2026",
+      "descripcion": "Interclubes de la Asociación Argentina de Tenis. Cada serie se juega a singles y dobles; los mejores de cada grupo pasan a la llave.",
+      "fuente": "AAT",
+      "tabla": {
+        "nombre": "Grupo C",
+        "columnas": [
+          "pts",
+          "pj",
+          "pg",
+          "pp",
+          "dif",
+          "dg"
+        ],
+        "filas": [
+          {
+            "pos": 1,
+            "equipo": "Quilmes",
+            "pts": 14,
+            "pj": 7,
+            "pg": 7,
+            "pp": 0,
+            "dif": 34,
+            "dg": 157,
+            "esQuilmes": true
+          },
+          {
+            "pos": 2,
+            "equipo": "EL JAGUEL",
+            "pts": 13,
+            "pj": 7,
+            "pg": 6,
+            "pp": 1,
+            "dif": 30,
+            "dg": 146,
+            "esQuilmes": false
+          },
+          {
+            "pos": 3,
+            "equipo": "URQUIZA TENIS CLUB",
+            "pts": 12,
+            "pj": 7,
+            "pg": 5,
+            "pp": 2,
+            "dif": 3,
+            "dg": 12,
+            "esQuilmes": false
+          },
+          {
+            "pos": 4,
+            "equipo": "BANCO PROV.DE BS. AS.",
+            "pts": 11,
+            "pj": 7,
+            "pg": 4,
+            "pp": 3,
+            "dif": 2,
+            "dg": 8,
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
+            "equipo": "BS.AS.LAWN TENNIS CLUB",
+            "pts": 10,
+            "pj": 7,
+            "pg": 3,
+            "pp": 4,
+            "dif": -5,
+            "dg": -15,
+            "esQuilmes": false
+          },
+          {
+            "pos": 6,
+            "equipo": "C.CIUDAD DE BS.AS.",
+            "pts": 9,
+            "pj": 7,
+            "pg": 2,
+            "pp": 5,
+            "dif": -15,
+            "dg": -72,
+            "esQuilmes": false
+          },
+          {
+            "pos": 7,
+            "equipo": "HARRODS, GATH Y CHAVES B",
+            "pts": 8,
+            "pj": 7,
+            "pg": 1,
+            "pp": 6,
+            "dif": -17,
+            "dg": -66,
+            "esQuilmes": false
+          },
+          {
+            "pos": 8,
+            "equipo": "DEPORTES DISCOBOLO",
+            "pts": 7,
+            "pj": 7,
+            "pg": 0,
+            "pp": 7,
+            "dif": -32,
+            "dg": -170,
+            "esQuilmes": false
+          }
+        ]
+      },
+      "partidos": [
+        {
+          "fecha": "2026-09-26T12:30:00-03:00",
+          "ronda": "Grupo C · Fecha 1",
+          "local": "Quilmes",
+          "visitante": "HARRODS, GATH Y CHAVES B",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-10-17T12:30:00-03:00",
+          "ronda": "Grupo C · Fecha 2",
+          "local": "C.CIUDAD DE BS.AS.",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 0,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-10-24T12:30:00-03:00",
+          "ronda": "Grupo C · Fecha 3",
+          "local": "Quilmes",
+          "visitante": "DEPORTES DISCOBOLO",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-10-31T12:30:00-03:00",
+          "ronda": "Grupo C · Fecha 4",
+          "local": "EL JAGUEL",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-11-07T12:30:00-03:00",
+          "ronda": "Grupo C · Fecha 5",
+          "local": "URQUIZA TENIS CLUB",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 0,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-11-14T12:30:00-03:00",
+          "ronda": "Grupo C · Fecha 6",
+          "local": "Quilmes",
+          "visitante": "BS.AS.LAWN TENNIS CLUB",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-11-21T12:30:00-03:00",
+          "ronda": "Grupo C · Fecha 7",
+          "local": "Quilmes",
+          "visitante": "BANCO PROV.DE BS. AS.",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        }
+      ],
+      "actualizado": "2026-11-27T22:54:17.885Z",
+      "desactualizado": false
+    },
+    {
+      "id": "tenis-152-83-2-b",
+      "deporte": "tenis",
+      "deporteNombre": "Tenis",
+      "titulo": "Caballeros +65 · Segunda · Equipo B",
+      "competencia": "AAT · Interclub Mayores · Agosto 2026",
+      "descripcion": "Interclubes de la Asociación Argentina de Tenis. Cada serie se juega a singles y dobles; los mejores de cada grupo pasan a la llave.",
       "fuente": "AAT",
       "tabla": {
         "nombre": "Grupo D",
@@ -1895,7 +3019,433 @@
         "filas": [
           {
             "pos": 1,
-            "equipo": "QUILMES ATLETICO",
+            "equipo": "S.ALEM,GIM.V.BALLESTER",
+            "pts": 13,
+            "pj": 7,
+            "pg": 6,
+            "pp": 1,
+            "dif": 27,
+            "dg": 106,
+            "esQuilmes": false
+          },
+          {
+            "pos": 2,
+            "equipo": "Quilmes B",
+            "pts": 11,
+            "pj": 6,
+            "pg": 5,
+            "pp": 1,
+            "dif": 14,
+            "dg": 47,
+            "esQuilmes": true
+          },
+          {
+            "pos": 3,
+            "equipo": "ATLETICO SAN ISIDRO",
+            "pts": 11,
+            "pj": 6,
+            "pg": 5,
+            "pp": 1,
+            "dif": 15,
+            "dg": 50,
+            "esQuilmes": false
+          },
+          {
+            "pos": 4,
+            "equipo": "HARRODS, GATH Y CHAVES",
+            "pts": 10,
+            "pj": 6,
+            "pg": 4,
+            "pp": 2,
+            "dif": 0,
+            "dg": -15,
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
+            "equipo": "COMERCIO",
+            "pts": 9,
+            "pj": 6,
+            "pg": 3,
+            "pp": 3,
+            "dif": 3,
+            "dg": 28,
+            "esQuilmes": false
+          },
+          {
+            "pos": 6,
+            "equipo": "UNIVERS. DE BS.AS (CUBA)",
+            "pts": 9,
+            "pj": 7,
+            "pg": 2,
+            "pp": 5,
+            "dif": -9,
+            "dg": -18,
+            "esQuilmes": false
+          },
+          {
+            "pos": 7,
+            "equipo": "A.E. BCO CIUDAD DE BS.AS.",
+            "pts": 6,
+            "pj": 6,
+            "pg": 0,
+            "pp": 6,
+            "dif": -26,
+            "dg": -106,
+            "esQuilmes": false
+          },
+          {
+            "pos": 8,
+            "equipo": "GIM. Y ESG. LA PLATA",
+            "pts": 4,
+            "pj": 6,
+            "pg": 0,
+            "pp": 6,
+            "dif": -24,
+            "dg": -92,
+            "esQuilmes": false
+          }
+        ]
+      },
+      "partidos": [
+        {
+          "fecha": "2026-09-26T12:30:00-03:00",
+          "ronda": "Grupo D · Fecha 1",
+          "local": "ATLETICO SAN ISIDRO",
+          "visitante": "Quilmes B",
+          "esLocal": false,
+          "gl": 0,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-10-10T12:30:00-03:00",
+          "ronda": "Grupo D · Fecha 2",
+          "local": "A.E. BCO CIUDAD DE BS.AS.",
+          "visitante": "Quilmes B",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-10-17T12:30:00-03:00",
+          "ronda": "Grupo D · Fecha 3",
+          "local": "GIM. Y ESG. LA PLATA",
+          "visitante": "Quilmes B",
+          "esLocal": false,
+          "gl": 0,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-10-31T12:30:00-03:00",
+          "ronda": "Grupo D · Fecha 4",
+          "local": "Quilmes B",
+          "visitante": "UNIVERS. DE BS.AS (CUBA)",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-11-07T12:30:00-03:00",
+          "ronda": "Grupo D · Fecha 5",
+          "local": "Quilmes B",
+          "visitante": "HARRODS, GATH Y CHAVES",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-11-21T12:30:00-03:00",
+          "ronda": "Grupo D · Fecha 6",
+          "local": "S.ALEM,GIM.V.BALLESTER",
+          "visitante": "Quilmes B",
+          "esLocal": false,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-11-28T12:30:00-03:00",
+          "ronda": "Grupo D · Fecha 7",
+          "local": "Quilmes B",
+          "visitante": "COMERCIO",
+          "esLocal": true,
+          "gl": null,
+          "gv": null,
+          "jugado": false,
+          "estado": "Reprogramado"
+        }
+      ],
+      "actualizado": "2026-11-27T22:54:17.885Z",
+      "desactualizado": false
+    },
+    {
+      "id": "tenis-152-23-1-a",
+      "deporte": "tenis",
+      "deporteNombre": "Tenis",
+      "titulo": "Caballeros +75 · Primera",
+      "competencia": "AAT · Interclub Mayores · Agosto 2026",
+      "descripcion": "Interclubes de la Asociación Argentina de Tenis. Cada serie se juega a singles y dobles; los mejores de cada grupo pasan a la llave.",
+      "fuente": "AAT",
+      "tabla": {
+        "nombre": "Grupo A",
+        "columnas": [
+          "pts",
+          "pj",
+          "pg",
+          "pp",
+          "dif",
+          "dg"
+        ],
+        "filas": [
+          {
+            "pos": 1,
+            "equipo": "ASOC. DEP. RACIONALES",
+            "pts": 16,
+            "pj": 8,
+            "pg": 8,
+            "pp": 0,
+            "dif": 29,
+            "dg": 112,
+            "esQuilmes": false
+          },
+          {
+            "pos": 2,
+            "equipo": "TENIS CLUB LA PLATA",
+            "pts": 15,
+            "pj": 8,
+            "pg": 7,
+            "pp": 1,
+            "dif": 10,
+            "dg": 44,
+            "esQuilmes": false
+          },
+          {
+            "pos": 3,
+            "equipo": "SAN FERNANDO",
+            "pts": 14,
+            "pj": 9,
+            "pg": 6,
+            "pp": 3,
+            "dif": 21,
+            "dg": 76,
+            "esQuilmes": false
+          },
+          {
+            "pos": 4,
+            "equipo": "REGATAS L AVIRON",
+            "pts": 14,
+            "pj": 9,
+            "pg": 6,
+            "pp": 3,
+            "dif": 4,
+            "dg": 15,
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
+            "equipo": "C.CIUDAD DE BS.AS.",
+            "pts": 12,
+            "pj": 9,
+            "pg": 3,
+            "pp": 6,
+            "dif": 5,
+            "dg": 49,
+            "esQuilmes": false
+          },
+          {
+            "pos": 6,
+            "equipo": "A.FOM. L. PALOMAR (AFALP)",
+            "pts": 12,
+            "pj": 9,
+            "pg": 3,
+            "pp": 6,
+            "dif": -9,
+            "dg": -25,
+            "esQuilmes": false
+          },
+          {
+            "pos": 7,
+            "equipo": "HARRODS, GATH Y CHAVES",
+            "pts": 11,
+            "pj": 8,
+            "pg": 4,
+            "pp": 4,
+            "dif": -7,
+            "dg": -36,
+            "esQuilmes": false
+          },
+          {
+            "pos": 8,
+            "equipo": "C. A. INDEPENDIENTE DE ESCOBAR",
+            "pts": 11,
+            "pj": 8,
+            "pg": 3,
+            "pp": 5,
+            "dif": -8,
+            "dg": -32,
+            "esQuilmes": false
+          },
+          {
+            "pos": 9,
+            "equipo": "UNIVERS. DE BS.AS (CUBA)",
+            "pts": 10,
+            "pj": 9,
+            "pg": 1,
+            "pp": 8,
+            "dif": -26,
+            "dg": -118,
+            "esQuilmes": false
+          },
+          {
+            "pos": 10,
+            "equipo": "Quilmes",
+            "pts": 8,
+            "pj": 7,
+            "pg": 1,
+            "pp": 6,
+            "dif": -18,
+            "dg": -79,
+            "esQuilmes": true
+          }
+        ]
+      },
+      "partidos": [
+        {
+          "fecha": "2026-08-28T11:00:00-03:00",
+          "ronda": "Grupo A · Fecha 1",
+          "local": "UNIVERS. DE BS.AS (CUBA)",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-09-04T11:00:00-03:00",
+          "ronda": "Grupo A · Fecha 2",
+          "local": "C.CIUDAD DE BS.AS.",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-09-11T11:00:00-03:00",
+          "ronda": "Grupo A · Fecha 3",
+          "local": "Quilmes",
+          "visitante": "TENIS CLUB LA PLATA",
+          "esLocal": true,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-09-18T11:00:00-03:00",
+          "ronda": "Grupo A · Fecha 4",
+          "local": "Quilmes",
+          "visitante": "A.FOM. L. PALOMAR (AFALP)",
+          "esLocal": true,
+          "gl": 0,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-09-25T11:00:00-03:00",
+          "ronda": "Grupo A · Fecha 5",
+          "local": "SAN FERNANDO",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-10-02T11:00:00-03:00",
+          "ronda": "Grupo A · Fecha 6",
+          "local": "Quilmes",
+          "visitante": "REGATAS L AVIRON",
+          "esLocal": true,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-11-20T11:00:00-03:00",
+          "ronda": "Grupo A · Fecha 7",
+          "local": "ASOC. DEP. RACIONALES",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-11-27T11:00:00-03:00",
+          "ronda": "Grupo A · Fecha 8",
+          "local": "Quilmes",
+          "visitante": "C. A. INDEPENDIENTE DE ESCOBAR",
+          "esLocal": true,
+          "gl": null,
+          "gv": null,
+          "jugado": false,
+          "estado": "Programado"
+        },
+        {
+          "fecha": "2026-12-04T11:00:00-03:00",
+          "ronda": "Grupo A · Fecha 9",
+          "local": "Quilmes",
+          "visitante": "HARRODS, GATH Y CHAVES",
+          "esLocal": true,
+          "gl": null,
+          "gv": null,
+          "jugado": false,
+          "estado": "Reprogramado"
+        }
+      ],
+      "actualizado": "2026-11-27T22:54:17.885Z",
+      "desactualizado": false
+    },
+    {
+      "id": "tenis-147-96-2-a",
+      "deporte": "tenis",
+      "deporteNombre": "Tenis",
+      "titulo": "Caballeros +40 · Segunda",
+      "competencia": "AAT · Interclubes por edad 2026 1er cuatrimestre",
+      "descripcion": "Interclubes de la Asociación Argentina de Tenis. Cada serie se juega a singles y dobles; los mejores de cada grupo pasan a la llave.",
+      "fuente": "AAT",
+      "tabla": {
+        "nombre": "Grupo D",
+        "columnas": [
+          "pts",
+          "pj",
+          "pg",
+          "pp",
+          "dif",
+          "dg"
+        ],
+        "filas": [
+          {
+            "pos": 1,
+            "equipo": "Quilmes",
             "pts": 11,
             "pj": 6,
             "pg": 5,
@@ -1977,7 +3527,7 @@
           "fecha": "2026-03-15T12:30:00-03:00",
           "ronda": "Grupo D · Fecha 1",
           "local": "LUJAN TENNIS CLUB",
-          "visitante": "QUILMES ATLETICO",
+          "visitante": "Quilmes",
           "esLocal": false,
           "gl": 2,
           "gv": 1,
@@ -1987,7 +3537,7 @@
         {
           "fecha": "2026-03-22T14:15:00-03:00",
           "ronda": "Grupo D · Fecha 2",
-          "local": "QUILMES ATLETICO",
+          "local": "Quilmes",
           "visitante": "ITALIANO",
           "esLocal": true,
           "gl": 2,
@@ -1998,7 +3548,7 @@
         {
           "fecha": "2026-04-19T14:15:00-03:00",
           "ronda": "Grupo D · Fecha 3",
-          "local": "QUILMES ATLETICO",
+          "local": "Quilmes",
           "visitante": "NAUTICO HACOAJ",
           "esLocal": true,
           "gl": 3,
@@ -2009,7 +3559,7 @@
         {
           "fecha": "2026-04-26T14:15:00-03:00",
           "ronda": "Grupo D · Fecha 4",
-          "local": "QUILMES ATLETICO",
+          "local": "Quilmes",
           "visitante": "BS.AS.LAWN TENNIS CLUB",
           "esLocal": true,
           "gl": 3,
@@ -2021,7 +3571,7 @@
           "fecha": "2026-05-03T12:30:00-03:00",
           "ronda": "Grupo D · Fecha 5",
           "local": "COMUNICACIONES",
-          "visitante": "QUILMES ATLETICO",
+          "visitante": "Quilmes",
           "esLocal": false,
           "gl": 0,
           "gv": 3,
@@ -2032,7 +3582,7 @@
           "fecha": "2026-05-10T12:30:00-03:00",
           "ronda": "Grupo D · Fecha 6",
           "local": "ARGENTINOS JUNIORS",
-          "visitante": "QUILMES ATLETICO",
+          "visitante": "Quilmes",
           "esLocal": false,
           "gl": 1,
           "gv": 2,
@@ -2043,7 +3593,7 @@
           "fecha": null,
           "ronda": "Llave Campeonato · Cuartos de final",
           "local": "CIRCULO MILITAR",
-          "visitante": "QUILMES ATLETICO",
+          "visitante": "Quilmes",
           "esLocal": false,
           "gl": 2,
           "gv": 1,
@@ -2051,16 +3601,905 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-27T22:41:01.437Z",
+      "actualizado": "2026-11-27T22:54:17.885Z",
       "desactualizado": false
     },
     {
-      "id": "tenis-70",
+      "id": "tenis-147-82-7-a",
       "deporte": "tenis",
       "deporteNombre": "Tenis",
-      "titulo": "Caballeros +70",
-      "competencia": "Interclubes AAT · +70 Segunda",
-      "descripcion": "Interclubes por edad de la Asociación Argentina de Tenis (1er cuatrimestre). Cada serie se juega a singles y dobles; los primeros de cada grupo pasan a la llave.",
+      "titulo": "Caballeros +50 · Intermedia",
+      "competencia": "AAT · Interclubes por edad 2026 1er cuatrimestre",
+      "descripcion": "Interclubes de la Asociación Argentina de Tenis. Cada serie se juega a singles y dobles; los mejores de cada grupo pasan a la llave.",
+      "fuente": "AAT",
+      "tabla": {
+        "nombre": "Grupo B",
+        "columnas": [
+          "pts",
+          "pj",
+          "pg",
+          "pp",
+          "dif",
+          "dg"
+        ],
+        "filas": [
+          {
+            "pos": 1,
+            "equipo": "RIVER PLATE",
+            "pts": 13,
+            "pj": 7,
+            "pg": 6,
+            "pp": 1,
+            "dif": 21,
+            "dg": 68,
+            "esQuilmes": false
+          },
+          {
+            "pos": 2,
+            "equipo": "REGATAS L AVIRON",
+            "pts": 12,
+            "pj": 7,
+            "pg": 5,
+            "pp": 2,
+            "dif": 17,
+            "dg": 64,
+            "esQuilmes": false
+          },
+          {
+            "pos": 3,
+            "equipo": "TEMPERLEY L.T.C.",
+            "pts": 12,
+            "pj": 7,
+            "pg": 5,
+            "pp": 2,
+            "dif": 4,
+            "dg": 23,
+            "esQuilmes": false
+          },
+          {
+            "pos": 4,
+            "equipo": "OLIVOS TENIS CLUB",
+            "pts": 12,
+            "pj": 7,
+            "pg": 5,
+            "pp": 2,
+            "dif": 4,
+            "dg": 8,
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
+            "equipo": "CENTRO NAVAL",
+            "pts": 10,
+            "pj": 7,
+            "pg": 3,
+            "pp": 4,
+            "dif": -4,
+            "dg": -25,
+            "esQuilmes": false
+          },
+          {
+            "pos": 6,
+            "equipo": "Quilmes",
+            "pts": 9,
+            "pj": 7,
+            "pg": 2,
+            "pp": 5,
+            "dif": -8,
+            "dg": -16,
+            "esQuilmes": true
+          },
+          {
+            "pos": 7,
+            "equipo": "CIRCULO POLICIA FEDERAL",
+            "pts": 9,
+            "pj": 7,
+            "pg": 2,
+            "pp": 5,
+            "dif": -11,
+            "dg": -39,
+            "esQuilmes": false
+          },
+          {
+            "pos": 8,
+            "equipo": "TENILUDIUS",
+            "pts": 7,
+            "pj": 7,
+            "pg": 0,
+            "pp": 7,
+            "dif": -23,
+            "dg": -83,
+            "esQuilmes": false
+          }
+        ]
+      },
+      "partidos": [
+        {
+          "fecha": "2026-03-28T14:15:00-03:00",
+          "ronda": "Grupo B · Fecha 1",
+          "local": "Quilmes",
+          "visitante": "TENILUDIUS",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-04-18T12:30:00-03:00",
+          "ronda": "Grupo B · Fecha 2",
+          "local": "Quilmes",
+          "visitante": "CENTRO NAVAL",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-04-25T12:30:00-03:00",
+          "ronda": "Grupo B · Fecha 3",
+          "local": "Quilmes",
+          "visitante": "CIRCULO POLICIA FEDERAL",
+          "esLocal": true,
+          "gl": 0,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-05-16T12:30:00-03:00",
+          "ronda": "Grupo B · Fecha 4",
+          "local": "Quilmes",
+          "visitante": "RIVER PLATE",
+          "esLocal": true,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-05-23T12:30:00-03:00",
+          "ronda": "Grupo B · Fecha 5",
+          "local": "TEMPERLEY L.T.C.",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-05-30T12:30:00-03:00",
+          "ronda": "Grupo B · Fecha 6",
+          "local": "REGATAS L AVIRON",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-06-06T14:00:00-03:00",
+          "ronda": "Grupo B · Fecha 7",
+          "local": "OLIVOS TENIS CLUB",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        }
+      ],
+      "actualizado": "2026-11-27T22:54:17.885Z",
+      "desactualizado": false
+    },
+    {
+      "id": "tenis-147-82-3-a",
+      "deporte": "tenis",
+      "deporteNombre": "Tenis",
+      "titulo": "Caballeros +50 · Tercera",
+      "competencia": "AAT · Interclubes por edad 2026 1er cuatrimestre",
+      "descripcion": "Interclubes de la Asociación Argentina de Tenis. Cada serie se juega a singles y dobles; los mejores de cada grupo pasan a la llave.",
+      "fuente": "AAT",
+      "tabla": {
+        "nombre": "Grupo E",
+        "columnas": [
+          "pts",
+          "pj",
+          "pg",
+          "pp",
+          "dif",
+          "dg"
+        ],
+        "filas": [
+          {
+            "pos": 1,
+            "equipo": "CIRCULO MILITAR",
+            "pts": 12,
+            "pj": 6,
+            "pg": 6,
+            "pp": 0,
+            "dif": 23,
+            "dg": 107,
+            "esQuilmes": false
+          },
+          {
+            "pos": 2,
+            "equipo": "HARRODS, GATH Y CHAVES",
+            "pts": 11,
+            "pj": 6,
+            "pg": 5,
+            "pp": 1,
+            "dif": 12,
+            "dg": 38,
+            "esQuilmes": false
+          },
+          {
+            "pos": 3,
+            "equipo": "Quilmes",
+            "pts": 10,
+            "pj": 6,
+            "pg": 4,
+            "pp": 2,
+            "dif": 10,
+            "dg": 41,
+            "esQuilmes": true
+          },
+          {
+            "pos": 4,
+            "equipo": "ARGENTINOS JUNIORS",
+            "pts": 9,
+            "pj": 6,
+            "pg": 3,
+            "pp": 3,
+            "dif": -1,
+            "dg": 2,
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
+            "equipo": "REGATAS L AVIRON",
+            "pts": 8,
+            "pj": 6,
+            "pg": 2,
+            "pp": 4,
+            "dif": 0,
+            "dg": -2,
+            "esQuilmes": false
+          },
+          {
+            "pos": 6,
+            "equipo": "GIM. Y ESG.DE ITUZAINGO",
+            "pts": 7,
+            "pj": 6,
+            "pg": 1,
+            "pp": 5,
+            "dif": -17,
+            "dg": -69,
+            "esQuilmes": false
+          },
+          {
+            "pos": 7,
+            "equipo": "DARLING TENNIS CLUB",
+            "pts": 6,
+            "pj": 6,
+            "pg": 0,
+            "pp": 6,
+            "dif": -27,
+            "dg": -117,
+            "esQuilmes": false
+          }
+        ]
+      },
+      "partidos": [
+        {
+          "fecha": "2026-03-28T12:30:00-03:00",
+          "ronda": "Grupo E · Fecha 1",
+          "local": "GIM. Y ESG.DE ITUZAINGO",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-04-11T12:30:00-03:00",
+          "ronda": "Grupo E · Fecha 2",
+          "local": "CIRCULO MILITAR",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-04-25T14:15:00-03:00",
+          "ronda": "Grupo E · Fecha 3",
+          "local": "Quilmes",
+          "visitante": "DARLING TENNIS CLUB",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-05-02T12:30:00-03:00",
+          "ronda": "Grupo E · Fecha 4",
+          "local": "REGATAS L AVIRON",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-05-16T14:15:00-03:00",
+          "ronda": "Grupo E · Fecha 5",
+          "local": "Quilmes",
+          "visitante": "HARRODS, GATH Y CHAVES",
+          "esLocal": true,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-06-13T12:30:00-03:00",
+          "ronda": "Grupo E · Fecha 6",
+          "local": "Quilmes",
+          "visitante": "ARGENTINOS JUNIORS",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        }
+      ],
+      "actualizado": "2026-11-27T22:54:17.885Z",
+      "desactualizado": false
+    },
+    {
+      "id": "tenis-147-82-5-a",
+      "deporte": "tenis",
+      "deporteNombre": "Tenis",
+      "titulo": "Caballeros +50 · Quinta",
+      "competencia": "AAT · Interclubes por edad 2026 1er cuatrimestre",
+      "descripcion": "Interclubes de la Asociación Argentina de Tenis. Cada serie se juega a singles y dobles; los mejores de cada grupo pasan a la llave.",
+      "fuente": "AAT",
+      "tabla": {
+        "nombre": "Grupo F",
+        "columnas": [
+          "pts",
+          "pj",
+          "pg",
+          "pp",
+          "dif",
+          "dg"
+        ],
+        "filas": [
+          {
+            "pos": 1,
+            "equipo": "LAS CABAÑAS",
+            "pts": 11,
+            "pj": 6,
+            "pg": 5,
+            "pp": 1,
+            "dif": 20,
+            "dg": 83,
+            "esQuilmes": false
+          },
+          {
+            "pos": 2,
+            "equipo": "Quilmes",
+            "pts": 10,
+            "pj": 6,
+            "pg": 4,
+            "pp": 2,
+            "dif": 13,
+            "dg": 79,
+            "esQuilmes": true
+          },
+          {
+            "pos": 3,
+            "equipo": "SAN FERNANDO",
+            "pts": 9,
+            "pj": 6,
+            "pg": 3,
+            "pp": 3,
+            "dif": 3,
+            "dg": 32,
+            "esQuilmes": false
+          },
+          {
+            "pos": 4,
+            "equipo": "TEMPERLEY L.T.C. B",
+            "pts": 8,
+            "pj": 6,
+            "pg": 2,
+            "pp": 4,
+            "dif": -8,
+            "dg": -48,
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
+            "equipo": "CLUB MORON",
+            "pts": 8,
+            "pj": 6,
+            "pg": 2,
+            "pp": 4,
+            "dif": -7,
+            "dg": -9,
+            "esQuilmes": false
+          },
+          {
+            "pos": 6,
+            "equipo": "ASOC. DEPORT. COUNTRY CANNING",
+            "pts": 7,
+            "pj": 6,
+            "pg": 4,
+            "pp": 2,
+            "dif": -1,
+            "dg": -30,
+            "esQuilmes": false
+          },
+          {
+            "pos": 7,
+            "equipo": "CENTRO DEPORTIVO HURACAN",
+            "pts": 5,
+            "pj": 6,
+            "pg": 1,
+            "pp": 5,
+            "dif": -20,
+            "dg": -107,
+            "esQuilmes": false
+          }
+        ]
+      },
+      "partidos": [
+        {
+          "fecha": "2026-03-14T12:30:00-03:00",
+          "ronda": "Grupo F · Fecha 1",
+          "local": "CLUB MORON",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-04-11T12:30:00-03:00",
+          "ronda": "Grupo F · Fecha 2",
+          "local": "ASOC. DEPORT. COUNTRY CANNING",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-04-18T14:15:00-03:00",
+          "ronda": "Grupo F · Fecha 3",
+          "local": "Quilmes",
+          "visitante": "CENTRO DEPORTIVO HURACAN",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-04-25T16:00:00-03:00",
+          "ronda": "Grupo F · Fecha 4",
+          "local": "Quilmes",
+          "visitante": "TEMPERLEY L.T.C. B",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-05-16T16:00:00-03:00",
+          "ronda": "Grupo F · Fecha 5",
+          "local": "Quilmes",
+          "visitante": "LAS CABAÑAS",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-05-30T14:15:00-03:00",
+          "ronda": "Grupo F · Fecha 6",
+          "local": "SAN FERNANDO",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 0,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado"
+        }
+      ],
+      "actualizado": "2026-11-27T22:54:17.885Z",
+      "desactualizado": false
+    },
+    {
+      "id": "tenis-147-12-1-a",
+      "deporte": "tenis",
+      "deporteNombre": "Tenis",
+      "titulo": "Caballeros +60 · Primera",
+      "competencia": "AAT · Interclubes por edad 2026 1er cuatrimestre",
+      "descripcion": "Interclubes de la Asociación Argentina de Tenis. Cada serie se juega a singles y dobles; los mejores de cada grupo pasan a la llave.",
+      "fuente": "AAT",
+      "tabla": {
+        "nombre": "Grupo A",
+        "columnas": [
+          "pts",
+          "pj",
+          "pg",
+          "pp",
+          "dif",
+          "dg"
+        ],
+        "filas": [
+          {
+            "pos": 1,
+            "equipo": "SOC.ITALIANA (SITAS)",
+            "pts": 14,
+            "pj": 7,
+            "pg": 7,
+            "pp": 0,
+            "dif": 20,
+            "dg": 69,
+            "esQuilmes": false
+          },
+          {
+            "pos": 2,
+            "equipo": "GAZCON LAWN TENNIS CLUB",
+            "pts": 12,
+            "pj": 7,
+            "pg": 5,
+            "pp": 2,
+            "dif": 15,
+            "dg": 78,
+            "esQuilmes": false
+          },
+          {
+            "pos": 3,
+            "equipo": "Quilmes",
+            "pts": 11,
+            "pj": 7,
+            "pg": 4,
+            "pp": 3,
+            "dif": 4,
+            "dg": 8,
+            "esQuilmes": true
+          },
+          {
+            "pos": 4,
+            "equipo": "COMERCIO",
+            "pts": 11,
+            "pj": 7,
+            "pg": 4,
+            "pp": 3,
+            "dif": -1,
+            "dg": -2,
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
+            "equipo": "HARRODS, GATH Y CHAVES",
+            "pts": 10,
+            "pj": 7,
+            "pg": 3,
+            "pp": 4,
+            "dif": -6,
+            "dg": -35,
+            "esQuilmes": false
+          },
+          {
+            "pos": 6,
+            "equipo": "GIMNASIA Y ESG. DE BS.AS.",
+            "pts": 10,
+            "pj": 7,
+            "pg": 3,
+            "pp": 4,
+            "dif": -8,
+            "dg": -39,
+            "esQuilmes": false
+          },
+          {
+            "pos": 7,
+            "equipo": "FLORIDA TENIS CLUB",
+            "pts": 8,
+            "pj": 7,
+            "pg": 1,
+            "pp": 6,
+            "dif": -13,
+            "dg": -54,
+            "esQuilmes": false
+          },
+          {
+            "pos": 8,
+            "equipo": "VELEZ SARSFIELD",
+            "pts": 8,
+            "pj": 7,
+            "pg": 1,
+            "pp": 6,
+            "dif": -11,
+            "dg": -25,
+            "esQuilmes": false
+          }
+        ]
+      },
+      "partidos": [
+        {
+          "fecha": "2026-03-22T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 1",
+          "local": "FLORIDA TENIS CLUB",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-04-12T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 2",
+          "local": "Quilmes",
+          "visitante": "HARRODS, GATH Y CHAVES",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-04-19T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 3",
+          "local": "GIMNASIA Y ESG. DE BS.AS.",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 0,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-04-26T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 4",
+          "local": "Quilmes",
+          "visitante": "GAZCON LAWN TENNIS CLUB",
+          "esLocal": true,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-05-10T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 5",
+          "local": "COMERCIO",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-05-17T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 6",
+          "local": "SOC.ITALIANA (SITAS)",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-06-28T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 7",
+          "local": "Quilmes",
+          "visitante": "VELEZ SARSFIELD",
+          "esLocal": true,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        }
+      ],
+      "actualizado": "2026-11-27T22:54:17.885Z",
+      "desactualizado": false
+    },
+    {
+      "id": "tenis-147-12-2-a",
+      "deporte": "tenis",
+      "deporteNombre": "Tenis",
+      "titulo": "Caballeros +60 · Segunda",
+      "competencia": "AAT · Interclubes por edad 2026 1er cuatrimestre",
+      "descripcion": "Interclubes de la Asociación Argentina de Tenis. Cada serie se juega a singles y dobles; los mejores de cada grupo pasan a la llave.",
+      "fuente": "AAT",
+      "tabla": {
+        "nombre": "Grupo B",
+        "columnas": [
+          "pts",
+          "pj",
+          "pg",
+          "pp",
+          "dif",
+          "dg"
+        ],
+        "filas": [
+          {
+            "pos": 1,
+            "equipo": "SAN FERNANDO",
+            "pts": 11,
+            "pj": 6,
+            "pg": 5,
+            "pp": 1,
+            "dif": 16,
+            "dg": 47,
+            "esQuilmes": false
+          },
+          {
+            "pos": 2,
+            "equipo": "COMERCIO",
+            "pts": 11,
+            "pj": 6,
+            "pg": 5,
+            "pp": 1,
+            "dif": 10,
+            "dg": 23,
+            "esQuilmes": false
+          },
+          {
+            "pos": 3,
+            "equipo": "ARGENTINOS JUNIORS",
+            "pts": 10,
+            "pj": 6,
+            "pg": 4,
+            "pp": 2,
+            "dif": 12,
+            "dg": 74,
+            "esQuilmes": false
+          },
+          {
+            "pos": 4,
+            "equipo": "CIRCULO GENERAL BELGRANO B",
+            "pts": 9,
+            "pj": 6,
+            "pg": 3,
+            "pp": 3,
+            "dif": -3,
+            "dg": -27,
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
+            "equipo": "ATL. Y SOCIAL BELLA VISTA",
+            "pts": 8,
+            "pj": 6,
+            "pg": 2,
+            "pp": 4,
+            "dif": -5,
+            "dg": -7,
+            "esQuilmes": false
+          },
+          {
+            "pos": 6,
+            "equipo": "EL JAGUEL",
+            "pts": 7,
+            "pj": 6,
+            "pg": 1,
+            "pp": 5,
+            "dif": -8,
+            "dg": -35,
+            "esQuilmes": false
+          },
+          {
+            "pos": 7,
+            "equipo": "Quilmes",
+            "pts": 7,
+            "pj": 6,
+            "pg": 1,
+            "pp": 5,
+            "dif": -22,
+            "dg": -75,
+            "esQuilmes": true
+          }
+        ]
+      },
+      "partidos": [
+        {
+          "fecha": "2026-03-15T10:45:00-03:00",
+          "ronda": "Grupo B · Fecha 1",
+          "local": "ATL. Y SOCIAL BELLA VISTA",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-03-24T10:45:00-03:00",
+          "ronda": "Grupo B · Fecha 2",
+          "local": "SAN FERNANDO",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-04-19T10:45:00-03:00",
+          "ronda": "Grupo B · Fecha 3",
+          "local": "Quilmes",
+          "visitante": "ARGENTINOS JUNIORS",
+          "esLocal": true,
+          "gl": 0,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-04-26T12:30:00-03:00",
+          "ronda": "Grupo B · Fecha 4",
+          "local": "Quilmes",
+          "visitante": "CIRCULO GENERAL BELGRANO B",
+          "esLocal": true,
+          "gl": 0,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-05-03T10:45:00-03:00",
+          "ronda": "Grupo B · Fecha 5",
+          "local": "COMERCIO",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-05-10T12:30:00-03:00",
+          "ronda": "Grupo B · Fecha 6",
+          "local": "Quilmes",
+          "visitante": "EL JAGUEL",
+          "esLocal": true,
+          "gl": 0,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado"
+        }
+      ],
+      "actualizado": "2026-11-27T22:54:17.885Z",
+      "desactualizado": false
+    },
+    {
+      "id": "tenis-147-22-2-a",
+      "deporte": "tenis",
+      "deporteNombre": "Tenis",
+      "titulo": "Caballeros +70 · Segunda",
+      "competencia": "AAT · Interclubes por edad 2026 1er cuatrimestre",
+      "descripcion": "Interclubes de la Asociación Argentina de Tenis. Cada serie se juega a singles y dobles; los mejores de cada grupo pasan a la llave.",
       "fuente": "AAT",
       "tabla": {
         "nombre": "Grupo A",
@@ -2086,7 +4525,7 @@
           },
           {
             "pos": 2,
-            "equipo": "QUILMES ATLETICO",
+            "equipo": "Quilmes",
             "pts": 10,
             "pj": 6,
             "pg": 4,
@@ -2157,7 +4596,7 @@
           "fecha": "2026-03-27T10:45:00-03:00",
           "ronda": "Grupo A · Fecha 1",
           "local": "C.CIUDAD DE BS.AS.",
-          "visitante": "QUILMES ATLETICO",
+          "visitante": "Quilmes",
           "esLocal": false,
           "gl": 1,
           "gv": 2,
@@ -2167,7 +4606,7 @@
         {
           "fecha": "2026-04-10T10:45:00-03:00",
           "ronda": "Grupo A · Fecha 2",
-          "local": "QUILMES ATLETICO",
+          "local": "Quilmes",
           "visitante": "GAZCON LAWN TENNIS CLUB",
           "esLocal": true,
           "gl": 1,
@@ -2178,7 +4617,7 @@
         {
           "fecha": "2026-04-24T10:45:00-03:00",
           "ronda": "Grupo A · Fecha 3",
-          "local": "QUILMES ATLETICO",
+          "local": "Quilmes",
           "visitante": "DARLING TENNIS CLUB",
           "esLocal": true,
           "gl": 2,
@@ -2189,7 +4628,7 @@
         {
           "fecha": "2026-05-15T10:45:00-03:00",
           "ronda": "Grupo A · Fecha 4",
-          "local": "QUILMES ATLETICO",
+          "local": "Quilmes",
           "visitante": "A.FOM. L. PALOMAR (AFALP)",
           "esLocal": true,
           "gl": 3,
@@ -2201,7 +4640,7 @@
           "fecha": "2026-05-22T10:45:00-03:00",
           "ronda": "Grupo A · Fecha 5",
           "local": "F. GRAL. SAN MARTIN",
-          "visitante": "QUILMES ATLETICO",
+          "visitante": "Quilmes",
           "esLocal": false,
           "gl": 1,
           "gv": 2,
@@ -2212,7 +4651,7 @@
           "fecha": "2026-06-12T10:45:00-03:00",
           "ronda": "Grupo A · Fecha 6",
           "local": "SAN FERNANDO",
-          "visitante": "QUILMES ATLETICO",
+          "visitante": "Quilmes",
           "esLocal": false,
           "gl": 2,
           "gv": 1,
@@ -2222,7 +4661,7 @@
         {
           "fecha": null,
           "ronda": "Llave Campeonato · Cuartos de final",
-          "local": "QUILMES ATLETICO",
+          "local": "Quilmes",
           "visitante": "BANCO PROV.DE BS. AS.",
           "esLocal": true,
           "gl": 0,
@@ -2231,7 +4670,154 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-27T22:41:01.437Z",
+      "actualizado": "2026-11-27T22:54:17.885Z",
+      "desactualizado": false
+    },
+    {
+      "id": "tenis-147-74-9-a",
+      "deporte": "tenis",
+      "deporteNombre": "Tenis",
+      "titulo": "Caballeros +80 · Única",
+      "competencia": "AAT · Interclubes por edad 2026 1er cuatrimestre",
+      "descripcion": "Interclubes de la Asociación Argentina de Tenis. Cada serie se juega a singles y dobles; los mejores de cada grupo pasan a la llave.",
+      "fuente": "AAT",
+      "tabla": {
+        "nombre": "Grupo A",
+        "columnas": [
+          "pts",
+          "pj",
+          "pg",
+          "pp",
+          "dif",
+          "dg"
+        ],
+        "filas": [
+          {
+            "pos": 1,
+            "equipo": "REGATAS L AVIRON",
+            "pts": 10,
+            "pj": 5,
+            "pg": 5,
+            "pp": 0,
+            "dif": 21,
+            "dg": 102,
+            "esQuilmes": false
+          },
+          {
+            "pos": 2,
+            "equipo": "ASOC. DEP. RACIONALES",
+            "pts": 9,
+            "pj": 5,
+            "pg": 4,
+            "pp": 1,
+            "dif": 16,
+            "dg": 60,
+            "esQuilmes": false
+          },
+          {
+            "pos": 3,
+            "equipo": "SAN FERNANDO",
+            "pts": 6,
+            "pj": 5,
+            "pg": 2,
+            "pp": 3,
+            "dif": -2,
+            "dg": -8,
+            "esQuilmes": false
+          },
+          {
+            "pos": 4,
+            "equipo": "GIMN. Y ESG. V. DEL PARQUE",
+            "pts": 6,
+            "pj": 5,
+            "pg": 2,
+            "pp": 3,
+            "dif": -3,
+            "dg": -4,
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
+            "equipo": "Quilmes",
+            "pts": 4,
+            "pj": 5,
+            "pg": 1,
+            "pp": 4,
+            "dif": -14,
+            "dg": -56,
+            "esQuilmes": true
+          },
+          {
+            "pos": 6,
+            "equipo": "ATLETICO LANUS",
+            "pts": 2,
+            "pj": 5,
+            "pg": 1,
+            "pp": 4,
+            "dif": -18,
+            "dg": -94,
+            "esQuilmes": false
+          }
+        ]
+      },
+      "partidos": [
+        {
+          "fecha": "2026-04-01T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 1",
+          "local": "Quilmes",
+          "visitante": "SAN FERNANDO",
+          "esLocal": true,
+          "gl": 0,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-04-08T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 2",
+          "local": "REGATAS L AVIRON",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-04-22T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 3",
+          "local": "Quilmes",
+          "visitante": "ATLETICO LANUS",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-04-29T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 4",
+          "local": "ASOC. DEP. RACIONALES",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-05-27T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 5",
+          "local": "GIMN. Y ESG. V. DEL PARQUE",
+          "visitante": "Quilmes",
+          "esLocal": false,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        }
+      ],
+      "actualizado": "2026-11-27T22:54:17.885Z",
       "desactualizado": false
     },
     {
