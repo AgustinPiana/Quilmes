@@ -120,5 +120,28 @@
     "torneo": "metro.?master",
     "sigla": "QAC",
     "nombreClub": "quilmes atl[eé]tico club"
+  },
+  "tenis": {
+    "nombreClub": "QUILMES ATLETICO",
+    "categorias": [
+      {
+        "id": "tenis-40",
+        "titulo": "Caballeros +40",
+        "idTorneo": 147,
+        "idCategoria": 96,
+        "idNivel": 2,
+        "competencia": "Interclubes AAT · +40 Segunda",
+        "descripcion": "Interclubes por edad de la Asociación Argentina de Tenis (1er cuatrimestre). Cada serie se juega a singles y dobles; los primeros de cada grupo pasan a la llave."
+      },
+      {
+        "id": "tenis-70",
+        "titulo": "Caballeros +70",
+        "idTorneo": 147,
+        "idCategoria": 22,
+        "idNivel": 2,
+        "competencia": "Interclubes AAT · +70 Segunda",
+        "descripcion": "Interclubes por edad de la Asociación Argentina de Tenis (1er cuatrimestre). Cada serie se juega a singles y dobles; los primeros de cada grupo pasan a la llave."
+      }
+    ]
   }
 }

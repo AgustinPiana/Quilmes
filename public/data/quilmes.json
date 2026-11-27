@@ -1875,6 +1875,366 @@
       "desactualizado": false
     },
     {
+      "id": "tenis-40",
+      "deporte": "tenis",
+      "deporteNombre": "Tenis",
+      "titulo": "Caballeros +40",
+      "competencia": "Interclubes AAT · +40 Segunda",
+      "descripcion": "Interclubes por edad de la Asociación Argentina de Tenis (1er cuatrimestre). Cada serie se juega a singles y dobles; los primeros de cada grupo pasan a la llave.",
+      "fuente": "AAT",
+      "tabla": {
+        "nombre": "Grupo D",
+        "columnas": [
+          "pts",
+          "pj",
+          "pg",
+          "pp",
+          "dif",
+          "dg"
+        ],
+        "filas": [
+          {
+            "pos": 1,
+            "equipo": "QUILMES ATLETICO",
+            "pts": 11,
+            "pj": 6,
+            "pg": 5,
+            "pp": 1,
+            "dif": 15,
+            "dg": 49,
+            "esQuilmes": true
+          },
+          {
+            "pos": 2,
+            "equipo": "ITALIANO",
+            "pts": 10,
+            "pj": 6,
+            "pg": 4,
+            "pp": 2,
+            "dif": 11,
+            "dg": 55,
+            "esQuilmes": false
+          },
+          {
+            "pos": 3,
+            "equipo": "LUJAN TENNIS CLUB",
+            "pts": 10,
+            "pj": 6,
+            "pg": 4,
+            "pp": 2,
+            "dif": 5,
+            "dg": 21,
+            "esQuilmes": false
+          },
+          {
+            "pos": 4,
+            "equipo": "BS.AS.LAWN TENNIS CLUB",
+            "pts": 10,
+            "pj": 6,
+            "pg": 4,
+            "pp": 2,
+            "dif": 2,
+            "dg": 10,
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
+            "equipo": "ARGENTINOS JUNIORS",
+            "pts": 8,
+            "pj": 6,
+            "pg": 2,
+            "pp": 4,
+            "dif": -5,
+            "dg": -41,
+            "esQuilmes": false
+          },
+          {
+            "pos": 6,
+            "equipo": "NAUTICO HACOAJ",
+            "pts": 6,
+            "pj": 6,
+            "pg": 1,
+            "pp": 5,
+            "dif": -14,
+            "dg": -50,
+            "esQuilmes": false
+          },
+          {
+            "pos": 7,
+            "equipo": "COMUNICACIONES",
+            "pts": 6,
+            "pj": 6,
+            "pg": 0,
+            "pp": 6,
+            "dif": -20,
+            "dg": -80,
+            "esQuilmes": false
+          }
+        ]
+      },
+      "partidos": [
+        {
+          "fecha": "2026-03-15T12:30:00-03:00",
+          "ronda": "Grupo D · Fecha 1",
+          "local": "LUJAN TENNIS CLUB",
+          "visitante": "QUILMES ATLETICO",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-03-22T14:15:00-03:00",
+          "ronda": "Grupo D · Fecha 2",
+          "local": "QUILMES ATLETICO",
+          "visitante": "ITALIANO",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-04-19T14:15:00-03:00",
+          "ronda": "Grupo D · Fecha 3",
+          "local": "QUILMES ATLETICO",
+          "visitante": "NAUTICO HACOAJ",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-04-26T14:15:00-03:00",
+          "ronda": "Grupo D · Fecha 4",
+          "local": "QUILMES ATLETICO",
+          "visitante": "BS.AS.LAWN TENNIS CLUB",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-05-03T12:30:00-03:00",
+          "ronda": "Grupo D · Fecha 5",
+          "local": "COMUNICACIONES",
+          "visitante": "QUILMES ATLETICO",
+          "esLocal": false,
+          "gl": 0,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-05-10T12:30:00-03:00",
+          "ronda": "Grupo D · Fecha 6",
+          "local": "ARGENTINOS JUNIORS",
+          "visitante": "QUILMES ATLETICO",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": null,
+          "ronda": "Llave Campeonato · Cuartos de final",
+          "local": "CIRCULO MILITAR",
+          "visitante": "QUILMES ATLETICO",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        }
+      ],
+      "actualizado": "2026-11-27T22:41:01.437Z",
+      "desactualizado": false
+    },
+    {
+      "id": "tenis-70",
+      "deporte": "tenis",
+      "deporteNombre": "Tenis",
+      "titulo": "Caballeros +70",
+      "competencia": "Interclubes AAT · +70 Segunda",
+      "descripcion": "Interclubes por edad de la Asociación Argentina de Tenis (1er cuatrimestre). Cada serie se juega a singles y dobles; los primeros de cada grupo pasan a la llave.",
+      "fuente": "AAT",
+      "tabla": {
+        "nombre": "Grupo A",
+        "columnas": [
+          "pts",
+          "pj",
+          "pg",
+          "pp",
+          "dif",
+          "dg"
+        ],
+        "filas": [
+          {
+            "pos": 1,
+            "equipo": "SAN FERNANDO",
+            "pts": 11,
+            "pj": 6,
+            "pg": 5,
+            "pp": 1,
+            "dif": 14,
+            "dg": 62,
+            "esQuilmes": false
+          },
+          {
+            "pos": 2,
+            "equipo": "QUILMES ATLETICO",
+            "pts": 10,
+            "pj": 6,
+            "pg": 4,
+            "pp": 2,
+            "dif": 8,
+            "dg": 34,
+            "esQuilmes": true
+          },
+          {
+            "pos": 3,
+            "equipo": "GAZCON LAWN TENNIS CLUB",
+            "pts": 10,
+            "pj": 6,
+            "pg": 4,
+            "pp": 2,
+            "dif": 6,
+            "dg": 37,
+            "esQuilmes": false
+          },
+          {
+            "pos": 4,
+            "equipo": "C.CIUDAD DE BS.AS.",
+            "pts": 9,
+            "pj": 6,
+            "pg": 3,
+            "pp": 3,
+            "dif": -3,
+            "dg": -21,
+            "esQuilmes": false
+          },
+          {
+            "pos": 5,
+            "equipo": "F. GRAL. SAN MARTIN",
+            "pts": 8,
+            "pj": 6,
+            "pg": 2,
+            "pp": 4,
+            "dif": -4,
+            "dg": -20,
+            "esQuilmes": false
+          },
+          {
+            "pos": 6,
+            "equipo": "A.FOM. L. PALOMAR (AFALP)",
+            "pts": 8,
+            "pj": 6,
+            "pg": 2,
+            "pp": 4,
+            "dif": -10,
+            "dg": -42,
+            "esQuilmes": false
+          },
+          {
+            "pos": 7,
+            "equipo": "DARLING TENNIS CLUB",
+            "pts": 7,
+            "pj": 6,
+            "pg": 1,
+            "pp": 5,
+            "dif": -11,
+            "dg": -50,
+            "esQuilmes": false
+          }
+        ]
+      },
+      "partidos": [
+        {
+          "fecha": "2026-03-27T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 1",
+          "local": "C.CIUDAD DE BS.AS.",
+          "visitante": "QUILMES ATLETICO",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-04-10T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 2",
+          "local": "QUILMES ATLETICO",
+          "visitante": "GAZCON LAWN TENNIS CLUB",
+          "esLocal": true,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-04-24T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 3",
+          "local": "QUILMES ATLETICO",
+          "visitante": "DARLING TENNIS CLUB",
+          "esLocal": true,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-05-15T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 4",
+          "local": "QUILMES ATLETICO",
+          "visitante": "A.FOM. L. PALOMAR (AFALP)",
+          "esLocal": true,
+          "gl": 3,
+          "gv": 0,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-05-22T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 5",
+          "local": "F. GRAL. SAN MARTIN",
+          "visitante": "QUILMES ATLETICO",
+          "esLocal": false,
+          "gl": 1,
+          "gv": 2,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": "2026-06-12T10:45:00-03:00",
+          "ronda": "Grupo A · Fecha 6",
+          "local": "SAN FERNANDO",
+          "visitante": "QUILMES ATLETICO",
+          "esLocal": false,
+          "gl": 2,
+          "gv": 1,
+          "jugado": true,
+          "estado": "Finalizado"
+        },
+        {
+          "fecha": null,
+          "ronda": "Llave Campeonato · Cuartos de final",
+          "local": "QUILMES ATLETICO",
+          "visitante": "BANCO PROV.DE BS. AS.",
+          "esLocal": true,
+          "gl": 0,
+          "gv": 3,
+          "jugado": true,
+          "estado": "Finalizado"
+        }
+      ],
+      "actualizado": "2026-11-27T22:41:01.437Z",
+      "desactualizado": false
+    },
+    {
       "id": "natacion-master",
       "deporte": "natacion",
       "deporteNombre": "Natación",

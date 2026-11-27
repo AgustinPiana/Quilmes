@@ -1,8 +1,8 @@
 // Agenda del Cervecero: lee data/quilmes.json y arma las vistas.
 
 const TZ = 'America/Argentina/Buenos_Aires';
-const VISTAS = ['resumen', 'futbol', 'basquet', 'hockey', 'natacion'];
-const ES_QUILMES = /^(quilmes|quilmes atletico club)$/i;
+const VISTAS = ['resumen', 'futbol', 'basquet', 'hockey', 'natacion', 'tenis'];
+const ES_QUILMES = /^(quilmes|quilmes atl[eé]tico( club)?)$/i;
 const $contenido = document.getElementById('contenido');
 const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
 let datos = null;
@@ -92,6 +92,9 @@ const rival = (p) => nombre(p.esLocal ? p.visitante : p.local);
 const marcadorPropio = (p) => `${p.esLocal ? p.gl : p.gv}-${p.esLocal ? p.gv : p.gl}`;
 const PALABRA = { G: 'Ganó', E: 'Empató', P: 'Perdió' };
 const COLOR = { G: 'var(--gano)', E: 'var(--empato)', P: 'var(--perdio)' };
+const SIN_EMPATE = new Set(['basquet', 'tenis']);
+/** Cómo se llama la diferencia en cada deporte. */
+const DIF = { basquet: 'Dif. tantos', tenis: 'Dif. sets' };
 
 function proximos(sec) {
   const limite = Date.now() - 3 * 3600e3;
@@ -100,7 +103,8 @@ function proximos(sec) {
   const sinFecha = sec.partidos.filter((p) => !p.jugado && !p.fecha);
   return [...conFecha, ...sinFecha];
 }
-const jugados = (sec) => sec.partidos.filter((p) => p.jugado).sort((a, b) => (b.fecha || '').localeCompare(a.fecha || ''));
+// Los jugados sin fecha (cruces de llave en tenis) son posteriores a la fase de grupos: van como los más recientes.
+const jugados = (sec) => sec.partidos.filter((p) => p.jugado).sort((a, b) => (b.fecha || '9999').localeCompare(a.fecha || '9999'));
 const filaQuilmes = (sec) => sec.tabla?.filas.find((f) => f.esQuilmes) || null;
 
 function situacion(sec) {
@@ -130,6 +134,7 @@ const ICONO = {
   futbol: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="m12 8 3.2 2.3-1.2 3.7h-4l-1.2-3.7z"/></svg>',
   basquet: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M3.5 12h17M12 3.5v17M6 6c3 3 3 9 0 12M18 6c-3 3-3 9 0 12"/></svg>',
   hockey: '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 3.5 9.5 17.5a2.5 2.5 0 0 1-2.4 1.6H4.5"/><circle cx="17.5" cy="18" r="2"/></svg>',
+  tenis: '<svg viewBox="0 0 24 24" aria-hidden="true"><ellipse cx="9.5" cy="9.5" rx="6" ry="6.5" transform="rotate(-45 9.5 9.5)"/><path d="m13.8 13.8 6.2 6.2M6.5 6.8l6 5.5M6.8 12.4l5.6-5.8"/><circle cx="19" cy="5" r="1.8"/></svg>',
   natacion: '<svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="17" cy="6.5" r="2"/><path d="m4 12.5 5-4.5 3.5 2.5L15 8M3 16.5c1.5 0 1.5-1.2 3-1.2s1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2M3 20.5c1.5 0 1.5-1.2 3-1.2s1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2 1.5-1.2 3-1.2 1.5 1.2 3 1.2"/></svg>',
 };
 
@@ -153,7 +158,7 @@ function lineas(sec) {
     const r = resultado(p);
     for (const k of ['G', 'E', 'P']) acum[k].push(acum[k].at(-1) + (k === r ? 1 : 0));
   }
-  const tipos = sec.deporte === 'basquet' ? ['G', 'P'] : ['G', 'E', 'P'];
+  const tipos = SIN_EMPATE.has(sec.deporte) ? ['G', 'P'] : ['G', 'E', 'P'];
   const max = Math.max(...tipos.map((k) => acum[k].at(-1)), 1);
   const n = lista.length;
   const x = (i) => (i / n) * (W - der);
@@ -219,7 +224,7 @@ function proximo(p, sec) {
       ['Posición', yo.pos, el.pos, (a, b) => a < b, (v) => `${v}°`],
       ['Puntos', yo.pts, el.pts, (a, b) => a > b, (v) => v],
       ['Jugados', yo.pj, el.pj, () => null, (v) => v],
-      sec.deporte === 'basquet' ? ['Ganados', yo.pg, el.pg, (a, b) => a > b, (v) => v] : ['Dif. de gol', yo.dif, el.dif, (a, b) => a > b, (v) => (v > 0 ? `+${v}` : v)],
+      sec.deporte === 'basquet' ? ['Ganados', yo.pg, el.pg, (a, b) => a > b, (v) => v] : [sec.deporte === 'tenis' ? 'Dif. de sets' : 'Dif. de gol', yo.dif, el.dif, (a, b) => a > b, (v) => (v > 0 ? `+${v}` : v)],
     ];
     const previo = jugados(sec).find((x) => norm(rival(x)) === norm(nombre(otro)));
     duelo = `<table class="duelo">
@@ -261,7 +266,7 @@ function listaResultados(items) {
         return `<li><span class="quien">${esc(sec.competencia)} · ${esc(j.nombre)}<small>${esc(contexto)}</small></span><span class="marcador">${medallas(j)}<b>${j.puesto ? `${esc(j.puesto)}°` : '–'}</b></span></li>`;
       }
       const r = resultado(p);
-      const contexto = [sec && `${sec.deporteNombre} ${minus(sec.titulo)}`, fechaBreve(p.fecha), p.ronda].filter(Boolean).join(' · ');
+      const contexto = [sec && `${sec.deporteNombre} ${minus(sec.titulo)}`, p.fecha ? fechaBreve(p.fecha) : p.jugado ? null : 'A confirmar', p.ronda].filter(Boolean).join(' · ');
       const derecha = p.jugado
         ? `<span class="marcador"><b>${esc(p.esLocal ? p.gl : p.gv)}<span>–${esc(p.esLocal ? p.gv : p.gl)}</span></b>${r ? `<span class="r ${r}" title="${PALABRA[r]}">${r}</span>` : ''}</span>`
         : `<span class="marcador pendiente"><b>${p.fecha ? esc(hora(p.fecha)) : '–'}</b></span>`;
@@ -270,8 +275,8 @@ function listaResultados(items) {
     .join('')}</ul>`;
 }
 
-const COLS = { pts: 'Pts', pj: 'PJ', pg: 'G', pe: 'E', pp: 'P', gf: 'GF', gc: 'GC', dif: 'Dif', pf: 'PF', pc: 'PC' };
-const EXT = new Set(['pg', 'pe', 'pp', 'gf', 'gc', 'pf', 'pc']);
+const COLS = { pts: 'Pts', pj: 'PJ', pg: 'G', pe: 'E', pp: 'P', gf: 'GF', gc: 'GC', dif: 'Dif', pf: 'PF', pc: 'PC', dg: 'Games' };
+const EXT = new Set(['pg', 'pe', 'pp', 'gf', 'gc', 'pf', 'pc', 'dg']);
 function tabla(sec) {
   if (!sec.tabla?.filas?.length) return '<p class="vacio">Tabla no disponible.</p>';
   const cols = sec.tabla.columnas;
@@ -279,7 +284,7 @@ function tabla(sec) {
     <thead><tr><th>#</th><th class="eq">${esc(sec.tabla.nombre)}</th>${cols.map((c) => `<th class="${EXT.has(c) ? 'ext' : ''}">${COLS[c] || c}</th>`).join('')}</tr></thead>
     <tbody>${sec.tabla.filas
       .map((f) => `<tr class="${f.esQuilmes ? 'qac' : ''}"><td class="pos">${esc(f.pos)}</td><td class="eq">${f.esQuilmes ? `<span>${escudo()}${esc(nombre(f.equipo))}</span>` : esc(nombre(f.equipo))}</td>${cols
-        .map((c) => `<td class="${c === 'pts' ? 'pts' : ''} ${EXT.has(c) ? 'ext' : ''}">${esc(c === 'dif' && f[c] > 0 ? `+${f[c]}` : f[c] ?? '')}</td>`)
+        .map((c) => `<td class="${c === 'pts' ? 'pts' : ''} ${EXT.has(c) ? 'ext' : ''}">${esc((c === 'dif' || c === 'dg') && f[c] > 0 ? `+${f[c]}` : f[c] ?? '')}</td>`)
         .join('')}</tr>`)
       .join('')}</tbody></table></div>`;
 }
@@ -415,7 +420,7 @@ function listaEquipos(dep) {
       const f = filaQuilmes(sec);
       if (!f) return '';
       const uj = ultimaJornada(sec);
-      const registro = esNatacion(sec) ? `${uj?.nombre || ''}` : sec.deporte === 'basquet' ? `${f.pg}G ${f.pp}P` : `${f.pg}G ${f.pe}E ${f.pp}P`;
+      const registro = esNatacion(sec) ? `${uj?.nombre || ''}` : SIN_EMPATE.has(sec.deporte) ? `${f.pg}G ${f.pp}P` : `${f.pg}G ${f.pe}E ${f.pp}P`;
       return `<a class="equipo" href="#${sec.deporte}">
           <div class="equipo-cab">
             <h3>${esc(sec.deporteNombre)} ${esc(minus(sec.titulo))}<span class="flecha">→</span><small class="chica">${esc(sec.competencia)}</small></h3>
@@ -539,7 +544,7 @@ function vistaDeporte(deporte) {
             <div><b>${esc(f.pos)}°</b><small class="chica">Posición</small></div>
             <div><b>${esc(f.pts)}</b><small class="chica">Puntos</small></div>
             <div><b>${esc(f.pj)}</b><small class="chica">Jugados</small></div>
-            <div><b>${dif == null ? '–' : esc(dif > 0 ? `+${dif}` : dif)}</b><small class="chica">${sec.deporte === 'basquet' ? 'Dif. tantos' : 'Dif. gol'}</small></div>
+            <div><b>${dif == null ? '–' : esc(dif > 0 ? `+${dif}` : dif)}</b><small class="chica">${DIF[sec.deporte] || 'Dif. gol'}</small></div>
           </div>` : ''}
         <div class="columnas">
           <div>
