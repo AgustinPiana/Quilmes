@@ -8,7 +8,7 @@ Página para seguir en un solo lugar el fixture, los resultados y las tablas de 
 | Fútbol · Reserva | Promiedos (`promiedos.com.ar`) | JSON que trae cada página (`__NEXT_DATA__`) |
 | Fútbol · Primera C femenina | DataFem (`datafem.com.ar`) | HTML de tabla y fixture, una página por fecha |
 | Básquet · Superior (Mayores) | FEBAMBA (`febamba.com`) | Fixture por fechas + APIs públicas de fases y grupos |
-| Hockey · Caballeros y Damas (Quilmes y Quilmes B) | AHBA (`tournamenttracker.buenosaireshockey.ar`) | Navegador automático (Playwright) que lee la página ya armada |
+| Hockey · Caballeros (A y B) y Damas (A, B, C y D) | AHBA (`tournamenttracker.buenosaireshockey.ar`) | Navegador automático (Playwright) que lee la página ya armada |
 | Natación · Metropolitano Master | FENABA (`fenaba.org.ar`) | API de resultados + páginas de Hy-Tek de cada jornada (puntaje por equipos y podios de "QAC") |
 
 Costo: **$0**. GitHub Actions junta los datos 6 veces por día y Vercel publica la página.

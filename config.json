@@ -91,6 +91,22 @@
         "codigo": "RUdVX3VleFA=",
         "nombreEquipo": "QUILMES B",
         "descripcion": "El segundo equipo de damas del club juega el Metropolitano D, la cuarta categoría del hockey femenino de Buenos Aires."
+      },
+      {
+        "id": "hockey-damas-c",
+        "deporteNombre": "Hockey",
+        "titulo": "Damas C",
+        "codigo": "RUdVX3VifFc=",
+        "nombreEquipo": "QUILMES C",
+        "descripcion": "El tercer equipo de damas del club juega el Metropolitano E."
+      },
+      {
+        "id": "hockey-damas-d",
+        "deporteNombre": "Hockey",
+        "titulo": "Damas D",
+        "codigo": "RUdVX3Vie10=",
+        "nombreEquipo": "QUILMES D",
+        "descripcion": "El cuarto equipo de damas del club juega el Metropolitano F."
       }
     ]
   },
