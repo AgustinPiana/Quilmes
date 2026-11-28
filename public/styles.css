@@ -456,3 +456,11 @@ details.fixture .resultados { border-top: 0; }
 
 /* Menú del celular con 6 secciones: letra un poco más compacta */
 @media (max-width: 899px) { .nav a { font-size: 9.5px; letter-spacing: .03em; } }
+
+/* Tenis: lista de buena fe dentro de un desplegable */
+details.fixture + details.fixture { margin-top: 0; }
+details.fixture + details.fixture summary { border-top: 0; }
+.jugadores { margin: 0; padding: 6px 0 4px; list-style: none; counter-reset: j; columns: 2; column-gap: 28px; }
+.jugadores li { counter-increment: j; display: flex; gap: 10px; padding: 8px 0; border-bottom: 1px solid var(--linea); break-inside: avoid; font-size: 14px; font-weight: 600; }
+.jugadores li::before { content: counter(j); min-width: 18px; font: 800 13px/1.4 var(--f); font-stretch: 62%; color: var(--gris); }
+@media (max-width: 480px) { .jugadores { columns: 1; } }

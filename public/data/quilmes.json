@@ -2040,9 +2040,30 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-27T22:54:17.885Z",
-      "desactualizado": true,
-      "error": "AAT: el club 128 no tiene equipos cargados"
+      "jugadores": [
+        "Rennes, Nahuel",
+        "Aimone, Juan Manuel",
+        "Feuring, Roberto",
+        "Mingrone, Patricio",
+        "Zito, Daniel Alberto",
+        "Soligo, Ezequiel",
+        "Rodriguez Vosa, Mariano",
+        "Gargiulo, Matias",
+        "Antonietta, Carlos Maximiliano"
+      ],
+      "aat": {
+        "idEquipo": 261874,
+        "idTorneo": 152,
+        "idCategoria": 19,
+        "idNivel": 2,
+        "equipo": "QUILMES ATLETICO-A",
+        "anio": 2026,
+        "torneo": "Interclub Mayores - Agosto2026",
+        "categoria": "Caballeros +35",
+        "nivel": "Segunda"
+      },
+      "actualizado": "2026-11-28T00:11:11.775Z",
+      "desactualizado": false
     },
     {
       "id": "tenis-152-16-2-a",
@@ -2232,9 +2253,31 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-27T22:54:17.885Z",
-      "desactualizado": true,
-      "error": "AAT: el club 128 no tiene equipos cargados"
+      "jugadores": [
+        "Dillmann, Daniel",
+        "Rennes, Nahuel",
+        "Aimone, Juan Manuel",
+        "Feuring, Roberto",
+        "Mingrone, Patricio",
+        "Zito, Daniel Alberto",
+        "Fulginiti, Gustavo Pablo",
+        "Rodriguez Vosa, Mariano",
+        "Soligo, Ezequiel",
+        "Gargiulo, Matias"
+      ],
+      "aat": {
+        "idEquipo": 261999,
+        "idTorneo": 152,
+        "idCategoria": 16,
+        "idNivel": 2,
+        "equipo": "QUILMES ATLETICO-A",
+        "anio": 2026,
+        "torneo": "Interclub Mayores - Agosto2026",
+        "categoria": "Caballeros +45",
+        "nivel": "Segunda"
+      },
+      "actualizado": "2026-11-28T00:11:11.775Z",
+      "desactualizado": false
     },
     {
       "id": "tenis-152-16-4-a",
@@ -2424,9 +2467,30 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-27T22:54:17.885Z",
-      "desactualizado": true,
-      "error": "AAT: el club 128 no tiene equipos cargados"
+      "jugadores": [
+        "Dieguez, Rodrigo German",
+        "Alcaraz, Guillermo",
+        "Abate, Diego Dario Fernando",
+        "Gonzalez , Claudio",
+        "Schenone, Rodolfo",
+        "Gargiulo, Matias",
+        "Llanos, Sebastian",
+        "Michel, Omar Enrique",
+        "Antonietta, Carlos Maximiliano"
+      ],
+      "aat": {
+        "idEquipo": 262080,
+        "idTorneo": 152,
+        "idCategoria": 16,
+        "idNivel": 4,
+        "equipo": "QUILMES ATLETICO-A",
+        "anio": 2026,
+        "torneo": "Interclub Mayores - Agosto2026",
+        "categoria": "Caballeros +45",
+        "nivel": "Cuarta"
+      },
+      "actualizado": "2026-11-28T00:11:11.775Z",
+      "desactualizado": false
     },
     {
       "id": "tenis-152-21-7-a",
@@ -2616,9 +2680,32 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-27T22:54:17.885Z",
-      "desactualizado": true,
-      "error": "AAT: el club 128 no tiene equipos cargados"
+      "jugadores": [
+        "Dillmann, Daniel",
+        "Gimenez, Luis Alberto (h)",
+        "Guarasci, Daniel",
+        "Brigo, Miguel F",
+        "Petroni, Nestor Fabian",
+        "Garcia, Marcelo Sergio",
+        "De Turris, Guillermo",
+        "Fulginiti, Gustavo Pablo",
+        "Cañete, Hernan",
+        "Fernandez, Gustavo Claudio",
+        "Rodriguez Vosa, Mariano"
+      ],
+      "aat": {
+        "idEquipo": 262142,
+        "idTorneo": 152,
+        "idCategoria": 21,
+        "idNivel": 7,
+        "equipo": "QUILMES ATLETICO-A",
+        "anio": 2026,
+        "torneo": "Interclub Mayores - Agosto2026",
+        "categoria": "Caballeros +55",
+        "nivel": "Intermedia"
+      },
+      "actualizado": "2026-11-28T00:11:11.775Z",
+      "desactualizado": false
     },
     {
       "id": "tenis-152-21-2-a",
@@ -2808,9 +2895,33 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-27T22:54:17.885Z",
-      "desactualizado": true,
-      "error": "AAT: el club 128 no tiene equipos cargados"
+      "jugadores": [
+        "Capra, Daniel Alberto",
+        "Cañete, Hernan",
+        "De Turris, Guillermo",
+        "Fulginiti, Gustavo Pablo",
+        "Fernandez, Gustavo Claudio",
+        "Garcia, Jorge D.",
+        "Rodriguez Vosa, Mariano",
+        "Berruti, Fernando",
+        "Garcia, Claudio",
+        "Fagotto, Paulo Maria",
+        "Baldassarre, Hector P.",
+        "Abate, Diego Dario Fernando"
+      ],
+      "aat": {
+        "idEquipo": 262168,
+        "idTorneo": 152,
+        "idCategoria": 21,
+        "idNivel": 2,
+        "equipo": "QUILMES ATLETICO-A",
+        "anio": 2026,
+        "torneo": "Interclub Mayores - Agosto2026",
+        "categoria": "Caballeros +55",
+        "nivel": "Segunda"
+      },
+      "actualizado": "2026-11-28T00:11:11.775Z",
+      "desactualizado": false
     },
     {
       "id": "tenis-152-83-2-a",
@@ -3000,9 +3111,28 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-27T22:54:17.885Z",
-      "desactualizado": true,
-      "error": "AAT: el club 128 no tiene equipos cargados"
+      "jugadores": [
+        "Capra, Daniel Alberto",
+        "Brigo, Miguel F",
+        "De Turris, Guillermo",
+        "Ruggero, Oscar",
+        "Baldassarre, Hector P.",
+        "Calafiore, Alberto S.",
+        "Lastra, Juan C"
+      ],
+      "aat": {
+        "idEquipo": 263044,
+        "idTorneo": 152,
+        "idCategoria": 83,
+        "idNivel": 2,
+        "equipo": "QUILMES ATLETICO-A",
+        "anio": 2026,
+        "torneo": "Interclub Mayores - Agosto2026",
+        "categoria": "Caballeros +65",
+        "nivel": "Segunda"
+      },
+      "actualizado": "2026-11-28T00:11:11.775Z",
+      "desactualizado": false
     },
     {
       "id": "tenis-152-83-2-b",
@@ -3192,9 +3322,27 @@
           "estado": "Reprogramado"
         }
       ],
-      "actualizado": "2026-11-27T22:54:17.885Z",
-      "desactualizado": true,
-      "error": "AAT: el club 128 no tiene equipos cargados"
+      "jugadores": [
+        "Berruti, Fernando",
+        "Garcia, Claudio",
+        "Fagotto, Paulo Maria",
+        "Soto, Hector Daniel",
+        "Respano, Francisco Vicent",
+        "Staffora, Francisco"
+      ],
+      "aat": {
+        "idEquipo": 263234,
+        "idTorneo": 152,
+        "idCategoria": 83,
+        "idNivel": 2,
+        "equipo": "QUILMES ATLETICO-B",
+        "anio": 2026,
+        "torneo": "Interclub Mayores - Agosto2026",
+        "categoria": "Caballeros +65",
+        "nivel": "Segunda"
+      },
+      "actualizado": "2026-11-28T00:11:11.775Z",
+      "desactualizado": false
     },
     {
       "id": "tenis-152-23-1-a",
@@ -3428,9 +3576,32 @@
           "estado": "Reprogramado"
         }
       ],
-      "actualizado": "2026-11-27T22:54:17.885Z",
-      "desactualizado": true,
-      "error": "AAT: el club 128 no tiene equipos cargados"
+      "jugadores": [
+        "Respano, Salvador",
+        "Quetglas, Juan Carlos",
+        "Lastra, Juan C",
+        "Calafiore, Alberto S.",
+        "Moroni, Ricardo",
+        "Vila, Justo Jose",
+        "Belaunzaran, Hector",
+        "Misiti, Francisco Julian",
+        "Lugones, Jorge G.",
+        "Vetter, Gerardo A",
+        "Alderete, Edgardo"
+      ],
+      "aat": {
+        "idEquipo": 262277,
+        "idTorneo": 152,
+        "idCategoria": 23,
+        "idNivel": 1,
+        "equipo": "QUILMES ATLETICO-A",
+        "anio": 2026,
+        "torneo": "Interclub Mayores - Agosto2026",
+        "categoria": "Caballeros +75",
+        "nivel": "Primera"
+      },
+      "actualizado": "2026-11-28T00:11:11.775Z",
+      "desactualizado": false
     },
     {
       "id": "tenis-147-96-2-a",
@@ -3609,9 +3780,33 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-27T22:54:17.885Z",
-      "desactualizado": true,
-      "error": "AAT: el club 128 no tiene equipos cargados"
+      "jugadores": [
+        "Dillmann, Daniel",
+        "Rennes, Nahuel",
+        "Aimone, Juan Manuel",
+        "Cañete, Hernan",
+        "Feuring, Roberto",
+        "Mingrone, Patricio",
+        "Zito, Daniel Alberto",
+        "Fulginiti, Gustavo Pablo",
+        "Soligo, Ezequiel",
+        "Rodriguez Vosa, Mariano",
+        "Ballester, Federico",
+        "Gargiulo, Matias"
+      ],
+      "aat": {
+        "idEquipo": 259173,
+        "idTorneo": 147,
+        "idCategoria": 96,
+        "idNivel": 2,
+        "equipo": "QUILMES ATLETICO-A",
+        "anio": 2026,
+        "torneo": "Interclubes por edad 2026 1er Cuat",
+        "categoria": "Caballeros +40",
+        "nivel": "Segunda"
+      },
+      "actualizado": "2026-11-28T00:11:11.775Z",
+      "desactualizado": false
     },
     {
       "id": "tenis-147-82-7-a",
@@ -3801,9 +3996,30 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-27T22:54:17.885Z",
-      "desactualizado": true,
-      "error": "AAT: el club 128 no tiene equipos cargados"
+      "jugadores": [
+        "Dillmann, Daniel",
+        "Gimenez, Luis Alberto (h)",
+        "Echeveste, Gaston E.",
+        "Guarasci, Daniel",
+        "Garcia, Marcelo Sergio",
+        "Zito, Daniel Alberto",
+        "Soligo, Ezequiel",
+        "Fulginiti, Gustavo Pablo",
+        "Feuring, Roberto"
+      ],
+      "aat": {
+        "idEquipo": 259375,
+        "idTorneo": 147,
+        "idCategoria": 82,
+        "idNivel": 7,
+        "equipo": "QUILMES ATLETICO-A",
+        "anio": 2026,
+        "torneo": "Interclubes por edad 2026 1er Cuat",
+        "categoria": "Caballeros +50",
+        "nivel": "Intermedia"
+      },
+      "actualizado": "2026-11-28T00:11:11.775Z",
+      "desactualizado": false
     },
     {
       "id": "tenis-147-82-3-a",
@@ -3971,9 +4187,33 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-27T22:54:17.885Z",
-      "desactualizado": true,
-      "error": "AAT: el club 128 no tiene equipos cargados"
+      "jugadores": [
+        "Brigo, Miguel F",
+        "Capra, Daniel Alberto",
+        "Petroni, Nestor Fabian",
+        "Cañete, Hernan",
+        "Feuring, Roberto",
+        "De Turris, Guillermo",
+        "Fulginiti, Gustavo Pablo",
+        "Zito, Daniel Alberto",
+        "Gismondi, Fernando Alberto",
+        "Garcia, Jorge D.",
+        "Rodriguez Vosa, Mariano",
+        "Soligo, Ezequiel"
+      ],
+      "aat": {
+        "idEquipo": 259466,
+        "idTorneo": 147,
+        "idCategoria": 82,
+        "idNivel": 3,
+        "equipo": "QUILMES ATLETICO-A",
+        "anio": 2026,
+        "torneo": "Interclubes por edad 2026 1er Cuat",
+        "categoria": "Caballeros +50",
+        "nivel": "Tercera"
+      },
+      "actualizado": "2026-11-28T00:11:11.775Z",
+      "desactualizado": false
     },
     {
       "id": "tenis-147-82-5-a",
@@ -4141,9 +4381,28 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-27T22:54:17.885Z",
-      "desactualizado": true,
-      "error": "AAT: el club 128 no tiene equipos cargados"
+      "jugadores": [
+        "Alcaraz, Guillermo",
+        "Gonzalez , Claudio",
+        "Schenone, Rodolfo",
+        "Dieguez, Rodrigo German",
+        "Abate, Diego Dario Fernando",
+        "Llanos, Sebastian",
+        "Michel, Omar Enrique"
+      ],
+      "aat": {
+        "idEquipo": 259729,
+        "idTorneo": 147,
+        "idCategoria": 82,
+        "idNivel": 5,
+        "equipo": "QUILMES ATLETICO-A",
+        "anio": 2026,
+        "torneo": "Interclubes por edad 2026 1er Cuat",
+        "categoria": "Caballeros +50",
+        "nivel": "Quinta"
+      },
+      "actualizado": "2026-11-28T00:11:11.775Z",
+      "desactualizado": false
     },
     {
       "id": "tenis-147-12-1-a",
@@ -4333,9 +4592,31 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-27T22:54:17.885Z",
-      "desactualizado": true,
-      "error": "AAT: el club 128 no tiene equipos cargados"
+      "jugadores": [
+        "Gimenez, Luis Alberto (h)",
+        "Garcia, Marcelo Sergio",
+        "Capra, Daniel Alberto",
+        "Brigo, Miguel F",
+        "Guarasci, Daniel",
+        "Fernandez, Gustavo Claudio",
+        "De Turris, Guillermo",
+        "Baldassarre, Hector P.",
+        "Garcia, Jorge D.",
+        "Garcia, Claudio"
+      ],
+      "aat": {
+        "idEquipo": 259542,
+        "idTorneo": 147,
+        "idCategoria": 12,
+        "idNivel": 1,
+        "equipo": "QUILMES ATLETICO-A",
+        "anio": 2026,
+        "torneo": "Interclubes por edad 2026 1er Cuat",
+        "categoria": "Caballeros +60",
+        "nivel": "Primera"
+      },
+      "actualizado": "2026-11-28T00:11:11.775Z",
+      "desactualizado": false
     },
     {
       "id": "tenis-147-12-2-a",
@@ -4503,9 +4784,29 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-27T22:54:17.885Z",
-      "desactualizado": true,
-      "error": "AAT: el club 128 no tiene equipos cargados"
+      "jugadores": [
+        "De Turris, Guillermo",
+        "Ruggero, Oscar",
+        "Fernandez, Gustavo Claudio",
+        "Garcia, Jorge D.",
+        "Berruti, Fernando",
+        "Garcia, Claudio",
+        "Fagotto, Paulo Maria",
+        "Baldassarre, Hector P."
+      ],
+      "aat": {
+        "idEquipo": 259589,
+        "idTorneo": 147,
+        "idCategoria": 12,
+        "idNivel": 2,
+        "equipo": "QUILMES ATLETICO-A",
+        "anio": 2026,
+        "torneo": "Interclubes por edad 2026 1er Cuat",
+        "categoria": "Caballeros +60",
+        "nivel": "Segunda"
+      },
+      "actualizado": "2026-11-28T00:11:11.775Z",
+      "desactualizado": false
     },
     {
       "id": "tenis-147-22-2-a",
@@ -4684,9 +4985,30 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-27T22:54:17.885Z",
-      "desactualizado": true,
-      "error": "AAT: el club 128 no tiene equipos cargados"
+      "jugadores": [
+        "Respano, Salvador",
+        "Soto, Hector Daniel",
+        "Sgoifo, Luis Vicente",
+        "Lastra, Juan C",
+        "Calafiore, Alberto S.",
+        "Respano, Francisco Vicent",
+        "Moroni, Ricardo",
+        "Vila, Justo Jose",
+        "Lugones, Jorge G."
+      ],
+      "aat": {
+        "idEquipo": 260097,
+        "idTorneo": 147,
+        "idCategoria": 22,
+        "idNivel": 2,
+        "equipo": "QUILMES ATLETICO-A",
+        "anio": 2026,
+        "torneo": "Interclubes por edad 2026 1er Cuat",
+        "categoria": "Caballeros +70",
+        "nivel": "Segunda"
+      },
+      "actualizado": "2026-11-28T00:11:11.775Z",
+      "desactualizado": false
     },
     {
       "id": "tenis-147-74-9-a",
@@ -4832,9 +5154,30 @@
           "estado": "Finalizado"
         }
       ],
-      "actualizado": "2026-11-27T22:54:17.885Z",
-      "desactualizado": true,
-      "error": "AAT: el club 128 no tiene equipos cargados"
+      "jugadores": [
+        "Respano, Salvador",
+        "Quetglas, Juan Carlos",
+        "Calafiore, Alberto S.",
+        "Belaunzaran, Hector",
+        "Moroni, Ricardo",
+        "Alderete, Edgardo",
+        "Vetter, Gerardo A",
+        "Lugones, Jorge G.",
+        "Vila, Justo Jose"
+      ],
+      "aat": {
+        "idEquipo": 259738,
+        "idTorneo": 147,
+        "idCategoria": 74,
+        "idNivel": 9,
+        "equipo": "QUILMES ATLETICO-A",
+        "anio": 2026,
+        "torneo": "Interclubes por edad 2026 1er Cuat",
+        "categoria": "Caballeros +80",
+        "nivel": "Unica"
+      },
+      "actualizado": "2026-11-28T00:11:11.775Z",
+      "desactualizado": false
     },
     {
       "id": "natacion-master",
@@ -7204,9 +7547,8 @@
         }
       ],
       "partidos": [],
-      "actualizado": "2026-11-27T23:00:37.688Z",
-      "desactualizado": true,
-      "error": "Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
+      "actualizado": "2026-11-28T00:11:11.775Z",
+      "desactualizado": false
     },
     {
       "id": "hockey-caballeros",
@@ -10419,23 +10761,5 @@
       "desactualizado": false
     }
   ],
-  "errores": [
-    "tenis-152-19-2-a: AAT: el club 128 no tiene equipos cargados",
-    "tenis-152-16-2-a: AAT: el club 128 no tiene equipos cargados",
-    "tenis-152-16-4-a: AAT: el club 128 no tiene equipos cargados",
-    "tenis-152-21-7-a: AAT: el club 128 no tiene equipos cargados",
-    "tenis-152-21-2-a: AAT: el club 128 no tiene equipos cargados",
-    "tenis-152-83-2-a: AAT: el club 128 no tiene equipos cargados",
-    "tenis-152-83-2-b: AAT: el club 128 no tiene equipos cargados",
-    "tenis-152-23-1-a: AAT: el club 128 no tiene equipos cargados",
-    "tenis-147-96-2-a: AAT: el club 128 no tiene equipos cargados",
-    "tenis-147-82-7-a: AAT: el club 128 no tiene equipos cargados",
-    "tenis-147-82-3-a: AAT: el club 128 no tiene equipos cargados",
-    "tenis-147-82-5-a: AAT: el club 128 no tiene equipos cargados",
-    "tenis-147-12-1-a: AAT: el club 128 no tiene equipos cargados",
-    "tenis-147-12-2-a: AAT: el club 128 no tiene equipos cargados",
-    "tenis-147-22-2-a: AAT: el club 128 no tiene equipos cargados",
-    "tenis-147-74-9-a: AAT: el club 128 no tiene equipos cargados",
-    "natacion-master: Unexpected token '<', \"<!DOCTYPE \"... is not valid JSON"
-  ]
+  "errores": []
 }

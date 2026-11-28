@@ -51,7 +51,9 @@ await intentar(config.reserva.id, () => leerPromiedos(config.reserva, zona));
 await intentar(config.femenino.id, () => leerDatafem(config.femenino, zona));
 await intentar(config.febamba.id, () => leerFebamba(config.febamba, zona));
 try {
-  for (const r of await leerAat(config.tenis, zona, previa)) agregar(r.ok ? r.seccion.id : r.id, r);
+  // "conocidas": los equipos de tenis de la corrida anterior, por si la página del club no responde bien
+  const conocidas = anterior.secciones?.filter((x) => x.deporte === 'tenis') || [];
+  for (const r of await leerAat({ ...config.tenis, conocidas }, zona, previa)) agregar(r.ok ? r.seccion.id : r.id, r);
 } catch (e) {
   // si no se pudo leer la página del club, se conservan las categorías que había
   for (const s of anterior.secciones?.filter((x) => x.deporte === 'tenis') || []) agregar(s.id, { ok: false, error: e.message });

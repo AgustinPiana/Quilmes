@@ -59,3 +59,14 @@ test('aat: equipos del club desde la página de la entidad', () => {
   assert.equal(torneoProlijo(e[1].torneo), 'Interclubes por edad 2026 1er cuatrimestre');
   assert.equal(mostrar('QUILMES ATLETICO-B', 'QUILMES ATLETICO'), 'Quilmes B');
 });
+
+test('aat: jugadores de la lista de buena fe, solo nombres (sin DNI ni contacto)', async () => {
+  const { jugadoresDeEquipo } = await import('../scripts/sources/aat.js');
+  const html = `QUILMES ATLETICO-B Capitan: GARCIA, C Tel: 1100000000 / mail@ejemplo.com
+    <table><tr><td>Orden</td><td>Nombre</td><td>DNI</td><td>Carnet de Doble</td></tr>
+    <tr><td>1</td><!-- x --><td>BERRUTI, FERNANDO</td><td>13343476</td><td>48</td></tr>
+    <tr><td>6</td><td>STAFFORA, FRANCISCO AGREGADO</td><td>14483038</td><td>62</td></tr></table> Fixture del equipo`;
+  const j = jugadoresDeEquipo(html);
+  assert.deepEqual(j, ['Berruti, Fernando', 'Staffora, Francisco']);
+  assert.ok(!JSON.stringify(j).match(/\d|mail|Tel/), 'no se cuela ningún dato personal');
+});

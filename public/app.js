@@ -563,6 +563,7 @@ function vistaDeporte(deporte) {
           <div>
             <div class="bloque"><div class="bloque-cab"><h3>Tabla de posiciones</h3><span class="chica">${esc(sec.tabla?.nombre || '')}</span></div>${tabla(sec)}
               <details class="fixture"><summary>Fixture completo · ${todos.length} partidos</summary>${listaResultados(todos)}</details>
+              ${sec.jugadores?.length ? `<details class="fixture"><summary>Jugadores · ${sec.jugadores.length}</summary><ol class="jugadores">${sec.jugadores.map((n) => `<li>${esc(n)}</li>`).join('')}</ol></details>` : ''}
             </div>
           </div>
         </div>

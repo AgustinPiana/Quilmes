@@ -84,7 +84,16 @@ const pausa = (ms) => new Promise((r) => setTimeout(r, ms));
 export async function leerFenaba(cfg, zona, previa = null) {
   const esElClub = (n) => new RegExp(cfg.nombreClub, 'i').test(n);
   const filtro = new RegExp(cfg.torneo, 'i');
-  const lista = (JSON.parse(await texto(`${API}?year=${cfg.temporada}`)).resultados || [])
+  // A veces la API responde una página HTML en vez del JSON (protección del sitio): se reintenta con pausa.
+  let datos = null;
+  for (let i = 0; i < 4 && !datos; i++) {
+    const cuerpo = await texto(`${API}?year=${cfg.temporada}`);
+    try { datos = JSON.parse(cuerpo); } catch {
+      if (i === 3) throw new Error(`FENABA: la API respondió HTML en vez de datos ("${limpiar(cuerpo.slice(0, 60))}…")`);
+      await new Promise((r) => setTimeout(r, 8000 * (i + 1)));
+    }
+  }
+  const lista = (datos.resultados || [])
     .filter((r) => r.isPublished !== false && !r.isDeleted && filtro.test(`${r.nombre} ${r.url}`));
   if (!lista.length) throw new Error(`FENABA: no hay resultados de "${cfg.torneo}" en ${cfg.temporada}`);
 

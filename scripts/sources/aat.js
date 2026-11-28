@@ -160,6 +160,26 @@ export function equiposDeEntidad(html) {
   return out;
 }
 
+/** "BERRUTI, FERNANDO" → "Berruti, Fernando". */
+const titulo = (n) => limpiar(n).toLowerCase().replace(/(^|[\s,.'-])(\p{L})/gu, (_, a, b) => a + b.toUpperCase());
+
+/**
+ * Nombres de la lista de buena fe de un equipo (vEquipo.php). La tabla es "Orden | Nombre | DNI | Carnet de Doble":
+ * se toma SOLO el nombre; DNI y datos del capitán no se guardan.
+ */
+export function jugadoresDeEquipo(html) {
+  const i = html.search(/Orden\s*\|?[\s\S]{0,400}?Nombre/i);
+  const fin = html.search(/Fixture del equipo/i);
+  const tramo = html.slice(i < 0 ? 0 : i, fin < 0 ? undefined : fin);
+  const out = [];
+  for (const m of tramo.matchAll(/<tr[^>]*>([\s\S]*?)<\/tr>/gi)) {
+    const celdas = [...m[1].matchAll(/<td[^>]*>([\s\S]*?)<\/td>/gi)].map((c) => limpiar(c[1].replace(/<!--[\s\S]*?-->/g, '').replace(/<[^>]+>/g, ' ').replace(/&nbsp;/g, ' ')));
+    const nombre = celdas.find((c) => /^[^\d|]+,\s*[^\d|]+$/.test(c)); // "APELLIDO, NOMBRE"
+    if (nombre && /^\d+$/.test(celdas.find(Boolean) || '')) out.push(titulo(nombre.replace(/\s+AGREGADO$/i, '')));
+  }
+  return [...new Set(out)];
+}
+
 /** "Interclub Mayores - Agosto2026" → "Interclub Mayores · Agosto 2026"; "1er Cuat" → "1er cuatrimestre". */
 export const torneoProlijo = (t) => limpiar(t)
   .replace(/\s+-\s+/g, ' · ')
@@ -175,9 +195,22 @@ const terminada = (sec) => !!sec?.partidos?.length && sec.partidos.every((p) => 
 /** previa(id): la sección del último quilmes.json, para no volver a bajar categorías terminadas. */
 export async function leerAat(cfg, zona, previa = () => null) {
   const nombreClub = cfg.nombreClub;
-  const todos = equiposDeEntidad(await (await pedir(`${BASE}/vEntidad.php?idEntidad=${cfg.idEntidad}`)).text())
-    .filter((e) => club(e.equipo) === nombreClub);
-  if (!todos.length) throw new Error(`AAT: el club ${cfg.idEntidad} no tiene equipos cargados`);
+  let todos = [];
+  let aviso = '';
+  try {
+    const html = await (await pedir(`${BASE}/vEntidad.php?idEntidad=${cfg.idEntidad}`)).text();
+    todos = equiposDeEntidad(html).filter((e) => club(e.equipo) === nombreClub);
+    if (!todos.length) aviso = `la página del club vino sin equipos (${html.length} bytes, "${limpiar((html.match(/<title>([^<]*)/i) || [])[1] || '')}")`;
+  } catch (err) {
+    aviso = err.message;
+  }
+  // Desde los servidores de GitHub la página del club a veces no trae los equipos:
+  // entonces se usan los equipos que ya se conocían (cada sección guarda sus datos de la AAT).
+  if (!todos.length) {
+    todos = (cfg.conocidas || []).map((s) => s.aat).filter(Boolean);
+    if (!todos.length) throw new Error(`AAT: ${aviso || 'el club no tiene equipos cargados'}`);
+    console.warn(`  AAT: ${aviso}; uso los ${todos.length} equipos conocidos`);
+  }
   const anio = Math.max(...todos.map((e) => e.anio));
   const equipos = todos
     .filter((e) => e.anio === anio)
@@ -189,7 +222,7 @@ export async function leerAat(cfg, zona, previa = () => null) {
     const letra = e.equipo.slice(-1);
     const id = `tenis-${e.idTorneo}-${e.idCategoria}-${e.idNivel}-${letra.toLowerCase()}`;
     const vieja = previa(id);
-    if (terminada(vieja)) { secciones.push({ ok: true, seccion: vieja }); continue; }
+    if (terminada(vieja) && vieja.aat && vieja.jugadores) { secciones.push({ ok: true, seccion: vieja }); continue; }
     try {
       const q = `idTorneo=${e.idTorneo}&idCategoria=${e.idCategoria}&idNivel=${e.idNivel}`;
       const r = await pedir(`${BASE}/vFixture2.php?${q}`);
@@ -209,6 +242,11 @@ export async function leerAat(cfg, zona, previa = () => null) {
       const fase = d.partidos
         .sort((a, b) => (a.fecha || '9999').localeCompare(b.fecha || '9999'))
         .map((p, i) => ({ ...p, ronda: `Grupo ${grupo.letra} · Fecha ${i + 1}` }));
+      // Lista de buena fe del equipo: solo los nombres (la página también trae DNI y contacto del capitán: no se publican).
+      let jugadores = vieja?.jugadores || [];
+      if (e.idEquipo) {
+        try { jugadores = jugadoresDeEquipo(await (await pedir(`${BASE}/vEquipo.php?idEquipo=${e.idEquipo}&${q}`)).text()); } catch { /* se queda con la anterior */ }
+      }
       secciones.push({
         ok: true,
         seccion: {
@@ -221,6 +259,8 @@ export async function leerAat(cfg, zona, previa = () => null) {
           fuente: 'AAT',
           tabla: { nombre: `Grupo ${grupo.letra}`, columnas: ['pts', 'pj', 'pg', 'pp', 'dif', 'dg'], filas: d.filas },
           partidos: [...fase, ...crucesDelClub(llaves(html), e.equipo, nombreClub)],
+          jugadores,
+          aat: e, // para poder seguir leyendo esta categoría aunque falle la página del club
         },
       });
     } catch (err) {
